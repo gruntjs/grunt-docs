@@ -1,13 +1,11 @@
 # Introduction
 
-## Installation (explain global/local)
+## Getting Started With Grunt
 
-## End Users
+## Diving into Grunt
 
-### Installing tasks
-### Loading tasks into grunt
-### Configuration
-### Options hierarchy
+### Tasks / Multi-tasks & Targets
+### Options Hierarchy
 ### Dynamic file objects (one-to-one conversions)
 
 ## Developers
