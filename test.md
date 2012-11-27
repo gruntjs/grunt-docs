@@ -1,1 +1,1 @@
-<foo>
+[[Getting Started]]
