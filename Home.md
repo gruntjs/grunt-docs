@@ -42,7 +42,7 @@
   * etc?
 * Collections
 
-### [[API]]
+### [[The grunt API]]
 * [[grunt.config]]
 * [[grunt.event]]
 * [[grunt.fail]]
@@ -52,15 +52,15 @@
 * [[grunt.template]]
 * [[grunt.util]]
 
-## [[Advanced]]
+## [[Advanced Usage]]
 * Using in-development features
 * Installing grunt-cli locally
 * Shell auto-completion
 * Using grunt as a lib
 
-## [[Migration guide]]
+## Migration guides
 
-#### 0.3 -> 0.4
+### [[Upgrading from 0.3 to 0.4]]
 * Installing grunt
   * grunt-cli global
   * grunt installed locally via package.json
@@ -88,7 +88,7 @@
 * Shell auto-completion (todo: test, this might need to move from grunt -> grunt-cli?)
 
 
-## Misc
+## Misc Reference
 * Options object: #302
 * Migration doc: #203, #350
 * Normalized file object: #457, #266
