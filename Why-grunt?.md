@@ -1,1 +1,3 @@
-Possibly link to [Why grunt? Why not something else?](http://benalman.com/news/2012/08/why-grunt/)
+
+* Info from <https://github.com/gruntjs/grunt/blob/devel/README.md>
+* Possibly link to [Why grunt? Why not something else?](http://benalman.com/news/2012/08/why-grunt/)
