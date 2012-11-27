@@ -9,7 +9,7 @@
 ### [[Creating Tasks]]
 ### [[Creating Plugins]]
 ### The grunt API
-# [[grunt]]
+* [[grunt]]
 * [[grunt.config]]
 * [[grunt.event]]
 * [[grunt.fail]]
