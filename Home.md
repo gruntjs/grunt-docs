@@ -23,3 +23,6 @@
 
 ## Migration guides
 ### [[Upgrading from 0.3 to 0.4]]
+
+## Help Resources
+* [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
