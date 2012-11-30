@@ -1,7 +1,5 @@
-## What is grunt?
 Grunt is a task-based command line build tool written in JavaScript.
 
-## Why does grunt exist?
 It’s far too easy to create a gist or one-file repository and promise yourself that you’ll add linting and unit tests later. 
 
 Also as seen, doing all this stuff manually is a total pain, and building all this stuff into a gigantic Makefile / Jakefile / Cakefile / Rakefile / ?akefile that's maintained across all projects was also becoming a total pain. Since I always found myself performing the same tasks over and over again, for every project, it made sense to build a task-based build tool.
