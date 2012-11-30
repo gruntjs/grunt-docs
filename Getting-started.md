@@ -1,4 +1,4 @@
-Grunt is a task-based command line build tool written in JavaScript. *[Why does grunt exist?](/)*
+Grunt is a task-based command line build tool written in JavaScript. *[Why does grunt exist?](https://github.com/gruntjs/grunt/wiki/Why-grunt%3F)*
 
 ## Installing the CLI
 In order to use grunt, you'll want to install the command line interface (CLI) globally.
