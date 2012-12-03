@@ -25,6 +25,7 @@
 
 ## Helpers & Directives
 * Gone! Alternatives for sharing code
+* reference grunt-lib-legacyhelpers, it shows a basic shared gruntlib.
 
 
 ## Configuration changes
