@@ -63,8 +63,6 @@ Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:pro
 
 Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip banners.
 
-Instead of processing a file as a template with `'<file_template:file.js>'`, the the `grunt.file.read` and `grunt.template.process` methods can be used.
-
 ## API changes
 * Event emitting (todo: add more events)
 * Changes with "this" inside multi tasks
