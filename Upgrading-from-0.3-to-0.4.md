@@ -52,9 +52,17 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 Grunt's helper system has been depreciated in favor of node `require`.  For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## Configuration changes
-* No more directives
-  * <% %> template tags work in config, even for non-strings
-  * Tasks now have options like "banner"
+The config.get method (used by many tasks) automatically expands `<% %>` style template strings specified as config data inside the Gruntfile.
+
+See the [[grunt.template]] documentation for more information.
+
+Directives (like `<foo>`) have been removed, but their functionality has been retained. 
+
+* `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
+* `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
+* `'<banner:prop.subprop>'` → Instead of specifying a banner in a file list, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins now have a banner option.
+* `'<file_strip_banner:file.js>'` → Instead of stripping banners from files individually, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins have an option to strip banners.
+* `'<file_template:file.js>`'' → This can be done manually with the `grunt.file.read` and `grunt.template.process` methods.
 
 ## API changes
 * Event emitting (todo: add more events)
