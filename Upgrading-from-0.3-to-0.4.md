@@ -49,14 +49,14 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
 ## Helpers
-Grunt's helper system has been depreciated in favor of node `require`.  For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
+Grunt's helper system has been removed in favor of node `require`.  For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## Configuration changes
 The config.get method (used by many tasks) automatically expands `<% %>` style template strings specified as config data inside the Gruntfile.
 
 See the [[grunt.template]] documentation for more information.
 
-Directives (like `<foo>`) have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
+Directives (like `<config>`) have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
 
 * `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
 * `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
