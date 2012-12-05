@@ -31,39 +31,6 @@ Some task names have changed, and specifying options and files has been standard
 ## Task configuration
 Specifying task options and files has been standardized in grunt 0.4. Options can be specified at both the task and target level, allowing target-level options to override more general task-level options. Multiple file src/dest groupings can be specified per-target. See the [[Configuring tasks]] guide for more information.
 
-
-## Options Merging
-
-Grunt will now merge options defined at the task level with each target (as long as the task has been updated to support grunt 0.4).  As a result, you can now share your configuration across multiple targets.  In the example below, both the `dev` and `prod` targets will inherit the options defined at the top level before the task is run.  Target level options can override task level options.
-
-```js
-requirejs: {
-  options: {
-    baseUrl: './app',
-    name: 'lib/almond/almond',
-    include: 'app',
-    mainConfigFile: 'app/config.js',
-    out: 'build/js/app.js',
-    wrap: true,
-  },
-  dev: {
-    options: {
-      optimize: 'none'
-    }
-  },
-  prod: {
-    options: {
-      optimize: 'uglify',
-      out: 'build/js/app.min.js'
-    }
-  }
-}
-```
-
-## Files object
-
-
-
 ## Alias task changes
 
 
