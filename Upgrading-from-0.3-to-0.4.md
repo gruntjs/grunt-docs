@@ -1,15 +1,14 @@
 ## Installing grunt
-* grunt-cli global
-* grunt installed locally via package.json
-
+* grunt-cli should be installed globally
+* grunt should now be installed locally (via package.json)
 
 ## The Gruntfile
 
 
-## Built-in tasks are now plugins
+## Built-in tasks are now plugins (mostly)
 * Name changes, functionality changes
 * Again, package.json
-* Except for init, which is still built-in (for now)
+* grunt-init is now a separate, globally-installed module
 
 
 ## Multi task changes
@@ -18,9 +17,6 @@
 
 
 ## Alias task changes
-
-
-## Updated "gruntplugin" init template (todo: test)
 
 
 ## Helpers & Directives
@@ -32,6 +28,11 @@
 * No more directives
   * <% %> template tags work in config, even for non-strings
   * Tasks now have options like "banner"
+
+
+## grunt-init changes
+* Updated "gruntplugin" init template (todo: test)
+* more stuff?
 
 
 ## API changes
