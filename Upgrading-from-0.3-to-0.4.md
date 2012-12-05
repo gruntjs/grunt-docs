@@ -21,7 +21,7 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 * test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit) plugin
 * watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch) plugin
 
-Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above.
+Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
 ## grunt init
 i'm writing this now
