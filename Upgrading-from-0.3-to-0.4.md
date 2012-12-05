@@ -1,6 +1,10 @@
 ## Installation
-Grunt itself should no longer be installed globally.  To install the `grunt` command on your system, run `npm install -g grunt-cli`.  As of grunt 0.4, the job of the `grunt` command is to load and run the version of grunt you have installed locally to your project, irrespective of its version.  For more information about why this has changed, [please read this](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).  For a basic primer on setting up grunt, please read [[Getting started]].
+Grunt is now split into two parts, `grunt` and `grunt-cli`.
 
+1. `grunt` is the core library that gets installed locally to your project. It contains all the code and logic for running tasks, loading plugins, etc. Install locally, per the [[Getting started]] guide.
+1. `grunt-cli` is installed globally, giving you the `grunt` command in your shell. It doesn't do anything by itself, but when run inside a project where `grunt` has been installed, will actually run grunt. Install globally, per the [[Getting started]] guide.
+
+For more information about why this has changed, [please read this](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 ## The Gruntfile
 
 
