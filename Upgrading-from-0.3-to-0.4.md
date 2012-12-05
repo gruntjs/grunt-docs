@@ -10,17 +10,18 @@ For more information about why this has changed, please read [npm 1.0: Global vs
 
 
 ## Core Tasks
-The standard plugins that shipped with Grunt 0.3 are now discreet npm modules that must be included in your project's package.json devDependencies.
+The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
-* lint -> [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint)
-* concat -> [grunt-contrib-concat](/gruntjs/grunt-contrib-concat)
-* min -> [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify)
-* qunit -> [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit)
-* server -> [grunt-contrib-connect](/gruntjs/grunt-contrib-connect)
-* watch -> [grunt-contrib-watch](/gruntjs/grunt-contrib-watch)
+* concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat)
+* init → stand-alone [grunt-init](/gruntjs/grunt-init) utility
+* lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint)
+* min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify)
+* qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit)
+* server → [grunt-contrib-connect](/gruntjs/grunt-contrib-connect)
+* test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit)
+* watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch)
 
-Configuration formats may have changed slightly, please see the documentation for each plugin as linked above.
-
+Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above.
 ## grunt init
 
 i'm writing this now
