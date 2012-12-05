@@ -52,9 +52,7 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 Grunt's helper system has been removed in favor of node `require`.  For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## Configuration changes
-The config.get method (used by many tasks) automatically expands `<% %>` style template strings specified as config data inside the Gruntfile.
-
-See the [[grunt.template]] documentation for more information.
+`<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
 
 Directives (like `<config>`) have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
 
