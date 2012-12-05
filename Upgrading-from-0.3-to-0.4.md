@@ -35,7 +35,7 @@ Some task names have changed, and specifying options and files has been standard
 ## Task configuration
 The configuration format for grunt 0.4 has been standardized and greatly enhanced.
 
-See the [[Configuring tasks]] guide as well as individul plugin documentation for more information.
+See the [[Configuring tasks]] guide as well as individual plugin documentation for more information.
 
 ## Alias task changes
 When specifying an alias task, the list of tasks to run must now be specified as an array.
