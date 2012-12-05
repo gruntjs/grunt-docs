@@ -7,7 +7,7 @@ Grunt is now split into two parts, `grunt` and `grunt-cli`.
 For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
 ## The Gruntfile
-
+The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`. See the "The Gruntfile" section of the [[Getting started]] guide for more details.
 
 ## Core Tasks
 The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
@@ -22,8 +22,8 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 * watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch)
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above.
-## grunt init
 
+## grunt init
 i'm writing this now
 
 
