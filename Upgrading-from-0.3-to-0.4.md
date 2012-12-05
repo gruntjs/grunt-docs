@@ -9,10 +9,21 @@ For more information about why this has changed, please read [npm 1.0: Global vs
 ## The Gruntfile
 
 
-## Built-in tasks are now plugins (mostly)
-* Name changes, functionality changes
-* Again, package.json
-* grunt-init is now a separate, globally-installed module
+## Core Tasks
+The standard plugins that shipped with Grunt 0.3 are now discreet npm modules that must be included in your project's package.json devDependencies.
+
+* lint -> [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint)
+* concat -> [grunt-contrib-concat](/gruntjs/grunt-contrib-concat)
+* min -> [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify)
+* qunit -> [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit)
+* server -> [grunt-contrib-connect](/gruntjs/grunt-contrib-connect)
+* watch -> [grunt-contrib-watch](/gruntjs/grunt-contrib-watch)
+
+Configuration formats may have changed slightly, please see the documentation for each plugin as linked above.
+
+## grunt init
+
+i'm writing this now
 
 
 ## Multi task changes
