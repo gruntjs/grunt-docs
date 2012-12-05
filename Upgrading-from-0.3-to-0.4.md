@@ -1,17 +1,11 @@
 ## Installing grunt
-Grunt is now split into two parts, `grunt` and `grunt-cli`.
+Grunt is now split into three parts, `grunt`, `grunt-cli` and `grunt-init`
 
 1. `grunt` is the core library that gets installed locally to your project. It contains all the code and logic for running tasks, loading plugins, etc. Install locally, along with grunt plugins, per the [[Getting started]] guide.
-1. `grunt-cli` is installed globally, giving you the `grunt` command in your shell. It doesn't do anything by itself, but will run a project's locally-installed grunt using the project's Gruntfile. Install globally, per the [[Getting started]] guide.
 
-For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
+2. `grunt-cli` is installed globally, giving you the `grunt` command in your shell. It doesn't do anything by itself, but will run a project's locally-installed grunt using the project's Gruntfile. Install globally, per the [[Getting started]] guide.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
-## grunt-init
-The grunt 0.3 init task has been broken out into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.
-
-See the [grunt-init project page](/gruntjs/grunt-init) for more information.
-
-TODO: explain changes in init templates
+3. `grunt-init` has been broken into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## The Gruntfile
 The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`.
@@ -62,20 +56,10 @@ Grunt's helper system has been depreciated in favor of node `require`.  For a co
   * <% %> template tags work in config, even for non-strings
   * Tasks now have options like "banner"
 
-
-## grunt-init changes
-* Updated "gruntplugin" init template (todo: test)
-* more stuff?
-
-
 ## API changes
 * Event emitting (todo: add more events)
 * Changes with "this" inside multi tasks
 * grunt.utils -> grunt.util
 * List added/changed/removed methods
 
-
 ## Shell auto-completion (todo: test, this might need to move from grunt -> grunt-cli?)
-
-
-## more??
