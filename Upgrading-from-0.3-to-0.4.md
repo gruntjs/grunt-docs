@@ -7,7 +7,7 @@ Grunt is now split into parts, `grunt` and `grunt-cli`.
 For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
 ## grunt-init
-The grunt 0.3 `init` task has been broken out into a separate `grunt-init` utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command. See the [grunt-init](/gruntjs/grunt-init) project for usage information.
+The grunt 0.3 init task has been broken out into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command. See the [grunt-init project page](/gruntjs/grunt-init) for usage information.
 
 ## The Gruntfile
 The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`. See the "The Gruntfile" section of the [[Getting started]] guide for more details.
