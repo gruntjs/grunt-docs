@@ -1,4 +1,3 @@
-
 ## API changes
 * Event emitting (todo: add more events)
 * Changes with "this" inside multi tasks
