@@ -12,14 +12,14 @@ The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`. See 
 ## Core Tasks
 The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
-* concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat)
+* concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
 * init → stand-alone [grunt-init](/gruntjs/grunt-init) utility
-* lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint)
-* min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify)
-* qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit)
-* server → [grunt-contrib-connect](/gruntjs/grunt-contrib-connect)
-* test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit)
-* watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch)
+* lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint) plugin
+* min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugin
+* qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit) plugin
+* server → [grunt-contrib-connect](/gruntjs/grunt-contrib-connect) plugin
+* test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit) plugin
+* watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch) plugin
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above.
 
