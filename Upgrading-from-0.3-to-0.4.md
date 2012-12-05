@@ -32,6 +32,19 @@ Some task names have changed, and specifying options and files has been standard
 Specifying task options and files has been standardized in grunt 0.4. Options can be specified at both the task and target level, allowing target-level options to override more general task-level options. Multiple file src/dest groupings can be specified per-target. See the [[Configuring tasks]] guide for more information.
 
 ## Alias task changes
+When specifying an alias task, the list of tasks to run must now be specified as an array.
+
+```js
+grunt.registerTask('default', ['jshint', 'nodeunit', 'concat']);
+```
+
+## Task arguments can now contain spaces
+The aforementioned alias task change (task lists must be specified as an array) makes this possible. Just be sure to surround task arguments containing spaces with quotes when specifying them on the command line, so they can be properly parsed.
+
+```shell
+grunt "my-task:argument with spaces" "my-other-task:another argument with spaces"
+```
+
 
 
 ## Helpers & Directives
