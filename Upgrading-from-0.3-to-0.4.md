@@ -1,6 +1,7 @@
-## Installing grunt
-* grunt-cli should be installed globally
-* grunt should now be installed locally (via package.json)
+## Installation
+Grunt itself should no longer be installed globally.  To install the `grunt` command on your system, run `npm install -g grunt-cli`
+
+The job of the `grunt` command is to load and run the version of grunt you have installed locally to your project, irrespective of its version.  For more information about why this has changed, [please read this](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
 ## The Gruntfile
 
