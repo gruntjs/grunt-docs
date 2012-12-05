@@ -54,12 +54,8 @@ The aforementioned alias task change (task lists must be specified as an array) 
 grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
-
-
-## Helpers & Directives
-* Gone! Alternatives for sharing code
-* reference grunt-lib-legacyhelpers, it shows a basic shared gruntlib.
-
+## Helpers
+Grunt's helper system has been depreciated in favor of node `require`.  For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## Configuration changes
 * No more directives
