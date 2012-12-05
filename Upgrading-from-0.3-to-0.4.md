@@ -28,6 +28,9 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
+## Task configuration
+Specifying task options and files has been standardized in grunt 0.4. Options can be specified at both the task and target level, allowing target-level options to override more general task-level options. Multiple file src/dest groupings can be specified per-target. See the [[Configuring tasks]] guide for more information.
+
 
 ## Options Merging
 
