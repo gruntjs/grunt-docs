@@ -56,13 +56,16 @@ The config.get method (used by many tasks) automatically expands `<% %>` style t
 
 See the [[grunt.template]] documentation for more information.
 
-Directives (like `<foo>`) have been removed, but their functionality has been retained. 
+Directives (like `<foo>`) have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
 
 * `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
 * `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
-* `'<banner:prop.subprop>'` → Instead of specifying a banner in a file list, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins now have a banner option.
-* `'<file_strip_banner:file.js>'` → Instead of stripping banners from files individually, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins have an option to strip banners.
-* `'<file_template:file.js>`'' → This can be done manually with the `grunt.file.read` and `grunt.template.process` methods.
+
+Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a banner option.
+
+Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip banners.
+
+Instead of processing a file as a template with `'<file_template:file.js>`'', the the `grunt.file.read` and `grunt.template.process` methods can be used.
 
 ## API changes
 * Event emitting (todo: add more events)
