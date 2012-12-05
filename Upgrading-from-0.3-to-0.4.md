@@ -48,7 +48,7 @@ grunt.registerTask('default', ['jshint', 'nodeunit', 'concat']);
 The aforementioned alias task change (task lists must be specified as an array) makes this possible. Just be sure to surround task arguments containing spaces with quotes when specifying them on the command line, so they can be properly parsed.
 
 ```shell
-grunt "my-task:argument with spaces" "my-other-task:another argument with spaces"
+grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
 
