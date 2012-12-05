@@ -57,6 +57,7 @@ Directives, like `<config>`, have been removed, but their functionality has been
 
 * `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
 * `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
+* `'<file_template:file.js>'` → `grunt.template.process(grunt.file.read('file.js'))`
 
 Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a banner option.
 
