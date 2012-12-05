@@ -41,17 +41,14 @@ See the [[Configuring tasks]] guide for more information.
 When specifying an alias task, the list of tasks to run must now be specified as an array.
 
 ```js
-// v.3 (old format)
-grunt.registerTask('default', 'jshint nodeunit concat');
-// v.4 (current format)
 grunt.registerTask('default', ['jshint', 'nodeunit', 'concat']);
 ```
 
-## Task arguments can now contain spaces
+## Task arguments may now contain spaces
 The aforementioned alias task change (task lists must be specified as an array) makes this possible. Just be sure to surround task arguments containing spaces with quotes when specifying them on the command line, so they can be properly parsed.
 
 ```shell
-grunt "my-task:argument with spaces" "my-other-task:another argument with spaces"
+grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
 
