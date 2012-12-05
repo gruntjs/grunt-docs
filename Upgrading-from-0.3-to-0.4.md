@@ -54,7 +54,7 @@ Grunt's helper system has been removed in favor of node `require`.  For a concis
 ## Configuration changes
 `<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
 
-Directives (like `<config>`) have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
+Directives, like `<config>`, have been removed, but their functionality has been retained. These fairly straightforward replacements can be made:
 
 * `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
 * `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
