@@ -33,7 +33,9 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
 ## Task configuration
-The configuration format for grunt 0.4 has been greatly enhanced.  Please see the [[Configuring tasks]] guide for more information.
+The configuration format for grunt 0.4 has been standardized and greatly enhanced.
+
+See the [[Configuring tasks]] guide as well as individul plugin documentation for more information.
 
 ## Alias task changes
 When specifying an alias task, the list of tasks to run must now be specified as an array.
