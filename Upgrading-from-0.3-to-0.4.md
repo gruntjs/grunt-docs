@@ -9,6 +9,8 @@ For more information about why this has changed, please read [npm 1.0: Global vs
 ## grunt-init
 The grunt 0.3 init task has been broken out into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command. See the [grunt-init project page](/gruntjs/grunt-init) for usage information.
 
+TODO: explain changes in init templates
+
 ## The Gruntfile
 The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`. See the "The Gruntfile" section of the [[Getting started]] guide for more details.
 
