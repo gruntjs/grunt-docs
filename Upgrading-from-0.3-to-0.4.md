@@ -1,4 +1,4 @@
-## Installation
+## Installing grunt
 Grunt is now split into two parts, `grunt` and `grunt-cli`.
 
 1. `grunt` is the core library that gets installed locally to your project. It contains all the code and logic for running tasks, loading plugins, etc. Install locally, per the [[Getting started]] guide.
@@ -9,7 +9,7 @@ For more information about why this has changed, please read [npm 1.0: Global vs
 ## The Gruntfile
 The Gruntfile filename has changed to `Gruntfile.js` or `Gruntfile.coffee`. See the "The Gruntfile" section of the [[Getting started]] guide for more details.
 
-## Core Tasks
+## Core Tasks are now Grunt Plugins
 The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
 * concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
