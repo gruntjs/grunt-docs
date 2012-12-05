@@ -63,10 +63,4 @@ Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:pro
 
 Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
 
-## API changes
-* Event emitting (todo: add more events)
-* Changes with "this" inside multi tasks
-* grunt.utils -> grunt.util
-* List added/changed/removed methods
-
 ## Shell auto-completion (todo: test, this might need to move from grunt -> grunt-cli?)
