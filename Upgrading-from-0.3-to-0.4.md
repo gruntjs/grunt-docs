@@ -8,7 +8,7 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`
 3. `grunt-init` has been broken into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## The Gruntfile
-The Gruntfile filename has changed from `grunt.js` to `Gruntfile.js` or `Gruntfile.coffee`.
+The Gruntfile filename has changed from `grunt.js` to `Gruntfile.js` or `Gruntfile.coffee` (transpiling to JS happens automatically).
 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
 
