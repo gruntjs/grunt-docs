@@ -304,7 +304,7 @@ grunt.file.userDir([path1, [, path2 [, ...]]])
 ```
 
 ### grunt.file.setBase
-Change grunt's current working directory (CWD). By default, all file paths are relative to the [Gruntfile](getting_started.md). This works just like the `--base` command-line option.
+Change grunt's current working directory (CWD). By default, all file paths are relative to the Gruntfile. This works just like the `--base` command-line option.
 
 ```javascript
 grunt.file.setBase(path1 [, path2 [, ...]])
