@@ -27,6 +27,9 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
+## Pre-existing tasks and plugins
+It is highly unlikely that tasks and plugins written for grunt 0.3 will continue to work with grunt 0.4 "out of the box." If you're having an issue with a third party task or plugin, please ask the author to update it.
+
 ## Task configuration
 The configuration format for grunt 0.4 has been standardized and greatly enhanced.
 
