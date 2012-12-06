@@ -22,7 +22,8 @@
 ## [[Advanced Usage]]
 
 ## Migration guides
-### [[Upgrading from 0.3 to 0.4 (users)]]
+### [[Upgrading from 0.3 to 0.4]]
+### [[Upgrading from 0.3 to 0.4 (task authors)]]
 
 ## Help Resources
 * [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
