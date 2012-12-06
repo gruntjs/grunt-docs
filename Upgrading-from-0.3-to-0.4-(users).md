@@ -67,3 +67,7 @@ Directives have been removed, but their functionality has been retained. These f
 Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
 
 Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
+
+## Troubleshooting tips
+
+* If you have ever previously installed grunt 0.4.0 or any of the grunt-contrib plugins from npm, flush your npm cache with `npm cache clear` to ensure that you are pulling the latest, released versions.
