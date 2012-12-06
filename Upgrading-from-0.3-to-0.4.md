@@ -73,6 +73,6 @@ Instead of stripping banners from files individually with `'<file_strip_banner:f
 ## Authoring tasks
 A comprehensive list of changes relevant to task authors is covered in the [[Upgrading from 0.3 to 0.4 (task authors)]] guide.
 
-## Troubleshooting tips
+## Troubleshooting
 
-* If you have ever previously installed grunt 0.4.0 or any of the grunt-contrib plugins from npm, flush your npm cache with `npm cache clear` to ensure that you are pulling the latest, released versions.
+* If you had previously installed a development version of grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of grunt and grunt-contrib plugins.
