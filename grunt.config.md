@@ -70,13 +70,11 @@ grunt.config.get('files2') // [['foo.txt', 'bar.txt'], 'baz.txt']
 ```
 
 ### grunt.config.getRaw
-Get a value from the project's grunt configuration. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned.
+Get a raw value from the project's grunt configuration, without processing `<% %>` template strings. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned.
 
 ```js
 grunt.config.getRaw([prop])
 ```
-
-Note that any specified `<% %>` template strings will NOT be processed when config data is retrieved via this method.
 
 ### grunt.config.set
 Set a value into the project's grunt configuration.
