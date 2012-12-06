@@ -1,3 +1,5 @@
+## Installing grunt
+
 Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`
 
 1. `grunt` is the core library that gets installed locally to your project. It contains all the code and logic for running tasks, loading plugins, etc. Install locally, along with grunt plugins, per the [[Getting started]] guide.
