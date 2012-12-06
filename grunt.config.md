@@ -3,7 +3,7 @@ Access project-specific configuration data defined in the Gruntfile.
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object, and any method marked with a ☆ (white star) is also available inside tasks on the `this` object. Just so you know.
 
 ## Initializing Config Data
-_Note that the method listed below is also available on the `grunt` object as `grunt.initConfig`._
+_Note that the following method is also available on the `grunt` object as `grunt.initConfig`._
 
 ### grunt.config.init ☃
 Initialize a configuration object for the current project. The specified `configObject` is used by tasks and can be accessed using the `grunt.config` method. Nearly every project's Gruntfile will call this method.
@@ -56,7 +56,7 @@ If any retrieved value is entirely a single `'<%= foo %>'` or `'<%= foo.bar %>'`
 For example:
 
 ```js
-grunt.initConfig({
+grunt.config.init({
   basename: 'foo',
   extension: 'txt',
   file: '<%= basename %>.<%= extension %>',
