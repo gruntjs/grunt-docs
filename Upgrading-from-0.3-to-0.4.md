@@ -11,7 +11,7 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`
 ## Pre-existing tasks and plugins
 All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
 
-*The next major release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates.  Please bear with us!*
+_A future grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
 
 ## The Gruntfile
 The Gruntfile filename has changed from `grunt.js` to `Gruntfile.js` or `Gruntfile.coffee` (transpiling to JS happens automatically).
