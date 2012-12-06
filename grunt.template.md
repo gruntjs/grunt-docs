@@ -48,7 +48,7 @@ _You probably won't need to use this method, because the built-in delimiters sho
 grunt.template.addDelimiters(name, opener, closer)
 ```
 
-## Template Helpers
+## Helpers
 
 ### grunt.template.date
 Format a date using the [dateformat library](https://github.com/felixge/node-dateformat).
