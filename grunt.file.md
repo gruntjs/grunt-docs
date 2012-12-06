@@ -1,27 +1,24 @@
-Wildcard expansion, file reading, writing, directory traversing.
-
-## The file API
-There are many provided methods for reading and writing files, as well as traversing the filesystem and finding files by wildcard patterns. Many of these methods are wrappers around core Node.js file functionality, but with additional error handling, logging and character encoding normalization.
+There are many provided methods for reading and writing files, traversing the filesystem and finding files by matching wildcard patterns. Many of these methods are wrappers around built-in Node.js file functionality, but with additional error handling, logging and character encoding normalization.
 
 _Note: all file paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
 
 ### grunt.file.defaultEncoding
 Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your Gruntfile.
 
-```javascript
+```js
 grunt.file.defaultEncoding = 'utf8';
 ```
 
 ### grunt.file.read
 Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
 
-```javascript
+```js
 grunt.file.read(filepath [, options])
 ```
 
 The `options` object has these possible properties:
 
-```javascript
+```js
 var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If specified as null, returns a non-decoded Buffer instead of a string.
@@ -32,14 +29,14 @@ var options = {
 ### grunt.file.readJSON
 Read a file's contents, parsing the data as JSON and returning the result. See `grunt.file.read` for a list of supported options.
 
-```javascript
+```js
 grunt.file.readJSON(filepath [, options])
 ```
 
 ### grunt.file.readYAML
 Read a file's contents, parsing the data as YAML and returning the result. See `grunt.file.read` for a list of supported options.
 
-```javascript
+```js
 grunt.file.readYAML(filepath [, options])
 ```
 
@@ -48,13 +45,13 @@ Write the specified contents to a file, creating intermediate directories if nec
 
 _If the `--no-write` command-line option is specified, the file won't actually be written._
 
-```javascript
+```js
 grunt.file.write(filepath, contents [, options])
 ```
 
 The `options` object has these possible properties:
 
-```javascript
+```js
 var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If `contents` is a Buffer, encoding is ignored.
@@ -67,13 +64,13 @@ Copy a source file to a destination path, creating intermediate directories if n
 
 _If the `--no-write` command-line option is specified, the file won't actually be written._
 
-```javascript
+```js
 grunt.file.copy(srcpath, destpath [, options])
 ```
 
 The `options` object has these possible properties:
 
-```javascript
+```js
 var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If null, the `process` function will receive a Buffer instead of String.
@@ -97,13 +94,13 @@ _Will not delete the current working directory or files outside the current work
 
 _If the `--no-write` command-line option is specified, the filepath won't actually be deleted._
 
-```javascript
+```js
 grunt.file.delete(filepath [, options])
 ```
 
 The `options` object has one possible property:
 
-```javascript
+```js
 var options = {
   // Enable deleting outside the current working directory. This option may
   // be overridden by the --force command-line option.
@@ -116,20 +113,20 @@ Works like `mkdir -p`. Create a directory along with any intermediate directorie
 
 _If the `--no-write` command-line option is specified, directories won't actually be created._
 
-```javascript
+```js
 grunt.file.mkdir(dirpath [, mode])
 ```
 
 ### grunt.file.recurse
 Recurse into a directory, executing `callback` for each file.
 
-```javascript
+```js
 grunt.file.recurse(rootdir, callback)
 ```
 
 The callback function receives the following arguments:
 
-```javascript
+```js
 function callback(abspath, rootdir, subdir, filename) {
   // The full path to the current file, which is nothing more than
   // the rootdir + subdir + filename arguments, joined.
@@ -144,20 +141,20 @@ function callback(abspath, rootdir, subdir, filename) {
 ```
 
 ## File Lists and Wildcards
-Wildcard patterns are resolved using the [glob library](https://github.com/isaacs/node-glob). See the [minimatch](https://github.com/isaacs/minimatch) module documentation for more details on supported wildcard patterns and matching options.
+Wildcard patterns are resolved using the [glob library](https://github.com/isaacs/node-glob). See the [minimatch library](https://github.com/isaacs/minimatch) documentation for more details on supported wildcard patterns and matching options.
 
 There are also a number of [task-specific file listing methods](api_task.md) that find files inside grunt plugins and task directories.
 
 ### grunt.file.expand
 Return a unique array of all file or directory paths that match the given wildcard pattern(s). This method accepts either comma separated wildcard patterns or an array of wildcard patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
-```javascript
+```js
 grunt.file.expand([options, ] patterns)
 ```
 
 File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
 
-The `options` object supports all [minimatch](https://github.com/isaacs/minimatch) options. Here are a few examples of where these options might be useful:
+The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options. Here are a few examples of where these options might be useful:
 
 * If `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
 * If `options.nonull` is true, patterns that fail to match anything will be returned in the result set. This allows further testing with `grunt.file.exists` to determine if any of the specified patterns were invalid.
@@ -166,14 +163,14 @@ The `options` object supports all [minimatch](https://github.com/isaacs/minimatc
 ### grunt.file.expandDirs
 This method behaves the same as `grunt.file.expand` except it only returns directory paths.
 
-```javascript
+```js
 grunt.file.expandDirs([options, ] patterns)
 ```
 
 ### grunt.file.expandFiles
 This method behaves the same as `grunt.file.expand` except it only returns file paths.
 
-```javascript
+```js
 grunt.file.expandFiles([options, ] patterns)
 ```
 
@@ -182,7 +179,7 @@ This method is used by many built-in tasks to handle wildcard expansion of the s
 ### grunt.file.expandFileURLs
 Return a unique array of all `file://` URLs for files that match the given wildcard pattern(s). Any absolute `file://`, `http://` or `https://` URLs specified will be passed through. This method accepts one or more comma separated wildcard patterns (or URLs), as well as an array of wildcard patterns (or URLs).
 
-```javascript
+```js
 grunt.file.expandFileURLs(patternsOrURLs)
 ```
 
@@ -191,18 +188,18 @@ File paths are relative to the Gruntfile unless the current working directory is
 ### grunt.file.findup
 Search in the given directory followed by all parent directories for a file matching the given wildcard pattern(s). Returns the first matching filepath found, otherwise returns `null`. This method accepts either comma separated wildcard patterns or an array of wildcard patterns.
 
-```javascript
+```js
 grunt.file.findup(rootdir, patterns)
 ```
 
 ### grunt.file.match
 Match one or more wildcard patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified wildcard patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
-```javascript
+```js
 grunt.file.match([options, ] patterns, filepaths)
 ```
 
-The `options` object supports all [minimatch](https://github.com/isaacs/minimatch) options. For example, if `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
+The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options. For example, if `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
 
 ### grunt.file.isMatch
 This method behaves similarly to `grunt.file.match` except it simply returns `true` if any files were matched, otherwise `false`.
@@ -212,7 +209,7 @@ Does the given path exist? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.exists(path1 [, path2 [, ...]])
 ```
 
@@ -221,7 +218,7 @@ Is the given path a symbolic link? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isLink(path1 [, path2 [, ...]])
 ```
 
@@ -232,7 +229,7 @@ Is the given path a directory? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isDir(path1 [, path2 [, ...]])
 ```
 
@@ -243,7 +240,7 @@ Is the given path a file? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isFile(path1 [, path2 [, ...]])
 ```
 
@@ -254,14 +251,14 @@ Is a given file path absolute? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isPathAbsolute(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.arePathsEquivalent
 Do all the specified paths refer to the same path? Returns a boolean.
 
-```javascript
+```js
 grunt.file.arePathsEquivalent(path1 [, path2 [, ...]])
 ```
 
@@ -270,7 +267,7 @@ Are all descendant path(s) contained within the specified ancestor path? Returns
 
 _Note: does not check to see if paths actually exist._
 
-```javascript
+```js
 grunt.file.doesPathContain(ancestorPath, descendantPath1 [, descendantPath2 [, ...]])
 ```
 
@@ -279,7 +276,7 @@ Is a given file path the CWD? Returns a boolean.
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isPathCwd(path1 [, path2 [, ...]])
 ```
 
@@ -288,7 +285,7 @@ Is a given file path inside the CWD? Note: CWD is not _inside_ CWD. Returns a bo
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-```javascript
+```js
 grunt.file.isPathInCwd(path1 [, path2 [, ...]])
 ```
 
@@ -299,14 +296,14 @@ Windows users: `%USERPROFILE%` is generally your `Documents and Settings` direct
 
 _Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path._
 
-```javascript
+```js
 grunt.file.userDir([path1, [, path2 [, ...]]])
 ```
 
 ### grunt.file.setBase
 Change grunt's current working directory (CWD). By default, all file paths are relative to the Gruntfile. This works just like the `--base` command-line option.
 
-```javascript
+```js
 grunt.file.setBase(path1 [, path2 [, ...]])
 ```
 
