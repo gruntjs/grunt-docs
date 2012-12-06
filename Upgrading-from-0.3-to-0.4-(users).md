@@ -8,6 +8,11 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`
 
 3. `grunt-init` has been broken into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
+## Pre-existing tasks and plugins
+All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party tasks and plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
+
+*The next major release will be focused on decoupling grunt's architecture so that tasks are not affected by future updates.  Please bear with us!*
+
 ## The Gruntfile
 The Gruntfile filename has changed from `grunt.js` to `Gruntfile.js` or `Gruntfile.coffee` (transpiling to JS happens automatically).
 
@@ -26,9 +31,6 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 * watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch) plugin
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
-
-## Pre-existing tasks and plugins
-It is highly unlikely that tasks and plugins written for grunt 0.3 will continue to work with grunt 0.4 "out of the box." If you're having an issue with a third party task or plugin, please ask the author to update it.
 
 ## Task configuration
 The configuration format for grunt 0.4 has been standardized and greatly enhanced.
