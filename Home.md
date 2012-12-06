@@ -18,6 +18,7 @@
 * [[grunt.task]]
 * [[grunt.template]]
 * [[grunt.util]]
+### [[Exit Codes]]
 
 ## [[Advanced Usage]]
 
