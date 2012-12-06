@@ -3,10 +3,10 @@ Wildcard expansion, file reading, writing, directory traversing.
 ## The file API
 There are many provided methods for reading and writing files, as well as traversing the filesystem and finding files by wildcard patterns. Many of these methods are wrappers around core Node.js file functionality, but with additional error handling, logging and character encoding normalization.
 
-_Note: all file paths are relative to the [Gruntfile](getting_started.md) unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
+_Note: all file paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
 
 ### grunt.file.defaultEncoding
-Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your [Gruntfile](getting_started.md).
+Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your Gruntfile.
 
 ```javascript
 grunt.file.defaultEncoding = 'utf8';
@@ -155,7 +155,7 @@ Return a unique array of all file or directory paths that match the given wildca
 grunt.file.expand([options, ] patterns)
 ```
 
-File paths are relative to the [Gruntfile](getting_started.md) unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
+File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
 
 The `options` object supports all [minimatch](https://github.com/isaacs/minimatch) options. Here are a few examples of where these options might be useful:
 
@@ -177,7 +177,7 @@ This method behaves the same as `grunt.file.expand` except it only returns file 
 grunt.file.expandFiles([options, ] patterns)
 ```
 
-This method is used by many built-in tasks to handle wildcard expansion of the specified source files. See the [concat task source](../tasks/concat.js) for an example.
+This method is used by many built-in tasks to handle wildcard expansion of the specified source files.
 
 ### grunt.file.expandFileURLs
 Return a unique array of all `file://` URLs for files that match the given wildcard pattern(s). Any absolute `file://`, `http://` or `https://` URLs specified will be passed through. This method accepts one or more comma separated wildcard patterns (or URLs), as well as an array of wildcard patterns (or URLs).
@@ -186,9 +186,7 @@ Return a unique array of all `file://` URLs for files that match the given wildc
 grunt.file.expandFileURLs(patternsOrURLs)
 ```
 
-File paths are relative to the [Gruntfile](getting_started.md) unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
-
-See the [qunit task source](../tasks/qunit.js) for an example.
+File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
 
 ### grunt.file.findup
 Search in the given directory followed by all parent directories for a file matching the given wildcard pattern(s). Returns the first matching filepath found, otherwise returns `null`. This method accepts either comma separated wildcard patterns or an array of wildcard patterns.
