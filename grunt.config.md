@@ -12,7 +12,7 @@ Initialize a configuration object for the current project. The specified `config
 grunt.config.init(configObject)
 ```
 
-Note that any specified `<% %>` template strings will only be processed when config data is retrieved.
+Note that any specified `<% %>` template strings will be processed when config data is retrieved.
 
 This example contains sample config data for the [grunt-contrib-jshint plugin](https://github.com/gruntjs/grunt-contrib-jshint) `jshint` task:
 
