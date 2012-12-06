@@ -9,7 +9,7 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`
 3. `grunt-init` has been broken into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## Pre-existing tasks and plugins
-All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party tasks and plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
+All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
 
 *The next major release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates.  Please bear with us!*
 
