@@ -2,12 +2,16 @@ There are many provided methods for reading and writing files, traversing the fi
 
 _Note: all file paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
 
+## Character encoding
+
 ### grunt.file.defaultEncoding
 Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your Gruntfile.
 
 ```js
 grunt.file.defaultEncoding = 'utf8';
 ```
+
+## Reading and writing
 
 ### grunt.file.read
 Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
@@ -108,6 +112,8 @@ var options = {
 };
 ```
 
+## Directories
+
 ### grunt.file.mkdir
 Works like `mkdir -p`. Create a directory along with any intermediate directories. If `mode` isn't specified, it defaults to `0777 & (~process.umask())`.
 
@@ -204,6 +210,8 @@ The `options` object supports all [minimatch library](https://github.com/isaacs/
 ### grunt.file.isMatch
 This method behaves similarly to `grunt.file.match` except it simply returns `true` if any files were matched, otherwise `false`.
 
+## File types
+
 ### grunt.file.exists
 Does the given path exist? Returns a boolean.
 
@@ -245,6 +253,8 @@ grunt.file.isFile(path1 [, path2 [, ...]])
 ```
 
 Returns false if the path doesn't exist.
+
+## Paths
 
 ### grunt.file.isPathAbsolute
 Is a given file path absolute? Returns a boolean.
