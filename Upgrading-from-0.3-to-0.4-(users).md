@@ -36,9 +36,9 @@ See the [[Configuring tasks]] guide as well as individual plugin documentation f
 When specifying an alias task, the list of tasks to run must now be specified as an array.
 
 ```js
-// v.3 (old format)
+// v 0.3.x (old format)
 grunt.registerTask('default', 'jshint nodeunit concat');
-// v.4 (current format)
+// v 0.4.x (new format)
 grunt.registerTask('default', ['jshint', 'nodeunit', 'concat']);
 ```
 
