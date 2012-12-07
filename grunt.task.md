@@ -330,8 +330,6 @@ Enqueue one or more tasks. Every specified task in `taskList` will be run immedi
 grunt.task.run(taskList)
 ```
 
-See the [watch task source](../tasks/watch.js) for an example.
-
 <a name="grunt-task-clearQueue"></a>
 ### grunt.task.clearQueue
 Empty the task queue completely. Unless additional tasks are enqueued, no more tasks will be run.
@@ -339,9 +337,6 @@ Empty the task queue completely. Unless additional tasks are enqueued, no more t
 ```javascript
 grunt.task.clearQueue()
 ```
-
-See the [watch task source](../tasks/watch.js) for an example.
-
 
 ## Search Directories
 For a given tasks file or related task "extra" file, these paths will be searched in this order, aka "task path order," until the first matching file is found.
