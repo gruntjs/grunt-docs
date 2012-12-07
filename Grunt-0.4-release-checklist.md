@@ -18,6 +18,7 @@
 * update "searchpaths" code / directories
 * merge standalone -> devel
 * npm publish first
+* update templates!
 
 ## all contrib plugins
 * ensure version numbers are proper release numbers. 0.1.0a -> 0.1.0.
