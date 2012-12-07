@@ -1,22 +1,17 @@
 ## grunt
 * get sindresorhus's files object generator in grunt itself.
-* remove init-used task file methods.
 * bump version to 0.4.0
 * npm publish BUT NOT AS "latest" initially
-
-* merge standalone -> devel
 * branch master -> 0.3-stable
 * merge devel -> master
 * (resulting in master = 0.4, 0.3-stable = 0.3)
 
 ## grunt-cli
-* merge standalone -> devel
 * bump version if necessary
 * npm publish
 
 ## grunt-init
 * update "searchpaths" code / directories
-* merge standalone -> devel
 * npm publish first
 * update templates!
 
