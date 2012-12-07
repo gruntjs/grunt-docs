@@ -11,6 +11,7 @@ Tasks are grunt's bread and butter. The stuff you do most often, like `jshint` o
 
 If you don't specify a task, but a task named "default" has been defined, that task will run (unsurprisingly) by default.
 
+<a name="grunt-task-registerTask"></a>
 ### grunt.task.registerTask ☃
 Register an "alias task" or a task function. This method supports the following two signatures:
 
@@ -60,7 +61,7 @@ See the [creating tasks](Creating-tasks) documentation for more examples of task
 
 _This method is also available as [grunt.registerTask](grunt)._
 
-
+<a name="grunt-task-registerMultiTask"></a>
 ### grunt.task.registerMultiTask ☃
 Register a "multi task." A multi task is a task that implicitly iterates over all of its named sub-properties (AKA targets) if no target was specified. In addition to the default properties and methods, extra multi task-specific properties are available inside the task function as properties of the `this` object.
 
@@ -90,7 +91,7 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
-
+<a name="grunt-task-registerInitTask"></a>
 ### grunt.task.registerInitTask ☃
 Register an "init task." An init task is a task that doesn't require any configuration data, and as such will still run even if grunt can't find a [Gruntfile](Getting-started). The [grunt-init task](https://github.com/gruntjs/grunt-init) is an example of an "init task."
 
@@ -102,6 +103,7 @@ For an init task example, see the [grunt-init task source](https://github.com/gr
 
 _This method is also available as [grunt.registerInitTask](grunt)._
 
+<a name="grunt-task-renameTask"></a>
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
 
@@ -111,6 +113,7 @@ grunt.task.renameTask(oldname, newname)
 
 _This method is also available as [grunt.renameTask](grunt)._
 
+<a name="grunt-task-unregisterTasks"></a>
 ### grunt.task.unregisterTasks ☃
 Unregister one or more tasks. This will de-list the specified tasks from the `--help` screen and make them no longer available for use. The task list can be an array of task names or individual task name arguments.
 
@@ -120,6 +123,7 @@ grunt.task.unregisterTasks(taskList)
 
 _This method is also available as [grunt.unregisterTasks](grunt)._
 
+<a name="grunt-task-splitArgs"></a>
 ### grunt.task.splitArgs
 Splits colon separated arguments but not escaped colons, `\\:`.
 
@@ -134,6 +138,7 @@ grunt.log.writeln(grunt.task.splitArgs('url:http\\\\://gruntjs.com'));
 ## Inside Tasks
 An object is made available as `this` inside each task function that contains a number of useful task-specific properties and methods. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
 
+<a name="this-async"></a>
 ### this.async / grunt.task.current.async
 If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. `false` can be passed to the done function to indicate that the task has failed. If this method isn't invoked, the task executes synchronously.
 
@@ -149,6 +154,7 @@ setTimeout(function() {
 }, 1000);
 ```
 
+<a name="this-requires"></a>
 ### this.requires / grunt.task.current.requires
 If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The task list can be an array of task names or individual task name arguments.
 
@@ -158,6 +164,7 @@ Note that this won't actually run the specified task(s), it will just fail the c
 this.requires(taskList)
 ```
 
+<a name="this-requiresConfig"></a>
 ### this.requiresConfig / grunt.task.current.requiresConfig
 Fail the current task if one or more required [config](grunt.config) properties is missing. One or more string or array config properties may be specified.
 
@@ -169,21 +176,27 @@ See the [grunt.config documentation](grunt.config) for more information about co
 
 _This method is an alias for the [grunt.config.requires](grunt.config) method._
 
+<a name="this-name"></a>
 ### this.name / grunt.task.current.name
 The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
 
+<a name="this-nameArgs"></a>
 ### this.nameArgs / grunt.task.current.nameArgs
 The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
+<a name="this-args"></a>
 ### this.args / grunt.task.current.args
 An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`. Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function.
 
+<a name="this-flags"></a>
 ### this.flags / grunt.task.current.flags
 An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`. In a multi task, the target name is not set as a flag.
 
+<a name="this-errorCount"></a>
 ### this.errorCount / grunt.task.current.errorCount
 The number of [grunt.log.error](grunt.log) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
 
+<a name="this-options"></a>
 ### this.options / grunt.task.current.options
 Returns a task-specific options object. This object contains properties merged from the optional `defaultsObj` argument, which can be overridden by a task-specific `options` property (and for multi tasks, an additional target-specific `options` property) in the config data.
 
@@ -233,12 +246,15 @@ grunt.registerTask('ourtask', function() {
 
 ## Inside Multi Tasks
 
+<a name="this-target"></a>
 ### this.target / grunt.task.current.target
 In a multi task, this is the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
+<a name="this-data"></a>
 ### this.data / grunt.task.current.data
 In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
 
+<a name="this-file"></a>
 ### this.file / grunt.task.current.file
 In a multi task, target data can be stored in three different formats. A relatively basic "compact" format, a much more flexible "full" format and a multiple destination "list" format.
 
@@ -282,6 +298,7 @@ grunt.initConfig({
 ## Loading Externally-Defined Tasks
 For most projects, tasks will be defined in the [Gruntfile](Getting-started). For larger projects, or in cases where tasks need to be shared across projects, tasks can be loaded from one or more external directories or Npm-installed grunt plugins.
 
+<a name="grunt-task-loadTasks"></a>
 ### grunt.task.loadTasks ☃
 Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
 
@@ -291,7 +308,7 @@ grunt.task.loadTasks(tasksPath)
 
 _This method is also available as [grunt.loadTasks](grunt)._
 
-
+<a name="grunt-task-loadNpmTasks"></a>
 ### grunt.task.loadNpmTasks ☃
 Load tasks from the specified grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init): `grunt init:gruntplugin`.
 
@@ -305,6 +322,7 @@ _This method is also available as [grunt.loadNpmTasks](grunt)._
 ## Queueing Tasks
 Grunt automatically enqueues and runs all tasks specified on the command line, but individual tasks can enqueue additional tasks to be run.
 
+<a name="grunt-task-run"></a>
 ### grunt.task.run
 Enqueue one or more tasks. Every specified task in `taskList` will be run immediately after the current task completes, in the order specified. The task list can be an array of tasks or individual task arguments.
 
@@ -314,6 +332,7 @@ grunt.task.run(taskList)
 
 See the [watch task source](../tasks/watch.js) for an example.
 
+<a name="grunt-task-clearQueue"></a>
 ### grunt.task.clearQueue
 Empty the task queue completely. Unless additional tasks are enqueued, no more tasks will be run.
 
@@ -338,6 +357,7 @@ For example, a grunt plugin may add a new "foo" task in its `tasks/foo.js`, comp
 
 **When defining project-specific tasks or "extra" files, it's always a good idea to include those files in a grunt plugin or tasks directory referenced in the [Gruntfile](Getting-started), and committed with the project when possible. This will help to guarantee consistent grunt behavior for all contributors to that project.**
 
+<a name="grunt-task-searchDirs"></a>
 ### grunt.task.searchDirs
 An array of directory paths that grunt uses to search for task-related files, in "task path order." This array is used by all task-specific file listing methods.
 
@@ -351,6 +371,7 @@ Wildcard patterns are resolved using the [glob library](https://github.com/isaac
 
 There are also a number of [generic file listing methods](grunt.file) that list files relative to the [Gruntfile](Getting-started).
 
+<a name="grunt-task-getFile"></a>
 ### grunt.task.getFile
 Search tasks directories in "task path order" (via `grunt.task.searchDirs`) for a given file path, returning the path of the first matching file.
 
@@ -362,6 +383,7 @@ _Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_p
 grunt.task.getFile(path1 [, path2 [, ...]])
 ```
 
+<a name="grunt-task-expand"></a>
 ### grunt.task.expand
 Search task "search directories" for the given wildcard pattern(s), returning a unique array of all matching file paths as "file objects" in `grunt.task.searchDirs` "task path order." This method accepts one or more comma separated wildcard patterns as well as an array of wildcard patterns. Paths matching patterns that begin with `!` will be excluded from the returned array.
 
@@ -385,6 +407,7 @@ var fileobj = {
 }
 ```
 
+<a name="grunt-task-expandDirs"></a>
 ### grunt.task.expandDirs
 This method behaves the same as `grunt.task.expand` except it only returns directory paths.
 
@@ -392,6 +415,7 @@ This method behaves the same as `grunt.task.expand` except it only returns direc
 grunt.task.expandDirs([options, ] patterns)
 ```
 
+<a name="grunt-task-expandFiles"></a>
 ### grunt.task.expandFiles
 This method behaves the same as `grunt.task.expand` except it only returns file paths.
 
@@ -401,6 +425,7 @@ grunt.task.expandFiles([options, ] patterns)
 
 ## JSON Defaults
 
+<a name="grunt-task-readDefaults"></a>
 ### grunt.task.readDefaults
 Search tasks directories for a given JSON file, merging the parsed data objects in "task path order" and returning the final merged object.
 
