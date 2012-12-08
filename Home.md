@@ -4,6 +4,7 @@
 
 ## Diving into Grunt
 ### [[Configuring Tasks]]
+### [[Frequently Asked Questions]]
 
 ## For Developers
 ### [[Creating Tasks]]
