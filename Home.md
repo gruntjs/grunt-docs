@@ -29,4 +29,4 @@
 
 ## Help Resources
 * [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
-* [[Example-Gruntfiles]]
+* [[Example Gruntfiles]]
