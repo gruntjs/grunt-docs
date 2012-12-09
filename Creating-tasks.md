@@ -78,8 +78,135 @@ grunt.registerInitTask(taskName, description, taskFunction)
 
 For an init task example, see the [grunt-init task source](https://github.com/gruntjs/grunt-init/blob/master/tasks/init.js).
 
-## Testing Tasks
-_TODO_
+## Custom tasks
+You can go crazy with tasks. If your tasks don't follow the "multi task" structure, use a custom task.
+
+```javascript
+grunt.registerTask('default', 'My "default" task description.', function() {
+  grunt.log.writeln('Currently running the "default" task.');
+});
+```
+
+Inside a task, you can run other tasks.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  // Enqueue "bar" and "baz" tasks, to run after "foo" finishes, in-order.
+  grunt.task.run('bar', 'baz');
+  // Or:
+  grunt.task.run(['bar', 'baz']);
+});
+```
+
+Tasks can be asynchronous.
+
+```javascript
+grunt.registerTask('asyncfoo', 'My "asyncfoo" task.', function() {
+  // Force task into async mode and grab a handle to the "done" function.
+  var done = this.async();
+  // Run some sync stuff.
+  grunt.log.writeln('Processing task...');
+  // And some async stuff.
+  setTimeout(function() {
+    grunt.log.writeln('All done!');
+    done();
+  }, 1000);
+});
+```
+
+Tasks can access their own name and arguments.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function(a, b) {
+  grunt.log.writeln(this.name, a, b);
+});
+
+// Usage:
+// grunt foo foo:bar
+//   logs: "foo", undefined, undefined
+//   logs: "foo", "bar", undefined
+// grunt foo:bar:baz
+//   logs: "foo", "bar", "baz"
+```
+
+Tasks can fail if any errors were logged.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  if (failureOfSomeKind) {
+    grunt.log.error('This is an error message.');
+  }
+
+  // Fail by returning false if this task had errors
+  if (ifErrors) { return false; }
+
+  grunt.log.writeln('This is the success message');
+});
+```
+
+When tasks fail, all subsequent tasks will be aborted unless `--force` was specified.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  // Fail synchronously.
+  return false;
+});
+
+grunt.registerTask('bar', 'My "bar" task.', function() {
+  var done = this.async();
+  setTimeout(function() {
+    // Fail asynchronously.
+    done(false);
+  }, 1000);
+});
+```
+
+Tasks can be dependent on the successful execution of other tasks. Note that `grunt.task.requires` won't actually RUN the other task(s). It'll just check to see that it has run and not failed.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  return false;
+});
+
+grunt.registerTask('bar', 'My "bar" task.', function() {
+  // Fail task if "foo" task failed or never ran.
+  grunt.task.requires('foo');
+  // This code executes if the "foo" task ran successfully.
+  grunt.log.writeln('Hello, world.');
+});
+
+// Usage:
+// grunt foo bar
+//   doesn't log, because foo failed.
+// grunt bar
+//   doesn't log, because foo never ran.
+```
+
+Tasks can fail if required configuration properties don't exist.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  // Fail task if "meta.name" config prop is missing.
+  grunt.config.requires('meta.name');
+  // Also fails if "meta.name" config prop is missing.
+  grunt.config.requires(['meta', 'name']);
+  // Log... conditionally.
+  grunt.log.writeln('This will only log if meta.name is defined in the config.');
+});
+```
+
+Tasks can access configuration properties.
+
+```javascript
+grunt.registerTask('foo', 'My "foo" task.', function() {
+  // Log the property value. Returns null if the property is undefined.
+  grunt.log.writeln('The meta.name property is: ' + grunt.config('meta.name'));
+  // Also logs the property value. Returns null if the property is undefined.
+  grunt.log.writeln('The meta.name property is: ' + grunt.config(['meta', 'name']));
+});
+```
+
+Take a look at the [contrib tasks](https://github.com/gruntjs/) for more examples.
 
 ## CLI options / environment
 _TODO_
