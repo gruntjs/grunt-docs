@@ -8,6 +8,7 @@
 
 ## For Developers
 ### [[Creating Tasks]]
+### [[Testing Tasks]]
 ### [[Creating Plugins]]
 ### The grunt API
 * [[grunt]]
