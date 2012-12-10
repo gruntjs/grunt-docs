@@ -1,5 +1,4 @@
 ## grunt
-* get sindresorhus's files object generator in grunt itself.
 * bump version to 0.4.0
 * npm publish BUT NOT AS "latest" initially
 * branch master -> 0.3-stable
