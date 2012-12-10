@@ -13,16 +13,16 @@ If something isn't working like you think it should, please read [the documentat
 If you have a question not covered in the documentation or want to report a bug, the best way to ensure it gets addressed is to file it in the appropriate issues tracker.
 
 #### If there's an issue with grunt, grunt-init, a grunt-lib-??? module, or a specific grunt-contrib-??? plugin
-Please file an issue on that project's issues tracker.
+* Please file an issue on that project's issues tracker.
 
 #### If you'd like to contribute a new plugin
-Please file an issue on the [grunt-contrib collection issues tracker](https://github.com/gruntjs/grunt-contrib/issues). We don't accept all plugins, but we'll certainly consider yours.
+* Please file an issue on the [grunt-contrib collection issues tracker](https://github.com/gruntjs/grunt-contrib/issues). We don't accept all plugins, but we'll certainly consider yours.
 
 #### If there's an issue with the [website](http://gruntjs.com/)
-Please file an issue on the [gruntjs.com website issues tracker](https://github.com/gruntjs/gruntjs.com/issues).
+* Please file an issue on the [gruntjs.com website issues tracker](https://github.com/gruntjs/gruntjs.com/issues).
 
 #### If there's an issue that isn't specific to any of the above
-Please file an issue on the [grunt issues tracker](https://github.com/gruntjs/grunt/issues) and let us know why you're filing it there.
+* Please file an issue on the [grunt issues tracker](https://github.com/gruntjs/grunt/issues) and let us know why you're filing it there.
 
 ### Simplify the issue
 Try to [reduce your code](http://www.webkit.org/quality/reduction.html) to the bare minimum required to reproduce the issue. This makes it much easier (and much faster) to isolate and fix the issue.
