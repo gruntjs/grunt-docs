@@ -1,5 +1,3 @@
-Introductory paragraph.
-
 * [[Getting Started]]
 * [[Configuring Tasks]]
 * [[Frequently Asked Questions]]
