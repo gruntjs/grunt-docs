@@ -202,12 +202,12 @@ Return a unique array of all `file://` URLs for files that match the given wildc
 grunt.file.expandFileURLs(patternsOrURLs)
 ```
 
-<a name="grunt-file-fileMapping"></a>
-### grunt.file.fileMapping
+<a name="grunt-file-expandMapping"></a>
+### grunt.file.expandMapping
 Build a files object suitable for use as a multi task "files" object. For each source file matched by a specified pattern, join that file path to the specified `destBase`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
 
 ```js
-grunt.file.fileMapping(patterns, destBase [, options])
+grunt.file.expandMapping(patterns, destBase [, options])
 ```
 
 In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
