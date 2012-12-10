@@ -28,3 +28,4 @@ Introductory paragraph.
 ## Help Resources
 * [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
 * [[Example Gruntfiles]]
+* [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
