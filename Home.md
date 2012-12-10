@@ -4,6 +4,7 @@ Introductory paragraph.
 * [[Getting Started]]
 * [[Configuring Tasks]]
 * [[Frequently Asked Questions]]
+* [Contributing / Filing Issues](Contributing-to-grunt)
 * [[Creating Tasks]]
 * [[Testing Tasks]]
 * [[Creating Plugins]]
@@ -26,6 +27,6 @@ Introductory paragraph.
 * [[Upgrading from 0.3 to 0.4 (task authors)]]
 
 ## Help Resources
-* [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
-* [[Example Gruntfiles]]
 * [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
+* [[Example Gruntfiles]]
+* [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
