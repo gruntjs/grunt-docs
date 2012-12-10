@@ -7,6 +7,7 @@ Introductory paragraph.
 * [[Creating Tasks]]
 * [[Testing Tasks]]
 * [[Creating Plugins]]
+* [[Advanced Usage]]
 
 ## API Docs
 * [[grunt]]
@@ -19,7 +20,6 @@ Introductory paragraph.
 * [[grunt.template]]
 * [[grunt.util]]
 * [[Exit Codes]]
-* [[Advanced Usage]]
 
 ## Migration guides
 * [[Upgrading from 0.3 to 0.4]]
