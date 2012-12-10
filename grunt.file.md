@@ -204,9 +204,9 @@ grunt.file.expandFileURLs(patternsOrURLs)
 
 <a name="grunt-file-fileMapping"></a>
 ### grunt.file.fileMapping
-Build a files object suitable for use as a multi task "files" object. For each source file matched by a specified pattern, join that file path to the specified `destBase`. This file path may be flattened or renamed, depending on the options specified.
+Build a files object suitable for use as a multi task "files" object. For each source file matched by a specified pattern, join that file path to the specified `destBase`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
 
-See the [[Configuring tasks]] guide for more information on configuring multi tasks. Also, see the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
+Also, see the [[Configuring tasks]] guide for more information on configuring multi tasks.
 
 ```js
 grunt.file.fileMapping(patterns, destBase [, options])
@@ -223,7 +223,7 @@ var options = {
   // is still joined to the specified destBase.
   flatten: Boolean,
   // If specified, this function will be responsible for returning the final
-  // dest filepath. By default, it joins destBase and destPath:
+  // dest filepath. By default, it jjoins destBase and destPath:
   rename: function(destBase, destPath, options) {
     return path.join(destBase, destPath);
   }
