@@ -3,8 +3,8 @@ Introductory paragraph.
 * [[Getting Started]]
 * [[Configuring Tasks]]
 * [[Frequently Asked Questions]]
+* [[Contributing]]
 * [[Why Grunt?]]
-* [Contributing / Filing Issues](Contributing to grunt)
 * [[Creating Tasks]]
 * [[Testing Tasks]]
 * [[Creating Plugins]]
