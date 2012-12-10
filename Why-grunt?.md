@@ -1,5 +1,3 @@
-Grunt is a task-based command line build tool written in JavaScript.
-
 It’s far too easy to create a gist or one-file repository and promise yourself that you’ll add linting and unit tests later. 
 
 Doing all this stuff manually is a total pain, as is building everything into a gigantic Makefile / Jakefile / Cakefile / Rakefile / ?akefile that's maintained across numerous projects. 
