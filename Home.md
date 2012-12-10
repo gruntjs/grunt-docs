@@ -1,9 +1,9 @@
 Introductory paragraph.
 
-* [[Why Grunt?]]
 * [[Getting Started]]
 * [[Configuring Tasks]]
 * [[Frequently Asked Questions]]
+* [[Why Grunt?]]
 * [Contributing / Filing Issues](Contributing-to-grunt)
 * [[Creating Tasks]]
 * [[Testing Tasks]]
