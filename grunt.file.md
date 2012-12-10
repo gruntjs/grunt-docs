@@ -202,7 +202,33 @@ Return a unique array of all `file://` URLs for files that match the given wildc
 grunt.file.expandFileURLs(patternsOrURLs)
 ```
 
-File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
+<a name="grunt-file-fileMapping"></a>
+### grunt.file.fileMapping
+Build a files object suitable for use as a multi task "files" object. For each source file matched by a specified pattern, join that file path to the specified `destBase`. This file path may be flattened or renamed, depending on the options specified.
+
+See the [[Configuring tasks]] guide for more information on configuring multi tasks. Also, see the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
+
+```js
+grunt.file.fileMapping(patterns, destBase [, options])
+```
+
+In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
+
+```js
+var options = {
+  // The directory from which patterns are matched. Any string specified as
+  // cwd is effectively stripped from the beginning of all matched paths.
+  cwd: String,
+  // Remove the path component from all matched src files. The src file path
+  // is still joined to the specified destBase.
+  flatten: Boolean,
+  // If specified, this function will be responsible for returning the final
+  // dest filepath. By default, it joins destBase and destPath:
+  rename: function(destBase, destPath, options) {
+    return path.join(destBase, destPath);
+  }
+};
+```
 
 <a name="grunt-file-findup"></a>
 ### grunt.file.findup
