@@ -69,15 +69,6 @@ grunt.registerMultiTask('log', 'Log stuff.', function() {
 
 See the [creating tasks](Creating-tasks) documentation for more examples of multi tasks.
 
-## Init Tasks
-Register an "init task." An init task is a task that doesn't require any configuration data, and as such will still run even if grunt can't find a [Gruntfile](Getting-started). The [grunt-init task](https://github.com/gruntjs/grunt-init) is an example of an "init task."
-
-```javascript
-grunt.registerInitTask(taskName, description, taskFunction)
-```
-
-For an init task example, see the [grunt-init task source](https://github.com/gruntjs/grunt-init/blob/master/tasks/init.js).
-
 ## Custom tasks
 You can go crazy with tasks. If your tasks don't follow the "multi task" structure, use a custom task.
 
