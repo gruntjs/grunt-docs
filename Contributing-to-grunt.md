@@ -1,6 +1,7 @@
 There are a number of grunt projects.
 
 * [grunt](https://github.com/gruntjs/grunt) - the main grunt project
+* [grunt-init](https://github.com/gruntjs/grunt-init) - the grunt-init project scaffolding tool
 * [gruntjs.com](https://github.com/gruntjs/gruntjs.com) - the gruntjs.com website
 * [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all grunt "contrib" plugins
 
