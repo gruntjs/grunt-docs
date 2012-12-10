@@ -6,27 +6,9 @@ Publishing a "grunt plugin" to Npm gives you 3 possible things:
 
 Other than that, it's not too much more than a specific directory structure, contain some number of task files. You load a plugin locally installed via Npm via [grunt.loadNpmTasks](grunt#wiki-grunt-loadNpmTasks), and you load tasks from a directory via [grunt.loadTasks](grunt#wiki-grunt-loadTasks).
 
-## Migrating from Gruntfile task to plugin
-_TODO_
-
 ## The "gruntplugin" init template
-1. Run `grunt init:gruntplugin` in an empty directory.
+1. Run `grunt-init gruntplugin` in an empty directory.
 2. Run `npm install` to install grunt locally.
-3. Run `./node_modules/.bin/grunt` to run the plugin-specific grunt. Just `grunt` won't work.
-4. When done, run `npm publish` to publish the grunt plugin to npm!
-
-## Recommendations
-_TODO_
-
-### Multi task vs basic task
-### Sharing libs across plugins (plus existing libs)
-
-
-## Requirements
-
-### keywords
-### grunt version
-### etc?
-
+3. When done, run `npm publish` to publish the grunt plugin to npm!
 
 ## Collections
