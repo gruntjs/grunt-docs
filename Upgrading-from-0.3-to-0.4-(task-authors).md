@@ -20,7 +20,7 @@ Grunt's helper system has been removed in favor of node require. For a concise e
 `this.file.src` within a multi-task is now normalized and auto expanded with `grunt.file.expand()`. `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will be the destination file string.
 
 ### [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
-The method `this.options()` within a task is available and contains the options for the current task.
+The method `this.options()` within a task is available and contains the options for the current task.  You may also pass a default options object like so: `this.options({option:'defaultvalue'})`
 
 ## [grunt.template](grunt.template)
 * `grunt.template.addDelimiters()`, `grunt.template.setDelimiters()` added to set or add to underscore.js template delimiters.
