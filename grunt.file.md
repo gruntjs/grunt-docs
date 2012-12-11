@@ -221,7 +221,7 @@ var options = {
   // is still joined to the specified destBase.
   flatten: Boolean,
   // If specified, this function will be responsible for returning the final
-  // dest filepath. By default, it jjoins destBase and destPath:
+  // dest filepath. By default, it joins destBase and destPath:
   rename: function(destBase, destPath, options) {
     return path.join(destBase, destPath);
   }
