@@ -33,6 +33,12 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
 ## Configuration
+The configuration format for grunt 0.4 tasks has been standardized and greatly enhanced. See the [[Configuring tasks]] guide as well as individual plugin documentation for more information.
+
+* File globbing (wildcard) patterns may now be negated to exclude matched files.
+* Tasks now support a standard `options` object.
+* Tasks now support a standard `files` object.
+
 `<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
 
 **Directives have been removed**, but their functionality has been retained. These replacements can be made:
@@ -44,11 +50,6 @@ Some task names have changed, and specifying options and files has been standard
 Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
 
 Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
-
-## Task configuration
-The configuration format for grunt 0.4 has been standardized and greatly enhanced.
-
-See the [[Configuring tasks]] guide as well as individual plugin documentation for more information.
 
 ## Alias task changes
 When specifying an alias task, the list of tasks to run must now be specified as an array.
