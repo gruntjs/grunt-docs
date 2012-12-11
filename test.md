@@ -1,0 +1,1 @@
+<script>window.location.href='http://gruntjs.com/getting-started</script>
