@@ -74,6 +74,8 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## API
+* [grunt](grunt)
+  * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
 * [grunt.config](grunt.config)
   * Changed `config.get` to automatically recursively expand `<% %>` templates.
   * Removed `config.process` method.
@@ -108,8 +110,9 @@ Grunt's helper system has been removed in favor of node `require`. For a concise
   * Added `template.setDelimiters` method to select template delimiters.
   * The `init` and `user` template delimiters have been removed, but you can add them in again if you need to with `template.addDelimiters` ([grunt-init][] uses this to enable the `{% %}` template delimiters).
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
-  * changed `util._` to use [Lo-Dash](http://lodash.com/)
-  * ???
+  * Changed `util._` to use [Lo-Dash](http://lodash.com/)
+  * Added the `util.callbackify` method.
+  * Changed the `util.spawn` method do be much better behaved.
 
 ## Task authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
