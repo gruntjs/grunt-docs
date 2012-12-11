@@ -252,10 +252,12 @@ When the compact format is used, that key and value are made available as `this.
 
 All formats are normalized to the following example object structure:
 
-```json
-{ src: ['src/one.js', 'src/two.js'],
+```js
+{
+  src: ['src/one.js', 'src/two.js', 'src/three.js'],
   dest: 'dist/built.js',
-  srcRaw: [ 'src/*.js' ] }
+  srcRaw: [ 'src/*.js' ]
+}
 ```
 
 `this.file.src` is auto expanded with [grunt.file.expand()](grunt.file). `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will be the destination file string.
