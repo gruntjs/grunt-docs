@@ -106,7 +106,7 @@ Grunt's helper system has been removed in favor of node `require`. For a concise
 * [grunt.template](grunt.template)
   * Added `template.addDelimiters` method to add new template delimiters.
   * Added `template.setDelimiters` method to select template delimiters.
-  * ???
+  * The 'init' and 'user' template delimiters have been removed by default, but you can add them in again if you need to with the aforementioned methods ([grunt-init][] enables the `{% %}` template delimiters internally).
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
   * changed `util._` to use [Lo-Dash](http://lodash.com/)
   * ???
