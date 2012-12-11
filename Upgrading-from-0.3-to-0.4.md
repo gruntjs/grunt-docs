@@ -82,7 +82,7 @@ Grunt's helper system, and the related methods `task.registerHelper` and `task.r
 * [grunt.event](grunt.event) library added so that tasks may emit events.
 
 ## Task authors
-** First, please indicate clearly on your repository README which major version number breaks compatibility with grunt 0.3.**
+**First, please indicate clearly on your repository README which major version number breaks compatibility with grunt 0.3.**
 
 ### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
 The `this.file.src` property within a multi-task is now _automatically_ expanded using `grunt.file.expand()` to the set of matching files. If you want to manually expand files using different options or a different method, the `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will still be the destination file string.
