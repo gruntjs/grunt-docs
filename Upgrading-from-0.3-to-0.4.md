@@ -4,7 +4,9 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
 
 2. `grunt-cli` is installed globally, giving you the `grunt` command in your shell. It doesn't do anything by itself, but will run a project's locally-installed grunt using the project's Gruntfile. Install globally, per the [[Getting started]] guide.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
-3. `grunt-init` has been broken into a separate [grunt-init](/gruntjs/grunt-init) utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
+3. `grunt-init` has been broken into a separate [grunt-init][] utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page][grunt-init] for more information.
+
+[grunt-init]: /gruntjs/grunt-init
 
 ## Pre-existing tasks and plugins
 All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
@@ -22,7 +24,7 @@ See the "The Gruntfile" section of the [[Getting started]] guide for more inform
 The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
 * concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
-* init → stand-alone [grunt-init](/gruntjs/grunt-init) utility
+* init → stand-alone [grunt-init][] utility
 * lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint) plugin
 * min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugin
 * qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit) plugin
@@ -69,40 +71,41 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
 ## Helpers
-Grunt's helper system, and the related methods `task.registerHelper` and `task.renameHelper`, have been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
+Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## API
 * [grunt.config](grunt.config)
-  * changed `config.get` to automatically recursively expand `<% %>` templates.
-  * removed `config.process` method.
-  * added `config.getRaw` will retrieve raw (unexpanded) data.
-* [grunt.event](grunt.event) library added so that tasks may emit events.
+  * Changed `config.get` to automatically recursively expand `<% %>` templates.
+  * Removed `config.process` method.
+  * Added `config.getRaw` will retrieve raw (unexpanded) data.
+* [grunt.event](grunt.event) added so that tasks may emit events.
 * [grunt.fail](grunt.fail)
-  * won't emit a beep if `--no-color` option specified.
-  * added `fail.code` exit code map.
-  * removed `fail.warnAlternate` method.
+  * Won't emit a beep if `--no-color` option specified.
+  * Added `fail.code` exit code map.
+  * Removed `fail.warnAlternate` method.
 * [grunt.file](grunt.file)
-  * added `file.defaultEncoding` method for normalizing character encoding across all `grunt.file methods`.
-  * added `file.delete` method.
-  * added `file.expandMapping` method for use in generating 1-to-1 src-dest file mappings.
-  * added relatively self-explanatory `file.exists` `file.isDir` `file.isFile` `file.isLink` `file.isPathCwd` `file.isPathInCwd` `file.doesPathContain` `file.arePathsEquivalent` testing methods.
-  * added `file.match` and `file.isMatch` methods to facilitate matching wildcard patterns against file paths.
-  * added `file.readYAML` method.
-  * changed `file.findup` to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
-  * changed `file.glob` to use the [glob](https://github.com/isaacs/node-glob) module.
-  * added `file.minimatch` which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
-  * removed `file.userDir` method.
-* [grunt.log](grunt#wiki-grunt-log)
-  * ???
-* [grunt.option](grunt#wiki-grunt-option)
-  * ???
+  * Tasks are no longer automatically loaded from `~/.grunt/tasks/` directory (install them locally to your project!).
+  * Added `file.defaultEncoding` method for normalizing character encoding across all `grunt.file methods`.
+  * Added `file.delete` method.
+  * Added `file.expandMapping` method for use in generating 1-to-1 src-dest file mappings.
+  * Added relatively self-explanatory `file.exists` `file.isDir` `file.isFile` `file.isLink` `file.isPathCwd` `file.isPathInCwd` `file.doesPathContain` `file.arePathsEquivalent` testing methods.
+  * Added `file.match` and `file.isMatch` methods to facilitate matching wildcard patterns against file paths.
+  * Added `file.readYAML` method.
+  * Changed `file.findup` to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
+  * Changed `file.glob` to use the [glob](https://github.com/isaacs/node-glob) module.
+  * Added `file.minimatch` which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
+  * Removed `file.userDir` method (its functionality now exists inside of [grunt-init][]).
 * [grunt.task](grunt#wiki-grunt-task)
-  * ???
+  * Tasks registered with both `task.registerTask` and `task.registerMultiTask` get a `this.options` method.
+  * Added `task.normalizeMultiTaskFiles` method to facilitate the normalization of multi task `files` objects into the `this.file` property.
+  * Removed `task.registerHelper` and `task.renameHelper` methods.
+  * Removed `task.searchDirs` property.
+  * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (their functionality now exists inside of [grunt-init][]).
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 * [grunt.template](grunt.template)
-  * added `template.addDelimiters` method to add new template delimiters.
-  * added `template.setDelimiters` method to select template delimiters.
+  * Added `template.addDelimiters` method to add new template delimiters.
+  * Added `template.setDelimiters` method to select template delimiters.
   * ???
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
   * changed `util._` to use [Lo-Dash](http://lodash.com/)
