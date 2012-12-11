@@ -98,21 +98,21 @@ Grunt's helper system has been removed in favor of node `require`. For a concise
   * Added [file.minimatch](grunt.file#wiki-grunt-file-minimatch) which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
   * Removed `file.userDir` method (moved into [grunt-init][]).
 * [grunt.task](grunt#wiki-grunt-task)
-  * Tasks registered with both [task.registerTask](grunt.file#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.file#wiki-grunt-file-registerMultiTask) get a `this.options` method.
-  * Added [task.normalizeMultiTaskFiles](grunt.file#wiki-grunt-task-normalizeMultiTaskFiles) method to facilitate the normalization of multi task `files` objects into the `this.file` property.
+  * Tasks registered with both [task.registerTask](grunt.task#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.task#wiki-grunt-file-registerMultiTask) get a `this.options` method.
+  * Added [task.normalizeMultiTaskFiles](grunt.task#wiki-grunt-task-normalizeMultiTaskFiles) method to facilitate the normalization of multi task `files` objects into the `this.file` property.
   * Removed `task.registerHelper` and `task.renameHelper` methods.
   * Removed `task.searchDirs` property.
   * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (moved into [grunt-init][]).
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 * [grunt.template](grunt.template)
-  * Added [template.addDelimiters](grunt.file#wiki-grunt-template-addDelimiters) method to add new template delimiters.
-  * Added [template.setDelimiters](grunt.file#wiki-grunt-template-setDelimiters) method to select template delimiters.
+  * Added [template.addDelimiters](grunt.template#wiki-grunt-template-addDelimiters) method to add new template delimiters.
+  * Added [template.setDelimiters](grunt.template#wiki-grunt-template-setDelimiters) method to select template delimiters.
   * The `init` and `user` template delimiters have been removed, but you can add them in again if you need to with `template.addDelimiters` ([grunt-init][] uses this to enable the `{% %}` template delimiters).
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
   * Changed `util._` to use [Lo-Dash](http://lodash.com/)
-  * Added the [util.callbackify](grunt.file#wiki-grunt-util-callbackify) method.
-  * Changed the [util.spawn](grunt.file#wiki-grunt-util-spawn) method do be much better behaved.
+  * Added the [util.callbackify](grunt.util#wiki-grunt-util-callbackify) method.
+  * Changed the [util.spawn](grunt.util#wiki-grunt-util-spawn) method do be much better behaved.
 
 ## Task authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
