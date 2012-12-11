@@ -113,16 +113,6 @@ grunt.task.renameTask(oldname, newname)
 
 _This method is also available as [grunt.renameTask](grunt)._
 
-<a name="grunt-task-unregisterTasks"></a>
-### grunt.task.unregisterTasks ☃
-Unregister one or more tasks. This will de-list the specified tasks from the `--help` screen and make them no longer available for use. The task list can be an array of task names or individual task name arguments.
-
-```javascript
-grunt.task.unregisterTasks(taskList)
-```
-
-_This method is also available as [grunt.unregisterTasks](grunt)._
-
 <a name="grunt-task-splitArgs"></a>
 ### grunt.task.splitArgs
 Splits colon separated arguments but not escaped colons, `\\:`.
