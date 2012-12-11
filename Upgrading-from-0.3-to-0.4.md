@@ -13,7 +13,7 @@ _A future grunt release will be focused on decoupling grunt's architecture so th
 
 ## General
 * grunt now requires Node.js version `>= 0.8.0`
-* The `grunt.js` "Gruntfile" config filename has been renamed to `Gruntfile.js`.
+* The `grunt.js` "Gruntfile" config filename has changed to `Gruntfile.js`.
 * CoffeeScript is supported in your `Gruntfile.coffee` project gruntfile or `*.coffee` task file(s). (transpiling to JS happens automatically).
 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
