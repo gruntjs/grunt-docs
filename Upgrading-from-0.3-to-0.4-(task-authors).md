@@ -18,6 +18,9 @@
 ## Helpers have been removed
 Grunt's helper system, and the related methods `task.registerHelper` and `task.renameHelper` have been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](https://github.com/gruntjs/grunt-lib-legacyhelpers).
 
+## Directives have been removed
+See the "Configuration changes" section of the general [[Upgrading from 0.3 to 0.4]] guide for a more detailed explanation. While this is a more general change, you'll most likely need to update your documentation.
+
 ## Task changes
 
 ### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
