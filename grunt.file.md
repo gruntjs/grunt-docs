@@ -230,14 +230,6 @@ var options = {
 
 See the [[Configuring tasks]] guide for more information on configuring multi tasks.
 
-<a name="grunt-file-findup"></a>
-### grunt.file.findup
-Search in the given directory followed by all parent directories for a file matching the given wildcard pattern(s). Returns the first matching filepath found, otherwise returns `null`. This method accepts either comma separated wildcard patterns or an array of wildcard patterns.
-
-```js
-grunt.file.findup(rootdir, patterns)
-```
-
 <a name="grunt-file-match"></a>
 ### grunt.file.match
 Match one or more wildcard patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified wildcard patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
@@ -382,3 +374,7 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 <a name="grunt-file-minimatch"></a>
 ### grunt.file.minimatch
 [minimatch](https://github.com/isaacs/minimatch) - File pattern matching utility.
+
+<a name="grunt-file-findup"></a>
+### grunt.file.findup
+[findup-sync](https://github.com/cowboy/node-findup-sync) - Search upwards for matching file patterns.
