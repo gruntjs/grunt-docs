@@ -2,7 +2,7 @@
 * Requires Node.js version `>= 0.8.0`
 * `grunt.utils` was renamed to [grunt.util](grunt.util).
 * The `grunt.js` config file was renamed to `Gruntfile.js`.
-* CoffeeScript is supported; the gruntfile can be `Gruntfile.coffee`, task files can be `yourtask.coffee`.
+* CoffeeScript is supported; your project gruntfile can be `Gruntfile.coffee`, task files can be `yourtask.coffee`.
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 
