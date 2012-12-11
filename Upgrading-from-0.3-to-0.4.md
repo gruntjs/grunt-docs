@@ -73,10 +73,29 @@ Grunt's helper system, and the related methods `task.registerHelper` and `task.r
 
 ## API
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
- * [Lo-Dash](http://lodash.com/) is now available as [grunt.util._](grunt.util#wiki-grunt-util-_) instead of [Underscore.js](http://underscorejs.org/)
+  * changed `util._` to use [Lo-Dash](http://lodash.com/)
 * [grunt.template](grunt.template)
- * added `.addDelimiters` and `.setDelimiters` methods to add/set template delimiters.
-* [grunt.fail](grunt.fail) won't emit a beep if `--no-color` option specified.
+  * added `template.addDelimiters` method to add new template delimiters.
+  * added `template.setDelimiters` method to select template delimiters.
+* [grunt.config](grunt.config)
+  * changed `config.get` to automatically recursively expand `<% %>` templates.
+  * removed `config.process` method.
+  * added `config.getRaw` will retrieve raw (unexpanded) data.
+* [grunt.fail](grunt.fail)
+  * won't emit a beep if `--no-color` option specified.
+  * added `fail.code` exit code map.
+  * removed `fail.warnAlternate` method.
+* [grunt.file](grunt.file)
+  * added `file.defaultEncoding` method for normalizing character encoding across all `grunt.file methods`.
+  * added `file.delete` method.
+  * added `file.expandMapping` method for use in generating 1-to-1 src-dest file mappings.
+  * added relatively self-explanatory `file.exists` `file.isDir` `file.isFile` `file.isLink` `file.isPathCwd` `file.isPathInCwd` `file.doesPathContain` `file.arePathsEquivalent` testing methods.
+  * added `file.match` and `file.isMatch` methods to facilitate matching wildcard patterns against file paths.
+  * added `file.readYAML` method.
+  * changed `file.findup` to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
+  * changed `file.glob` to use the [glob](https://github.com/isaacs/node-glob) module.
+  * added `file.minimatch` which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
+  * removed `file.userDir` method.
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 * [grunt.event](grunt.event) library added so that tasks may emit events.
