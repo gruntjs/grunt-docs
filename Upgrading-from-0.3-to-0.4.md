@@ -34,6 +34,19 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 
 Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
 
+## Configuration
+`<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
+
+**Directives have been removed**, but their functionality has been retained. These replacements can be made:
+
+* `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
+* `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
+* `'<file_template:file.js>'` → `grunt.template.process(grunt.file.read('file.js'))`
+
+Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
+
+Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
+
 ## Task configuration
 The configuration format for grunt 0.4 has been standardized and greatly enhanced.
 
@@ -59,20 +72,7 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ## Helpers
 Grunt's helper system, and the related methods `task.registerHelper` and `task.renameHelper`, have been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
-## Configuration changes
-`<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
-
-**Directives have been removed**, but their functionality has been retained. These replacements can be made:
-
-* `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
-* `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
-* `'<file_template:file.js>'` → `grunt.template.process(grunt.file.read('file.js'))`
-
-Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
-
-Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
-
-## API changes
+## API
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
  * [Lo-Dash](http://lodash.com/) is now available as [grunt.util._](grunt.util#wiki-grunt-util-_) instead of [Underscore.js](http://underscorejs.org/)
 * [grunt.template](grunt.template)
