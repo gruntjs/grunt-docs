@@ -4,9 +4,7 @@ Template strings can be processed manually using the provided template functions
 ### grunt.template.process
 Process a [Lo-Dash template](http://lodash.com/docs/#template) string. The `template` argument will be processed recursively until there are no more templates to process.
 
-The default data object is the entire config object, but if `options.data` is set, that object will be used instead. The default template delimiters are `<% %>` but if `options.delimiters` is set to a valid delimiter name, those template delimiters will be used instead.
-
-_See the `grunt.template.setDelimiters` method for a list of valid delimiter names._
+The default data object is the entire config object, but if `options.data` is set, that object will be used instead. The default template delimiters are `<% %>` but if `options.delimiters` is set to a custom delimiter name, those template delimiters will be used instead.
 
 ```js
 grunt.template.process(template [, options])
@@ -27,15 +25,9 @@ grunt.template.process('<%= baz %>', {data: obj}) // 'abcde'
 
 <a name="grunt-template-setDelimiters"></a>
 ### grunt.template.setDelimiters
-Set the [Lo-Dash template](http://lodash.com/docs/#template) delimiters to a predefined set in case you `grunt.util._.template` needs to be called manually.
-
+Set the [Lo-Dash template](http://lodash.com/docs/#template) delimiters to a predefined set in case you `grunt.util._.template` needs to be called manually. The `config` delimiters `<% %>` are included by default.
+ 
 _You probably won't need to use this method, because you'll be using `grunt.template.process` which uses this method internally._
-
-Valid names:
-
-* `config` - use `<% %>` style delimiters (default)
-* `init` - use `{% %}` style delimiters (used in [init task](task_init.md) templates)
-* `user` - use `[% %]` style delimiters (not used internally in grunt)
 
 ```js
 grunt.template.setDelimiters(name)
@@ -43,9 +35,7 @@ grunt.template.setDelimiters(name)
 
 <a name="grunt-template-addDelimiters"></a>
 ### grunt.template.addDelimiters
-Add a named set of [Lo-Dash template](http://lodash.com/docs/#template) delimiters. A few sets have already been added for your convenience, see the `grunt.template.setDelimiters` method for a list.
-
-_You probably won't need to use this method, because the built-in delimiters should be sufficient._
+Add a named set of [Lo-Dash template](http://lodash.com/docs/#template) delimiters. You probably won't need to use this method, because the built-in delimiters should be sufficient, but you could always add `{% %}` or `[% %]` style delimiters.
 
 ```js
 grunt.template.addDelimiters(name, opener, closer)
