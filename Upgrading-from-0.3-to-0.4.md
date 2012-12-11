@@ -94,13 +94,13 @@ Grunt's helper system has been removed in favor of node `require`. For a concise
   * Changed `file.findup` to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
   * Changed `file.glob` to use the [glob](https://github.com/isaacs/node-glob) module.
   * Added `file.minimatch` which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
-  * Removed `file.userDir` method (its functionality now exists inside of [grunt-init][]).
+  * Removed `file.userDir` method (moved into [grunt-init][]).
 * [grunt.task](grunt#wiki-grunt-task)
   * Tasks registered with both `task.registerTask` and `task.registerMultiTask` get a `this.options` method.
   * Added `task.normalizeMultiTaskFiles` method to facilitate the normalization of multi task `files` objects into the `this.file` property.
   * Removed `task.registerHelper` and `task.renameHelper` methods.
   * Removed `task.searchDirs` property.
-  * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (their functionality now exists inside of [grunt-init][]).
+  * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (moved into [grunt-init][]).
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 * [grunt.template](grunt.template)
