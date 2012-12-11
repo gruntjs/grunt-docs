@@ -9,9 +9,7 @@ In order to use grunt, you'll want to install the command line interface (CLI) g
 npm install -g grunt-cli
 ```
 
-This will put the `grunt` command in your system path, allowing it to be run from anywhere.
-
-_Note that You may need to use `sudo` or run your command shell as Administrator to do this._
+This will put the `grunt` command in your system path, allowing it to be run from anywhere. Note that You may need to use `sudo` or run your command shell as Administrator to do this.
 
 ## How the CLI works
 
