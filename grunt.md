@@ -196,16 +196,6 @@ grunt.renameTask(oldname, newname)
 
 _This method is an alias for the [grunt.task.renameTask](grunt.task#wiki-grunt-task-renameTask) method._
 
-<a name="grunt-unregisterTasks"></a>
-### grunt.unregisterTasks
-Unregister one or more tasks. This will de-list the specified tasks from the `--help` screen and make them no longer available for use. The task list can be an array of task names or individual task name arguments.
-
-```javascript
-grunt.unregisterTasks(taskList)
-```
-
-_This method is an alias for the [grunt.task.unregisterTasks](grunt.task#wiki-grunt-task-unregisterTasks) method._
-
 ## Inside Tasks
 An object is made available as `this` inside each task function that contains a number of useful task-specific properties and methods. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
 
