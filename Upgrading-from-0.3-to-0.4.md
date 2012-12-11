@@ -72,15 +72,11 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 Grunt's helper system, and the related methods `task.registerHelper` and `task.renameHelper`, have been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## API
-* [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
-  * changed `util._` to use [Lo-Dash](http://lodash.com/)
-* [grunt.template](grunt.template)
-  * added `template.addDelimiters` method to add new template delimiters.
-  * added `template.setDelimiters` method to select template delimiters.
 * [grunt.config](grunt.config)
   * changed `config.get` to automatically recursively expand `<% %>` templates.
   * removed `config.process` method.
   * added `config.getRaw` will retrieve raw (unexpanded) data.
+* [grunt.event](grunt.event) library added so that tasks may emit events.
 * [grunt.fail](grunt.fail)
   * won't emit a beep if `--no-color` option specified.
   * added `fail.code` exit code map.
@@ -96,17 +92,30 @@ Grunt's helper system, and the related methods `task.registerHelper` and `task.r
   * changed `file.glob` to use the [glob](https://github.com/isaacs/node-glob) module.
   * added `file.minimatch` which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
   * removed `file.userDir` method.
+* [grunt.log](grunt#wiki-grunt-log)
+  * ???
+* [grunt.option](grunt#wiki-grunt-option)
+  * ???
+* [grunt.task](grunt#wiki-grunt-task)
+  * ???
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
-* [grunt.event](grunt.event) library added so that tasks may emit events.
+* [grunt.template](grunt.template)
+  * added `template.addDelimiters` method to add new template delimiters.
+  * added `template.setDelimiters` method to select template delimiters.
+  * ???
+* [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
+  * changed `util._` to use [Lo-Dash](http://lodash.com/)
+  * ???
 
 ## Task authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
 
-### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
+### Changes inside tasks
+#### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
 The `this.file.src` property within a multi-task is now _automatically_ expanded internally using the `grunt.file.expand` method. If you want to manually expand files using different options or a different method, the `this.file.srcRaw` property contains the raw, unexpanded (but still template processed) source file patterns. The `this.file.dest` property still contains the destination file path.
 
-### [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
+#### [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
 The `this.options` method may be used within tasks to normalize options. You may also specify options defaults like so: `var options = this.options({option: 'defaultvalue', ...});`
 
 ## Troubleshooting
