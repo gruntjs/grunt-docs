@@ -83,14 +83,15 @@ Instead of stripping banners from files individually with `'<file_strip_banner:f
 * [grunt.event](grunt.event) library added so that tasks may emit events.
 
 ## Task authors
+** First, please indicate clearly on your repository README which major version number breaks compatibility with grunt 0.3.**
 
 ### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
-`this.file.src` within a multi-task is now _automatically_ expanded using `grunt.file.expand()` to the set of matching files. If you want to manually expand files using different options or a different method, the `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will still be the destination file string.
+The `this.file.src` property within a multi-task is now _automatically_ expanded using `grunt.file.expand()` to the set of matching files. If you want to manually expand files using different options or a different method, the `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will still be the destination file string.
 
 In addition, multi task targets can now contain more than one set of src-dest pairs in a `files` object, see the [[Configuring tasks]] guide for more information on this.
 
 ### [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
-A `this.options()` method may be used within tasks to normalize options. You may also specify options defaults like so: `this.options({option: 'defaultvalue', ...})`
+The `this.options()` method may be used within tasks to normalize options. You may also specify options defaults like so: `this.options({option: 'defaultvalue', ...})`
 
 ## Troubleshooting
 
