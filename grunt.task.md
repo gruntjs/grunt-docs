@@ -410,6 +410,14 @@ This method behaves the same as `grunt.task.expand` except it only returns file 
 grunt.task.expandFiles([options, ] patterns)
 ```
 
+<a name="grunt-task-normalizeMultiTaskFiles"></a>
+### grunt.task.normalizeMultiTaskFiles
+Normalizes a `data` object extracting `src`, `dest` and `options`. [this.file / grunt.task.current.file](grunt.task#wiki-this-file) uses this method.
+
+```javascript
+grunt.task.normalizeMultiTaskFiles(data [, target])
+```
+
 ## JSON Defaults
 
 <a name="grunt-task-readDefaults"></a>

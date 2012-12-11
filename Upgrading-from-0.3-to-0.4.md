@@ -98,7 +98,7 @@ Grunt's helper system has been removed in favor of node `require`. For a concise
   * Added [file.minimatch](grunt.file#wiki-grunt-file-minimatch) which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
   * Removed `file.userDir` method (moved into [grunt-init][]).
 * [grunt.task](grunt#wiki-grunt-task)
-  * Tasks registered with both [task.registerTask](grunt.task#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.task#wiki-grunt-file-registerMultiTask) get a `this.options` method.
+  * Tasks registered with both [task.registerTask](grunt.task#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.task#wiki-grunt-task-registerMultiTask) get a `this.options` method.
   * Added [task.normalizeMultiTaskFiles](grunt.task#wiki-grunt-task-normalizeMultiTaskFiles) method to facilitate the normalization of multi task `files` objects into the `this.file` property.
   * Removed `task.registerHelper` and `task.renameHelper` methods.
   * Removed `task.searchDirs` property.
