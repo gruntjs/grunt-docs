@@ -1,3 +1,5 @@
+This document lists changes that task authors need to know. That being said, please be sure to read the general [[Upgrading from 0.3 to 0.4]] guide before reading this guide, as it contains a lot of more general information.
+
 ## grunt
 * Requires Node.js version `>= 0.8.0`
 
