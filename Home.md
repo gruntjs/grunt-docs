@@ -24,7 +24,6 @@ Introductory paragraph.
 
 ## Migration guides
 * [[Upgrading from 0.3 to 0.4]]
-* [[Upgrading from 0.3 to 0.4 (task authors)]]
 
 ## Help Resources
 * [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
