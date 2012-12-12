@@ -73,7 +73,7 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
 ## Character encodings
-The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added to normalize character encodings, and all `grunt.file` methods have been updated to support the specified character encoding.
+The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added to normalize character encodings, and all `grunt.file` methods have been updated to support the specified encoding.
 
 ## Helpers
 Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
@@ -126,11 +126,12 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
 
 ### Changes inside tasks
-#### [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
-The `this.file.src` property within a multi-task is now _automatically_ expanded internally using the `grunt.file.expand` method. If you want to manually expand files using different options or a different method, the `this.file.srcRaw` property contains the raw, unexpanded (but still template processed) source file patterns. The `this.file.dest` property still contains the destination file path.
-
-#### [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
-The `this.options` method may be used within tasks to normalize options. You may also specify options defaults like so: `var options = this.options({option: 'defaultvalue', ...});`
+* [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
+  * The `this.file.src` property is now _automatically_ expanded internally using the `grunt.file.expand` method.
+  * The `this.file.srcRaw` property contains the raw, unexpanded (but still template processed) source file patterns, in case you need to manually expand files using different options.
+  * The `this.file.dest` property still contains the destination file path.
+* [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
+  * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
 ## Troubleshooting
 
