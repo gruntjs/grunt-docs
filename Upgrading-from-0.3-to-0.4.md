@@ -13,8 +13,10 @@ All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly
 
 _A future grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
 
-## General
+## Requirements
 * grunt now requires Node.js version `>= 0.8.0`
+
+## The Gruntfile
 * The `grunt.js` "Gruntfile" config filename has changed to `Gruntfile.js`.
 * CoffeeScript is supported in your `Gruntfile.coffee` project gruntfile or `*.coffee` task files (transpiling to JS happens automatically).
 
