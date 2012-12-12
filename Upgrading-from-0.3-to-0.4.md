@@ -72,11 +72,14 @@ The aforementioned alias task change (task lists must be specified as an array) 
 grunt my-task:argument-without-spaces "other-task:argument with spaces"
 ```
 
+## Character encodings
+The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added for normalizing character encoding across all `grunt.file` methods.
+
 ## Helpers
 Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## API
-Many methods were changed.
+The grunt API saw substantial changes from 0.3 to 0.4.
 
 * [grunt](grunt)
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
@@ -91,11 +94,11 @@ Many methods were changed.
   * Removed `fail.warnAlternate` method.
 * [grunt.file](grunt.file)
   * Tasks are no longer automatically loaded from `~/.grunt/tasks/` directory (install them locally to your project!).
-  * Added [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method for normalizing character encoding across all `grunt.file methods`.
+  * Added [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method for normalizing character encoding across all `grunt.file` methods.
   * Added [file.delete](grunt.file#wiki-grunt-file-delete) method.
-  * Added [file.expandMapping](grunt.file#wiki-grunt-file-expandMapping) method for use in generating 1-to-1 src-dest file mappings.
   * Added relatively self-explanatory [file.exists](grunt.file#wiki-grunt-file-exists), [file.isDir](grunt.file#wiki-grunt-file-isDir), [file.isFile](grunt.file#wiki-grunt-file-isFile), [file.isLink](grunt.file#wiki-grunt-file-isLink), [file.isPathCwd](grunt.file#wiki-grunt-file-isPathCwd), [file.isPathInCwd](grunt.file#wiki-grunt-file-isPathInCwd), [file.doesPathContain](grunt.file#wiki-grunt-file-doesPathContain), [file.arePathsEquivalent](grunt.file#wiki-grunt-file-arePathsEquivalent) testing methods.
   * Added [file.match](grunt.file#wiki-grunt-file-match) and [file.isMatch](grunt.file#wiki-grunt-file-isMatch) methods to facilitate matching wildcard patterns against file paths.
+  * Added [file.expandMapping](grunt.file#wiki-grunt-file-expandMapping) method for use in generating 1-to-1 src-dest file mappings.
   * Added [file.readYAML](grunt.file#wiki-grunt-file-readYAML) method.
   * Changed [file.findup](grunt.file#wiki-grunt-file-findup) to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
   * Changed [file.glob](grunt.file#wiki-grunt-file-glob) to use the [glob](https://github.com/isaacs/node-glob) module.
@@ -117,7 +120,7 @@ Many methods were changed.
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
   * Changed `util._` to use [Lo-Dash](http://lodash.com/)
   * Added the [util.callbackify](grunt.util#wiki-grunt-util-callbackify) method.
-  * Changed the [util.spawn](grunt.util#wiki-grunt-util-spawn) method do be much better behaved.
+  * Changed the [util.spawn](grunt.util#wiki-grunt-util-spawn) method to be much better behaved and pass more consistent arguments into its callback.
 
 ## Task authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
