@@ -1,4 +1,4 @@
-Introductory paragraph.
+Welcome to the home of grunt.
 
 * [[Getting Started]]
 * [[Configuring Tasks]]
