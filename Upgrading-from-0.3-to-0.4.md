@@ -76,6 +76,8 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
 
 ## API
+Many methods were changed.
+
 * [grunt](grunt)
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
 * [grunt.config](grunt.config)
