@@ -1,23 +1,21 @@
-Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
+Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.  Even if you are familiar with grunt, it would be worthwhile to read the new [[Getting started]] guide.
 
-1. `grunt` is the core library that gets installed locally to your project. It contains all the code and logic for running tasks, loading plugins, etc. Install locally, along with grunt plugins, per the [[Getting started]] guide.
+1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
 
-2. `grunt-cli` is installed globally, giving you the `grunt` command in your shell. It doesn't do anything by itself, but will run a project's locally-installed grunt using the project's Gruntfile. Install globally, per the [[Getting started]] guide.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
+2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything, its job is to load and run the grunt that has been installed locally to your project, regardless of its version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 
-3. `grunt-init` has been broken into a separate [grunt-init][] utility that may be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page][grunt-init] for more information.
-
-[grunt-init]: /gruntjs/grunt-init
+3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## Pre-existing tasks and plugins
 All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
 
-_A future grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
+_A forthcoming grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
 
 ## Requirements
 * grunt now requires Node.js version `>= 0.8.0`
 
 ## The Gruntfile
-* The `grunt.js` "Gruntfile" config filename has changed to `Gruntfile.js`.
+* The "Gruntfile" has changed from `grunt.js` to `Gruntfile.js`.
 * CoffeeScript is supported in your `Gruntfile.coffee` project gruntfile or `*.coffee` task files (transpiling to JS happens automatically).
 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
@@ -34,10 +32,10 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 * test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit) plugin
 * watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch) plugin
 
-Some task names have changed, and specifying options and files has been standardized in grunt 0.4, so be sure to see each plugin's documentation as linked above for the latest configuration details.
+Some task names and options have changed.  Be sure to see each plugin's documentation as linked above for the latest configuration details.
 
 ## Configuration
-The configuration format for grunt 0.4 tasks has been standardized and greatly enhanced. See the [[Configuring tasks]] guide as well as individual plugin documentation for more information.
+The configuration format for grunt 0.4 tasks has been standardized and greatly enhanced. See the [[Configuring tasks]] guide, as well as individual plugin documentation for more information.
 
 * File globbing (wildcard) patterns may now be negated to exclude matched files.
 * Tasks now support a standard `options` object.
