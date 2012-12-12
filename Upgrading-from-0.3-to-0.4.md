@@ -125,20 +125,20 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 ## Task / plugin authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
 
-### Task changes
+### Tasks
 * Multi tasks
   * Multiple src-dest file mappings may now be specified per target in a `files` object (this is optional).
   * Multi tasks now iterate over not just _targets_ but _src-dest file mappings, per target_.
 
-### Changes inside tasks
+### Inside tasks
 * [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
-  * The `this.file.src` property is now _automatically_ expanded internally using the `grunt.file.expand` method.
+  * The `this.file.src` property is now _automatically_ expanded internally using the [grunt.file.expand](grunt.file#wiki-grunt-file-expand) method.
   * The `this.file.srcRaw` property contains the raw, unexpanded (but still template processed and array flattened) source file patterns, in case you need to manually expand files using different options.
   * The `this.file.dest` property still contains the destination file path.
 * [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
   * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
-### Plugin changes
+### Plugins
 * An updated `gruntplugin` template has been created for grunt 0.4-compatible plugins, and is available in the standalone [grunt-init][].
 
 ## Troubleshooting
