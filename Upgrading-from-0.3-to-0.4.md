@@ -122,8 +122,13 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Added the [util.callbackify](grunt.util#wiki-grunt-util-callbackify) method.
   * Changed the [util.spawn](grunt.util#wiki-grunt-util-spawn) method to be much better behaved and pass more consistent arguments into its callback.
 
-## Task authors
+## Task / plugin authors
 **Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
+
+### Task changes
+* Multi tasks
+  * Multiple src-dest file mappings may now be specified per target in a `files` object (this is optional).
+  * Multi tasks now iterate over not just _targets_ but _src-dest file mappings, per target_.
 
 ### Changes inside tasks
 * [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
@@ -133,6 +138,8 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 * [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
   * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
-## Troubleshooting
+### Plugin changes
+* An updated `gruntplugin` template has been created for grunt 0.4-compatible plugins, and is available in the standalone [grunt-init][].
 
+## Troubleshooting
 * If you had previously installed a development version of grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of grunt and grunt-contrib plugins.
