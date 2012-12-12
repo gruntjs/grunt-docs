@@ -176,7 +176,7 @@ module.exports = function(grunt) {
 };
 ```
 
-For more information about writing custom tasks or grunt plugins, check out the [developer documentation]https://github.com/gruntjs/grunt/wiki/grunt.
+For more information about writing custom tasks or grunt plugins, check out the [developer documentation](https://github.com/gruntjs/grunt/wiki/grunt).
 
 [Gruntfile]: #the-gruntfile
 [package.json]: #packagejson
