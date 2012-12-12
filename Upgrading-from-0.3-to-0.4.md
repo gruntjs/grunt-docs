@@ -129,8 +129,6 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 * Multi tasks
   * Multiple src-dest file mappings may now be specified per target in a `files` object (this is optional).
   * Multi tasks now iterate over not just _targets_ but _src-dest file mappings, per target_.
-
-### Inside tasks
 * [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
   * The `this.file.src` property is now _automatically_ expanded internally using the [grunt.file.expand](grunt.file#wiki-grunt-file-expand) method.
   * The `this.file.srcRaw` property contains the raw, unexpanded (but still template processed and array flattened) source file patterns, in case you need to manually expand files using different options.
