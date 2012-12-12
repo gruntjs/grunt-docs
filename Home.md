@@ -1,4 +1,4 @@
-Welcome to the home of grunt.
+Welcome to the home of **grunt**.
 
 * [[Getting Started]]
 * [[Configuring Tasks]]
