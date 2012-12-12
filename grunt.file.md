@@ -210,6 +210,18 @@ Build a files object suitable for use as a multi task "files" object. For each s
 grunt.file.expandMapping(patterns, destBase [, options])
 ```
 
+Compiling a directory of coffee-script files to JS:
+```js
+coffee: {
+  compile: {
+    files: grunt.file.expandMapping(['path/to/*.coffee'],'path/to/dest/',{
+      rename: function(destBase,destPath) {
+        return destBase+destPath.replace(/\.coffee$/,".js");
+      }
+    })
+  }
+}
+```
 In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
 
 ```js
