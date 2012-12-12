@@ -21,7 +21,7 @@ _A forthcoming grunt release will be focused on decoupling grunt's architecture 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
 
 ## Core Tasks are now Grunt Plugins
-The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discreet npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
+The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discrete npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
 * concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
 * init → stand-alone [grunt-init][] utility
