@@ -1,4 +1,4 @@
-Welcome to the home of **grunt**.
+Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets get started.
 
 * [[Getting Started]]
 * [[Configuring Tasks]]
