@@ -38,7 +38,17 @@ requirejs: {
 ### The files object
 
 ### Building the files object dynamically
-
+```js
+coffee: {
+  compile: {
+    files: grunt.file.expandMapping(['path/to/*.coffee'],'path/to/dest/',{
+      rename: function(destBase,destPath) {
+        return destBase+destPath.replace(/\.coffee$/,".js");
+      }
+    })
+  }
+}
+```
 
 ## "Basic" tasks
 (explanation that configuring tasks is sometimes entirely up to the task author)
