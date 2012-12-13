@@ -10,19 +10,13 @@
 * npm publish
 
 ## grunt-init
-* update "searchpaths" code / directories
-* npm publish first
 * update templates!
 
 ## all contrib plugins
-* ensure version numbers are proper release numbers. 0.1.0a -> 0.1.0.
-* if a version number DOESN'T end in a, bump it. 0.1.1 -> 0.1.2
 * update CHANGELOG
+* update package.json "main" to point to Gruntfile.js
 
 ## original contrib plugins
-* branch master -> grunt-0.3-stable
-* merge devel -> master
-* (resulting in master = 0.4, grunt-0.3-stable = 0.3 compatible)
 * Include major version number that works with 0.3 in overview.
 
 ## new contrib plugins
