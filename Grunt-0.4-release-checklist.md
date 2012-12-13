@@ -18,6 +18,7 @@
 
 ## original contrib plugins
 * Include major version number that works with 0.3 in overview.
+* bump major version
 
 ## new contrib plugins
 * ???
