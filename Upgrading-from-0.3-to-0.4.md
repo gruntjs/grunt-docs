@@ -24,7 +24,7 @@ See the "The Gruntfile" section of the [[Getting started]] guide for more inform
 The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discrete npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
 
 * concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
-* init → stand-alone [grunt-init][] utility
+* init → stand-alone [grunt-init] utility
 * lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint) plugin
 * min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugin
 * qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit) plugin
@@ -101,20 +101,20 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Changed [file.findup](grunt.file#wiki-grunt-file-findup) to use the [findup-sync](https://github.com/cowboy/node-findup-sync) module.
   * Changed [file.glob](grunt.file#wiki-grunt-file-glob) to use the [glob](https://github.com/isaacs/node-glob) module.
   * Added [file.minimatch](grunt.file#wiki-grunt-file-minimatch) which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
-  * Removed `file.userDir` method (moved into [grunt-init][]).
+  * Removed `file.userDir` method (moved into [grunt-init]).
   * Removed `file.clearRequireCache` method.
 * [grunt.task](grunt#wiki-grunt-task)
   * Tasks registered with both [task.registerTask](grunt.task#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.task#wiki-grunt-task-registerMultiTask) get a `this.options` method.
   * Added [task.normalizeMultiTaskFiles](grunt.task#wiki-grunt-task-normalizeMultiTaskFiles) method to facilitate the normalization of multi task `files` objects into the `this.file` property.
   * Removed `task.registerHelper` and `task.renameHelper` methods.
   * Removed `task.searchDirs` property.
-  * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (moved into [grunt-init][]).
+  * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (moved into [grunt-init]).
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
 * [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
 * [grunt.template](grunt.template)
   * Added [template.addDelimiters](grunt.template#wiki-grunt-template-addDelimiters) method to add new template delimiters.
   * Added [template.setDelimiters](grunt.template#wiki-grunt-template-setDelimiters) method to select template delimiters.
-  * The `init` and `user` template delimiters have been removed, but you can add them in again if you need to with `template.addDelimiters` ([grunt-init][] uses this to enable the `{% %}` template delimiters).
+  * The `init` and `user` template delimiters have been removed, but you can add them in again if you need to with `template.addDelimiters` ([grunt-init] uses this to enable the `{% %}` template delimiters).
 * [grunt.util](grunt.util) replaces the now-removed `grunt.utils`.
   * Changed `util._` to use [Lo-Dash](http://lodash.com/)
   * Added the [util.callbackify](grunt.util#wiki-grunt-util-callbackify) method.
@@ -135,7 +135,9 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
 ### Plugins
-* An updated `gruntplugin` template has been created for grunt 0.4-compatible plugins, and is available in the standalone [grunt-init][].
+* An updated `gruntplugin` template has been created for grunt 0.4-compatible plugins, and is available in the standalone [grunt-init].
 
 ## Troubleshooting
 * If you had previously installed a development version of grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of grunt and grunt-contrib plugins.
+
+[grunt-init]: /gruntjs/grunt-init
