@@ -16,6 +16,6 @@
 - Invoke tasks with expanded config (send raw config as well).
 
 **task - [node-task](/tkellen/task)**
-- Dead simple node module.
+- Dead simple npm module.
 - Can use config-processor / file-globbing libs for runtime-configuration if needed.
 - Abstracts file reading and writing.
