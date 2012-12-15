@@ -344,71 +344,12 @@ For example, a grunt plugin may add a new "foo" task in its `tasks/foo.js`, comp
 
 **When defining project-specific tasks or "extra" files, it's always a good idea to include those files in a grunt plugin or tasks directory referenced in the [Gruntfile](Getting-started), and committed with the project when possible. This will help to guarantee consistent grunt behavior for all contributors to that project.**
 
-<a name="grunt-task-searchDirs"></a>
-### grunt.task.searchDirs
-An array of directory paths that grunt uses to search for task-related files, in "task path order." This array is used by all task-specific file listing methods.
-
-```javascript
-grunt.task.searchDirs
-```
-
-
 ## File Lists and Wildcards
 Wildcard patterns are resolved using the [glob library](https://github.com/isaacs/node-glob). See the [minimatch](https://github.com/isaacs/minimatch) module documentation for more details on supported wildcard patterns and matching options.
 
 There are also a number of [generic file listing methods](grunt.file) that list files relative to the [Gruntfile](Getting-started).
 
-<a name="grunt-task-getFile"></a>
-### grunt.task.getFile
-Search tasks directories in "task path order" (via `grunt.task.searchDirs`) for a given file path, returning the path of the first matching file.
-
-**This is the primary method used to locate tasks files and extras files.**
-
 _Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path._
-
-```javascript
-grunt.task.getFile(path1 [, path2 [, ...]])
-```
-
-<a name="grunt-task-expand"></a>
-### grunt.task.expand
-Search task "search directories" for the given wildcard pattern(s), returning a unique array of all matching file paths as "file objects" in `grunt.task.searchDirs` "task path order." This method accepts one or more comma separated wildcard patterns as well as an array of wildcard patterns. Paths matching patterns that begin with `!` will be excluded from the returned array.
-
-The `options` object supports all [minimatch](https://github.com/isaacs/minimatch) options.
-
-```javascript
-grunt.task.expand([options, ] patterns)
-```
-
-Each "file object" item in the returned array has the following properties, and if coerced to string via `String(fileobj)` or `fileObj.toString()` returns the absolute file path value. In this way, `.map(String)` can be called on the resulting array to return an array of absolute file path strings.
-
-```javascript
-var fileobj = {
-  // The absolute path of the matched file or directory.
-  abs: absolutePath,
-  // The path of the matched file or directory, relative to the search
-  // directory in which it was found.
-  rel: relativePath,
-  // The search directory in which this file was found.
-  base: basePath
-}
-```
-
-<a name="grunt-task-expandDirs"></a>
-### grunt.task.expandDirs
-This method behaves the same as `grunt.task.expand` except it only returns directory paths.
-
-```javascript
-grunt.task.expandDirs([options, ] patterns)
-```
-
-<a name="grunt-task-expandFiles"></a>
-### grunt.task.expandFiles
-This method behaves the same as `grunt.task.expand` except it only returns file paths.
-
-```javascript
-grunt.task.expandFiles([options, ] patterns)
-```
 
 <a name="grunt-task-normalizeMultiTaskFiles"></a>
 ### grunt.task.normalizeMultiTaskFiles
