@@ -15,12 +15,14 @@
 * update CHANGELOG to say "Extracted from grunt, compatible with grunt 0.4.0."
 * update package.json "main" to point to Gruntfile.js (any reason??)
 * update gruntplugin devDependencies (chicken and egg)
+* update docs to point to task configuration docs (remove duplicate docs from tasks)
 
 ## original contrib plugins
 * update CHANGELOG to say "Now compatible with grunt 0.4.0."
 * Include major version number that works with 0.3 in overview.
 * bump major version
 * update gruntplugin devDependencies (chicken and egg)
+* update docs to point to task configuration docs (remove duplicate docs from tasks)
 
 ## new contrib plugins
 * ???
