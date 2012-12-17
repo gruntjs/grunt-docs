@@ -46,7 +46,7 @@ The configuration format for grunt 0.4 tasks has been standardized and greatly e
 **Directives have been removed**, but their functionality has been retained. These replacements can be made:
 
 * `'<config:prop.subprop>'` → `'<%= prop.subprop %>'`
-* `'<json:file.json>'` → `grunt.file.parseJSON('file.json')`
+* `'<json:file.json>'` → `grunt.file.readJSON('file.json')`
 * `'<file_template:file.js>'` → `grunt.template.process(grunt.file.read('file.js'))`
 
 Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
