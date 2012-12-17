@@ -1,6 +1,6 @@
 ## grunt
 * bump version to 0.4.0
-* npm publish BUT NOT AS "latest" initially
+* npm publish BUT NOT AS "latest" initially: `npm publish --tag beta`
 * update gruntplugin devDependencies (after gruntplugins are published)
 
 ## grunt-cli
