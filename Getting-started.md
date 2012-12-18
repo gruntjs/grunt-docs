@@ -3,19 +3,23 @@ Grunt is a task-based command line build tool written in JavaScript. *[Why does 
 ## Installing the CLI
 **If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
 
-In order to use grunt, you'll want to install the command line interface (CLI) globally.
+In order to get started, you'll want to install grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
 ```bash
 npm install -g grunt-cli
 ```
 
-This will put the `grunt` command in your system path, allowing it to be run from anywhere. Note that You may need to use `sudo` or run your command shell as Administrator to do this.
+This will put the `grunt` command in your system path, allowing it to be run from any directory.
+
+**Important Note:** Installing `grunt-cli` does not install the grunt task runner!  The job of the grunt command is simple: load any version of grunt which has been installed next to a [Gruntfile].  This allows multiple versions of grunt to be installed on the same machine simultaneously.
 
 ## How the CLI works
 
 Each time `grunt` is run, it looks for a [Gruntfile] in the current folder. If none is found, it will traverse up the directory tree trying to find one. Because of this, you can run `grunt` from any subfolder in your project.
 
 If a [Gruntfile] is found, the CLI loads a local installation of the grunt library, applies the configuration from your [Gruntfile], and executes any tasks you've requested for it to run.
+
+*To really understand what is happening, [read the code](/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
 ## Preparing a grunt project
 A typical setup will involve adding two files to your project: [package.json] and [the Gruntfile][Gruntfile].
