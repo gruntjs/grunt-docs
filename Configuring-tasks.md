@@ -1,5 +1,4 @@
-## The Gruntfile
-(mention it, link to it in the getting started guide)
+Task configuration happens in your Gruntfile.
 
 ### File globbing
 
