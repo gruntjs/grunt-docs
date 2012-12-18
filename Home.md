@@ -17,6 +17,7 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 * [[grunt.fail]]
 * [[grunt.file]]
 * [[grunt.log]]
+* [[grunt.option]]
 * [[grunt.task]]
 * [[grunt.template]]
 * [[grunt.util]]
