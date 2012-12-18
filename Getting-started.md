@@ -11,7 +11,7 @@ npm install -g grunt-cli
 
 This will put the `grunt` command in your system path, allowing it to be run from any directory.
 
-Note that installing `grunt-cli` does not install the grunt task runner!  he job of grunt-cli is simple: load the version of grunt which has been installed next to a [Gruntfile]. This allows multiple versions of grunt to be installed on the same machine simultaneously.
+Note that installing `grunt-cli` does not install the grunt task runner!  The job of the grunt CLI is simple: run the version of grunt which has been installed next to a [Gruntfile]. This allows multiple versions of grunt to be installed on the same machine simultaneously.
 
 ## How the CLI works
 
