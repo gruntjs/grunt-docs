@@ -9,7 +9,7 @@
 - Expand globs based on declarative convention (many-to-one, one-to-one with renaming etc).
 - Responsible for emitting events if files are missing during expansion.
 
-** grunt.log **
+**grunt.log**
 - Listens to the emitter object exported by a task and writes to console.log.
 - Can be swapped out with any other logger.
 
