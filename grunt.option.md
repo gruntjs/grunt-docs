@@ -48,6 +48,14 @@ Gets or sets an option.
 grunt.option(key[, val])
 ```
 
+Boolean options can be negated by prepending `no-` onto the `key`. For example:
+
+```javascript
+grunt.option('staging', false);
+var isDev = grunt.option('no-staging');
+// isDev === true
+```
+
 <a name="grunt-option-init"></a>
 ### grunt.option.init
 Initialize `grunt.option`. If `initObject` is omitted option will be initialized to an empty object otherwise will be set to `initObject`.
