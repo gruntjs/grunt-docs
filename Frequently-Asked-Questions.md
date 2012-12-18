@@ -41,6 +41,7 @@ grunt.registerTask('asyncme', 'My asynchronous task.', function() {
 });
 ```
 
+<a name="faq-auto-completion"></a>
 ## How do I enable shell tab auto-completion?
 To enable bash tab auto-completion for grunt, add the following line to your `~/.bashrc` file:
 
