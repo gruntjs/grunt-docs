@@ -11,7 +11,7 @@ npm install -g grunt-cli
 
 This will put the `grunt` command in your system path, allowing it to be run from any directory.
 
-**Important Note:** Installing `grunt-cli` does not install the grunt task runner!  The job of the grunt command is simple: load any version of grunt which has been installed next to a [Gruntfile].  This allows multiple versions of grunt to be installed on the same machine simultaneously.
+Note that installing `grunt-cli` does not install the grunt task runner!  he job of grunt-cli is simple: load the version of grunt which has been installed next to a [Gruntfile]. This allows multiple versions of grunt to be installed on the same machine simultaneously.
 
 ## How the CLI works
 
@@ -50,7 +50,7 @@ Here are a few ways to create a `package.json` file for your project:
 }
 ```
 
-### Adding dependencies
+### Installing grunt and grunt plugins
 The easiest way to add grunt and grunt plugins to an existing `package.json` is with the command `npm install <module> --save-dev`.  Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
 
 For example, this will install the latest version of grunt in your project folder, adding it to your devDependencies:
@@ -59,7 +59,7 @@ For example, this will install the latest version of grunt in your project folde
 npm install grunt --save-dev
 ```
 
-The same can be done for grunt plugins. Be sure to commit the updated `package.json` file with your project when you're done!
+The same can be done for grunt plugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file, placed in the root directory of your project—next to the `package.json` file—and should be committed with your project source.
