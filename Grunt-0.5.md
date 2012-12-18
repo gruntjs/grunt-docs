@@ -1,6 +1,5 @@
 **cli**
 - Configure execution state (dry run, etc).
-- Provide help system.
 - Invoke task runner.
 
 **config-processor lib**
