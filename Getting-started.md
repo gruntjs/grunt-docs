@@ -15,9 +15,9 @@ Note that installing `grunt-cli` does not install the grunt task runner!  The jo
 
 ## How the CLI works
 
-Each time `grunt` is run, it looks for a [Gruntfile] in the current folder. If none is found, it will traverse up the directory tree trying to find one. Because of this, you can run `grunt` from any subfolder in your project.
+Each time `grunt` is run, it looks for a locally installed grunt using node's `require()` system. Because of this, you can run `grunt` from any subfolder in your project.
 
-If a [Gruntfile] is found, the CLI loads a local installation of the grunt library, applies the configuration from your [Gruntfile], and executes any tasks you've requested for it to run.
+If a locally installed grunt is found, the CLI loads the local installation of the grunt library, applies the configuration from your [Gruntfile], and executes any tasks you've requested for it to run.
 
 *To really understand what is happening, [read the code](/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
