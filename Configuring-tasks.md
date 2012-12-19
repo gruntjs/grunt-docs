@@ -1,7 +1,9 @@
 Task configuration happens in your Gruntfile.
 
 ### File globbing
-
+- How node-glob works
+- How arrays of globs can negate stuff
+- Some examples
 
 ### Specifying Files
 Grunt provides several ways of declaring your files.  Each target in the following example of a configuration for the [grunt-contrib-concat plugin](/gruntjs/grunt-contrib-concat) is functionally equivalent. 
@@ -64,6 +66,3 @@ requirejs: {
   }
 }
 ```
-
-## "Basic" tasks
-(explanation that configuring tasks is sometimes entirely up to the task author)
