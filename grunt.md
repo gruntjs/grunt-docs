@@ -174,18 +174,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is an alias for the [grunt.task.registerMultiTask](grunt.task#wiki-grunt-task-registerMultiTask) method._
 
-<a name="grunt-registerInitTask"></a>
-### grunt.registerInitTask
-Register an "init task." An init task is a task that doesn't require any configuration data, and as such will still run even if grunt can't find a [Gruntfile](Getting-started). The [grunt-init task](https://github.com/gruntjs/grunt-init) is an example of an "init task."
-
-```javascript
-grunt.registerInitTask(taskName, description, taskFunction)
-```
-
-For an init task example, see the [grunt-init task source](https://github.com/gruntjs/grunt-init/blob/master/tasks/init.js).
-
-_This method is an alias for the [grunt.task.registerInitTask](grunt.task#wiki-grunt-task-registerInitTask) method._
-
 <a name="grunt-renameTask"></a>
 ### grunt.renameTask
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
