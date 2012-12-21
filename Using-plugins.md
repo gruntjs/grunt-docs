@@ -33,4 +33,4 @@ Or by registering a new task alias which calls this task, and running that task:
 
 Plugin configuration depends on the specific plugin, so check the plugin's documentation for further information. Generally the configuration is located in the `initConfig` section of the Gruntfile.
 
-**TODO**: Configuration Targets/options
+**TODO**: Configuration Targets/options (Merge [Configuring tasks](Configuring tasks)?)
