@@ -91,18 +91,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
-<a name="grunt-task-registerInitTask"></a>
-### grunt.task.registerInitTask ☃
-Register an "init task." An init task is a task that doesn't require any configuration data, and as such will still run even if grunt can't find a [Gruntfile](Getting-started). The [grunt-init task](https://github.com/gruntjs/grunt-init) is an example of an "init task."
-
-```javascript
-grunt.task.registerInitTask(taskName, description, taskFunction)
-```
-
-For an init task example, see the [grunt-init task source](https://github.com/gruntjs/grunt-init/blob/master/tasks/init.js).
-
-_This method is also available as [grunt.registerInitTask](grunt)._
-
 <a name="grunt-task-renameTask"></a>
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
@@ -130,7 +118,9 @@ An object is made available as `this` inside each task function that contains a 
 
 <a name="this-async"></a>
 ### this.async / grunt.task.current.async
-If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. `false` can be passed to the done function to indicate that the task has failed. If this method isn't invoked, the task executes synchronously.
+If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to indicate that the task has failed.
+
+If the `this.async` method isn't invoked, the task will execute synchronously.
 
 ```javascript
 // Tell grunt this task is asynchronous.
@@ -146,12 +136,12 @@ setTimeout(function() {
 
 <a name="this-requires"></a>
 ### this.requires / grunt.task.current.requires
-If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The task list can be an array of task names or individual task name arguments.
+If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The tasks list can be an array of task names or individual task names, as arguments.
 
 Note that this won't actually run the specified task(s), it will just fail the current task if they haven't already run successfully.
 
 ```javascript
-this.requires(taskList)
+this.requires(tasksList)
 ```
 
 <a name="this-requiresConfig"></a>
@@ -180,7 +170,9 @@ An array of arguments passed to the task. For example, if a "sample" task was ru
 
 <a name="this-flags"></a>
 ### this.flags / grunt.task.current.flags
-An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`. In a multi task, the target name is not set as a flag.
+An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`.
+
+Note that inside multi tasks, the target name is _not_ set as a flag.
 
 <a name="this-errorCount"></a>
 ### this.errorCount / grunt.task.current.errorCount
@@ -229,9 +221,11 @@ grunt.registerTask('ourtask', function() {
 
 `options` would equal the following as the target specific option gets precedence:
 
-```json
-{ punctuation: '.',
-  separator: '|' }
+```js
+{
+  punctuation: '.',
+  separator: '|'
+}
 ```
 
 ## Inside Multi Tasks
@@ -239,10 +233,6 @@ grunt.registerTask('ourtask', function() {
 <a name="this-target"></a>
 ### this.target / grunt.task.current.target
 In a multi task, this is the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
-
-<a name="this-data"></a>
-### this.data / grunt.task.current.data
-In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
 
 <a name="this-file"></a>
 ### this.file / grunt.task.current.file
@@ -260,7 +250,7 @@ All formats are normalized to the following example object structure:
 }
 ```
 
-`this.file.src` is auto expanded with [grunt.file.expand()](grunt.file). `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. `this.file.dest` will be the destination file string.
+`this.file.src` is auto expanded with [grunt.file.expand()](grunt.file). `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. Both `this.file.src` and `this.file.srcRaw` values will always be flattened arrays. `this.file.dest` will be the destination file string.
 
 The following are examples of the mentioned formats:
 
@@ -286,6 +276,13 @@ grunt.initConfig({
   }
 });
 ```
+
+<a name="this-data"></a>
+### this.data / grunt.task.current.data
+In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
+
+It is recommended that `this.file` and `this.options` are use instead of `this.data`, as their values are normalized.
+
 
 ## Loading Externally-Defined Tasks
 For most projects, tasks will be defined in the [Gruntfile](Getting-started). For larger projects, or in cases where tasks need to be shared across projects, tasks can be loaded from one or more external directories or Npm-installed grunt plugins.
