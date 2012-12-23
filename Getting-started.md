@@ -26,7 +26,7 @@ A typical setup will involve adding two files to your project: [package.json] an
 
 **[package.json]**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the grunt plugins your project needs as [devDependencies] in this file.
 
-**[The Gruntfile][Gruntfile]**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used by grunt to configure or define tasks and load grunt plugins.
+**[The Gruntfile][Gruntfile]**: This file is named `grunt.js` or `grunt.coffee` for Grunt `0.3.x` and `Gruntfile.js` or `Gruntfile.coffee` for `0.4.x+` and is used by grunt to configure or define tasks and load grunt plugins.
 
 ## package.json
 
@@ -62,7 +62,7 @@ npm install grunt --save-dev
 The same can be done for grunt plugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
-The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file, placed in the root directory of your project—next to the `package.json` file—and should be committed with your project source.
+The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file, placed in the root directory of your project—next to the `package.json` file—and should be committed with your project source. This file was named `grunt.js` or `grunt.coffee` for versions earlier than `0.4.0`.
 
 A Gruntfile is comprised of the following parts:
 
