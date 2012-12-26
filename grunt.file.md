@@ -214,9 +214,9 @@ Compiling a directory of coffee-script files to JS:
 ```js
 coffee: {
   compile: {
-    files: grunt.file.expandMapping(['path/to/*.coffee'],'path/to/dest/',{
-      rename: function(destBase,destPath) {
-        return destBase+destPath.replace(/\.coffee$/,".js");
+    files: grunt.file.expandMapping(['path/to/*.coffee'], 'path/to/dest/', {
+      rename: function(destBase, destPath) {
+        return destBase + destPath.replace(/\.coffee$/, '.js');
       }
     })
   }
