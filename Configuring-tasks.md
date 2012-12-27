@@ -1,11 +1,72 @@
-Task configuration happens in your Gruntfile.
+Task configuration happens in your Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
-### File globbing
-- How node-glob works
-- How arrays of globs can negate stuff
-- Some examples
+## Multi tasks
+Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
 
-### Specifying Files
+Most tasks will be multi tasks; when in doubt, see the task or plugin documentation.
+
+## Task configuration
+When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration for both the `concat` and `uglify` tasks are specified.
+
+```js
+grunt.initConfig({
+  concat: {
+    // concat task targets go here.
+  },
+  uglify: {
+    // uglify task targets go here.
+  }
+});
+```
+
+Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for the _new_ task-named property in the config object.
+
+## Targets
+Multi tasks SOMETHING 
+It's often useful for tasks to run using different options for different sets of files. 
+Talk about specifying targets explicitly vs implicit iteration over targets 
+
+```js
+grunt.initConfig({
+  concat: {
+    foo: {
+      // "foo" target configuration goes here.
+    },
+    bar: {
+      // "bar" target configuration goes here.
+    }
+  }
+});
+```
+
+## Options
+Each target in a multi task may have an `options` property that is specific to that target. In addition, a task-level `options` property may be specified that is used as default options for each target. Target-level options will override task-level options, which override built-in task defaults.
+
+```js
+grunt.initConfig({
+  concat: {
+    options: {
+      // task-level options go here. These options will override built-in
+      // task defaults, and may be overridden by target-level options.
+    }
+    foo: {
+      options: {
+        // "foo" target options go here, overridding task-level options
+        // and built-in task defaults.
+      }
+    },
+    bar: {
+      options: {
+        // "bar" target options go here, overridding task-level options
+        // and built-in task defaults.
+      }
+    }
+  }
+});
+```
+
+## Files
+
 Grunt provides several ways of declaring your files.  Each target in the following example of a configuration for the [grunt-contrib-concat plugin](/gruntjs/grunt-contrib-concat) is functionally equivalent. 
 ```js
 grunt.initConfig({
@@ -40,29 +101,9 @@ coffee: {
 }
 ```
 
-### The options object
-Grunt will now merge options defined at the task level with each target (as long as the task has been updated to support grunt 0.4).  As a result, you can now share your configuration across multiple targets.  In the example below, both the `dev` and `prod` targets will inherit the options defined at the top level before the task is run.  Target level options can override task level options.
 
-```js
-requirejs: {
-  options: {
-    baseUrl: './app',
-    name: 'lib/almond/almond',
-    include: 'app',
-    mainConfigFile: 'app/config.js',
-    out: 'build/js/app.js',
-    wrap: true,
-  },
-  dev: {
-    options: {
-      optimize: 'none'
-    }
-  },
-  prod: {
-    options: {
-      optimize: 'uglify',
-      out: 'build/js/app.min.js'
-    }
-  }
-}
-```
+
+### File globbing
+- How node-glob works
+- How arrays of globs can negate stuff
+- Some examples
