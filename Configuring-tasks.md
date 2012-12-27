@@ -19,7 +19,7 @@ grunt.initConfig({
 });
 ```
 
-Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
+Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
 
 ### Targets
 Multi tasks SOMETHING  
@@ -64,18 +64,18 @@ grunt.initConfig({
 ```
 
 ### Files
-Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. In any of the following examples, both src and dest properties may contain [[template strings]].
+Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
 
-The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or where src-dest mappings aren't relevant.
+The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
 
 ```js
 grunt.initConfig({
-  foo: {
-    bar: {
+  concat: {
+    foo: {
       src: ['src/aa.js', 'src/aaa.js'],
       dest: 'dest/a.js',
     },
-    baz: {
+    bar: {
       src: ['src/bb.js', 'src/bbb.js'],
       dest: 'dest/b.js',
     },
@@ -87,14 +87,14 @@ The **files object** format supports multiple src-dest mappings per-target, wher
 
 ```js
 grunt.initConfig({
-  foo: {
-    bar: {
+  concat: {
+    foo: {
       files: {
         'dest/a.js': ['src/aa.js', 'src/aaa.js'],
         'dest/a1.js': ['src/aa1.js', 'src/aaa1.js'],
       },
     },
-    baz: {
+    bar: {
       files: {
         'dest/b.js': ['src/bb.js', 'src/bbb.js'],
         'dest/b1.js': ['src/bb1.js', 'src/bbb1.js'],
@@ -108,17 +108,17 @@ The **files array** format also supports multiple src-dest mappings per-target, 
 
 ```js
 grunt.initConfig({
-  foo: {
-    bar: {
+  concat: {
+    foo: {
       files: [
         {src: ['src/aa.js', 'src/aaa.js'], dest: 'dest/a.js'},
         {src: ['src/aa1.js', 'src/aaa1.js'], dest: 'dest/a1.js'},
       ],
     },
-    baz: {
+    bar: {
       files: [
-        {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', ext: '.min.js'},
-        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', flatten: true},
+        {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', flatten: true},
+        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', flatten: false},
       ],
     },
   },
@@ -132,7 +132,7 @@ Consider this format deprecated, and avoid it where possible.
 
 ```js
 grunt.initConfig({
-  foo: {
+  concat: {
     'dest/a.js': ['src/aa.js', 'src/aaa.js'],
     'dest/b.js': ['src/bb.js', 'src/bbb.js'],
   },
