@@ -1,9 +1,7 @@
 Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
 ## Which tasks support these options?
-Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
-
-Most tasks are multi tasks, so if you're configuring a multi task, this guide will help you.
+Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions. _Most tasks are multi tasks, so if you're configuring a multi task, this guide might help you._
 
 That being said, it's possible that a task will be written in a fundamentally different way, in which case please see the task or plugin documentation.
 
