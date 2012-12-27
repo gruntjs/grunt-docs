@@ -1,11 +1,11 @@
 Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
-## Multi tasks
+## Which tasks support these options?
 Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
 
-Most tasks will be multi tasks; if in doubt, see the task or plugin documentation.
+Most tasks will be multi tasks, in which case these configuration rules should apply. It's possible that a task will be written to work in a fundamentally different way, in that case please see the task or plugin documentation.
 
-### Task configuration
+## Task configuration
 When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration is specified for both a `concat` and `uglify` task.
 
 ```js
@@ -21,7 +21,7 @@ grunt.initConfig({
 
 Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
 
-### Targets
+## Targets
 Multi tasks SOMETHING  
 It's often useful for tasks to run using different options for different sets of files.  
 Talk about specifying targets explicitly vs implicit iteration over targets  
@@ -40,7 +40,7 @@ grunt.initConfig({
 });
 ```
 
-### Options
+## Options
 Inside a multi task configuration object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
@@ -63,7 +63,7 @@ grunt.initConfig({
 });
 ```
 
-### Files
+## Files
 Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
 
 The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
@@ -125,7 +125,7 @@ grunt.initConfig({
 });
 ```
 
-#### Older formats
+### Older formats
 The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options.
 
 Consider this format deprecated, and avoid it where possible.
@@ -139,12 +139,12 @@ grunt.initConfig({
 });
 ```
 
-#### File globbing
+### File globbing
 - How node-glob works
 - How arrays of globs can negate stuff
 - Some examples
 
-#### Building the files object dynamically
+### Building the files object dynamically
 https://github.com/gruntjs/grunt/issues/450
 
 In target3, the files object shows how a single target can specify multiple file/destination pairs.  This is useful for programmatically generating a list of src/dest pairs.  In the example below, a folder of coffeescript files are mapped to a destination javascript file.
@@ -160,5 +160,3 @@ coffee: {
   }
 }
 ```
-
-## Non-multi tasks
