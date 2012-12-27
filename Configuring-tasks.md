@@ -1,7 +1,7 @@
 Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
 ## Will this guide help me?
-Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
+Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. **Multi tasks** registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
 
 _Most tasks are multi tasks, so you'll probably find this guide useful._
 
@@ -10,7 +10,7 @@ That being said, it's possible that a task will be written in a fundamentally di
 ## Tasks and Targets
 When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method.
 
-This task-named property is an object which must contain at least one target. The target name is completely arbitrary, and may be used to run an individual task's target. If a task is run without a specific target, grunt will iterate over _all_ targets, running each in-turn.
+This task-named property is an object which must contain at least one **target**. The target name is completely arbitrary, and may be used to run an individual task's target. If a task is run without a specific target, grunt will iterate over _all_ targets, running each in-turn.
 
 In the following example, configuration is specified for both a concat and uglify task. The concat task has foo and bar targets, and the uglify task has a single foo target. Running `grunt concat:foo` or `grunt concat:bar` will run just those targets, while running `grunt concat` will run all targets.
 
