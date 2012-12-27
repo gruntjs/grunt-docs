@@ -5,7 +5,7 @@ Because most grunt tasks take optional parameters and operate on sets of files, 
 
 _Most tasks are multi tasks, so you'll probably find this guide useful._
 
-That being said, it's possible that a task will be written in a fundamentally different way, in which case please see the task or plugin documentation.
+That being said, it's possible that a task will be written in a fundamentally different way, in which case please see the documentation for that task or plugin.
 
 ## Task configuration
 When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration is specified for both a `concat` and `uglify` task.
