@@ -1,46 +1,38 @@
 Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
-## Which tasks support these options?
+## Will this guide help me?
 Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
 
 _Most tasks are multi tasks, so you'll probably find this guide useful._
 
 That being said, it's possible that a task will be written in a fundamentally different way, in which case please see the documentation for that task or plugin.
 
-## Task configuration
-When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration is specified for both a `concat` and `uglify` task.
+## Tasks and Targets
+When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method.
 
-```js
-grunt.initConfig({
-  concat: {
-    // "concat" task targets and task-level options go here.
-  },
-  uglify: {
-    // "uglify" task targets and task-level options go here.
-  },
-});
-```
+This task-named property is an object which must contain at least one "target." The target name is completely arbitrary, and may be used to run an individual task's target like `grunt concat:foo` or `grunt concat:bar`. If a task is run without a specific target like `grunt concat` grunt will iterate over _all_ targets, running them in-turn.
 
-Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
-
-## Targets
-Multi tasks SOMETHING  
-It's often useful for tasks to run using different options for different sets of files.  
-Talk about specifying targets explicitly vs implicit iteration over targets  
-Target names are completely arbitrary  
+In the following example, configuration is specified for both a concat and uglify task. The concat task has foo and bar targets, and the uglify task has a single foo target.
 
 ```js
 grunt.initConfig({
   concat: {
     foo: {
-      // "foo" target options and files go here.
+      // concat task "foo" target options and files go here.
     },
     bar: {
-      // "bar" target options and files go here.
+      // concat task "bar" target options and files go here.
+    },
+  },
+  uglify: {
+    foo: {
+      // uglify task "foo" target options and files go here.
     },
   },
 });
 ```
+
+Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
 Inside a multi task configuration object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
