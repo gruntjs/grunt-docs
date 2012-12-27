@@ -41,7 +41,7 @@ grunt.initConfig({
 ```
 
 ### Options
-In a multi task, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
+Inside a multi task configuration object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
 
@@ -64,6 +64,28 @@ grunt.initConfig({
 ```
 
 ### Files
+Each multi task target configuration may have one or more files specified. A few formats are acceptible.
+
+The "compact" format is a holdover from before multi tasks and targets existed. At that time, you could just have a config like this, but it wasn't really possible to just process a subset of task files. The destination filepath is actually the target name.
+
+Pros:
+* Very concise.
+
+Cons:
+* Target names are filepaths which can be awkward, especially if paths contain templates or spaces.
+* Can't specify target-level options.
+
+```js
+grunt.initConfig({
+  foo: {
+    'dest/a.js': ['src/aa.js', 'src/aaa.js'],
+    'dest/b.js': ['src/bb.js', 'src/bbb.js'],
+  },
+});
+```
+
+**TODO: MORE DOCS**
+
 
 Grunt provides several ways of declaring your files.  Each target in the following example of a configuration for the [grunt-contrib-concat plugin](/gruntjs/grunt-contrib-concat) is functionally equivalent. 
 ```js
@@ -106,5 +128,7 @@ coffee: {
 - How arrays of globs can negate stuff
 - Some examples
 
+#### Building the files object dynamically
+https://github.com/gruntjs/grunt/issues/450
 
 ## Non-multi tasks
