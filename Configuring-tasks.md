@@ -58,7 +58,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Each multi task target may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
+Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
 
 The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
 
