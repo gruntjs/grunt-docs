@@ -42,6 +42,8 @@ grunt.initConfig({
 ### Options
 In a multi task, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
 
+The `options` object is optional and may be omitted if not needed.
+
 ```js
 grunt.initConfig({
   concat: {
@@ -59,8 +61,6 @@ grunt.initConfig({
   }
 });
 ```
-
-The `options` object is optional and may be omitted if not needed.
 
 ### Files
 
