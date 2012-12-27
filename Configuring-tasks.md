@@ -69,7 +69,7 @@ Each multi task target configuration may have one or more files specified. A few
 The "compact" format is a holdover from before multi tasks and targets existed. At that time, you could just have a config like this, but it wasn't really possible to just process a subset of task files. The destination filepath is actually the target name.
 
 **Pros:** Very concise.  
-**Cons:** Target names are filepaths which can be awkward, especially if paths contain templates or spaces. Can't specify target-level options.
+**Cons:** Because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options.
 
 ```js
 grunt.initConfig({
