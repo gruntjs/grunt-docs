@@ -171,6 +171,9 @@ A few examples:
 {src: ['foo/*.js', '!foo/zed.js']}
 // But this won't, because the exclusion is happening too early:
 {src: ['!foo/zed.js', 'foo/*.js']}
+
+// Also, templates may be used in filepaths or glob patterns:
+{src: ['foo/<%= basename %>.js']}
 ```
 
 ### Building the files object dynamically
