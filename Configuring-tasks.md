@@ -25,6 +25,7 @@ Note that if a task is renamed with the [grunt.renameTask](https://github.com/gr
 Multi tasks SOMETHING  
 It's often useful for tasks to run using different options for different sets of files.  
 Talk about specifying targets explicitly vs implicit iteration over targets  
+Target names are completely arbitrary  
 
 ```js
 grunt.initConfig({
