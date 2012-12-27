@@ -64,11 +64,9 @@ grunt.initConfig({
 ```
 
 ### Files
-Each multi task target configuration may have one or more src-dest filepath mappings specified. A few formats are acceptible.
+Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will all be normalized into a format the task will understand.
 
-The **compact** file format only allows for a single src-dest mapping per-target. It is most commonly used where a read-only task (like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task) requires just a `src` property (the `dest` filepath may be omitted).
-
-The `src` property is an array of one or more source filepaths or wildcard patterns.
+The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or where src-dest mappings aren't relevant.
 
 ```js
 grunt.initConfig({
@@ -85,7 +83,7 @@ grunt.initConfig({
 });
 ```
 
-The **files object** format supports multiple src-dest mappings per-target, where the property name is the destination filepath, and its value is an array of one or more source filepaths or wildcard patterns.
+The **files object** format supports multiple src-dest mappings per-target, where the property name is the dest, and its value is the src. Any number of src-dest mappings may be specified in this way.
 
 ```js
 grunt.initConfig({
