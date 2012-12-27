@@ -182,18 +182,53 @@ For example:
 For more on glob pattern syntax, see the [node-glob documentation][node-glob].
 
 ### Building the files object dynamically
-https://github.com/gruntjs/grunt/issues/450
+When many related src-dest mapping must be specified for a one-to-one process like copying files, the [grunt.file.expandMapping](https://github.com/gruntjs/grunt/wiki/grunt.file#wiki-grunt-file-expandMapping) method may be used to build the `files` object dynamically.
 
-In target3, the files object shows how a single target can specify multiple file/destination pairs.  This is useful for programmatically generating a list of src/dest pairs.  In the example below, a folder of coffeescript files are mapped to a destination javascript file.
+In this example, assuming all four src files exist, the following copy task foo and bar `files` objects will be equivalent:
 
 ```js
-coffee: {
-  compile: {
-    files: grunt.file.expandMapping(['path/to/*.coffee'],'path/to/dest/',{
-      rename: function(destBase,destPath) {
-        return destBase+destPath.replace(/\.coffee$/,".js");
-      }
-    })
-  }
-}
+grunt.initConfig({
+  copy: {
+    foo: {
+      files: {
+        'dest/a.js': 'src/a.js',
+        'dest/b.js': 'src/b.js',
+        'dest/subdir/c.js': 'src/subdir/c.js',
+        'dest/subdir/d.js': 'src/subdir/d.js',
+      },
+    },
+    bar: {
+      files: grunt.file.expandMapping(['**/*.js'], 'dest', {cwd: 'src'}),
+    },
+  },
+});
+```
+
+In addition, templates may be used to generate dynamic filenames. In this example, assuming all four src files exist, the following copy task foo and bar `files` objects will be equivalent. Because [[template strings]] are expanded when read by a task, destination filepaths can be dynamically updated by changing the `stuff.dest` and ``stuff.ext` properties.
+
+```js
+grunt.initConfig({
+  stuff: {
+    dest: 'foo/',
+    ext: '.bar',
+  },
+  copy: {
+    foo: {
+      files: {
+        '<%= stuff.dest %>a<%= stuff.ext %>': 'src/a.js',
+        '<%= stuff.dest %>b<%= stuff.ext %>': 'src/b.js',
+        '<%= stuff.dest %>subdir/c<%= stuff.ext %>': 'src/subdir/c.js',
+        '<%= stuff.dest %>subdir/d<%= stuff.ext %>': 'src/subdir/d.js'
+      },
+    },
+    bar: {
+      files: grunt.file.expandMapping('**/*.js', '<%= stuff.dest %>', {
+        cwd: 'src',
+        rename: function(destBase, destPath) {
+          return destBase + destPath.replace(/\.js$/, '<%= stuff.ext %>');
+        }
+      })
+    },
+  },
+});
 ```
