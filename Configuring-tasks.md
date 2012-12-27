@@ -58,7 +58,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptable and will automatically be normalized into a format the task can process.
+Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process.
 
 Regardless of the format, both src and dest may contain [[template strings]]. Additionally, please specify filepaths in the unix style, using `/` as a path separator, instead of `\`.
 
@@ -140,7 +140,7 @@ It is often impractical to specify all source filepaths individually, so grunt s
 
 [node-glob]: https://github.com/isaacs/node-glob
 
-While this isn't be a comprehensive tutorial on globbing patterns, know that in a filepath:
+While this isn't a comprehensive tutorial on globbing patterns, know that in a filepath:
 
 * `*` matches any number of characters, but not `/`
 * `?` matches a single character, but not `/`
@@ -148,15 +148,18 @@ While this isn't be a comprehensive tutorial on globbing patterns, know that in 
 * `{}` allows for a comma-separated list of "or" expressions
 * `!` at the beginning of a pattern will negate the match
 
-Typically, all you need to know is that `foo/*.js` will match all files ending with `.js` in the `foo/` subdirectory, but `foo/**/*.js` will match all files ending with `.js` in the `foo/` subdirectory _and all of its subdirectories_.
+All most people need to know is that `foo/*.js` will match all files ending with `.js` in the `foo/` subdirectory, but `foo/**/*.js` will match all files ending with `.js` in the `foo/` subdirectory _and all of its subdirectories_.
 
-For more examples, see the [node-glob documentation][node-glob].
+Also, in order to simplify otherwise complicated globbing patterns, grunt allows arrays of file paths or globbing patterns to be specified. Patterns are processed in-order, with `!`-prefixed matches excluding matched files from the result set. The result set is uniqued.
 
-In order to simplify otherwise complicated globbing patterns, grunt allows arrays of file paths or globbing patterns to be specified. Patterns are processed in-order, with `!`-prefixed matches excluding matched files from the result set. The result set is uniqued.
-
-A few examples:
+For example:
 
 ```js
+// You can specify individual files:
+{src: ['foo/this.js', 'foo/that.js', 'foo/the-other.js'], dest: ...}
+// Or you can generalize with a glob pattern:
+{src: ['foo/t*.js'], dest: ...}
+
 // This single node-glob pattern:
 {src: 'foo/{a,b}*.js', dest: ...}
 // Could also be written like this:
@@ -175,6 +178,8 @@ A few examples:
 // Also, templates may be used in filepaths or glob patterns:
 {src: ['src/<%= basename %>.js'], dest: 'build/<%= basename %>.js'}
 ```
+
+For more on glob pattern syntax, see the [node-glob documentation][node-glob].
 
 ### Building the files object dynamically
 https://github.com/gruntjs/grunt/issues/450
