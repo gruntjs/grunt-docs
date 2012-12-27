@@ -64,7 +64,7 @@ grunt.initConfig({
 ```
 
 ### Files
-Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will all be normalized into a format the task will understand.
+Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. In any of the following examples, both src and dest properties may contain [[template strings]].
 
 The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or where src-dest mappings aren't relevant.
 
@@ -139,30 +139,13 @@ grunt.initConfig({
 });
 ```
 
+#### File globbing
+- How node-glob works
+- How arrays of globs can negate stuff
+- Some examples
 
-
-**TODO: MORE DOCS**
-
-
-Grunt provides several ways of declaring your files.  Each target in the following example of a configuration for the [grunt-contrib-concat plugin](/gruntjs/grunt-contrib-concat) is functionally equivalent. 
-```js
-grunt.initConfig({
-  concat: {
-    target1: {
-      src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
-      dest: 'dist/built.js'
-    },
-    target2: {
-      'dist/built.js': ['src/intro.js', 'src/project.js', 'src/outro.js']
-    },
-    target3: {
-      files: {
-        'dist/built.js': ['src/intro.js', 'src/project.js', 'src/outro.js']
-      }
-    }
-  }
-});
-```
+#### Building the files object dynamically
+https://github.com/gruntjs/grunt/issues/450
 
 In target3, the files object shows how a single target can specify multiple file/destination pairs.  This is useful for programmatically generating a list of src/dest pairs.  In the example below, a folder of coffeescript files are mapped to a destination javascript file.
 
@@ -177,15 +160,5 @@ coffee: {
   }
 }
 ```
-
-
-
-#### File globbing
-- How node-glob works
-- How arrays of globs can negate stuff
-- Some examples
-
-#### Building the files object dynamically
-https://github.com/gruntjs/grunt/issues/450
 
 ## Non-multi tasks
