@@ -58,13 +58,8 @@ grunt.initConfig({
       }
     },
     bar: {
-      options: {
-        // "bar" target options may be specified here.
-      }
-    },
-    baz: {
       // No options specified; this target will use task-level options.
-    }
+    },
   }
 });
 ```
