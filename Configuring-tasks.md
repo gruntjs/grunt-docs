@@ -5,7 +5,7 @@ Because most grunt tasks take optional parameters and operate on sets of files, 
 
 Most tasks will be multi tasks; when in doubt, see the task or plugin documentation.
 
-## Task configuration
+### Task configuration
 When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration for both the `concat` and `uglify` tasks are specified.
 
 ```js
@@ -21,7 +21,7 @@ grunt.initConfig({
 
 Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for the _new_ task-named property in the config object.
 
-## Targets
+### Targets
 Multi tasks SOMETHING 
 It's often useful for tasks to run using different options for different sets of files. 
 Talk about specifying targets explicitly vs implicit iteration over targets 
@@ -39,7 +39,7 @@ grunt.initConfig({
 });
 ```
 
-## Options
+### Options
 Each target in a multi task may have an `options` property that is specific to that target. In addition, a task-level `options` property may be specified that is used as default options for each target. Target-level options will override task-level options, which override built-in task defaults.
 
 ```js
@@ -65,7 +65,7 @@ grunt.initConfig({
 });
 ```
 
-## Files
+### Files
 
 Grunt provides several ways of declaring your files.  Each target in the following example of a configuration for the [grunt-contrib-concat plugin](/gruntjs/grunt-contrib-concat) is functionally equivalent. 
 ```js
@@ -103,7 +103,7 @@ coffee: {
 
 
 
-### File globbing
+#### File globbing
 - How node-glob works
 - How arrays of globs can negate stuff
 - Some examples
