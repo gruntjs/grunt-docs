@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 }
 ```
 
-Within there we can then initialise our configuration object:
+Within there we can then initialize our configuration object:
 
 ```javascript
 grunt.initConfig({

@@ -58,7 +58,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process.
+Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptable and will automatically be normalized into a format the task can process.
 
 Regardless of the format, both src and dest may contain [[template strings]]. Additionally, please specify filepaths in the unix style, using `/` as a path separator, instead of `\`.
 
