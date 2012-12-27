@@ -58,7 +58,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
+Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]]. Additionally, grunt will normalize filepaths to the appropriate format for your operating system, so it's recommended that you specify filepaths in the unix style, using `/` instead of `\`.
 
 The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
 
@@ -133,10 +133,14 @@ grunt.initConfig({
 });
 ```
 
-### File globbing
+### Source files
+It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob](https://github.com/isaacs/node-glob) library.
+
 - How node-glob works
 - How arrays of globs can negate stuff
 - Some examples
+
+
 
 ### Building the files object dynamically
 https://github.com/gruntjs/grunt/issues/450
