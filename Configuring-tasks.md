@@ -19,7 +19,7 @@ grunt.initConfig({
 });
 ```
 
-Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for a property with the _new_ task name in the config object.
+Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
 
 ### Targets
 Multi tasks SOMETHING  
