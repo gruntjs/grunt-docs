@@ -1,4 +1,4 @@
-Task configuration happens in your Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
+Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
 
 ## Multi tasks
 Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
@@ -105,3 +105,6 @@ coffee: {
 - How node-glob works
 - How arrays of globs can negate stuff
 - Some examples
+
+
+## Non-multi tasks
