@@ -40,26 +40,30 @@ grunt.initConfig({
 ```
 
 ### Options
-Each target in a multi task may have an `options` property that is specific to that target. In addition, a task-level `options` property may be specified that is used as default options for each target. Target-level options will override task-level options, which override built-in task defaults.
+In a multi task, a task-level `options` property may be specified. Task-level options will override built-in task defaults.
+
+In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
+
+As implied by its name, the `options` object is optional and may be omitted if not needed.
 
 ```js
 grunt.initConfig({
   concat: {
     options: {
-      // Task-level options are specified here. These options will override
-      // built-in task defaults, and may be overridden by target-level options.
+      // Task-level options may be specified here.
     }
     foo: {
       options: {
-        // "foo" target options are specified here, overridding task-level
-        // options and built-in task defaults.
+        // "foo" target options may be specified here.
       }
     },
     bar: {
       options: {
-        // "bar" target options are specified here, overridding task-level
-        // options and built-in task defaults.
+        // "bar" target options may be specified here.
       }
+    },
+    baz: {
+      // No options specified; this target will use task-level options.
     }
   }
 });
