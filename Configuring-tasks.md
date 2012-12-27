@@ -3,23 +3,23 @@ Task configuration happens in your Gruntfile. If you don't know what a Gruntfile
 ## Multi tasks
 Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. "Multi tasks" registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
 
-Most tasks will be multi tasks; when in doubt, see the task or plugin documentation.
+Most tasks will be multi tasks; if in doubt, see the task or plugin documentation.
 
 ### Task configuration
-When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration for both the `concat` and `uglify` tasks are specified.
+When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method. In the following example, configuration is specified for both a `concat` and `uglify` task.
 
 ```js
 grunt.initConfig({
   concat: {
-    // concat task targets go here.
+    // "concat" task targets and task-level options go here.
   },
   uglify: {
-    // uglify task targets go here.
+    // "uglify" task targets and task-level options go here.
   }
 });
 ```
 
-Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for the _new_ task-named property in the config object.
+Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for a property with the _new_ task name in the config object.
 
 ### Targets
 Multi tasks SOMETHING 
