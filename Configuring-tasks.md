@@ -15,7 +15,7 @@ grunt.initConfig({
   },
   uglify: {
     // "uglify" task targets and task-level options go here.
-  }
+  },
 });
 ```
 
@@ -35,8 +35,8 @@ grunt.initConfig({
     },
     bar: {
       // "bar" target options and files go here.
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -50,26 +50,87 @@ grunt.initConfig({
   concat: {
     options: {
       // Task-level options may go here, overriding task defaults.
-    }
+    },
     foo: {
       options: {
         // "foo" target options may go here, overriding task-level options.
-      }
+      },
     },
     bar: {
       // No options specified; this target will use task-level options.
     },
-  }
+  },
 });
 ```
 
 ### Files
-Each multi task target configuration may have one or more files specified. A few formats are acceptible.
+Each multi task target configuration may have one or more src-dest filepath mappings specified. A few formats are acceptible.
 
-The "compact" format is a holdover from before multi tasks and targets existed. At that time, you could just have a config like this, but it wasn't really possible to just process a subset of task files. The destination filepath is actually the target name.
+The **compact** file format only allows for a single src-dest mapping per-target. It is most commonly used where a read-only task (like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task) requires just a `src` property (the `dest` filepath may be omitted).
 
-**Pros:** Very concise.  
-**Cons:** Because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options.
+The `src` property is an array of one or more source filepaths or wildcard patterns.
+
+```js
+grunt.initConfig({
+  foo: {
+    bar: {
+      src: ['src/aa.js', 'src/aaa.js'],
+      dest: 'dest/a.js',
+    },
+    baz: {
+      src: ['src/bb.js', 'src/bbb.js'],
+      dest: 'dest/b.js',
+    },
+  },
+});
+```
+
+The **files object** format supports multiple src-dest mappings per-target, where the property name is the destination filepath, and its value is an array of one or more source filepaths or wildcard patterns.
+
+```js
+grunt.initConfig({
+  foo: {
+    bar: {
+      files: {
+        'dest/a.js': ['src/aa.js', 'src/aaa.js'],
+        'dest/a1.js': ['src/aa1.js', 'src/aaa1.js'],
+      },
+    },
+    baz: {
+      files: {
+        'dest/b.js': ['src/bb.js', 'src/bbb.js'],
+        'dest/b1.js': ['src/bb1.js', 'src/bbb1.js'],
+      },
+    },
+  },
+});
+```
+
+The **files array** format also supports multiple src-dest mappings per-target, but allows for extra per-mapping properties, in cases where a task might utilize them. Each src-dest mapping is a separate object in the files array.
+
+```js
+grunt.initConfig({
+  foo: {
+    bar: {
+      files: [
+        {src: ['src/aa.js', 'src/aaa.js'], dest: 'dest/a.js'},
+        {src: ['src/aa1.js', 'src/aaa1.js'], dest: 'dest/a1.js'},
+      ],
+    },
+    baz: {
+      files: [
+        {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', ext: '.min.js'},
+        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', flatten: true},
+      ],
+    },
+  },
+});
+```
+
+#### Older formats
+The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options.
+
+Consider this format deprecated, and avoid it where possible.
 
 ```js
 grunt.initConfig({
@@ -79,6 +140,8 @@ grunt.initConfig({
   },
 });
 ```
+
+
 
 **TODO: MORE DOCS**
 
