@@ -10,9 +10,9 @@ That being said, it's possible that a task will be written in a fundamentally di
 ## Tasks and Targets
 When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method.
 
-This task-named property is an object which must contain at least one "target." The target name is completely arbitrary, and may be used to run an individual task's target like `grunt concat:foo` or `grunt concat:bar`. If a task is run without a specific target like `grunt concat` grunt will iterate over _all_ targets, running them in-turn.
+This task-named property is an object which must contain at least one target. The target name is completely arbitrary, and may be used to run an individual task's target. If a task is run without a specific target, grunt will iterate over _all_ targets, running each in-turn.
 
-In the following example, configuration is specified for both a concat and uglify task. The concat task has foo and bar targets, and the uglify task has a single foo target.
+In the following example, configuration is specified for both a concat and uglify task. The concat task has foo and bar targets, and the uglify task has a single foo target. Running `grunt concat:foo` or `grunt concat:bar` will run just those targets, while running `grunt concat` will run all targets.
 
 ```js
 grunt.initConfig({
@@ -35,7 +35,7 @@ grunt.initConfig({
 Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
-Inside a multi task configuration object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
+Inside a task-named object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
 
@@ -58,7 +58,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Each multi task target configuration may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
+Each multi task target may have one or more src-dest (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process. Regardless of the format, both src and dest may contain [[template strings]].
 
 The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
 
