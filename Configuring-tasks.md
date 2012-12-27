@@ -135,7 +135,7 @@ grunt.initConfig({
 });
 ```
 
-### Source files
+### Globbing patterns
 It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] library.
 
 [node-glob]: https://github.com/isaacs/node-glob
@@ -144,15 +144,15 @@ While this isn't be a comprehensive tutorial on globbing patterns, know that in 
 
 * `*` matches any number of characters, but not `/`
 * `?` matches a single character, but not `/`
-* `**` matches any number of characters, including `/` (as long as it's the only thing in a path part)
-* `{}` support a comma-separated list of "or" expressions
+* `**` matches any number of characters, including `/`, as long as it's the only thing in a path part
+* `{}` allows for a comma-separated list of "or" expressions
 * `!` at the beginning of a pattern will negate the match
 
 Typically, all you need to know is that `foo/*.js` will match all files ending with `.js` in the `foo/` subdirectory, but `foo/**/*.js` will match all files ending with `.js` in the `foo/` subdirectory _and all of its subdirectories_.
 
 For more examples, see the [node-glob documentation][node-glob].
 
-In order to simplify otherwise complicated globbing patterns, grunt allows arrays of file paths or globbing patterns to be specified. Patterns are processed in-order, with `!`-prefixed matches excluding matched files from the result set, and result sets are uniqued.
+In order to simplify otherwise complicated globbing patterns, grunt allows arrays of file paths or globbing patterns to be specified. Patterns are processed in-order, with `!`-prefixed matches excluding matched files from the result set. The result set is uniqued.
 
 A few examples:
 
@@ -164,7 +164,7 @@ A few examples:
 
 // This will return files in alphabetical order:
 {src: ['foo/*.js']}
-// But this will return zed.js first, followed by all other files (in order):
+// This will return zed.js first, followed by all other files (in alpha order):
 {src: ['foo/zed.js', 'foo/*.js']}
 
 // This will return all files in alphabetical order, except for zed.js:
