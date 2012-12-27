@@ -158,22 +158,22 @@ A few examples:
 
 ```js
 // This single node-glob pattern:
-{src: 'foo/{a,b}*.js'}
+{src: 'foo/{a,b}*.js', dest: ...}
 // Could also be written like this:
-{src: ['foo/a*.js', 'foo/b*.js']}
+{src: ['foo/a*.js', 'foo/b*.js'], dest: ...}
 
 // This will return files in alphabetical order:
-{src: ['foo/*.js']}
+{src: ['foo/*.js'], dest: ...}
 // This will return zed.js first, followed by all other files (in alpha order):
-{src: ['foo/zed.js', 'foo/*.js']}
+{src: ['foo/zed.js', 'foo/*.js'], dest: ...}
 
 // This will return all files in alphabetical order, except for zed.js:
-{src: ['foo/*.js', '!foo/zed.js']}
+{src: ['foo/*.js', '!foo/zed.js'], dest: ...}
 // But this won't, because the exclusion is happening too early:
-{src: ['!foo/zed.js', 'foo/*.js']}
+{src: ['!foo/zed.js', 'foo/*.js'], dest: ...}
 
 // Also, templates may be used in filepaths or glob patterns:
-{src: ['foo/<%= basename %>.js']}
+{src: ['src/<%= basename %>.js'], dest: 'build/<%= basename %>.js'}
 ```
 
 ### Building the files object dynamically
