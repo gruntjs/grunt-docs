@@ -11,10 +11,10 @@ When a multi task is run, grunt looks for a task-named property in the config ob
 ```js
 grunt.initConfig({
   concat: {
-    // "concat" task targets and task-level options go here.
+    // "concat" task targets and task-level options are specified here.
   },
   uglify: {
-    // "uglify" task targets and task-level options go here.
+    // "uglify" task targets and task-level options are specified here.
   }
 });
 ```
@@ -30,10 +30,10 @@ Talk about specifying targets explicitly vs implicit iteration over targets
 grunt.initConfig({
   concat: {
     foo: {
-      // "foo" target configuration goes here.
+      // "foo" target options and files are specified here.
     },
     bar: {
-      // "bar" target configuration goes here.
+      // "bar" target options and files are specified here.
     }
   }
 });
@@ -46,19 +46,19 @@ Each target in a multi task may have an `options` property that is specific to t
 grunt.initConfig({
   concat: {
     options: {
-      // task-level options go here. These options will override built-in
-      // task defaults, and may be overridden by target-level options.
+      // task-level options are specified here. These options will override
+      //  built-in task defaults, and may be overridden by target-level options.
     }
     foo: {
       options: {
-        // "foo" target options go here, overridding task-level options
-        // and built-in task defaults.
+        // "foo" target options are specified here, overridding task-level
+        // options and built-in task defaults.
       }
     },
     bar: {
       options: {
-        // "bar" target options go here, overridding task-level options
-        // and built-in task defaults.
+        // "bar" target options are specified here, overridding task-level
+        // options and built-in task defaults.
       }
     }
   }
