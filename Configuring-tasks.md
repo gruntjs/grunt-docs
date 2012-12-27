@@ -46,8 +46,8 @@ Each target in a multi task may have an `options` property that is specific to t
 grunt.initConfig({
   concat: {
     options: {
-      // task-level options are specified here. These options will override
-      //  built-in task defaults, and may be overridden by target-level options.
+      // Task-level options are specified here. These options will override
+      // built-in task defaults, and may be overridden by target-level options.
     }
     foo: {
       options: {
