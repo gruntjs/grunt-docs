@@ -22,9 +22,9 @@ grunt.initConfig({
 Note that if a task is renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, it will look for a property with the _new_ task name in the config object.
 
 ### Targets
-Multi tasks SOMETHING 
-It's often useful for tasks to run using different options for different sets of files. 
-Talk about specifying targets explicitly vs implicit iteration over targets 
+Multi tasks SOMETHING  
+It's often useful for tasks to run using different options for different sets of files.  
+Talk about specifying targets explicitly vs implicit iteration over targets  
 
 ```js
 grunt.initConfig({
