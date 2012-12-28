@@ -23,7 +23,7 @@ grunt.initConfig({
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, executing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
-Inside a task configuration, an `options` property may be specified.  Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
+Inside a task configuration, an `options` property may be specified to override built-in defaults.  In addition, each target may have an `options` property which is specific to that target.  Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
 
@@ -46,30 +46,29 @@ grunt.initConfig({
 ```
 
 ## Files
-Because the vast majority of tasks perform some kind of file operation, Grunt has powerful abstractions for selecting the files you wish to work with.
+Because the vast majority of tasks perform some kind of file operation, Grunt has powerful abstractions for declaring which files you wish to work with.  There several ways to define **src-dest** (source-destination) mappings, each with increasing verbosity and control.
 
-Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process.
-
-Regardless of the format, both src and dest may contain [[template strings]]. Additionally, please specify filepaths in the unix style, using `/` as a path separator, instead of `\`.
-
-The **compact** file format allows for a single src-dest mapping per-target. It is most commonly used where a read-only task—like the [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin `jshint` task—requires a single `src` property, or in other tasks where src-dest mappings aren't relevant.
+### Compact Format
+This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. 
 
 ```js
 grunt.initConfig({
-  concat: {
+  jshint: {
     foo: {
-      src: ['src/aa.js', 'src/aaa.js'],
-      dest: 'dest/a.js',
-    },
-    bar: {
-      src: ['src/bb.js', 'src/bbb.js'],
-      dest: 'dest/b.js',
+      src: ['src/aa.js', 'src/aaa.js']
     },
   },
+  concat: {
+    bar: {
+      src: ['src/bb.js', 'src/bbb.js'],
+      dest: 'dest/b.js'
+    },
+  }
 });
 ```
 
-The **files object** format supports multiple src-dest mappings per-target, where the property name is the dest, and its value is the src. Any number of src-dest mappings may be specified in this way.
+### Files Format
+This form supports multiple src-dest mappings per-target, where the property name is the destination file, and its value is the source file(s). Any number of src-dest mappings may be specified in this way.
 
 ```js
 grunt.initConfig({
@@ -90,7 +89,8 @@ grunt.initConfig({
 });
 ```
 
-The **files array** format also supports multiple src-dest mappings per-target, but allows for extra per-mapping properties, in cases where a task might utilize them. Each src-dest mapping is a separate object in the files array.
+### Files Array Format
+This form supports multiple src-dest mappings per-target, while also allowing extra properties for each src-dest mapping.
 
 ```js
 grunt.initConfig({
