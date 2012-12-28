@@ -4,7 +4,7 @@ This guide explains how to configure tasks for your project using a Gruntfile.  
 Explain this here.
 
 ## Task Configuration & Targets
-When running a task, its configuration is found in your [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  Multi-tasks can have multiple configurations, defined using arbitrarily named "targets".  In the example below, both `concat` and `uglify` tasks have been configured using targets.
+When running a task, grunt looks for its configuration in your [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  Multi-tasks can have multiple configurations, defined using arbitrarily named "targets." In the example below, both `concat` and `uglify` tasks have been configured with `foo` and `bar` targets.
 
 ```js
 grunt.initConfig({
