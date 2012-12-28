@@ -4,30 +4,26 @@ This guide explains how to configure tasks for your project using a Gruntfile.  
 Explain this here.
 
 ## Task Configuration & Targets
-When running a task, it's configuration is found in your [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  In the example below, settings have been specified for both a `concat` and `uglify` task.  The `foo` and `bar` keys are called "targets".  Targets make multiple configurations for a single task possible.  You must specify at least one target for multi-tasks.  Target keys are completely arbitrary, use whatever name you like. 
+When running a task, its configuration is found in your [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  Multi-tasks can have multiple configurations, defined using arbitrarily named "targets".  In the example below, both `concat` and `uglify` tasks have been configured using targets.
 
 ```js
 grunt.initConfig({
   concat: {
     foo: {
-      src: ['path/to/sources/*.js']
-      dest: 'path/to/combined.js'
+      // concat task "foo" target options and files go here.
     },
     bar: {
-      src: ['path/to/other/sources/*.js']
-      dest: 'path/to/other-combined.js'
+      // concat task "bar" target options and files go here.
     }
   },
   uglify: {
     foo: {
-      src: 'path/to/combined.js',
-      dest: 'path/to/combined.min.js'
+      // uglify task "foo" target options and files go here.
     }
   }
 });
-grunt.loadNpmTasks('grunt-contrib-concat');
 ```
-Given the above example, running `grunt concat:foo` or `grunt concat:bar` will run just those targets, while running `grunt concat` will iterate over _all_ targets, running each in-turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
+Running `grunt concat:foo` or `grunt concat:bar` will process an individual target's configuration, while running `grunt concat` will iterate over _all_ targets, executing each in the order they were defined.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
 Inside a task-named object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
