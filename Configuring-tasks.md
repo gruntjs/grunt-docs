@@ -46,7 +46,7 @@ grunt.initConfig({
 ```
 
 ## Files
-Because the vast majority of tasks perform some kind of file operation, Grunt has powerful abstractions for declaring which files you wish to work with.  There several ways to define **src-dest** (source-destination) mappings, each with increasing verbosity and control.
+Because most tasks perform some kind of file operation, Grunt has powerful abstractions for declaring which files you wish to work with. There are several ways to define **src-dest** (source-destination) mappings, offering varying degrees of verbosity and control.
 
 ### Compact Format
 This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. 
