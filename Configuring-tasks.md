@@ -14,8 +14,8 @@ grunt.initConfig({
     }
   },
   uglify: {
-    foo: {
-      // uglify task "foo" target options and files go here.
+    bar: {
+      // uglify task "bar" target options and files go here.
     }
   }
 });
