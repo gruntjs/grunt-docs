@@ -67,7 +67,7 @@ grunt.initConfig({
 });
 ```
 
-### Files Format
+### Files Object Format
 This form supports multiple src-dest mappings per-target, where the property name is the destination file, and its value is the source file(s). Any number of src-dest mappings may be specified in this way.
 
 ```js
