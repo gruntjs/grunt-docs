@@ -1,38 +1,33 @@
-Task configuration happens inside a Gruntfile. If you don't know what a Gruntfile is, see the [[Getting Started]] guide and the [[Sample Gruntfile]].
+This guide explains how to configure tasks for your project using a Gruntfile.  If you don't know what a Gruntfile is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
-## Will this guide help me?
-Because most grunt tasks take optional parameters and operate on sets of files, a few conventions have been established to facilitate task configuration. **Multi tasks** registered using the [grunt.registerMultiTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-registerMultiTask) method should follow these conventions.
+## Regular Tasks vs Multi-Tasks 
+Explain this here.
 
-_Most tasks are multi tasks, so you'll probably find this guide useful._
-
-That being said, it's possible that a task will be written in a fundamentally different way, in which case please see the documentation for that task or plugin.
-
-## Tasks and Targets
-When a multi task is run, grunt looks for a task-named property in the config object passed to the [grunt.initConfig](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) method.
-
-This task-named property is an object which must contain at least one **target**. The target name is completely arbitrary, and may be used to run an individual task's target. If a task is run without a specific target, grunt will iterate over _all_ targets, running each in-turn.
-
-In the following example, configuration is specified for both a concat and uglify task. The concat task has foo and bar targets, and the uglify task has a single foo target. Running `grunt concat:foo` or `grunt concat:bar` will run just those targets, while running `grunt concat` will run all targets.
+## Task Configuration & Targets
+When running a task, it's configuration is found in your [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  In the example below, settings have been specified for both a `concat` and `uglify` task.  The `foo` and `bar` keys are called "targets".  Targets make multiple configurations for a single task possible.  You must specify at least one target for multi-tasks.  Target keys are completely arbitrary, use whatever name you like. 
 
 ```js
 grunt.initConfig({
   concat: {
     foo: {
-      // concat task "foo" target options and files go here.
+      src: ['path/to/sources/*.js']
+      dest: 'path/to/combined.js'
     },
     bar: {
-      // concat task "bar" target options and files go here.
-    },
+      src: ['path/to/other/sources/*.js']
+      dest: 'path/to/other-combined.js'
+    }
   },
   uglify: {
     foo: {
-      // uglify task "foo" target options and files go here.
-    },
-  },
+      src: 'path/to/combined.js',
+      dest: 'path/to/combined.min.js'
+    }
+  }
 });
+grunt.loadNpmTasks('grunt-contrib-concat');
 ```
-
-Note that if a task has been renamed with the [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask) method, grunt will look for a property with the _new_ task name in the config object.
+Given the above example, running `grunt concat:foo` or `grunt concat:bar` will run just those targets, while running `grunt concat` will iterate over _all_ targets, running each in-turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
 Inside a task-named object, a task-level `options` property may be specified. Task-level options will override built-in task defaults. In addition, each target may have an `options` property that is specific to that target. Target-level options will override task-level options.
@@ -58,6 +53,8 @@ grunt.initConfig({
 ```
 
 ## Files
+Because the vast majority of tasks perform some kind of file operation, Grunt has powerful abstractions for selecting the files you wish to work with.
+
 Each multi task target may have one or more **src-dest** (source-destination) filepath mappings specified. The following formats are acceptible and will automatically be normalized into a format the task can process.
 
 Regardless of the format, both src and dest may contain [[template strings]]. Additionally, please specify filepaths in the unix style, using `/` as a path separator, instead of `\`.
