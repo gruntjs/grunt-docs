@@ -10,6 +10,9 @@
 
 The "grunt-contrib" namespace is reserved for tasks maintained by the grunt team, please name your task something appropriate that avoids that naming scheme.
 
+### Debugging
+Grunt hides error stack traces by default, but they can be enabled for easier task debugging with the `--stack` option. If you want grunt to always log stack traces on errors, create an alias in your shell. Eg, in bash, you could do `alias grunt='grunt --stack'`.
+
 ### Storing task files
 
 Only store data files in a .grunt/[npm-module-name]/ directory at the project's root and clean up after yourself when appropriate. This is not a solution for temporary scratch files, use one of the common npm modules (eg [temporary](https://npmjs.org/package/temporary), [tmp](https://npmjs.org/package/tmp)) that take advantage of the OS level temporary directories for that case.
