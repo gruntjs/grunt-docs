@@ -1,5 +1,7 @@
 Grunt is a task-based command line build tool written in JavaScript. *[Why does grunt exist?](https://github.com/gruntjs/grunt/wiki/Why-grunt%3F)*
 
+[[_TOC_]]
+
 ## Installing the CLI
 **If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
 
