@@ -24,3 +24,48 @@
 - Dead simple npm module exporting a specified set of common methods.
 - If user really needs runtime config processing or file expansion, they can require the config processor lib or file expansion lib themselves.  These situations should be carefully examined and generalized into the runner.
 - Abstract file reading and writing with task prototypes that emit all proper events.
+
+
+
+
+
+
+
+
+
+
+
+
+
+***Please ignore the section below.  It is a jumbled mess/work in progress and should not be considered anything resembling a roadmap.***
+
+527 - parallel execution of tasks
+545 - conditional compilation (probably belongs on the watch task)
+493 - cwd handling
+
+## grunt
+* should abort early if no files defined, if a flag like needsFiles is set to true when exporting task
+* should give config to task with files expanded, allow custom expansion if desired
+* Investigate shelljs integration. [#59](https://github.com/gruntjs/grunt/issues/59)
+* more specific error codes
+  * Task not found
+  * Task failed
+  * Task requirement not met
+  * Config requirement not met
+
+## grunt-log
+* Log to stderr/stdout. #570 [#120](https://github.com/gruntjs/grunt/issues/120)
+* https://github.com/tkellen/grunt-decoupled/tree/master/grunt-log
+
+## grunt-file
+* https://github.com/tkellen/grunt-decoupled/tree/master/grunt-file
+
+## grunt-util
+* https://github.com/tkellen/grunt-decoupled/tree/master/grunt-util
+
+## grunt-task
+* Task loading should be more robust.  Allow it to load from a single tasks file, a directory of tasks files, or a passed-in callback. [#261](https://github.com/gruntjs/grunt/issues/261)
+* Task testability: [#183](https://github.com/gruntjs/grunt/issues/183)
+* Task API: [#189](https://github.com/gruntjs/grunt/issues/189), [#385](https://github.com/gruntjs/grunt/issues/385)
+* Make a convention for what happens when files for a task are missing [#434](https://github.com/gruntjs/grunt/issues/434)
+* anonymous task names
