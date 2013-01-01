@@ -51,7 +51,7 @@ grunt.run();
   * Config requirement not met
 
 ## grunt-log
-* Log to stderr/stdout. #570 [#120](https://github.com/gruntjs/grunt/issues/120)
+* Log to stderr/stdout. [#586](https://github.com/gruntjs/grunt/issues/586) [#570](https://github.com/gruntjs/grunt/issues/570) [#120](https://github.com/gruntjs/grunt/issues/120)
 * https://github.com/tkellen/grunt-decoupled/tree/master/grunt-log
 
 ## grunt-file
