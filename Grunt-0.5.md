@@ -1,17 +1,12 @@
-**cli**
-- Configure execution state (dry run, etc).
-- Invoke task runner.
+** Architecture **
 
-**config-processor lib**
-- Merge options, expand templates.
+1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  You will also be able to pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  See: http://github.com/tkellen/node-task
 
-**file-globbing lib**
-- Expand globs based on declarative convention (many-to-one, one-to-one with renaming etc).
-- Responsible for emitting events if files are missing during expansion.
+2. A library for parsing configurations (merge options, template expansion, glob expansion etc) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.  See: http://github.com/cowboy/configthing
 
-**grunt.log**
-- Listens to the emitter object exported by a task and writes to console.log.
-- Can be swapped out with any other logger.
+3. A task runner which uses said config parsing library to execute node-task compatible modules (can be used programmatically, or via cli)  See: http://github.com/gruntjs/grunt
+
+4. All task output emitted as events which can be listened to by any compatible logger (the default being a console logger that produces output very similar to what we currently have).
 
 **task-runner lib - [grunt](/gruntjs/grunt)**
 - Responsible for task execution, and for producing task-compatible configs / file listings.
@@ -19,16 +14,6 @@
 - Merge config values using config-processor lib **before** they are sent to the task.
 - Send raw config / file globs to task during execution, but discourage handling this at the task level.
 - New config conventions allow chaining a single set of files through multiple tasks.
-
-**task - [node-task](/tkellen/task)**
-- Dead simple npm module exporting a specified set of common methods.
-- If user really needs runtime config processing or file expansion, they can require the config processor lib or file expansion lib themselves.  These situations should be carefully examined and generalized into the runner.
-- Abstract file reading and writing with task prototypes that emit all proper events.
-
-
-
-
-
 
 
 
