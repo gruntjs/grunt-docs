@@ -17,10 +17,6 @@
 545 - conditional compilation (probably belongs on the watch task)
 493 - cwd handling
 
-## grunt
-* should abort early if no files defined, if a flag like needsFiles is set to true when exporting task
-* should give config to task with files expanded, allow custom expansion if desired
-* Investigate shelljs integration. [#59](https://github.com/gruntjs/grunt/issues/59)
 * more specific error codes
   * Task not found
   * Task failed
@@ -36,10 +32,3 @@
 
 ## grunt-util
 * https://github.com/tkellen/grunt-decoupled/tree/master/grunt-util
-
-## grunt-task
-* Task loading should be more robust.  Allow it to load from a single tasks file, a directory of tasks files, or a passed-in callback. [#261](https://github.com/gruntjs/grunt/issues/261)
-* Task testability: [#183](https://github.com/gruntjs/grunt/issues/183)
-* Task API: [#189](https://github.com/gruntjs/grunt/issues/189), [#385](https://github.com/gruntjs/grunt/issues/385)
-* Make a convention for what happens when files for a task are missing [#434](https://github.com/gruntjs/grunt/issues/434)
-* anonymous task names
