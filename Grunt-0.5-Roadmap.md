@@ -37,7 +37,7 @@ grunt.registerTask(require('grunt-contrib-jshint'));
 grunt.registerTask(require('grunt-contrib-concat'));
 grunt.registerTask(require('grunt-contrib-uglify'), 'min'); // optional second param renames
 
-// registerTask generates a node-task compliant object and runs grunt.loadTask on it
+// generates a node-task compliant object and runs grunt.registerTask on it
 grunt.registerTask('name','description', function (config) {
   //...
 });
