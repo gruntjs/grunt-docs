@@ -32,6 +32,9 @@ grunt.registerTask('name','description', function (config) {
   //...
 });
 
+// load a set of tasks to be run in parallel
+grunt.registerTask('name', ['jshint', 'concat'], { parallel:true });
+
 // i think the cli should call this, but putting it here because you mentioned thinking it should go here.
 grunt.run();
 ```
