@@ -17,15 +17,25 @@ grunt.initConfig({
   grunt: {
     dryRun: true,
     stack: true,
-    verbose: true
+    verbose: true,
+    // what about defining loggers specific to a task?
+    // is this required in your gruntfile or on by default?
+    logger: [require('grunt-logger')] 
   },
-  jshint: {},
-  concat: {}
+  jshint: {
+    // ...
+  },
+  concat: {
+    // ...
+  },
+  min: {
+    // ...
+  }
 });
 
 grunt.registerTask(require('grunt-contrib-jshint'));
 grunt.registerTask(require('grunt-contrib-concat'));
-grunt.registerTask(require('grunt-contrib-uglify'), 'uglify'); // optional second param renames
+grunt.registerTask(require('grunt-contrib-uglify'), 'min'); // optional second param renames
 
 // registerTask generates a node-task compliant object and runs grunt.loadTask on it
 grunt.registerTask('name','description', function (config) {
