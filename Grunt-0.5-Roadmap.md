@@ -23,9 +23,9 @@ grunt.initConfig({
   concat: {}
 });
 
-grunt.loadTask(require('grunt-contrib-jshint'));
-grunt.loadTask(require('grunt-contrib-concat'));
-grunt.loadTask(require('grunt-contrib-uglify'), 'uglify'); // optional second param renames
+grunt.registerTask(require('grunt-contrib-jshint'));
+grunt.registerTask(require('grunt-contrib-concat'));
+grunt.registerTask(require('grunt-contrib-uglify'), 'uglify'); // optional second param renames
 
 // registerTask generates a node-task compliant object and runs grunt.loadTask on it
 grunt.registerTask('name','description', function (config) {
