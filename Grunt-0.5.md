@@ -1,25 +1,14 @@
-** Architecture **
+**Architecture**
 
-1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  You will also be able to pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  See: http://github.com/tkellen/node-task
+1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  All task output emitted as events.  See: http://github.com/tkellen/node-task
 
-2. A library for parsing configurations (merge options, template expansion, glob expansion etc) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.  See: http://github.com/cowboy/configthing
+2. A library for glob expansion that handles arrays of globs, negation, etc. See http://github.com/cowboy/globtastic
 
-3. A task runner which uses said config parsing library to execute node-task compatible modules (can be used programmatically, or via cli)  See: http://github.com/gruntjs/grunt
+3. A library for parsing configurations (merge options, template expansion, glob expansion (using lib from item #2) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.  See: http://github.com/cowboy/configthing
 
-4. All task output emitted as events which can be listened to by any compatible logger (the default being a console logger that produces output very similar to what we currently have).
+3. A task runner which uses config parsing library from item #3 to execute node-task compatible modules (can be used programmatically, or via cli).  Supports defining "alias" tasks which compile a set of tasks which can be run in parallel  See: http://github.com/gruntjs/grunt
 
-**task-runner lib - [grunt](/gruntjs/grunt)**
-- Responsible for task execution, and for producing task-compatible configs / file listings.
-- Expand files using file-globbing lib **before** they are sent to the task.  Tasks which need to customize expansion should export declarative flags that instruct the runner what to do.  These exported flags must be carefully considered and backwards compatibility must be retained in perpetuity to prevent tasks relying on the runner version for correct operation.  This stuff could happen at the task level with an exported method like task.expandFiles but I really think we can nail the needed use-cases at the runner level to ensure consistency throughout the ecosystem.
-- Merge config values using config-processor lib **before** they are sent to the task.
-- Send raw config / file globs to task during execution, but discourage handling this at the task level.
-- New config conventions allow chaining a single set of files through multiple tasks.
-
-
-
-
-
-
+4. A logger to listen to events and output them to the console.  See: http://github.com/gruntjs/grunt-logger
 
 
 ***Please ignore the section below.  It is a jumbled mess/work in progress and should not be considered anything resembling a roadmap.***
