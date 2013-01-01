@@ -6,7 +6,7 @@
 
 3. A task runner which uses config parsing library from item #3 to execute node-task compatible modules (can be used programmatically, or via cli).  Supports defining "alias" tasks which compile a set of tasks which can be run in parallel  See: http://github.com/gruntjs/grunt
 
-4. A logger to listen to events and output them to the console.  See: http://github.com/gruntjs/grunt-logger
+4. A logger to listen to events and output them to the console.  Deals with stderr/stdout, or grunt itself has this built in.  See: http://github.com/gruntjs/grunt-logger
 
 **0.5 Gruntfile**
 ```js
