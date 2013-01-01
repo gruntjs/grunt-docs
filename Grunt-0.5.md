@@ -1,5 +1,3 @@
-**Architecture**
-
 1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  All task output emitted as events.  See: http://github.com/tkellen/node-task
 
 2. A library for glob expansion that handles arrays of globs, negation, etc. See http://github.com/cowboy/globtastic
@@ -10,7 +8,33 @@
 
 4. A logger to listen to events and output them to the console.  See: http://github.com/gruntjs/grunt-logger
 
+**0.5 Gruntfile**
+```js
+var grunt = require('grunt');
 
+grunt.initConfig({
+  // defaults for cli
+  grunt: {
+    dryRun: true,
+    stack: true,
+    verbose: true
+  },
+  jshint: {},
+  concat: {}
+});
+
+grunt.loadTask(require('grunt-contrib-jshint'));
+grunt.loadTask(require('grunt-contrib-concat'));
+grunt.loadTask(require('grunt-contrib-uglify'), 'uglify'); // optional second param renames
+
+// registerTask generates a node-task compliant object and runs grunt.loadTask on it
+grunt.registerTask('name','description', function (config) {
+  //...
+});
+
+// i think the cli should call this, but putting it here because you mentioned thinking it should go here.
+grunt.run();
+```
 ***Please ignore the section below.  It is a jumbled mess/work in progress and should not be considered anything resembling a roadmap.***
 
 527 - parallel execution of tasks
