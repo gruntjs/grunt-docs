@@ -118,7 +118,7 @@ You may store any arbitrary data inside of the configuration object, and as long
 
 Like most tasks, the [grunt-contrib-uglify plugin] `uglify` task expects its configuration to be specified in a property of the same name. Here, the `banner` option is specified, along with a single uglify target named `dist` that minifies a single source file to a single destination file.
 
-((( link out to the options object page and file lists page )))
+See the [[Configuring tasks]] guide for more task configuration examples.
 
 ```js
 // Project configuration.
