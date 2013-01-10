@@ -5,9 +5,13 @@ Task configuration is specified in your Gruntfile via the `grunt.initConfig` met
 
 ```js
 grunt.initConfig({
-  concat: { /* concat task configuration goes here */ },
-  uglify: { /* uglify task configuration goes here */ },
-  // Arbitrary properties.
+  concat: {
+    // concat task configuration goes here.
+  },
+  uglify: {
+    // uglify task configuration goes here.
+  },
+  // These arbitrary properties aren't used by either task.
   my_property: 'whatever',
   my_src_files: ['foo/*.js', 'bar/*.js'],
 });
