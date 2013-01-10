@@ -1,7 +1,20 @@
 This guide explains how to configure tasks for your project using a Gruntfile.  If you don't know what a Gruntfile is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
+## Grunt configuration
+Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any other arbitrary data. Because multi tasks only care about their data, any other properties will be ignored.
+
+```js
+grunt.initConfig({
+  concat: { /* concat task configuration goes here */ },
+  uglify: { /* uglify task configuration goes here */ },
+  // Arbitrary properties.
+  my_property: 'whatever',
+  my_src_files: ['foo/*.js', 'bar/*.js'],
+});
+```
+
 ## Task Configuration & Targets
-When a task is run, grunt looks for its configuration in the [Gruntfile](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-initConfig) under a property of the same name.  Multi-tasks can have multiple configurations, defined using arbitrarily named "targets."  In the example below, the `concat` task has `foo` and `bar` targets, while the `uglify` task only configures a `bar` target.
+When a task is run, grunt looks for its configuration under a property of the same name. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets." In the example below, the `concat` task has `foo` and `bar` targets, while the `uglify` task only has a `bar` target.
 
 ```js
 grunt.initConfig({
@@ -225,5 +238,29 @@ grunt.initConfig({
       ],
     },
   },
+});
+```
+
+## Templates
+Templates specified using `<%= %>` delimiters will be automatically expanded when tasks read values from the config.
+
+Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concating the banner
+
+```js
+grunt.initConfig({
+  concat: {
+    sample: {
+      options: {
+        banner: '/* <%= baz %> */\n',
+      },
+      src: ['<%= srcs %>', 'baz/*.js'],
+      dest: ['build/<%= baz %>.js']
+    },
+  },
+  // Arbitrary properties.
+  foo: 'c',
+  bar: 'b<%= foo %>d',
+  baz: 'a<%= bar %>e',
+  srcs: ['foo/*.js', 'bar/*.js']
 });
 ```
