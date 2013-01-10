@@ -178,7 +178,7 @@ For more on glob pattern syntax, see the [node-glob documentation][node-glob].
 ### Building the files object dynamically
 When many static src-dest mappings must be specified for a one-to-one process like copying, compiling or minifying files, a few additional properties may be used to build src-dest file mappings dynamically.
 
-* `expand` set to `true` to enable any of the following options
+* `expand` set to `true` to enable the following options
 * `cwd` All `src` matches are relative to (but don't include) this path
 * `src` Pattern(s) to match, relative to the `cwd`
 * `dest` Destination path prefix
@@ -186,9 +186,9 @@ When many static src-dest mappings must be specified for a one-to-one process li
 * `flatten` Remove all path parts from generated `dest` paths
 * `rename` This function is called for each matched `src` file, post-ext/-flatten. The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.
 
-In the following example, the `minify` task will see the same list of src-dest file mappings for both `static_mappings` and `dynamic_mappings` because grunt will automatically expand the specified `dynamic_mappings` files object into 4 individual file objects (assuming 4 files are found) when the task runs.
+In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static file objects (assuming 4 files are found) when the task runs.
 
-Any combination of static src-dest and dynamic src-dest file mappings may be specified.
+Any combination of static src-dest and dynamic src-dest file mappings may be specified, and templates may be used.
 
 ```js
 grunt.initConfig({
