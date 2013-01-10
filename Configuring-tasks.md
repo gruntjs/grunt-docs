@@ -1,7 +1,7 @@
 This guide explains how to configure tasks for your project using a Gruntfile.  If you don't know what a Gruntfile is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
 ## Grunt configuration
-Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any other arbitrary data. Because multi tasks only care about their data, any other properties will be ignored.
+Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any other arbitrary data. Because most tasks only care about their data, other properties will be ignored.
 
 ```js
 grunt.initConfig({
