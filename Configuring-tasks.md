@@ -176,52 +176,44 @@ For example:
 For more on glob pattern syntax, see the [node-glob documentation][node-glob].
 
 ### Building the files object dynamically
-When many related src-dest mapping must be specified for a one-to-one process like copying files, the [grunt.file.expandMapping](https://github.com/gruntjs/grunt/wiki/grunt.file#wiki-grunt-file-expandMapping) method may be used to build the `files` object dynamically.
+When many static src-dest mappings must be specified for a one-to-one process like copying, compiling or minifying files, a few additional properties may be used to build src-dest file mappings dynamically.
 
-In this example, assuming all four src files exist, the following copy task foo and bar `files` objects will be equivalent:
+* `expand` set to `true` to enable any of the following options
+* `cwd` All `src` matches are relative to (but don't include) this path
+* `src` Pattern(s) to match, relative to the `cwd`
+* `dest` Destination path prefix
+* `ext` Replace any existing extension with this value in generated `dest` paths
+* `flatten` Remove all path parts from generated `dest` paths
+* `rename` This function is called for each matched `src` file, post-ext/-flatten. The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.
 
-```js
-grunt.initConfig({
-  copy: {
-    foo: {
-      files: {
-        'dest/a.js': 'src/a.js',
-        'dest/b.js': 'src/b.js',
-        'dest/subdir/c.js': 'src/subdir/c.js',
-        'dest/subdir/d.js': 'src/subdir/d.js',
-      },
-    },
-    bar: {
-      files: grunt.file.expandMapping(['**/*.js'], 'dest', {cwd: 'src'}),
-    },
-  },
-});
-```
-
-In addition, templates may be used to generate dynamic filenames. In this example, assuming all four src files exist, the following copy task foo and bar `files` objects will be equivalent. Because [[template strings]] are expanded when read by a task, destination filepaths can be dynamically updated by changing the `stuff.dest` and ``stuff.ext` properties.
+In this example (assuming all src files exist) the following minify task foo and bar `files` objects will be equivalent, because grunt will automatically expand the dynamic `bar` example when the task runs. Any combination of static src-dest and dynamic src-dest file mappings may be specified.
 
 ```js
 grunt.initConfig({
-  stuff: {
-    dest: 'foo/',
-    ext: '.bar',
-  },
-  copy: {
+  minify: {
     foo: {
-      files: {
-        '<%= stuff.dest %>a<%= stuff.ext %>': 'src/a.js',
-        '<%= stuff.dest %>b<%= stuff.ext %>': 'src/b.js',
-        '<%= stuff.dest %>subdir/c<%= stuff.ext %>': 'src/subdir/c.js',
-        '<%= stuff.dest %>subdir/d<%= stuff.ext %>': 'src/subdir/d.js'
-      },
+      // Because these src-dest file mappings are manually specified, every
+      // time a new file is added or removed, the Gruntfile has to be updated.
+      files: [
+        {src: 'lib/a.js', dest: 'build/a.min.js'},
+        {src: 'lib/b.js', dest: 'build/b.min.js'},
+        {src: 'lib/subdir/c.js', dest: 'build/subdir/c.min.js'},
+        {src: 'lib/subdir/d.js', dest: 'build/subdir/d.min.js'},
+      ],
     },
     bar: {
-      files: grunt.file.expandMapping('**/*.js', '<%= stuff.dest %>', {
-        cwd: 'src',
-        rename: function(destBase, destPath) {
-          return destBase + destPath.replace(/\.js$/, '<%= stuff.ext %>');
-        }
-      })
+      // Grunt will search for "**/?.js" under "lib/" when the "minify" task
+      // runs and build the appropriate src-dest file mappings then, so you
+      // don't need to update the Gruntfile when files are added or removed.
+      files: [
+        {
+          expand: true,     // Enable dynamic expansion.
+          cwd: 'lib/'       // Src matches are relative to this path.
+          src: ['**/?.js'], // Actual pattern(s) to match.
+          dest: 'build/',   // Destination path prefix.
+          ext: '.min.js',   // Dest filepaths will have this extension.
+        },
+      ],
     },
   },
 });
