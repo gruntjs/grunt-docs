@@ -69,7 +69,6 @@ grunt.initConfig({
     bar: {
       src: ['src/bb.js', 'src/bbb.js'],
       dest: 'dest/b.js',
-      nonull: true,
     },
   }
 });
@@ -112,7 +111,7 @@ grunt.initConfig({
     bar: {
       files: [
         {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', nonull: true},
-        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', nonull: true},
+        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', filter: 'isFile'},
       ],
     },
   },
