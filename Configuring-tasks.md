@@ -73,7 +73,7 @@ All files formats support `src` and `dest` but the "Compact" and "Files Array" f
 * Other properties will be passed into [node-glob][] as matching options.
 
 ### Compact Format
-This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant.
+This form allows a single **src-dest** (source-destination) file mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. This format also supports additional properties per src-dest file mapping.
 
 ```js
 grunt.initConfig({
@@ -92,7 +92,7 @@ grunt.initConfig({
 ```
 
 ### Files Object Format
-This form supports multiple src-dest mappings per-target, where the property name is the destination file, and its value is the source file(s). Any number of src-dest mappings may be specified in this way.
+This form supports multiple src-dest mappings per-target, where the property name is the destination file, and its value is the source file(s). Any number of src-dest file mappings may be specified in this way, but additional properties may not be specified per mapping.
 
 ```js
 grunt.initConfig({
@@ -114,7 +114,7 @@ grunt.initConfig({
 ```
 
 ### Files Array Format
-This form supports multiple src-dest mappings per-target, while also allowing extra properties for each src-dest mapping.
+This form supports multiple src-dest file mappings per-target, while also allowing additional properties per mapping.
 
 ```js
 grunt.initConfig({
@@ -136,7 +136,7 @@ grunt.initConfig({
 ```
 
 ### Older formats
-The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options.
+The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options or additional properties per src-dest file mapping.
 
 Consider this format deprecated, and avoid it where possible.
 
@@ -246,9 +246,14 @@ grunt.initConfig({
 ```
 
 ## Templates
-Templates specified using `<%= %>` delimiters will be automatically expanded when tasks read values from the config.
+Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more `<% %>` templates remain.
 
-Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concating the banner
+The entire config object is the context in which properties are resolved. Additionally, `grunt` and its methods are available inside templates, eg. `<%= grunt.template.today('yyyy-mm-dd') %>`.
+
+* `<%= prop.subprop %>` Expand to the value of `prop.subprop` in the config, regardless of type. Templates ike this can be used to reference not only string values, but also arrays or other objects.
+* `<% %>` Execute arbitrary inline JavaScript code. This is useful with control flow or looping.
+
+Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concating the banner `/* abcde */` with all files matching `foo/*.js` + `bar/*.js` + `baz/*.js`.
 
 ```js
 grunt.initConfig({
@@ -261,7 +266,7 @@ grunt.initConfig({
       dest: ['build/<%= baz %>.js']
     },
   },
-  // Arbitrary properties.
+  // Arbitrary properties used in task configuration templates.
   foo: 'c',
   bar: 'b<%= foo %>d',
   baz: 'a<%= bar %>e',
