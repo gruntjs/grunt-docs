@@ -246,7 +246,7 @@ grunt.initConfig({
 ```
 
 ## Templates
-Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more `<% %>` templates remain.
+Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more remain.
 
 The entire config object is the context in which properties are resolved. Additionally, `grunt` and its methods are available inside templates, eg. `<%= grunt.template.today('yyyy-mm-dd') %>`.
 
