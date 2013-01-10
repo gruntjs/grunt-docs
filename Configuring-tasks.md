@@ -186,12 +186,14 @@ When many static src-dest mappings must be specified for a one-to-one process li
 * `flatten` Remove all path parts from generated `dest` paths
 * `rename` This function is called for each matched `src` file, post-ext/-flatten. The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.
 
-In this example (assuming all src files exist) the following minify task foo and bar `files` objects will be equivalent, because grunt will automatically expand the dynamic `bar` example when the task runs. Any combination of static src-dest and dynamic src-dest file mappings may be specified.
+In the following example, the `minify` task will see the same list of src-dest file mappings for both `static_mappings` and `dynamic_mappings` because grunt will automatically expand the specified `dynamic_mappings` files object into 4 individual file objects (assuming 4 files are found) when the task runs.
+
+Any combination of static src-dest and dynamic src-dest file mappings may be specified.
 
 ```js
 grunt.initConfig({
   minify: {
-    foo: {
+    static_mappings: {
       // Because these src-dest file mappings are manually specified, every
       // time a new file is added or removed, the Gruntfile has to be updated.
       files: [
@@ -201,7 +203,7 @@ grunt.initConfig({
         {src: 'lib/subdir/d.js', dest: 'build/subdir/d.min.js'},
       ],
     },
-    bar: {
+    dynamic_mappings: {
       // Grunt will search for "**/?.js" under "lib/" when the "minify" task
       // runs and build the appropriate src-dest file mappings then, so you
       // don't need to update the Gruntfile when files are added or removed.
