@@ -48,10 +48,15 @@ grunt.initConfig({
 ## Files
 Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
 
+All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
+
+* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
+* `nonull` Retain `src` patterns even if they fail to match files.
+* `expand` Process a dynamic src-dest file mapping, see "Building the files object dynamically" for more information.
+* Other properties will be passed into [node-glob][] as matching options.
+
 ### Compact Format
 This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant.
-
-Properties other than `src` or `dest` may be used to build src-dest file mappings dynamically, or will be passed to [node-glob][] when the match is made. For example, if the `nonull` property is set, `src` patterns will be retained even if they fail to match files. If the `expand` property is set, src-dest file mappings will be built dynamically.
 
 ```js
 grunt.initConfig({
@@ -94,8 +99,6 @@ grunt.initConfig({
 
 ### Files Array Format
 This form supports multiple src-dest mappings per-target, while also allowing extra properties for each src-dest mapping.
-
-Properties other than `src` or `dest` may be used to build src-dest file mappings dynamically, or will be passed to [node-glob][] when the match is made. For example, if the `nonull` property is set, `src` patterns will be retained even if they fail to match files. If the `expand` property is set, src-dest file mappings will be built dynamically.
 
 ```js
 grunt.initConfig({
