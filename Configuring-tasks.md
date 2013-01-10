@@ -30,13 +30,13 @@ grunt.initConfig({
     },
     bar: {
       // concat task "bar" target options and files go here.
-    }
+    },
   },
   uglify: {
     bar: {
       // uglify task "bar" target options and files go here.
-    }
-  }
+    },
+  },
 });
 ```
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
@@ -89,7 +89,7 @@ grunt.initConfig({
       src: ['src/bb.js', 'src/bbb.js'],
       dest: 'dest/b.js',
     },
-  }
+  },
 });
 ```
 
@@ -265,13 +265,13 @@ grunt.initConfig({
         banner: '/* <%= baz %> */\n',   // '/* abcde */\n'
       },
       src: ['<%= qux %>', 'baz/*.js'],  // [['foo/*.js', 'bar/*.js'], 'baz/*.js']
-      dest: 'build/<%= baz %>.js'       // 'build/abcde.js'
+      dest: 'build/<%= baz %>.js',      // 'build/abcde.js'
     },
   },
   // Arbitrary properties used in task configuration templates.
   foo: 'c',
   bar: 'b<%= foo %>d', // 'bcd'
   baz: 'a<%= bar %>e', // 'abcde'
-  qux: ['foo/*.js', 'bar/*.js']
+  qux: ['foo/*.js', 'bar/*.js'],
 });
 ```
