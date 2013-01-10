@@ -1,7 +1,9 @@
 This guide explains how to configure tasks for your project using a Gruntfile.  If you don't know what a Gruntfile is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
 ## Grunt Configuration
-Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any other arbitrary data. Because most tasks only care about their data, other properties will be ignored.
+Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any arbitrary data. As long as properties don't conflict with properties your tasks require, they will be otherwise ignored.
+
+Also, because this is JavaScript, you're not limited to JSON; you may use any valid JavaScript here. You may even programmatically generate the configuration if necessary.
 
 ```js
 grunt.initConfig({
@@ -204,17 +206,17 @@ For more on glob pattern syntax, see the [node-glob documentation][node-glob].
 ### Building the files object dynamically
 When many static src-dest mappings must be specified for a one-to-one process like copying, compiling or minifying files, a few additional properties may be used to build src-dest file mappings dynamically.
 
-* `expand` set to `true` to enable the following options
-* `cwd` All `src` matches are relative to (but don't include) this path
-* `src` Pattern(s) to match, relative to the `cwd`
-* `dest` Destination path prefix
-* `ext` Replace any existing extension with this value in generated `dest` paths
-* `flatten` Remove all path parts from generated `dest` paths
+* `expand` Set to `true` to enable the following options:
+* `cwd` All `src` matches are relative to (but don't include) this path.
+* `src` Pattern(s) to match, relative to the `cwd`.
+* `dest` Destination path prefix.
+* `ext` Replace any existing extension with this value in generated `dest` paths.
+* `flatten` Remove all path parts from generated `dest` paths.
 * `rename` This function is called for each matched `src` file, post-ext/-flatten. The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.
 
-In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static file objects (assuming 4 files are found) when the task runs.
+In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
-Any combination of static src-dest and dynamic src-dest file mappings may be specified, and templates may be used.
+Any combination of static src-dest and dynamic src-dest file mappings may be specified.
 
 ```js
 grunt.initConfig({
@@ -273,5 +275,25 @@ grunt.initConfig({
   bar: 'b<%= foo %>d', // 'bcd'
   baz: 'a<%= bar %>e', // 'abcde'
   qux: ['foo/*.js', 'bar/*.js'],
+});
+```
+
+## Importing External Data
+In the following Gruntfile, project metadata is imported into the grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin](http://github.com/gruntjs/grunt-contrib-uglify) `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
+
+Grunt has `grunt.file.readJSON` and `grunt.file.readYAML` methods for importing JSON and YAML data.
+
+```js
+grunt.initConfig({
+  pkg: grunt.file.readJSON('package.json'),
+  uglify: {
+    options: {
+      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+    },
+    dist: {
+      src: 'src/<%= pkg.name %>.js',
+      dest: 'dist/<%= pkg.name %>.min.js'
+    }
+  }
 });
 ```
