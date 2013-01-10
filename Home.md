@@ -3,7 +3,6 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 * [[Getting Started]]
 * [[Configuring Tasks]]
 * [[Frequently Asked Questions]]
-* [[Template Strings]]
 * [[Contributing]]
 * [[Why Grunt?]]
 * [[Creating Tasks]]
