@@ -11,7 +11,7 @@ grunt.initConfig({
   uglify: {
     // uglify task configuration goes here.
   },
-  // These arbitrary properties aren't used by either task.
+  // Arbitrary non-task-specific properties.
   my_property: 'whatever',
   my_src_files: ['foo/*.js', 'bar/*.js'],
 });
