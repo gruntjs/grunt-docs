@@ -51,7 +51,7 @@ Because most tasks perform file operations, Grunt has powerful abstractions for 
 ### Compact Format
 This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant.
 
-If the `nonull` property is set, `src` patterns will be retained even if they fail to match files.
+Properties other than `src` or `dest` may be used to build src-dest file mappings dynamically, or will be passed to [node-glob][] when the match is made. For example, if the `nonull` property is set, `src` patterns will be retained even if they fail to match files. If the `expand` property is set, src-dest file mappings will be built dynamically.
 
 ```js
 grunt.initConfig({
@@ -95,7 +95,7 @@ grunt.initConfig({
 ### Files Array Format
 This form supports multiple src-dest mappings per-target, while also allowing extra properties for each src-dest mapping.
 
-If the `nonull` property is set, `src` patterns will be retained even if they fail to match files.
+Properties other than `src` or `dest` may be used to build src-dest file mappings dynamically, or will be passed to [node-glob][] when the match is made. For example, if the `nonull` property is set, `src` patterns will be retained even if they fail to match files. If the `expand` property is set, src-dest file mappings will be built dynamically.
 
 ```js
 grunt.initConfig({
