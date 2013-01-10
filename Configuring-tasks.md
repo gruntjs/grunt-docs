@@ -46,10 +46,12 @@ grunt.initConfig({
 ```
 
 ## Files
-Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
+Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
 
 ### Compact Format
-This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. 
+This form allows a single **src-dest** (source-destination) mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant.
+
+If the `nonull` property is set, `src` patterns will be retained even if they fail to match files.
 
 ```js
 grunt.initConfig({
@@ -61,7 +63,8 @@ grunt.initConfig({
   concat: {
     bar: {
       src: ['src/bb.js', 'src/bbb.js'],
-      dest: 'dest/b.js'
+      dest: 'dest/b.js',
+      nonull: true,
     },
   }
 });
@@ -92,6 +95,8 @@ grunt.initConfig({
 ### Files Array Format
 This form supports multiple src-dest mappings per-target, while also allowing extra properties for each src-dest mapping.
 
+If the `nonull` property is set, `src` patterns will be retained even if they fail to match files.
+
 ```js
 grunt.initConfig({
   concat: {
@@ -103,8 +108,8 @@ grunt.initConfig({
     },
     bar: {
       files: [
-        {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', flatten: true},
-        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', flatten: false},
+        {src: ['src/bb.js', 'src/bbb.js'], dest: 'dest/b/', nonull: true},
+        {src: ['src/bb1.js', 'src/bbb1.js'], dest: 'dest/b1/', nonull: true},
       ],
     },
   },
