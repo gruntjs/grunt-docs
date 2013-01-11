@@ -53,7 +53,7 @@ grunt.config.get([prop])
 
 <a name="grunt-config-process"></a>
 ### grunt.config.process
-Process a value, recursively expanding `<% %>` templates (via the `grunt.template.process` method) in the context of the grunt config, as they are encountered.
+Process a value, recursively expanding `<% %>` templates (via the `grunt.template.process` method) in the context of the grunt config, as they are encountered. this method is called automatically by `grunt.config.get` but _not_ by `grunt.config.getRaw`.
 
 ```js
 grunt.config.process(value)
