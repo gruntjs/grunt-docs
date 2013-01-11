@@ -1,4 +1,11 @@
-For most users, the installation instructions in the [[Getting Started]] guide will be sufficient. If you have already read that guide, yet have unanswered questions, please read on.
+For general installtion instructions, please read the [[Getting Started]] guide. If you need more specific information, after having read that, read on.
+
+## Overview
+
+Grunt is comprised of two parts: `grunt` and `grunt-cli`.
+
+1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
+1. The npm module `grunt-cli` should be installed globally. It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the grunt that has been installed locally to your project, regardless of its version.
 
 It is preferable to specify grunt and grunt plugins as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html) and instruct users to do `npm install` than to have users install grunt and grunt plugins manually. Utilizing `package.json` makes the task of installing grunt (and any other dev dependencies) much easier and less error-prone.
 
@@ -28,5 +35,5 @@ If you want to install a bleeding-edge, unpublished version of grunt, follow the
 
 The specified git URL may be that of the official grunt repo or a fork.
 
-
 ## Installing grunt-cli locally
+(todo)
