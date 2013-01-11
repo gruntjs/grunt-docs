@@ -1,4 +1,4 @@
-There are many provided methods for reading and writing files, traversing the filesystem and finding files by matching wildcard patterns. Many of these methods are wrappers around built-in Node.js file functionality, but with additional error handling, logging and character encoding normalization.
+There are many provided methods for reading and writing files, traversing the filesystem and finding files by matching globbing patterns. Many of these methods are wrappers around built-in Node.js file functionality, but with additional error handling, logging and character encoding normalization.
 
 _Note: all file paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
 
@@ -89,11 +89,11 @@ var options = {
   // whose return value will be used as the destination file's contents. If
   // this function returns `false`, the file copy will be aborted.
   process: processFunction,
-  // These optional wildcard patterns will be matched against the filepath
-  // (not the filename) using grunt.file.isMatch. If any specified wildcard
+  // These optional globbing patterns will be matched against the filepath
+  // (not the filename) using grunt.file.isMatch. If any specified globbing
   // pattern matches, the file won't be processed via the `process` function.
   // If `true` is specified, processing will be prevented.
-  noProcess: wildcardPatterns
+  noProcess: globbingPatterns
 };
 ```
 
@@ -155,12 +155,14 @@ function callback(abspath, rootdir, subdir, filename) {
 }
 ```
 
-## File Lists and Wildcards
-Wildcard patterns are resolved using the [glob library](https://github.com/isaacs/node-glob). See the [minimatch library](https://github.com/isaacs/minimatch) documentation for more details on supported wildcard patterns and matching options.
+## Globbing patterns
+It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob](https://github.com/isaacs/node-glob) library.
+
+See the "Globbing patterns" section of the [[Configuring tasks]] guide for globbing pattern examples.
 
 <a name="grunt-file-expand"></a>
 ### grunt.file.expand
-Return a unique array of all file or directory paths that match the given wildcard pattern(s). This method accepts either comma separated wildcard patterns or an array of wildcard patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
+Return a unique array of all file or directory paths that match the given globbing pattern(s). This method accepts either comma separated globbing patterns or an array of globbing patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
 ```js
 grunt.file.expand([options, ] patterns)
@@ -183,7 +185,7 @@ Returns an array of src-dest file mapping objects. For each source file matched 
 grunt.file.expandMapping(patterns, dest [, options])
 ```
 
-Note that while this method may be used to programmatically generate a `files` array for a multi task, the declarative syntax for doing this described in the "Building the files object dynamically" section of the [[Configuring tasks]] guide is preferred.
+_Note that while this method may be used to programmatically generate a `files` array for a multi task, the declarative syntax for doing this described in the "Building the files object dynamically" section of the [[Configuring tasks]] guide is preferred._
 
 In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
 
@@ -208,7 +210,7 @@ var options = {
 
 <a name="grunt-file-match"></a>
 ### grunt.file.match
-Match one or more wildcard patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified wildcard patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
+Match one or more globbing patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified globbing patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
 ```js
 grunt.file.match([options, ] patterns, filepaths)
