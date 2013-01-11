@@ -9,7 +9,7 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 * [[Creating Plugins]]
 
 ## Advanced
-* [[Installing grunt]]
+* [[Installing Grunt]]
 * [[Advanced Usage]]
 * [[Frequently Asked Questions]]
 
