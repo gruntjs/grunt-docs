@@ -180,7 +180,10 @@ module.exports = function(grunt) {
 };
 ```
 
-For more information about writing custom tasks or grunt plugins, check out the [developer documentation](https://github.com/gruntjs/grunt/wiki/grunt).
+## Further Reading
+
+* For more information about writing custom tasks or grunt plugins, check out the [developer documentation](https://github.com/gruntjs/grunt/wiki/grunt).
+* The [[Installing grunt]] guide has detailed information about installing specific, production or in-development, versions of grunt and grunt-cli.
 
 [Gruntfile]: #the-gruntfile
 [package.json]: #packagejson
