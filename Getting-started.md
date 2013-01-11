@@ -184,6 +184,7 @@ module.exports = function(grunt) {
 
 * The [[Installing grunt]] guide has detailed information about installing specific, production or in-development, versions of grunt and grunt-cli.
 * The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the Gruntfile, along with an explanation of templates, globbing patterns and importing external data.
+* The [[Creating Tasks]] guide lists the differences between the types of grunt tasks and shows a number of sample tasks and configurations.
 * For more information about writing custom tasks or grunt plugins, check out the [developer documentation](https://github.com/gruntjs/grunt/wiki/grunt).
 
 [Gruntfile]: #the-gruntfile
