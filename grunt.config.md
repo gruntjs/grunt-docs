@@ -45,32 +45,21 @@ grunt.config([prop [, value]])
 
 <a name="grunt-config-get"></a>
 ### grunt.config.get
-Get a value from the project's grunt configuration. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned.
+Get a value from the project's grunt configuration. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned. Templates strings will be recursively processed using the `grunt.config.process` method.
 
 ```js
 grunt.config.get([prop])
 ```
 
-#### Recursive template processing
-Note that any `<% %>` template strings will be recursively processed via the `grunt.template.process` method. Raw values can be accessed via the `grunt.config.getRaw` method.
-
-If any retrieved value is entirely a single `'<%= foo %>'` or `'<%= foo.bar %>'` template string, and the specified `foo` or `foo.bar` property is a non-string (and not `null` or `undefined`) value, it will be expanded to the _actual_ value. That, combined with the fact that the `grunt.file.expand` method will automatically flatten arrays, can be extremely useful.
-
-For example:
+<a name="grunt-config-process"></a>
+### grunt.config.process
+Process a value, recursively expanding `<% %>` templates (via the `grunt.template.process` method) in the context of the grunt config, as they are encountered.
 
 ```js
-grunt.config.init({
-  basename: 'foo',
-  extension: 'txt',
-  file: '<%= basename %>.<%= extension %>',
-  files: ['<%= file %>', 'bar.txt'],
-  files2: ['<%= files %>', 'baz.txt']
-});
-
-grunt.config.get('file')   // 'foo.txt'
-grunt.config.get('files')  // ['foo.txt', 'bar.txt']
-grunt.config.get('files2') // [['foo.txt', 'bar.txt'], 'baz.txt']
+grunt.config.process(value)
 ```
+
+If any retrieved value is entirely a single `'<%= foo %>'` or `'<%= foo.bar %>'` template string, and the specified `foo` or `foo.bar` property is a non-string (and not `null` or `undefined`) value, it will be expanded to the _actual_ value. That, combined with grunt's task system automatically flattening arrays, can be extremely useful.
 
 <a name="grunt-config-getRaw"></a>
 ### grunt.config.getRaw
