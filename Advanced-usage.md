@@ -13,7 +13,7 @@ Periodically, as new functionality is being developed, grunt builds will be publ
 
 Like installing a specific version of grunt, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need. Note that regardless of the version you specify, a [tilde version range][] will be specified in `package.json`. In this case, this is a **very bad thing** as new, possibly incompatible, patch releases of the specified version will be automatically installed by npm, and your build will be broken.
 
-**In this case it is very important that you manually edit `package.json` and remove the ~ (tilde) from the version number. This locks in the in-development version that you have specified. You will need to manually change the version in `package.json` if you want a different version of grunt to be installed.**
+_In this case it is **very important** that you manually edit `package.json` and remove the ~ (tilde) from the version number. This locks in the in-development version that you have specified. You will need to manually change the version in `package.json` if you want a different version of grunt to be installed._
 
 ### Installing an unpublished development version of grunt
 If you want to install a bleeding-edge, unpublished version of grunt, follow the instructions for specifying a [git URL as a dependency](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies) and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of grunt.
