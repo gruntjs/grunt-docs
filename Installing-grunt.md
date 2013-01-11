@@ -40,6 +40,6 @@ As the "Installing the CLI" section of the [[Getting Started]] guide explains, r
 **If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
 
 ### Installing grunt-cli locally
-While you may install `grunt-cli` locally to a project, instead of being able to access the `grunt` command from anywhere, you'll need to specify its explicit local path, which will be something like `./node_modules/.bin/grunt`.
+You may install grunt-cli locally to a project using `npm install grunt-cli --save-dev` but instead of being able to access the `grunt` command from anywhere, you'll need to specify its explicit local path, which will be something like `./node_modules/.bin/grunt`.
 
-Using `grunt-cli` in this way is unsupported.
+Using grunt-cli in this way is unsupported.
