@@ -6,7 +6,7 @@ If you don't specify a task, but a task named "default" has been defined, that t
 If a task list is specified, the new task will be an alias for one or more other tasks. Whenever this "alias task" is run, every specified task in `taskList` will be run, in the order specified. The `taskList` argument must be an array of tasks.
 
 ```javascript
-grunt.registerTask(taskName, taskList)
+grunt.registerTask(taskName, [description, ] taskList)
 ```
 
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if grunt is executed without any tasks specified:
