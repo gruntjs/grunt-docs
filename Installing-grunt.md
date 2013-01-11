@@ -1,3 +1,5 @@
+For most users, the installation instructions in the [[Getting Started]] guide will be sufficient. If you have already read that guide, yet have unanswered questions, please read on.
+
 It is preferable to specify grunt and grunt plugins as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html) and instruct users to do `npm install` than to have users install grunt and grunt plugins manually. Utilizing `package.json` makes the task of installing grunt (and any other dev dependencies) much easier and less error-prone.
 
 ## Installing the latest release of grunt
