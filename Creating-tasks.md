@@ -27,7 +27,7 @@ If a `description` and `taskFunction` are passed, the specified function will be
 Note that the `grunt.registerMultiTask` method, explained below, can be used to define a special type of task known as a "multi task."
 
 ```javascript
-grunt.registerTask(taskName, description, taskFunction)
+grunt.registerTask(taskName, [description, ] taskFunction)
 ```
 
 This example task logs `foo, testing 123` if grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
@@ -48,7 +48,7 @@ Register a "multi task." A multi task is a task that implicitly iterates over al
 Many of the contrib tasks, including the [jshint task](https://github.com/gruntjs/grunt-contrib-jshint), [concat task](https://github.com/gruntjs/grunt-contrib-concat) and [uglify task](https://github.com/gruntjs/grunt-contrib-jshint) are multi tasks.
 
 ```javascript
-grunt.registerMultiTask(taskName, description, taskFunction)
+grunt.registerMultiTask(taskName, [description, ] taskFunction)
 ```
 
 Given the specified configuration, this example multi task would log `foo: 1,2,3` if grunt was run via `grunt log:foo`, or it would log `bar: hello world` if grunt was run via `grunt log:bar`. If grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
