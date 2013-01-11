@@ -21,7 +21,7 @@ If you need a specific version of grunt, run `npm install grunt@VERSION --save-d
 Note that a [tilde version range][] will be automatically specified in `package.json`. This is typically good, as new patch releases of the specified version will be installable by npm. If you don't want this behavior, manually edit your `package.json` and remove the ~ (tilde) from the version number. This will lock in the exact version that you have specified.
 
 ### Installing a published development version of grunt
-Periodically, as new functionality is being developed, grunt builds will be published to npm. These builds will _not_ be published as a `@latest` official release, and will typically have a build number or alpha/beta/release candidate desgination.
+Periodically, as new functionality is being developed, grunt builds will be published to npm. These builds will _not_ be published as a `@latest` official release, and will typically have a build number or alpha/beta/release candidate designation.
 
 Like installing a specific version of grunt, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need, and npm will install that version of grunt in your project folder, adding it to your `package.json` devDependencies.
 

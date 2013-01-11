@@ -255,10 +255,10 @@ Templates specified using `<% %>` delimiters will be automatically expanded when
 
 The entire config object is the context in which properties are resolved. Additionally, `grunt` and its methods are available inside templates, eg. `<%= grunt.template.today('yyyy-mm-dd') %>`.
 
-* `<%= prop.subprop %>` Expand to the value of `prop.subprop` in the config, regardless of type. Templates ike this can be used to reference not only string values, but also arrays or other objects.
+* `<%= prop.subprop %>` Expand to the value of `prop.subprop` in the config, regardless of type. Templates like this can be used to reference not only string values, but also arrays or other objects.
 * `<% %>` Execute arbitrary inline JavaScript code. This is useful with control flow or looping.
 
-Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concating the banner `/* abcde */` with all files matching `foo/*.js` + `bar/*.js` + `baz/*.js`.
+Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concatenating the banner `/* abcde */` with all files matching `foo/*.js` + `bar/*.js` + `baz/*.js`.
 
 ```js
 grunt.initConfig({
