@@ -82,9 +82,9 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 * [grunt](grunt)
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
 * [grunt.config](grunt.config)
-  * Changed `config.get` method to automatically recursively expand `<% %>` templates.
-  * Added `config.getRaw` method that will retrieve raw (unexpanded) config data.
-  * Changed `config.process` method to now process a value as if it had been retrived from the config, expanding templates recursively. This method is called internally inside of `config.get`, but _not_ inside of `config.getRaw`.
+  * Changed [config.get](grunt.config#wiki-grunt-config-get) method to automatically recursively expand `<% %>` templates.
+  * Added [config.getRaw](grunt.config#wiki-grunt-config-getRaw) method that will retrieve raw (unexpanded) config data.
+  * Changed [config.process](grunt.config#wiki-grunt-config-process) method to now process a value as if it had been retrived from the config, expanding templates recursively. This method is called internally inside of `config.get`, but _not_ inside of `config.getRaw`.
 * [grunt.event](grunt.event) added so that tasks may emit events.
 * [grunt.fail](grunt.fail)
   * Won't emit a beep if `--no-color` option specified.
