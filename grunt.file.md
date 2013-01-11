@@ -158,8 +158,6 @@ function callback(abspath, rootdir, subdir, filename) {
 ## File Lists and Wildcards
 Wildcard patterns are resolved using the [glob library](https://github.com/isaacs/node-glob). See the [minimatch library](https://github.com/isaacs/minimatch) documentation for more details on supported wildcard patterns and matching options.
 
-There are also a number of [task-specific file listing methods](api_task.md) that find files inside grunt plugins and task directories.
-
 <a name="grunt-file-expand"></a>
 ### grunt.file.expand
 Return a unique array of all file or directory paths that match the given wildcard pattern(s). This method accepts either comma separated wildcard patterns or an array of wildcard patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
@@ -170,58 +168,23 @@ grunt.file.expand([options, ] patterns)
 
 File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
 
-The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options. Here are a few examples of where these options might be useful:
+The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options, and a few others. For example:
 
-* If `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
-* If `options.nonull` is true, patterns that fail to match anything will be returned in the result set. This allows further testing with `grunt.file.exists` to determine if any of the specified patterns were invalid.
-* If `options.cwd` is set, patterns will be matched relative to that path, and all returned filepaths will also be relative to that path.
-
-<a name="grunt-file-expandDirs"></a>
-### grunt.file.expandDirs
-This method behaves the same as `grunt.file.expand` except it only returns directory paths.
-
-```js
-grunt.file.expandDirs([options, ] patterns)
-```
-
-<a name="grunt-file-expandFiles"></a>
-### grunt.file.expandFiles
-This method behaves the same as `grunt.file.expand` except it only returns file paths.
-
-```js
-grunt.file.expandFiles([options, ] patterns)
-```
-
-This method is used by many built-in tasks to handle wildcard expansion of the specified source files.
-
-<a name="grunt-file-expandFileURLs"></a>
-### grunt.file.expandFileURLs
-Return a unique array of all `file://` URLs for files that match the given wildcard pattern(s). Any absolute `file://`, `http://` or `https://` URLs specified will be passed through. This method accepts one or more comma separated wildcard patterns (or URLs), as well as an array of wildcard patterns (or URLs).
-
-```js
-grunt.file.expandFileURLs(patternsOrURLs)
-```
+* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
+* `nonull` Retain `src` patterns even if they fail to match files. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
+* `matchBase` Patterns without slashes will match just the basename part. Eg. this makes `*.js` work like `**/*.js`.
+* `cwd` Patterns will be matched relative to this path, and all returned filepaths will also be relative to this path.
 
 <a name="grunt-file-expandMapping"></a>
 ### grunt.file.expandMapping
-Returns an array of src-dest file mappings suitable for use as a multi task "files" property. For each source file matched by a specified pattern, join that file path to the specified `destBase`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
+Returns an array of src-dest file mapping objects. For each source file matched by a specified pattern, join that file path to the specified `dest`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
 
 ```js
-grunt.file.expandMapping(patterns, destBase [, options])
+grunt.file.expandMapping(patterns, dest [, options])
 ```
 
-Compiling a directory of coffee-script files to JS:
-```js
-coffee: {
-  compile: {
-    files: grunt.file.expandMapping(['path/to/*.coffee'], 'path/to/dest/', {
-      rename: function(destBase, destPath) {
-        return destBase + destPath.replace(/\.coffee$/, '.js');
-      }
-    })
-  }
-}
-```
+Note that while this method may be used to programmatically generate a `files` array for a multi task, the declarative syntax for doing this described in the "Building the files object dynamically" section of the [[Configuring tasks]] guide is preferred.
+
 In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
 
 ```js
@@ -230,17 +193,18 @@ var options = {
   // cwd is effectively stripped from the beginning of all matched paths.
   cwd: String,
   // Remove the path component from all matched src files. The src file path
-  // is still joined to the specified destBase.
+  // is still joined to the specified dest.
   flatten: Boolean,
+  // Remove anything after (and including) the first "." in the destination
+  // path, then append this value.
+  ext: String,
   // If specified, this function will be responsible for returning the final
-  // dest filepath. By default, it joins destBase and destPath:
-  rename: function(destBase, destPath, options) {
-    return path.join(destBase, destPath);
+  // dest filepath. By default, it joins dest and matchedSrcPath like so:
+  rename: function(dest, matchedSrcPath, options) {
+    return path.join(dest, matchedSrcPath);
   }
 };
 ```
-
-See the [[Configuring tasks]] guide for more information on configuring multi tasks.
 
 <a name="grunt-file-match"></a>
 ### grunt.file.match
@@ -254,7 +218,7 @@ The `options` object supports all [minimatch library](https://github.com/isaacs/
 
 <a name="grunt-file-isMatch"></a>
 ### grunt.file.isMatch
-This method behaves similarly to `grunt.file.match` except it simply returns `true` if any files were matched, otherwise `false`.
+This method contains the same signature and logic as the `grunt.file.match` method, but simply returns `true` if any files were matched, otherwise `false`.
 
 ## File types
 
