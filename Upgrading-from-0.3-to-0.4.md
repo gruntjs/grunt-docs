@@ -82,9 +82,9 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 * [grunt](grunt)
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
 * [grunt.config](grunt.config)
-  * Changed `config.get` to automatically recursively expand `<% %>` templates.
-  * Added `config.getRaw` will retrieve raw (unexpanded) data.
-  * Changed `config.process` to now process a value as if it had been retrived from the config. This method is called internally inside of `config.get`, but _not_ inside of `config.getRaw`.
+  * Changed `config.get` method to automatically recursively expand `<% %>` templates.
+  * Added `config.getRaw` method that will retrieve raw (unexpanded) config data.
+  * Changed `config.process` method to now process a value as if it had been retrived from the config, expanding templates recursively. This method is called internally inside of `config.get`, but _not_ inside of `config.getRaw`.
 * [grunt.event](grunt.event) added so that tasks may emit events.
 * [grunt.fail](grunt.fail)
   * Won't emit a beep if `--no-color` option specified.
@@ -130,7 +130,7 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Multiple src-dest file mappings may now be specified per target in a `files` object (this is optional).
 * [this.files / grunt.task.current.files](grunt.task#wiki-this-files)
   * The `this.files` property is an array of src-dest file mapping objects to be iterated over in your multi task. It will always be an array, and you should always iterate over it, even if the most common use case is to specify a single file.
-  * Each src-dest file mapping object has a `src` and `dest` property (and possibly others, depending on what the user specified).
+  * Each src-dest file mapping object has a `src` and `dest` property (and possibly others, depending on what the user specified). The `src` property is already expanded from whatever glob pattern the user may have specified.
 * [this.filesSrc / grunt.task.current.filesSrc](grunt.task#wiki-this-filesSrc)
   * The `this.filesSrc` property is a reduced, uniqued array of all files matched by all specified `src` properties. Useful for read-only tasks.
 * [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
