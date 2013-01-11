@@ -2,13 +2,16 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 
 * [[Getting Started]]
 * [[Configuring Tasks]]
-* [[Frequently Asked Questions]]
 * [[Contributing]]
 * [[Why Grunt?]]
 * [[Creating Tasks]]
 * [[Testing Tasks]]
 * [[Creating Plugins]]
+
+## Advanced
+* [[Installing grunt]]
 * [[Advanced Usage]]
+* [[Frequently Asked Questions]]
 
 ## API Docs
 * [[grunt]]
