@@ -1,7 +1,7 @@
 ## Installing grunt
 
 ### Installing the latest release of grunt
-As the "Installing grunt and grunt plugins" section of the [[Getting Started]] guide explains, run `npm install grunt --save-dev` and npm will install the latest official version of grunt in your project folder, adding it to your `package.json` devDependencies. Specifying `grunt` this way is the same as specifying `grunt@latest`.
+As the "Installing grunt and grunt plugins" section of the [[Getting Started]] guide explains, run `npm install grunt --save-dev` and npm will install the latest official version of grunt in your project folder, adding it to your `package.json` devDependencies. You can specify `grunt` or `grunt@latest` in this case, the `latest` identifier is just an npm tag for the last-published release version.
 
 ### Installing a specific version of grunt
 If you need a specific version of grunt, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need. Note that regardless of the version you specify, a [tilde version range][] will be specified in `package.json`. This is a good thing; as new patch releases of the specified version are published, npm will be able to install them.
