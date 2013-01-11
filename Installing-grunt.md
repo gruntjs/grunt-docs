@@ -1,7 +1,6 @@
-For general installtion instructions, please read the [[Getting Started]] guide. If you need more specific information, after having read that, read on.
+For general installation instructions, please read the [[Getting Started]] guide. If you need more specific information after having read that, read on.
 
 ## Overview
-
 Grunt is comprised of two parts: `grunt` and `grunt-cli`.
 
 1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
@@ -10,8 +9,6 @@ Grunt is comprised of two parts: `grunt` and `grunt-cli`.
 It is preferable to specify grunt and grunt plugins as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html) and instruct users to do `npm install` than to have users install grunt and grunt plugins manually. Utilizing `package.json` makes the task of installing grunt (and any other dev dependencies) much easier and less error-prone.
 
 ## Installing grunt
-
-### Installing the latest release of grunt
 As the "Installing grunt and grunt plugins" section of the [[Getting Started]] guide explains, run `npm install grunt --save-dev` and npm will install the latest official version of grunt in your project folder, adding it to your `package.json` devDependencies. You can specify either `grunt` or `grunt@latest` as `latest` is just an npm tag for the last-published release version.
 
 Note that a [tilde version range][] will be automatically specified in `package.json`. This is good, as new patch releases of the latest version will be installable by npm.
@@ -40,4 +37,6 @@ The specified git URL may be that of the official grunt repo or a fork.
 ## Installing grunt-cli
 
 ### Installing grunt-cli locally
-(todo)
+While you may install `grunt-cli` locally to a project, instead of being able to access the `grunt` command from anywhere, you'll need to specify its explicit local path, which will be something like `./node_modules/.bin/grunt`.
+
+Using `grunt-cli` in this way is unsupported.
