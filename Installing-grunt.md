@@ -35,6 +35,9 @@ If you want to install a bleeding-edge, unpublished version of grunt, follow the
 The specified git URL may be that of the official grunt repo or a fork.
 
 ## Installing grunt-cli
+As the "Installing the CLI" section of the [[Getting Started]] guide explains, run `npm install -g grunt-cli` and npm will install the latest official version of grunt-cli. This will put the `grunt` command in your system path, allowing it to be run from any directory.
+
+**If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
 
 ### Installing grunt-cli locally
 While you may install `grunt-cli` locally to a project, instead of being able to access the `grunt` command from anywhere, you'll need to specify its explicit local path, which will be something like `./node_modules/.bin/grunt`.
