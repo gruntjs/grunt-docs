@@ -83,8 +83,8 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
 * [grunt.config](grunt.config)
   * Changed `config.get` to automatically recursively expand `<% %>` templates.
-  * Removed `config.process` method.
   * Added `config.getRaw` will retrieve raw (unexpanded) data.
+  * Changed `config.process` to now process a value as if it had been retrived from the config. This method is called internally inside of `config.get`, but _not_ inside of `config.getRaw`.
 * [grunt.event](grunt.event) added so that tasks may emit events.
 * [grunt.fail](grunt.fail)
   * Won't emit a beep if `--no-color` option specified.
@@ -103,6 +103,8 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Added [file.minimatch](grunt.file#wiki-grunt-file-minimatch) which exposes the [minimatch](https://github.com/isaacs/minimatch) module.
   * Removed `file.userDir` method (moved into [grunt-init]).
   * Removed `file.clearRequireCache` method.
+  * Removed `file.expandFiles` and `file.expandDirs` methods, use the `filter` option of `file.expand` instead.
+  * Removed `file.expandFileURLs` method. Don't specify URLs where files should be specified (eg. the qunit task now allows for a `urls` option).
 * [grunt.task](grunt#wiki-grunt-task)
   * Tasks registered with both [task.registerTask](grunt.task#wiki-grunt-task-registerTask) and [task.registerMultiTask](grunt.task#wiki-grunt-task-registerMultiTask) get a `this.options` method.
   * Added [task.normalizeMultiTaskFiles](grunt.task#wiki-grunt-task-normalizeMultiTaskFiles) method to facilitate the normalization of multi task `files` objects into the `this.file` property.
@@ -126,11 +128,11 @@ The grunt API saw substantial changes from 0.3 to 0.4.
 ### Tasks
 * Multi tasks
   * Multiple src-dest file mappings may now be specified per target in a `files` object (this is optional).
-  * Multi tasks now iterate over not just _targets_ but _src-dest file mappings, per target_.
-* [this.file / grunt.task.current.file](grunt.task#wiki-this-file)
-  * The `this.file.src` property is now _automatically_ expanded internally using the [grunt.file.expand](grunt.file#wiki-grunt-file-expand) method.
-  * The `this.file.srcRaw` property contains the raw, unexpanded (but still template processed and array flattened) source file patterns, in case you need to manually expand files using different options.
-  * The `this.file.dest` property still contains the destination file path.
+* [this.files / grunt.task.current.files](grunt.task#wiki-this-files)
+  * The `this.files` property is an array of src-dest file mapping objects to be iterated over in your multi task. It will always be an array, and you should always iterate over it, even if the most common use case is to specify a single file.
+  * Each src-dest file mapping object has a `src` and `dest` property (and possibly others, depending on what the user specified).
+* [this.filesSrc / grunt.task.current.filesSrc](grunt.task#wiki-this-filesSrc)
+  * The `this.filesSrc` property is a reduced, uniqued array of all files matched by all specified `src` properties. Useful for read-only tasks.
 * [this.options / grunt.task.current.options](grunt.task#wiki-this-options)
   * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
