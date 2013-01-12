@@ -12,13 +12,13 @@ grunt.registerTask(taskName, [description, ] taskList)
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if grunt is executed without specifying any tasks:
 
 ```javascript
-task.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
 Task arguments can be specified as well. In this example, the alias "dist" runs both the "concat" and "min" tasks, each with a "dist" argument:
 
 ```javascript
-task.registerTask('dist', ['concat:dist', 'uglify:dist']);
+grunt.registerTask('dist', ['concat:dist', 'uglify:dist']);
 ```
 
 ## Multi Tasks
