@@ -11,5 +11,5 @@ With grunt, all the excuses you've ever made just disappear. Instead of being a 
 ## How do i get started?
 To get started, take a look at the [getting started guide](https://github.com/gruntjs/grunt/wiki/Getting-started). In addition, check out the example Gruntfiles() which highlight a number of fairly common configurations.
 
-* Info from <https://github.com/gruntjs/grunt/blob/devel/README.md>
+* Info from <https://github.com/gruntjs/grunt/blob/master/README.md>
 * Possibly link to [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/)
