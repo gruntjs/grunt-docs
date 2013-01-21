@@ -16,12 +16,12 @@ _Notes: You may need to use sudo or run your command shell as Administrator to d
 
 ## Usage
 * Get program help and a listing of built-in templates with `grunt-init --help`
-* Create a project based around a built-in template with `grunt-init templatename`
-* Create a project based around a custom template with `grunt-init /path/to/template`
+* Create a project based around an installed template with `grunt-init TEMPLATE`
+* Create a project based around a arbitrarily-located template with `grunt-init /path/to/TEMPLATE`
 
 Note that most templates generate their files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files.
 
-## grunt-init templates
+## Installing grunt-init templates
 grunt-init doesn't include any templates, but these (and more) can be installed with git.
 
 * [commonjs](https://github.com/gruntjs/grunt-init-commonjs) - Create a commonjs module, including Nodeunit unit tests. ([sample "generated" repo](https://github.com/gruntjs/grunt-init-commonjs-sample/tree/generated) | [creation transcript](https://github.com/gruntjs/grunt-init-commonjs-sample#project-creation-transcript))
