@@ -21,8 +21,14 @@ _Notes: You may need to use sudo or run your command shell as Administrator to d
 
 Note that most templates generate their files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files.
 
-## Installing grunt-init templates
-grunt-init doesn't include any templates, but these (and more) can be installed with git.
+## Installing templates
+Once templates are installed into your `~/.grunt-init/` directory (`%USERPROFILE%\.grunt-init\` on Windows) they will be available for use via grunt-init. It's recommended that you use git to clone this template into that directory. For example, the [grunt-init-jquery](https://github.com/gruntjs/grunt-init-jquery) template can be installed like so:
+
+```
+git clone git@github.com:gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
+```
+
+This is a list of the officially-maintained grunt-init templates:
 
 * [commonjs](https://github.com/gruntjs/grunt-init-commonjs) - Create a commonjs module, including Nodeunit unit tests. ([sample "generated" repo](https://github.com/gruntjs/grunt-init-commonjs-sample/tree/generated) | [creation transcript](https://github.com/gruntjs/grunt-init-commonjs-sample#project-creation-transcript))
 * [gruntfile](https://github.com/gruntjs/grunt-init-gruntfile) - Create a basic Gruntfile. ([sample "generated" repo](https://github.com/gruntjs/grunt-init-gruntfile-sample/tree/generated) | [creation transcript](https://github.com/gruntjs/grunt-init-gruntfile-sample#project-creation-transcript))
