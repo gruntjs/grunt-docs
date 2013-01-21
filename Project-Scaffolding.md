@@ -3,8 +3,6 @@ Grunt-init is a scaffolding tool used to automate project creation. It will buil
 
 _Note: This standalone utility used to be built-in to grunt as the "init" task. See the grunt [Upgrading from 0.3 to 0.4](https://github.com/gruntjs/grunt/wiki/Upgrading-from-0.3-to-0.4) guide for more information about this change._
 
-For more information, see the [grunt-init documentation](https://github.com/gruntjs/grunt-init).
-
 ## Installation
 In order to use grunt-init, you'll want to install it globally.
 
