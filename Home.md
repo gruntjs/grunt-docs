@@ -12,6 +12,7 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 * [[Advanced Usage]]
 * [[Testing Tasks]]
 * [[Frequently Asked Questions]]
+* [[Project Scaffolding]]
 
 ## API Docs
 * [[grunt]]
