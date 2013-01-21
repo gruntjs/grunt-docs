@@ -28,7 +28,7 @@ Once templates are installed into your `~/.grunt-init/` directory (`%USERPROFILE
 git clone git@github.com:gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
 ```
 
-_Note: if you want to make the template available locally as "foobarbaz" you could specify `~/.grunt-init/foobarbaz` while cloning. Grunt-init will use the actual template directory name as it exists inside of `~/.grunt-init`._
+_Note: if you want to make the template available locally as "foobarbaz" you could specify `~/.grunt-init/foobarbaz` while cloning. Grunt-init will use the actual template directory name as it exists inside of the `~/.grunt-init/` directory._
 
 A few grunt-init templates are maintained officially:
 
