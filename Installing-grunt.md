@@ -1,5 +1,7 @@
 For general installation instructions, please read the [[Getting Started]] guide. If you need more specific information after having read that, read on.
 
+_Note that the following guide applies to both grunt and grunt plugins._
+
 ## Overview
 Grunt is comprised of two parts: `grunt` and `grunt-cli`.
 
