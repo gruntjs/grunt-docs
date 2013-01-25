@@ -21,9 +21,9 @@ Grunt contrib plugins published to npm that work with grunt 0.4.0rc7:
 - grunt-contrib-watch@0.2.0rc7
 - grunt-contrib-yuidoc@0.4.0rc7
 - grunt-contrib-jade@0.4.0.rc7
+- grunt-contrib-sass@0.2.2rc7
+- grunt-contrib-compass@0.1.1rc7
 
 Not yet updated:
-- grunt-contrib-compass
 - grunt-contrib-htmlmin
 - grunt-contrib-imagemin
-- grunt-contrib-sass
