@@ -11,7 +11,7 @@ If you don't want this behavior, manually edit your `package.json` and remove th
 [semver]: http://semver.org
 
 ### Installing published development versions of grunt or grunt plugins
-Periodically, as new functionality is being developed, alpha/beta/release candidates will be published to npm. **How do people know when this happens? These builds will _not_ be available as a `@latest` official release. **What is the significance of latest?**
+Periodically, as new functionality is being developed, alpha/beta/release candidates will be published to npm. **How do people know when this happens?** These builds will _not_ be available as a `@latest` official release. **What is the significance of latest?**
 
 It is **very important** that you manually edit your `package.json` and remove the ~ (tilde) from the version number when using these or subsequent releases may break your build system.
 
