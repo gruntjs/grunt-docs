@@ -1,4 +1,4 @@
-This document explains how to install development versions of grunt and grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
+This document explains how to install specific versions of grunt and grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
 
 ## Overview
 Grunt and grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  This will allow you to install all of your project's dependencies with a single command: `npm install`.
