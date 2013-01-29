@@ -1,9 +1,9 @@
-Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.  Even if you are familiar with grunt, it would be worthwhile to read the new [[Getting started]] guide.
+_Note that even if you are familiar with grunt, it would be worthwhile to read the new [[Getting started]] guide._
+
+Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
 
 1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
-
 2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the grunt that has been installed locally to your project, regardless of the version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
-
 3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## Pre-existing tasks and plugins
