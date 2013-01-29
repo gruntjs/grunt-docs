@@ -3,7 +3,7 @@ This document explains how to install development versions of grunt and grunt pl
 ## Overview
 Grunt and grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  This will allow you to install all of your project's dependencies with a single command: `npm install`.
 
-## Installing development versions of grunt / grunt plugin 
+## Installing specific version numbers
 If you need a specific version of grunt or a grunt plugin, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need.  This will install the specified version, adding it to your package.json devDependencies.
 
 Note that a [tilde version range] will be used in your `package.json` when you add the `--save-dev` flag to `npm install`. This is typically good, as new patch releases of the specified version will automatically be upgraded as development continues, per [semver].
@@ -11,7 +11,7 @@ Note that a [tilde version range] will be used in your `package.json` when you a
 [tilde version range]: https://npmjs.org/doc/json.html#Tilde-Version-Ranges
 [semver]: http://semver.org
 
-## Installing a published development version of grunt / grunt plugin
+## Installing a published development versions
 Periodically, as new functionality is being developed, grunt builds may be published to npm. These builds will _never_ be installable without explicitly specifying a version number, and will typically have a build number or alpha/beta/release candidate designation.
 
 Like installing a specific version of grunt, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need, and npm will install that version of grunt in your project folder, adding it to your `package.json` devDependencies.
