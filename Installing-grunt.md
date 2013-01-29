@@ -1,5 +1,11 @@
 This document explains how to install development versions of grunt and grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
 
+## Overview
+1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc   
+2. The npm module `grunt-cli` should be installed globally. It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the grunt that has been installed locally to your project, regardless of its version.
+
+Grunt and grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  This will allow you to install all of your project's dependencies with a single command: `npm install`.
+
 ## Installing development versions of grunt / grunt plugin 
 If you need a specific version of grunt or a grunt plugin, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need.  This will install the specified version, adding it to your package.json devDependencies.
 
