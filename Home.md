@@ -1,8 +1,8 @@
-Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets get started.
+Welcome to the home of **Grunt**, a JavaScript task-based automation tool.
 
-Stable: **0.3.17** / Development: **0.4.0rc7**
+Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 
----
+## Table of Contents
 
 * [[Getting Started]]
 * [[Installing Grunt]]
