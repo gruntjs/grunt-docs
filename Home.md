@@ -29,6 +29,7 @@ Welcome to the home of **Grunt**, a JavaScript task-based automation tool. Lets 
 * [[Exit Codes]]
 
 ## Migration guides
+* [[Plugin Release Candidate Versions]]
 * [[Upgrading from 0.3 to 0.4]]
 
 ## Help Resources
