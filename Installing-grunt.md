@@ -1,14 +1,7 @@
-Before reading this, please see the [[Getting Started]] guide.
-
-## Overview
-Grunt is comprised of two parts: `grunt` and `grunt-cli`.
-
-1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
-1. The npm module `grunt-cli` should be installed globally. It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the grunt that has been installed locally to your project, regardless of its version.
-
-Grunt and grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  Using a `package.json` file will allow you to install all of your project's dependencies with a single command: `npm install`.
+This document explains how to install development versions of grunt and grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
 
 ## Installing grunt / grunt plugins
+Grunt and grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  Using a `package.json` file will allow you to install all of your project's dependencies with a single command: `npm install`.
 As the "Installing grunt and grunt plugins" section of the [[Getting Started]] guide explains, run `npm install grunt --save-dev` and npm will install the latest official version of grunt in your project folder, adding it to your `package.json` devDependencies.
 
 Note that a [tilde version range][] will be automatically specified in `package.json`. This is good, as new patch releases of the latest version will be installable by npm.
@@ -39,13 +32,3 @@ The same process may be used to install a published development version of a gru
 If you want to install a bleeding-edge, unpublished version of grunt or grunt plugin, follow the instructions for specifying a [git URL as a dependency](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies) and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of grunt.
 
 The specified git URL may be that of the official grunt repo or a fork.
-
-## Installing grunt-cli
-As the "Installing the CLI" section of the [[Getting Started]] guide explains, run `npm install -g grunt-cli` and npm will install the latest official version of grunt-cli. This will put the `grunt` command in your system path, allowing it to be run from any directory.
-
-**If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
-
-### Installing grunt-cli locally
-You may install grunt-cli locally to a project using `npm install grunt-cli --save-dev` but instead of being able to access the `grunt` command from anywhere, you'll need to specify its explicit local path, which will be something like `./node_modules/.bin/grunt`.
-
-Using grunt-cli in this way is unsupported.
