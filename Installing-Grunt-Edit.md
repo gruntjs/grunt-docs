@@ -19,8 +19,3 @@ It is **very important** that you manually edit your `package.json` and remove t
 If you want to install a bleeding-edge, unpublished version of grunt, follow the instructions for specifying a [git URL as a dependency](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies) and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of grunt.
 
 The specified git URL may be that of the official grunt repo or a fork.
-
-### Installing grunt-cli locally
-If you don't have administrator rights, you may need to install grunt-cli locally to your project using `npm install grunt-cli --save-dev`.  Unfortunately, this will not put the `grunt` executable in your PATH.  You'll need to specify its explicit location when executing it, eg: `./node_modules/.bin/grunt`, 
-
-Using grunt-cli in this way is unsupported.
