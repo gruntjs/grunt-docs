@@ -22,7 +22,7 @@ _In this case it is **very important** that you manually edit your `package.json
 
 The same process may be used to install a published development version of a grunt plugin.
 
-## Installing an unpublished development version of grunt / grunt plugin
+## Installing directly from github
 If you want to install a bleeding-edge, unpublished version of grunt or grunt plugin, follow the instructions for specifying a [git URL as a dependency](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies) and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of grunt.
 
 The specified git URL may be that of the official grunt repo or a fork.
