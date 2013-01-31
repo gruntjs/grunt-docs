@@ -37,7 +37,10 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[Inside Tasks]]
 * [[Exit Codes]]
 
-## Help Resources
+## Community
+* [[Contributing]]
+
+### Help Resources
 * [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
 * [[Example Gruntfiles]]
 * [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
