@@ -14,7 +14,6 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[Why Grunt?]]
 
 ### Advanced
-* [[Advanced Usage]]
 * [[Testing Tasks]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
