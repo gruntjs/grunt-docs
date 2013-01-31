@@ -1,5 +1,7 @@
 Even though only the most relevant methods are listed on this page, the full [EventEmitter2 API][ee2] is available on the `grunt.event` object. Event namespaces may be specified with the `.` (dot) separator, and namespace wildcards have been enabled.
 
+*Note that grunt doesn't yet emit any events, but can still be useful in your own tasks.*
+
 [ee2]: https://github.com/hij1nx/EventEmitter2
 
 <a name="grunt-event-on"></a>
