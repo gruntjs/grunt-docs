@@ -3,7 +3,9 @@ Register, run and load external tasks.
 See the [task lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt/task.js) and [task util lib source](https://github.com/gruntjs/grunt/blob/master/lib/util/task.js) for more information.
 
 ## The task API
-Many utility properties and methods are available inside of tasks via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
+While a task is running, grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
+
+Many utility properties and methods are available inside of tasks via the `this` object. 
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
 
