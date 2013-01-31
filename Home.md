@@ -3,7 +3,6 @@ Welcome to the home of **Grunt**, a JavaScript automation tool.
 Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 
 ## Documentation
-
 * [[Getting Started]]
 * [[Installing Grunt]]
 * [[Plugin Release Candidate Versions]]
@@ -33,7 +32,9 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[grunt.task]]
 * [[grunt.template]]
 * [[grunt.util]]
-* [[Inside tasks]]
+
+## Other
+* [[Inside Tasks]]
 * [[Exit Codes]]
 
 ## Help Resources
