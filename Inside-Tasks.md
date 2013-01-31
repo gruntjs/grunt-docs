@@ -1,5 +1,4 @@
-## Inside Tasks
-An object is made available as `this` inside each task function that contains a number of useful task-specific properties and methods. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
+While a task is running, grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
 
 <a name="this-async"></a>
 ### this.async / grunt.task.current.async
