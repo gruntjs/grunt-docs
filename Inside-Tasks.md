@@ -1,5 +1,7 @@
 While a task is running, grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
 
+## Inside All Tasks
+
 <a name="this-async"></a>
 ### this.async / grunt.task.current.async
 If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to indicate that the task has failed.
