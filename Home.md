@@ -30,6 +30,7 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[grunt.task]]
 * [[grunt.template]]
 * [[grunt.util]]
+* [[Inside tasks]]
 * [[Exit Codes]]
 
 ## Migration guides
