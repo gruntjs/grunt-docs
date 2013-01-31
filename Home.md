@@ -2,7 +2,7 @@ Welcome to the home of **Grunt**, a JavaScript automation tool.
 
 Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 
-## Overview
+## Documentation
 
 * [[Getting Started]]
 * [[Installing Grunt]]
@@ -13,13 +13,17 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[Contributing]]
 * [[Why Grunt?]]
 
-## Advanced
+# Advanced
 * [[Advanced Usage]]
 * [[Testing Tasks]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
 
-## API Docs
+# Migration guides
+* [[Plugin Release Candidate Versions]]
+* [[Upgrading from 0.3 to 0.4]]
+
+## API
 * [[grunt]]
 * [[grunt.config]]
 * [[grunt.event]]
@@ -32,10 +36,6 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[grunt.util]]
 * [[Inside tasks]]
 * [[Exit Codes]]
-
-## Migration guides
-* [[Plugin Release Candidate Versions]]
-* [[Upgrading from 0.3 to 0.4]]
 
 ## Help Resources
 * [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
