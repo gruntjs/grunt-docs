@@ -26,19 +26,15 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[grunt.config]]
 * [[grunt.event]]
 * [[grunt.fail]]
+* [[grunt.file]]
 * [[grunt.log]]
 * [[grunt.option]]
+* [[grunt.task]]
 * [[grunt.template]]
 * [[grunt.util]]
 
-### Creating tasks
-* [[grunt.task]]
-* [[Inside Tasks]]
-
-### Filesystem
-* [[grunt.file]]
-
 ### Other
+* [[Inside Tasks]]
 * [[Exit Codes]]
 
 ## Help Resources
