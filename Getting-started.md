@@ -1,10 +1,10 @@
 Grunt is a task-based command line build tool written in JavaScript. *[Why does grunt exist?](https://github.com/gruntjs/grunt/wiki/Why-grunt%3F)*
 
 ## Installing the CLI
-**If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first.**
+**If you have installed grunt globally in the past, you will need to remove it with `npm uninstall -g grunt` first. eg: **
 
 ```bash
-`npm uninstall -g grunt`
+npm uninstall -g grunt
 ```
 
 In order to get started, you'll want to install grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
