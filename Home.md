@@ -13,13 +13,13 @@ Stable Version: **0.3.17** / Development Version: **0.4.0rc7**
 * [[Contributing]]
 * [[Why Grunt?]]
 
-# Advanced
+### Advanced
 * [[Advanced Usage]]
 * [[Testing Tasks]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
 
-# Migration guides
+### Migration guides
 * [[Plugin Release Candidate Versions]]
 * [[Upgrading from 0.3 to 0.4]]
 
