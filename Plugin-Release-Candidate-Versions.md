@@ -7,7 +7,7 @@ Grunt contrib plugins published to npm that work with grunt 0.4.0rc7:
 - grunt-contrib-concat@0.1.2rc6
 - grunt-contrib-connect@0.1.1rc6
 - grunt-contrib-copy@0.4.0rc7
-- grunt-contrib-handlebars@0.5.0rc7
+- grunt-contrib-handlebars@0.5.3rc7
 - grunt-contrib-jasmine@0.3.0rc7
 - grunt-contrib-jshint@0.1.1rc6
 - grunt-contrib-jst@0.4.0rc7
