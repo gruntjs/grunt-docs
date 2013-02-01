@@ -26,5 +26,3 @@ Grunt contrib plugins published to npm that work with grunt 0.4.0rc7:
 - grunt-contrib-imagemin@0.1.1rc7
 - grunt-contrib-htmlmin@0.1.1rc7
 - grunt-contrib-livereload@0.1.0rc7
-
-Not yet updated:
