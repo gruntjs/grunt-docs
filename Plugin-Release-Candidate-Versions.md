@@ -22,7 +22,7 @@ Grunt contrib plugins published to npm that work with grunt 0.4.0rc7:
 - grunt-contrib-yuidoc@0.4.0rc7
 - grunt-contrib-jade@0.4.0.rc7
 - grunt-contrib-sass@0.2.2rc7
-- grunt-contrib-compass@0.1.1rc7
+- grunt-contrib-compass@0.1.1rc8
 - grunt-contrib-imagemin@0.1.1rc7
 - grunt-contrib-htmlmin@0.1.1rc7
 - grunt-contrib-livereload@0.1.0rc7
