@@ -74,7 +74,7 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added to normalize character encodings, and all `grunt.file` methods have been updated to support the specified encoding.
 
 ## Helpers
-Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between gruntplugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers).
+Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between grunt plugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers). Plugin authors are encouraged to upgrade their plugins.
 
 ## API
 The grunt API saw substantial changes from 0.3 to 0.4.
