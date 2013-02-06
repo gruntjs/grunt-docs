@@ -1,5 +1,3 @@
-Grunt is a task-based command line build tool written in JavaScript. *[Why does grunt exist?](https://github.com/gruntjs/grunt/wiki/Why-grunt%3F)*
-
 Grunt and grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
 
 ## Installing the CLI
