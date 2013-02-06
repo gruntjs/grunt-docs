@@ -63,6 +63,8 @@ For example, this will install the latest 0.4.0 release candidate of grunt in yo
 npm install grunt@0.4.0rc7 --save-dev
 ```
 
+_Note: until 0.4.0 is releases, a list of updated contrib plugins compatible with the latest release candidate can be found in the [[Plugin Release Candidate Versions]] guide._
+
 <!--
 For example, this will install the latest version of grunt in your project folder, adding it to your devDependencies:
 
