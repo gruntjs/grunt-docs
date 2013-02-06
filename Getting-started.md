@@ -213,7 +213,7 @@ Custom project-specific tasks don't need to be defined in the Gruntfile; they ma
 [grunt-contrib-uglify]: http://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
-[grunt.loadTasks]: https://github.com/gruntjs/grunt/blob/devel/docs/api.md#loading-externally-defined-tasks
+[grunt.loadTasks]: https://github.com/gruntjs/grunt/wiki/grunt.task
 [grunt plugins]: TODO
 [custom tasks]: TODO
 [developer documentation]: TODO
