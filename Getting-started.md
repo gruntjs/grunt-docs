@@ -63,7 +63,9 @@ For example, this will install the latest 0.4.0 release candidate of grunt in yo
 npm install grunt@0.4.0rc7 --save-dev
 ```
 
-_Note: until 0.4.0 is released, a list of updated contrib plugins compatible with the latest release candidate can be found in the [[Plugin Release Candidate Versions]] guide._
+The same can be done for grunt plugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
+
+_Note: until 0.4.0 is officially released, a list of updated contrib plugins compatible with the latest release candidate can be found in the [[Plugin Release Candidate Versions]] guide._
 
 <!--
 For example, this will install the latest version of grunt in your project folder, adding it to your devDependencies:
@@ -72,8 +74,6 @@ For example, this will install the latest version of grunt in your project folde
 npm install grunt --save-dev
 ```
 -->
-
-The same can be done for grunt plugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file, placed in the root directory of your project—next to the `package.json` file—and should be committed with your project source. This file was named `grunt.js` or `grunt.coffee` for versions earlier than `0.4.0`.
