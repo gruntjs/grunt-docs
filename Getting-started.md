@@ -26,15 +26,15 @@ If a locally installed grunt is found, the CLI loads the local installation of t
 *To really understand what is happening, [read the code](/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
 ## Preparing a grunt project
-A typical setup will involve adding two files to your project: [package.json] and [the Gruntfile][Gruntfile].
+A typical setup will involve adding two files to your project: [package.json] and the [Gruntfile].
 
 **[package.json]**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the grunt plugins your project needs as [devDependencies] in this file.
 
-**[The Gruntfile][Gruntfile]**: This file is named `grunt.js` for grunt 0.3.x and `Gruntfile.js` or `Gruntfile.coffee` for grunt 0.4.x and is used to configure or define tasks and load grunt plugins.
+**The [Gruntfile]**: This file is named `grunt.js` for grunt 0.3.x and `Gruntfile.js` or `Gruntfile.coffee` for grunt 0.4.x and is used to configure or define tasks and load grunt plugins.
 
 ## package.json
 
-The `package.json` file belongs in the root directory of your project, next to [the Gruntfile][Gruntfile], and should be committed with your project source.  Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed within.
+The `package.json` file belongs in the root directory of your project, next to the [Gruntfile], and should be committed with your project source.  Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed within.
 
 Here are a few ways to create a `package.json` file for your project:
 
