@@ -88,7 +88,7 @@ A Gruntfile is comprised of the following parts:
 * Custom inline tasks
 
 ### An example Gruntfile
-In the following Gruntfile—which will be explained in more detail below—project metadata is imported into the grunt config from the project's `package.json` file, and the [grunt-contrib-uglify plugin] `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
+In the following Gruntfile, which is explained in more detail below, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify plugin] `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
 
 ```js
 module.exports = function(grunt) {
@@ -115,6 +115,8 @@ module.exports = function(grunt) {
 
 };
 ```
+
+Now that you've seen the whole Gruntfile, let's look at its component parts.
 
 ### The "wrapper" function
 Every Gruntfile (and grunt plugin) uses this basic format, and all of your grunt code must be specified inside this function:
