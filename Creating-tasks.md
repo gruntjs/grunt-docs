@@ -48,7 +48,6 @@ grunt.registerMultiTask('log', 'Log stuff.', function() {
 });
 ```
 
-See the [creating tasks](Creating-tasks) documentation for more examples of multi tasks.
 
 ## "Basic" Tasks
 When a basic task is run, grunt doesn't look at the configuration or environment—it just runs the specified task function, passing any specified colon-separated arguments in as function arguments.
