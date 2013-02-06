@@ -88,7 +88,7 @@ A Gruntfile is comprised of the following parts:
 * Custom inline tasks
 
 ### An example Gruntfile
-In the following Gruntfile, project metadata is imported into the grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin] `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
+In the following Gruntfile—which will be explained in more detail below—project metadata is imported into the grunt config from the project's `package.json` file, and the [grunt-contrib-uglify plugin] `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
 
 ```js
 module.exports = function(grunt) {
