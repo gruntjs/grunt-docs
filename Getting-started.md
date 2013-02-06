@@ -1,5 +1,7 @@
 Grunt and grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
 
+_Note that these instructions work for grunt 0.3.x as well as grunt 0.4.x; the only difference being that plugins and tasks may be named differently or configured with different options._
+
 ## Installing the CLI
 **If you have installed grunt globally in the past, you will need to remove it first:**
 
