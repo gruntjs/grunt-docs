@@ -88,7 +88,7 @@ A Gruntfile is comprised of the following parts:
 * Custom inline tasks
 
 ### An example Gruntfile
-In the following Gruntfile, which is explained in more detail below, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify plugin] `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
+In the following Gruntfile, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
 
 ```js
 module.exports = function(grunt) {
@@ -100,9 +100,9 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      dist: {
+      build: {
         src: 'src/<%= pkg.name %>.js',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: 'build/<%= pkg.name %>.min.js'
       }
     }
   });
@@ -134,7 +134,7 @@ In this example, `grunt.file.readJSON('package.json')` imports the JSON metadata
 
 You may store any arbitrary data inside of the configuration object, and as long as it doesn't conflict with properties your tasks require, it will be otherwise ignored. Also, because this is JavaScript, you're not limited to JSON; you may use any valid JS here. You can even programmatically generate the configuration if necessary.
 
-Like most tasks, the [grunt-contrib-uglify plugin] `uglify` task expects its configuration to be specified in a property of the same name. Here, the `banner` option is specified, along with a single uglify target named `dist` that minifies a single source file to a single destination file.
+Like most tasks, the [grunt-contrib-uglify] plugin's `uglify` task expects its configuration to be specified in a property of the same name. Here, the `banner` option is specified, along with a single uglify target named `build` that minifies a single source file to a single destination file.
 
 See the [[Configuring tasks]] guide for more task configuration examples.
 
@@ -146,16 +146,16 @@ grunt.initConfig({
     options: {
       banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
     },
-    dist: {
+    build: {
       src: 'src/<%= pkg.name %>.js',
-      dest: 'dist/<%= pkg.name %>.min.js'
+      dest: 'build/<%= pkg.name %>.min.js'
     }
   }
 });
 ```
 
 ### Loading grunt plugins and tasks
-Many commonly used tasks like [concatenation], [minification][grunt-contrib-uglify plugin] and [linting] are available as [grunt plugins]. As long as a plugin is specified in `package.json` as a dependency, and has been installed via `npm install`, it may be enabled inside your [Gruntfile] with a simple command:
+Many commonly used tasks like [concatenation], [minification][grunt-contrib-uglify] and [linting] are available as [grunt plugins]. As long as a plugin is specified in `package.json` as a dependency, and has been installed via `npm install`, it may be enabled inside your [Gruntfile] with a simple command:
 
 ```js
 // Load the plugin that provides the "uglify" task.
@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 [grunt-init]: Project-Scaffolding
 [tilde version range]: https://npmjs.org/doc/json.html#Tilde-Version-Ranges
 [grunt.initConfig]: api.md
-[grunt-contrib-uglify plugin]: http://github.com/gruntjs/grunt-contrib-uglify
+[grunt-contrib-uglify]: http://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
 [grunt.loadTasks]: https://github.com/gruntjs/grunt/blob/devel/docs/api.md#loading-externally-defined-tasks
