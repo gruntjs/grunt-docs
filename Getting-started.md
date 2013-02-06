@@ -30,7 +30,7 @@ A typical setup will involve adding two files to your project: [package.json] an
 
 **[package.json]**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the grunt plugins your project needs as [devDependencies] in this file.
 
-**[The Gruntfile][Gruntfile]**: This file is named `grunt.js` or `grunt.coffee` for Grunt `0.3.x` and `Gruntfile.js` or `Gruntfile.coffee` for `0.4.x+` and is used by grunt to configure or define tasks and load grunt plugins.
+**[The Gruntfile][Gruntfile]**: This file is named `grunt.js` for `0.3.x` and `Gruntfile.js` or `Gruntfile.coffee` for `0.4.x` and is used by grunt to configure or define tasks and load grunt plugins.
 
 ## package.json
 
