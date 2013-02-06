@@ -76,7 +76,7 @@ npm install grunt --save-dev
 -->
 
 ## The Gruntfile
-The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file, placed in the root directory of your project—next to the `package.json` file—and should be committed with your project source. This file was named `grunt.js` or `grunt.coffee` for versions earlier than `0.4.0`.
+The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the [package.json] file, and should be committed with your project source. _This file was named `grunt.js` for 0.3.x versions of grunt._
 
 A Gruntfile is comprised of the following parts:
 
