@@ -1,4 +1,4 @@
-Note: because these are pre-release versions, please follow the instructions in the "Installing a published development version of grunt" section of the [Installing grunt guide](https://github.com/gruntjs/grunt/wiki/Installing-grunt). And as a reminder, **do not** specify a version range (using ~ or <=) with a development version of grunt or grunt plugin.
+Note: because these are pre-release versions, please follow the instructions in the "Installing a published development version of grunt" section of the [Installing grunt guide](https://github.com/gruntjs/grunt/wiki/Installing-grunt). And as a reminder, **do not** specify a version range (using ~ or <=) when including a pre-release version of grunt or grunt plugin in your project.
 
 Grunt contrib plugins published to npm that work with grunt 0.4.0rc7:
 - grunt-contrib-clean@0.4.0rc6
