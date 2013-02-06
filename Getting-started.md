@@ -27,7 +27,15 @@ If a locally installed grunt is found, the CLI loads the local installation of t
 
 *To really understand what is happening, [read the code](/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
-## Preparing a grunt project
+## Working with an existing grunt project
+Assuming that the CLI has been installed and that a project has already been set up with a [package.json] and a [Gruntfile], it's very easy to start working with grunt.
+
+1. Install project dependencies with `npm install`.
+1. Run grunt with `grunt`.
+
+That's really all there is to it. Project grunt tasks can be listed by running `grunt --help` but it's usually a good idea to start with that project's documentation.
+
+## Preparing a new grunt project
 A typical setup will involve adding two files to your project: [package.json] and the [Gruntfile].
 
 **[package.json]**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the grunt plugins your project needs as [devDependencies] in this file.
