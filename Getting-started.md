@@ -57,11 +57,19 @@ Here are a few ways to create a `package.json` file for your project:
 ### Installing grunt and grunt plugins
 The easiest way to add grunt and grunt plugins to an existing `package.json` is with the command `npm install <module> --save-dev`.  Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
 
+For example, this will install the latest 0.4.0 release candidate of grunt in your project folder, adding it to your devDependencies:
+
+```bash
+npm install grunt@0.4.0rc7 --save-dev
+```
+
+<!--
 For example, this will install the latest version of grunt in your project folder, adding it to your devDependencies:
 
 ```bash
 npm install grunt --save-dev
 ```
+-->
 
 The same can be done for grunt plugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
