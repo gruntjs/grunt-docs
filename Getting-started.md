@@ -39,7 +39,7 @@ The `package.json` file belongs in the root directory of your project, next to t
 There are a few ways to create a `package.json` file for your project:
 
 * Most [grunt-init] templates will automatically create a project-specific `package.json` file.
-* The [npm init] command will create a basic `package.json` file for you.
+* The [npm init] command will create a basic `package.json` file.
 * Start with the example below, and expand as needed, following this [specification][json].
 
 ```js
