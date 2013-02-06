@@ -85,7 +85,7 @@ A Gruntfile is comprised of the following parts:
 * The "wrapper" function
 * Project and task configuration
 * Loading grunt plugins and tasks
-* Custom inline tasks
+* Custom tasks
 
 ### An example Gruntfile
 In the following Gruntfile, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
@@ -136,8 +136,6 @@ You may store any arbitrary data inside of the configuration object, and as long
 
 Like most tasks, the [grunt-contrib-uglify] plugin's `uglify` task expects its configuration to be specified in a property of the same name. Here, the `banner` option is specified, along with a single uglify target named `build` that minifies a single source file to a single destination file.
 
-See the [[Configuring tasks]] guide for more task configuration examples.
-
 ```js
 // Project configuration.
 grunt.initConfig({
@@ -162,30 +160,16 @@ Many commonly used tasks like [concatenation], [minification][grunt-contrib-ugli
 grunt.loadNpmTasks('grunt-contrib-uglify');
 ```
 
-Tasks defined in external `.js` files can be loaded from with the [grunt.loadTasks] method.
+**Note:** the `grunt --help` command will list all available tasks.
 
-**Note:** You can list all available tasks with the command `grunt --help`.
-
-### Custom inline tasks
-If your project only uses tasks provided by [grunt plugins], you might not need to define any custom tasks. That being said, if you want grunt to perform one or more tasks by default when running `grunt` with no arguments, you'll need to create a default task.
-
-To do this, create an [alias task][custom tasks].  In the example below, when running `grunt` (or `grunt default`) at the command line, the uglify task will be run. This is functionally the same as running `grunt uglify`.
+### Custom tasks
+You can configure grunt to run one or more tasks by default by defining a `default` task. In the following example, running `grunt` at the command line without specifying a task will run the `uglify` task. This is functionally the same as explicitly running `grunt uglify` or even `grunt default`. Any number of tasks (with or without arguments) may be specified in the array.
 
 ```js
 // Default task(s).
 grunt.registerTask('default', ['uglify']);
-```
 
-If you want to run multiple tasks in succession with a single command, just add more tasks to the array, with any arguments they might need.
-
-```js
-// Build my project
-grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
-```
-
-If you don't need pre-made tasks, and you don't want to [load your custom tasks from an external folder][grunt.loadTasks], you can register tasks right inside your [Gruntfile].
-
-Here is an extremely simple example [Gruntfile] that doesn't even utilize task configuration:
+If your project requires tasks not provided by a [grunt plugin][grunt plugins], you may define custom tasks right inside the [Gruntfile]. For example, this Gruntfile defines a completely custom `default` task that doesn't even utilize task configuration:
 
 ```js
 module.exports = function(grunt) {
@@ -197,6 +181,8 @@ module.exports = function(grunt) {
 
 };
 ```
+
+Custom project-specific tasks don't need to be defined in the Gruntfile; they may be defined in external `.js` files and loaded via the [grunt.loadTasks] method.
 
 ## Further Reading
 
