@@ -168,6 +168,7 @@ You can configure grunt to run one or more tasks by default by defining a `defau
 ```js
 // Default task(s).
 grunt.registerTask('default', ['uglify']);
+```
 
 If your project requires tasks not provided by a [grunt plugin][grunt plugins], you may define custom tasks right inside the [Gruntfile]. For example, this Gruntfile defines a completely custom `default` task that doesn't even utilize task configuration:
 
