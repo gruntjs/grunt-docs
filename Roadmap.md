@@ -1,3 +1,5 @@
+## grunt 0.5
+
 1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  All task output emitted as events.  See: http://github.com/tkellen/node-task
 
 2. A library for glob expansion that handles arrays of globs, negation, etc. See http://github.com/cowboy/globtastic
