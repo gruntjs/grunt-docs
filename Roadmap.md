@@ -10,7 +10,7 @@
 
 4. A logger to listen to events and output them to the console.  Deals with stderr/stdout, or grunt itself has this built in.  See: http://github.com/gruntjs/grunt-logger
 
-**0.5 Gruntfile**
+**0.5 Gruntfile Ideas**
 ```js
 var grunt = require('grunt');
 
