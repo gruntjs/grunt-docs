@@ -217,7 +217,7 @@ When many static src-dest mappings must be specified for a one-to-one process li
 
 In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
-Any combination of static src-dest and dynamic src-dest file mappings may be specified.
+Both the "Compact" and "Files Array" src-dest file mapping formats support these properties. Also, any combination of static src-dest and dynamic src-dest file mappings may be specified.
 
 ```js
 grunt.initConfig({
