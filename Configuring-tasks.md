@@ -72,8 +72,9 @@ Because most tasks perform file operations, Grunt has powerful abstractions for 
 All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
 
 * `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
-* `nonull` Retain `src` patterns even if they fail to match files. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
-* `matchBase` Patterns without slashes will match just the basename part. Eg. this makes `*.js` work like `**/*.js`.
+* `nonull` When a match is not found, return a list containing the pattern itself. Otherwise, an empty list is returned if there are no matches. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
+* `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
+* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
 * `expand` Process a dynamic src-dest file mapping, see "Building the files object dynamically" for more information.
 * Other properties will be passed into [node-glob][] as matching options.
 
