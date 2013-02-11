@@ -76,7 +76,7 @@ All files formats support `src` and `dest` but the "Compact" and "Files Array" f
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
 * `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
 * `expand` Process a dynamic src-dest file mapping, see "Building the files object dynamically" for more information.
-* Other properties will be passed into [node-glob][] as matching options.
+* Other properties will be passed into the underlying libs as matching options. See the [node-glob][] and [minimatch][] documentation for more options.
 
 ### Compact Format
 This form allows a single **src-dest** (source-destination) file mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. This format also supports additional properties per src-dest file mapping.
@@ -156,9 +156,10 @@ grunt.initConfig({
 ```
 
 ### Globbing patterns
-It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] library.
+It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
 
 [node-glob]: https://github.com/isaacs/node-glob
+[minimatch]: https://github.com/isaacs/minimatch
 
 While this isn't a comprehensive tutorial on globbing patterns, know that in a filepath:
 
@@ -203,7 +204,7 @@ For example:
 {src: ['foo/*.js', '<%= jshint.all.src %>'], dest: ...}
 ```
 
-For more on glob pattern syntax, see the [node-glob documentation][node-glob].
+For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
 
 ### Building the files object dynamically
 When many static src-dest mappings must be specified for a one-to-one process like copying, compiling or minifying files, a few additional properties may be used to build src-dest file mappings dynamically. These properties may be specified in both "Compact" and "Files Array" src-dest file mapping formats.
