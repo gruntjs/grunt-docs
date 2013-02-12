@@ -1,4 +1,4 @@
-## Grunt - JavaScript for your Command Line
+## Grunt: The JavaScript Task Runner
 
 _WORK IN PROGRESS_
 
