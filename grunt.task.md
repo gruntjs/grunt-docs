@@ -11,7 +11,6 @@ Note that any method marked with a ☃ (unicode snowman) is also available direc
 
 ## Creating Tasks
 
-<a name="grunt-task-registerTask"></a>
 ### grunt.task.registerTask ☃
 Register an "alias task" or a task function. This method supports the following two signatures:
 
@@ -61,7 +60,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of task
 
 _This method is also available as [grunt.registerTask](grunt)._
 
-<a name="grunt-task-registerMultiTask"></a>
 ### grunt.task.registerMultiTask ☃
 Register a "multi task." A multi task is a task that implicitly iterates over all of its named sub-properties (AKA targets) if no target was specified. In addition to the default properties and methods, extra multi task-specific properties are available inside the task function as properties of the `this` object.
 
@@ -91,7 +89,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
-<a name="grunt-task-renameTask"></a>
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
 
@@ -104,7 +101,6 @@ _This method is also available as [grunt.renameTask](grunt)._
 ## Loading Externally-Defined Tasks
 For most projects, tasks will be defined in the [Gruntfile](Getting-started). For larger projects, or in cases where tasks need to be shared across projects, tasks can be loaded from one or more external directories or Npm-installed grunt plugins.
 
-<a name="grunt-task-loadTasks"></a>
 ### grunt.task.loadTasks ☃
 Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
 
@@ -114,7 +110,6 @@ grunt.task.loadTasks(tasksPath)
 
 _This method is also available as [grunt.loadTasks](grunt)._
 
-<a name="grunt-task-loadNpmTasks"></a>
 ### grunt.task.loadNpmTasks ☃
 Load tasks from the specified grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init): `grunt init:gruntplugin`.
 
@@ -128,7 +123,6 @@ _This method is also available as [grunt.loadNpmTasks](grunt)._
 ## Queueing Tasks
 Grunt automatically enqueues and runs all tasks specified on the command line, but individual tasks can enqueue additional tasks to be run.
 
-<a name="grunt-task-run"></a>
 ### grunt.task.run
 Enqueue one or more tasks. Every specified task in `taskList` will be run immediately after the current task completes, in the order specified. The task list can be an array of tasks or individual task arguments.
 
@@ -136,7 +130,6 @@ Enqueue one or more tasks. Every specified task in `taskList` will be run immedi
 grunt.task.run(taskList)
 ```
 
-<a name="grunt-task-clearQueue"></a>
 ### grunt.task.clearQueue
 Empty the task queue completely. Unless additional tasks are enqueued, no more tasks will be run.
 
@@ -144,7 +137,6 @@ Empty the task queue completely. Unless additional tasks are enqueued, no more t
 grunt.task.clearQueue()
 ```
 
-<a name="grunt-task-normalizeMultiTaskFiles"></a>
 ### grunt.task.normalizeMultiTaskFiles
 Normalizes a task target configuration object into an array of src-dest file mappings. This method is used internally by the multi task system [this.files / grunt.task.current.files](grunt.task#wiki-this-files) property.
 
