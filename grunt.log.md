@@ -7,7 +7,6 @@ Grunt output should look consistent, and maybe even pretty. As such, there is a 
 
 _Note: all methods available under `grunt.verbose` work exactly like `grunt.log` methods, but only log if the `--verbose` command-line option was specified._
 
-<a name="grunt-log-write"></a>
 ### grunt.log.write / grunt.verbose.write
 Log the specified `msg` string, with no trailing newline.
 
@@ -15,7 +14,6 @@ Log the specified `msg` string, with no trailing newline.
 grunt.log.write(msg)
 ```
 
-<a name="grunt-log-writeln"></a>
 ### grunt.log.writeln / grunt.verbose.writeln
 Log the specified `msg` string, with trailing newline.
 
@@ -23,7 +21,6 @@ Log the specified `msg` string, with trailing newline.
 grunt.log.writeln([msg])
 ```
 
-<a name="grunt-log-error"></a>
 ### grunt.log.error / grunt.verbose.error
 If `msg` string is omitted, logs `ERROR` in red, otherwise logs `>> msg`, with trailing newline.
 
@@ -31,7 +28,6 @@ If `msg` string is omitted, logs `ERROR` in red, otherwise logs `>> msg`, with t
 grunt.log.error([msg])
 ```
 
-<a name="grunt-log-errorlns"></a>
 ### grunt.log.errorlns / grunt.verbose.errorlns
 Log an error with `grunt.log.error`, wrapping text to 80 columns using `grunt.log.wraptext`.
 
@@ -39,7 +35,6 @@ Log an error with `grunt.log.error`, wrapping text to 80 columns using `grunt.lo
 grunt.log.errorlns(msg)
 ```
 
-<a name="grunt-log-ok"></a>
 ### grunt.log.ok / grunt.verbose.ok
 If `msg` string is omitted, logs `OK` in green, otherwise logs `>> msg`, with trailing newline.
 
@@ -47,7 +42,6 @@ If `msg` string is omitted, logs `OK` in green, otherwise logs `>> msg`, with tr
 grunt.log.ok([msg])
 ```
 
-<a name="grunt-log-oklns"></a>
 ### grunt.log.oklns / grunt.verbose.oklns
 Log an ok message with `grunt.log.ok`, wrapping text to 80 columns using `grunt.log.wraptext`.
 
@@ -55,7 +49,6 @@ Log an ok message with `grunt.log.ok`, wrapping text to 80 columns using `grunt.
 grunt.log.oklns(msg)
 ```
 
-<a name="grunt-log-subhead"></a>
 ### grunt.log.subhead / grunt.verbose.subhead
 Log the specified `msg` string in **bold**, with trailing newline.
 
@@ -63,7 +56,6 @@ Log the specified `msg` string in **bold**, with trailing newline.
 grunt.log.subhead(msg)
 ```
 
-<a name="grunt-log-writeflags"></a>
 ### grunt.log.writeflags / grunt.verbose.writeflags
 Log a list of `obj` properties (good for debugging flags).
 
@@ -71,7 +63,6 @@ Log a list of `obj` properties (good for debugging flags).
 grunt.log.writeflags(obj, prefix)
 ```
 
-<a name="grunt-log-debug"></a>
 ### grunt.log.debug / grunt.verbose.debug
 Logs a debugging message, but only if the `--debug` command-line option was specified.
 
@@ -82,7 +73,6 @@ grunt.log.debug(msg)
 ## Verbose and Notverbose
 All logging methods available under `grunt.verbose` work exactly like their `grunt.log` counterparts, but only log if the `--verbose` command-line option was specified. There is also a "notverbose" counterpart available at both `grunt.log.notverbose` and `grunt.log.verbose.or`. In fact, the `.or` property can be used on both `verbose` and `notverbose` to effectively toggle between the two.
 
-<a name="grunt-verbose"></a>
 ### grunt.verbose / grunt.log.verbose
 This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was specified.
 
@@ -90,7 +80,6 @@ This object contains all methods of `grunt.log` but only logs if the `--verbose`
 grunt.verbose
 ```
 
-<a name="grunt-verbose-or"></a>
 ### grunt.verbose.or / grunt.log.notverbose
 This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was _not_ specified.
 
@@ -101,7 +90,6 @@ grunt.verbose.or
 ## Utility Methods
 These methods don't actually log, they just return strings that can be used in other methods.
 
-<a name="grunt-log-wordlist"></a>
 ### grunt.log.wordlist
 Returns a comma-separated list of `arr` array items.
 
@@ -120,7 +108,6 @@ var options = {
 };
 ```
 
-<a name="grunt-log-uncolor"></a>
 ### grunt.log.uncolor
 Removes all color information from a string, making it suitable for testing `.length` or perhaps logging to a file.
 
@@ -128,7 +115,6 @@ Removes all color information from a string, making it suitable for testing `.le
 grunt.log.uncolor(str)
 ```
 
-<a name="grunt-log-wraptext"></a>
 ### grunt.log.wraptext
 Wrap `text` string to `width` characters with `\n`, ensuring that words are not split in the middle unless absolutely necessary.
 
@@ -136,7 +122,6 @@ Wrap `text` string to `width` characters with `\n`, ensuring that words are not 
 grunt.log.wraptext(width, text)
 ```
 
-<a name="grunt-log-table"></a>
 ### grunt.log.table
 Wrap `texts` array of strings to columns `widths` characters wide. A wrapper for the `grunt.log.wraptext` method that can be used to generate output in columns.
 
