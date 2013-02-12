@@ -4,7 +4,6 @@ _Note: all file paths are relative to the Gruntfile unless the current working d
 
 ## Character encoding
 
-<a name="grunt-file-defaultEncoding"></a>
 ### grunt.file.defaultEncoding
 Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your Gruntfile.
 
@@ -14,7 +13,6 @@ grunt.file.defaultEncoding = 'utf8';
 
 ## Reading and writing
 
-<a name="grunt-file-read"></a>
 ### grunt.file.read
 Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
 
@@ -32,7 +30,6 @@ var options = {
 };
 ```
 
-<a name="grunt-file-readJSON"></a>
 ### grunt.file.readJSON
 Read a file's contents, parsing the data as JSON and returning the result. See `grunt.file.read` for a list of supported options.
 
@@ -40,7 +37,6 @@ Read a file's contents, parsing the data as JSON and returning the result. See `
 grunt.file.readJSON(filepath [, options])
 ```
 
-<a name="grunt-file-readYAML"></a>
 ### grunt.file.readYAML
 Read a file's contents, parsing the data as YAML and returning the result. See `grunt.file.read` for a list of supported options.
 
@@ -48,7 +44,6 @@ Read a file's contents, parsing the data as YAML and returning the result. See `
 grunt.file.readYAML(filepath [, options])
 ```
 
-<a name="grunt-file-write"></a>
 ### grunt.file.write
 Write the specified contents to a file, creating intermediate directories if necessary. Strings will be encoded using the specified character encoding, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) will be written to disk as-specified.
 
@@ -68,7 +63,6 @@ var options = {
 };
 ```
 
-<a name="grunt-file-copy"></a>
 ### grunt.file.copy
 Copy a source file to a destination path, creating intermediate directories if necessary.
 
@@ -97,7 +91,6 @@ var options = {
 };
 ```
 
-<a name="grunt-file-delete"></a>
 ### grunt.file.delete
 Delete the specified filepath. Will delete files and folders recursively.
 
@@ -121,7 +114,6 @@ var options = {
 
 ## Directories
 
-<a name="grunt-file-mkdir"></a>
 ### grunt.file.mkdir
 Works like `mkdir -p`. Create a directory along with any intermediate directories. If `mode` isn't specified, it defaults to `0777 & (~process.umask())`.
 
@@ -177,7 +169,6 @@ The `options` object supports all [minimatch library](https://github.com/isaacs/
 * `matchBase` Patterns without slashes will match just the basename part. Eg. this makes `*.js` work like `**/*.js`.
 * `cwd` Patterns will be matched relative to this path, and all returned filepaths will also be relative to this path.
 
-<a name="grunt-file-expandMapping"></a>
 ### grunt.file.expandMapping
 Returns an array of src-dest file mapping objects. For each source file matched by a specified pattern, join that file path to the specified `dest`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
 
@@ -208,7 +199,6 @@ var options = {
 };
 ```
 
-<a name="grunt-file-match"></a>
 ### grunt.file.match
 Match one or more globbing patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified globbing patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
@@ -218,13 +208,11 @@ grunt.file.match([options, ] patterns, filepaths)
 
 The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options. For example, if `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
 
-<a name="grunt-file-isMatch"></a>
 ### grunt.file.isMatch
 This method contains the same signature and logic as the `grunt.file.match` method, but simply returns `true` if any files were matched, otherwise `false`.
 
 ## File types
 
-<a name="grunt-file-exists"></a>
 ### grunt.file.exists
 Does the given path exist? Returns a boolean.
 
@@ -234,7 +222,6 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 grunt.file.exists(path1 [, path2 [, ...]])
 ```
 
-<a name="grunt-file-isLink"></a>
 ### grunt.file.isLink
 Is the given path a symbolic link? Returns a boolean.
 
@@ -246,7 +233,6 @@ grunt.file.isLink(path1 [, path2 [, ...]])
 
 Returns false if the path doesn't exist.
 
-<a name="grunt-file-isDir"></a>
 ### grunt.file.isDir
 Is the given path a directory? Returns a boolean.
 
@@ -258,7 +244,6 @@ grunt.file.isDir(path1 [, path2 [, ...]])
 
 Returns false if the path doesn't exist.
 
-<a name="grunt-file-isFile"></a>
 ### grunt.file.isFile
 Is the given path a file? Returns a boolean.
 
@@ -272,7 +257,6 @@ Returns false if the path doesn't exist.
 
 ## Paths
 
-<a name="grunt-file-isPathAbsolute"></a>
 ### grunt.file.isPathAbsolute
 Is a given file path absolute? Returns a boolean.
 
@@ -282,7 +266,6 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 grunt.file.isPathAbsolute(path1 [, path2 [, ...]])
 ```
 
-<a name="grunt-file-arePathsEquivalent"></a>
 ### grunt.file.arePathsEquivalent
 Do all the specified paths refer to the same path? Returns a boolean.
 
@@ -290,7 +273,6 @@ Do all the specified paths refer to the same path? Returns a boolean.
 grunt.file.arePathsEquivalent(path1 [, path2 [, ...]])
 ```
 
-<a name="grunt-file-doesPathContain"></a>
 ### grunt.file.doesPathContain
 Are all descendant path(s) contained within the specified ancestor path? Returns a boolean.
 
@@ -300,7 +282,6 @@ _Note: does not check to see if paths actually exist._
 grunt.file.doesPathContain(ancestorPath, descendantPath1 [, descendantPath2 [, ...]])
 ```
 
-<a name="grunt-file-isPathCwd"></a>
 ### grunt.file.isPathCwd
 Is a given file path the CWD? Returns a boolean.
 
@@ -310,7 +291,6 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 grunt.file.isPathCwd(path1 [, path2 [, ...]])
 ```
 
-<a name="grunt-file-isPathInCwd"></a>
 ### grunt.file.isPathInCwd
 Is a given file path inside the CWD? Note: CWD is not _inside_ CWD. Returns a boolean.
 
@@ -320,7 +300,6 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 grunt.file.isPathInCwd(path1 [, path2 [, ...]])
 ```
 
-<a name="grunt-file-userDir"></a>
 ### grunt.file.userDir
 Return a file path relative to the user's `.grunt` directory, which is `%USERPROFILE%\.grunt\` on Windows, and `~/.grunt/` on OS X or Linux. If no file path is specified, the base user `.grunt` directory path will be returned. If the specified path is not found, `null` is returned.
 
@@ -332,7 +311,6 @@ _Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_p
 grunt.file.userDir([path1, [, path2 [, ...]]])
 ```
 
-<a name="grunt-file-setBase"></a>
 ### grunt.file.setBase
 Change grunt's current working directory (CWD). By default, all file paths are relative to the Gruntfile. This works just like the `--base` command-line option.
 
@@ -345,14 +323,11 @@ Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_pa
 
 ## External libraries
 
-<a name="grunt-file-glob"></a>
 ### grunt.file.glob
 [glob](https://github.com/isaacs/node-glob) - File globbing utility.
 
-<a name="grunt-file-minimatch"></a>
 ### grunt.file.minimatch
 [minimatch](https://github.com/isaacs/minimatch) - File pattern matching utility.
 
-<a name="grunt-file-findup"></a>
 ### grunt.file.findup
 [findup-sync](https://github.com/cowboy/node-findup-sync) - Search upwards for matching file patterns.
