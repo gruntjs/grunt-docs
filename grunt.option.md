@@ -40,7 +40,6 @@ grunt.registerTask('deploy', ['validate', 'upload']);
 _Note that boolean options can be specified using just a key without a value. For example, running `grunt deploy --staging` on the command line would cause `grunt.option('staging')` to return `true`._
 
 
-<a name="grunt-option"></a>
 ### grunt.option ☃
 Gets or sets an option.
 
@@ -56,7 +55,6 @@ var isDev = grunt.option('no-staging');
 // isDev === true
 ```
 
-<a name="grunt-option-init"></a>
 ### grunt.option.init
 Initialize `grunt.option`. If `initObject` is omitted option will be initialized to an empty object otherwise will be set to `initObject`.
 
@@ -64,7 +62,6 @@ Initialize `grunt.option`. If `initObject` is omitted option will be initialized
 grunt.option.init([initObject])
 ```
 
-<a name="grunt-option-flags"></a>
 ### grunt.option.flags
 Returns the options as an array of command line parameters.
 
