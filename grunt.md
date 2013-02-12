@@ -62,7 +62,6 @@ module.exports = function(grunt) {
 ## Config
 _Note that the method listed below is also available on the [grunt.config](grunt.config) object in addition to the `grunt` object._
 
-<a name="grunt-initConfig"></a>
 ### grunt.initConfig
 Initialize a configuration object for the current project. The specified `configObject` is used by tasks and can be accessed using the [grunt.config](grunt.config) method. Nearly every project's [Gruntfile](Getting-started) will call this method.
 
@@ -94,7 +93,6 @@ If you don't specify a task, but a task named "default" has been defined, that t
 
 _Note that the methods listed below are also available on the [grunt.task](grunt.task) object in addition to the `grunt` object._
 
-<a name="grunt-registerTask"></a>
 ### grunt.registerTask
 Register an "alias task" or a task function. This method supports the following two signatures:
 
@@ -144,7 +142,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of task
 
 _This method is an alias for the [grunt.task.registerTask](grunt.task#wiki-grunt-task-registerTask) method._
 
-<a name="grunt-registerMultiTask"></a>
 ### grunt.registerMultiTask
 Register a "multi task." A multi task is a task that implicitly iterates over all of its named sub-properties (AKA targets) if no target was specified. In addition to the default properties and methods, extra multi task-specific properties are available inside the task function as properties of the `this` object.
 
@@ -174,7 +171,6 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is an alias for the [grunt.task.registerMultiTask](grunt.task#wiki-grunt-task-registerMultiTask) method._
 
-<a name="grunt-renameTask"></a>
 ### grunt.renameTask
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
 
@@ -187,7 +183,6 @@ _This method is an alias for the [grunt.task.renameTask](grunt.task#wiki-grunt-t
 ## Inside Tasks
 An object is made available as `this` inside each task function that contains a number of useful task-specific properties and methods. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template).
 
-<a name="this-async"></a>
 ### this.async / grunt.task.current.async
 If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. `false` can be passed to the done function to indicate that the task has failed. If this method isn't invoked, the task executes synchronously.
 
@@ -203,7 +198,6 @@ setTimeout(function() {
 }, 1000);
 ```
 
-<a name="this-requires"></a>
 ### this.requires / grunt.task.current.requires
 If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The task list can be an array of task names or individual task name arguments.
 
@@ -213,7 +207,6 @@ Note that this won't actually run the specified task(s), it will just fail the c
 this.requires(taskList)
 ```
 
-<a name="this-requiresConfig"></a>
 ### this.requiresConfig / grunt.task.current.requiresConfig
 Fail the current task if one or more required [config](grunt.config) properties is missing. One or more string or array config properties may be specified.
 
@@ -225,7 +218,6 @@ See the [grunt.config documentation](grunt.config) for more information about co
 
 _This method is an alias for the [grunt.config.requires](grunt.config#wiki-grunt-config-requires) method._
 
-<a name="this-name"></a>
 ### this.name / grunt.task.current.name
 The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
 
@@ -233,19 +225,15 @@ The name of the task, as defined in `grunt.registerTask`. For example, if a "sam
 ### this.nameArgs / grunt.task.current.nameArgs
 The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
-<a name="this-args"></a>
 ### this.args / grunt.task.current.args
 An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`. Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function.
 
-<a name="this-flags"></a>
 ### this.flags / grunt.task.current.flags
 An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`. In a multi task, the target name is not set as a flag.
 
-<a name="this-errorCount"></a>
 ### this.errorCount / grunt.task.current.errorCount
 The number of [grunt.log.error](grunt.log#wiki-grunt-log-error) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
 
-<a name="this-options"></a>
 ### this.options / grunt.task.current.options
 Returns a task-specific options object. This object contains properties merged from the optional `defaultsObj` argument, which can be overridden by a task-specific `options` property (and for multi tasks, an additional target-specific `options` property) in the config data.
 
@@ -295,15 +283,12 @@ grunt.registerTask('ourtask', function() {
 
 ## Inside Multi Tasks
 
-<a name="this-target"></a>
 ### this.target / grunt.task.current.target
 In a multi task, this is the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
-<a name="this-data"></a>
 ### this.data / grunt.task.current.data
 In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
 
-<a name="this-file"></a>
 ### this.file / grunt.task.current.file
 In a multi task, target data can be stored in three different formats. A relatively basic "compact" format, a much more flexible "full" format and a multiple destination "list" format.
 
@@ -349,7 +334,6 @@ For most projects, tasks will be defined in the [Gruntfile](Getting-started). Fo
 
 _Note that the methods listed below are also available on the [grunt.task](grunt.task) object in addition to the `grunt` object._
 
-<a name="grunt-loadTasks"></a>
 ### grunt.loadTasks
 Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
 
@@ -359,7 +343,6 @@ grunt.loadTasks(tasksPath)
 
 _This method is an alias for the [grunt.task.loadTasks](grunt.task#wiki-grunt-task-loadTasks) method._
 
-<a name="grunt-loadNpmTasks"></a>
 ### grunt.loadNpmTasks
 Load tasks from the specified grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init).
 
@@ -373,7 +356,6 @@ _This method is an alias for the [grunt.task.loadNpmTasks](grunt.task#wiki-grunt
 ## Warnings and Fatal Errors
 If something explodes (or is about to explode) inside a task, it can force grunt to abort. See the [exit codes documentation](Exit-Codes) for a list of all built-in grunt exit codes.
 
-<a name="grunt-warn"></a>
 ### grunt.warn
 Display a warning and abort grunt immediately. Grunt will continue processing tasks if the `--force` command-line option was specified. The `error` argument can be a string message or an error object.
 
@@ -385,7 +367,6 @@ If `--debug 9` is specified on the command-line and an error object was specifie
 
 _This method is an alias for the [grunt.fail.warn](grunt.fail#wiki-grunt-fail-warn) method._
 
-<a name="grunt-fatal"></a>
 ### grunt.fatal
 Display a warning and abort grunt immediately. The `error` argument can be a string message or an error object.
 
@@ -400,7 +381,6 @@ _This method is an alias for the [grunt.fail.fatal](grunt.fail#wiki-grunt-fail-f
 
 ## Command-line Options
 
-<a name="grunt-option"></a>
 ### grunt.option
 Retrieve the value of a command-line option, eg. `debug`. Note that for each command-line option, the inverse can be tested, eg. `no-debug`.
 
@@ -410,7 +390,6 @@ grunt.option(optionName)
 
 ## Miscellaneous
 
-<a name="grunt-package"></a>
 ### grunt.package
 The current grunt `package.json` metadata, as an object.
 
@@ -418,7 +397,6 @@ The current grunt `package.json` metadata, as an object.
 grunt.package
 ```
 
-<a name="grunt-version"></a>
 ### grunt.version
 The current grunt version, as a string. This is just a shortcut to the `grunt.package.version` property.
 
