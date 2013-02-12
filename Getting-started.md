@@ -137,7 +137,7 @@ module.exports = function(grunt) {
 ```
 
 ### Project and task configuration
-Most grunt tasks rely on configuration data defined in an object passed to the [grunt.initConfig] method.
+Most grunt tasks rely on configuration data defined in an object passed to the [[grunt.initConfig|grunt#grunt.initconfig]] method.
 
 In this example, `grunt.file.readJSON('package.json')` imports the JSON metadata stored in `package.json` into the grunt config. Because `<% %>` template strings may reference any config properties, configuration data like filepaths and file lists may be specified this way to reduce repetition.
 
@@ -209,7 +209,6 @@ Custom project-specific tasks don't need to be defined in the Gruntfile; they ma
 [npm init]: https://npmjs.org/doc/init.html
 [grunt-init]: Project-Scaffolding
 [tilde version range]: https://npmjs.org/doc/json.html#Tilde-Version-Ranges
-[grunt.initConfig]: api.md
 [grunt-contrib-uglify]: http://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
