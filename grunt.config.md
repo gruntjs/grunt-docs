@@ -5,7 +5,6 @@ Note that any method marked with a ☃ (unicode snowman) is also available direc
 ## Initializing Config Data
 _Note that the following method is also available on the `grunt` object as `grunt.initConfig`._
 
-<a name="grunt-config-init"></a>
 ### grunt.config.init ☃
 Initialize a configuration object for the current project. The specified `configObject` is used by tasks and can be accessed using the `grunt.config` method. Nearly every project's Gruntfile will call this method.
 
@@ -35,7 +34,6 @@ The following methods allow grunt configuration data to be accessed either via d
 
 Note that if a specified property name contains a `.` dot, it must be escaped with a literal backslash, eg. `'concat.dist/built\\.js'`. If an array of parts is specified, grunt will handle the escaping internally with the `grunt.config.escape` method.
 
-<a name="grunt-config"></a>
 ### grunt.config
 Get or set a value from the project's grunt configuration. This method serves as an alias to other methods; if two arguments are passed, `grunt.config.set` is called, otherwise `grunt.config.get` is called.
 
@@ -43,7 +41,6 @@ Get or set a value from the project's grunt configuration. This method serves as
 grunt.config([prop [, value]])
 ```
 
-<a name="grunt-config-get"></a>
 ### grunt.config.get
 Get a value from the project's grunt configuration. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned. Templates strings will be recursively processed using the `grunt.config.process` method.
 
@@ -51,7 +48,6 @@ Get a value from the project's grunt configuration. If `prop` is specified, that
 grunt.config.get([prop])
 ```
 
-<a name="grunt-config-process"></a>
 ### grunt.config.process
 Process a value, recursively expanding `<% %>` templates (via the `grunt.template.process` method) in the context of the grunt config, as they are encountered. this method is called automatically by `grunt.config.get` but _not_ by `grunt.config.getRaw`.
 
@@ -61,7 +57,6 @@ grunt.config.process(value)
 
 If any retrieved value is entirely a single `'<%= foo %>'` or `'<%= foo.bar %>'` template string, and the specified `foo` or `foo.bar` property is a non-string (and not `null` or `undefined`) value, it will be expanded to the _actual_ value. That, combined with grunt's task system automatically flattening arrays, can be extremely useful.
 
-<a name="grunt-config-getRaw"></a>
 ### grunt.config.getRaw
 Get a raw value from the project's grunt configuration, without processing `<% %>` template strings. If `prop` is specified, that property's value is returned, or `null` if that property is not defined. If `prop` isn't specified, a copy of the entire config object is returned.
 
@@ -69,7 +64,6 @@ Get a raw value from the project's grunt configuration, without processing `<% %
 grunt.config.getRaw([prop])
 ```
 
-<a name="grunt-config-set"></a>
 ### grunt.config.set
 Set a value into the project's grunt configuration.
 
@@ -90,7 +84,6 @@ grunt.config.escape(propString)
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._
 
-<a name="grunt-config-requires"></a>
 ### grunt.config.requires ☆
 Fail the current task if one or more required config properties is missing, `null` or `undefined`. One or more string or array config properties may be specified.
 
