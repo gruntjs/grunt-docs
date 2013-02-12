@@ -8,7 +8,6 @@ If something explodes (or is about to explode) inside a task, it can force grunt
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
 
-<a name="grunt-warn"></a>
 ### grunt.warn ☃
 Display a warning and abort grunt immediately. Grunt will continue processing tasks if the `--force` command-line option was specified. The `error` argument can be a string message or an error object.
 
@@ -20,7 +19,6 @@ If `--debug 9` is specified on the command-line and an error object was specifie
 
 _This method is also available as `grunt.warn`._
 
-<a name="grunt-fatal"></a>
 ### grunt.fatal ☃
 Display a warning and abort grunt immediately. The `error` argument can be a string message or an error object.
 
