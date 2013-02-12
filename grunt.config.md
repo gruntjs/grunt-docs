@@ -73,7 +73,6 @@ grunt.config.set(prop, value)
 
 Note that any specified `<% %>` template strings will only be processed when config data is retrieved.
 
-<a name="grunt-config-escape"></a>
 ### grunt.config.escape
 Escape `.` dots in the given `propString`. This should be used for property names that contain dots.
 
