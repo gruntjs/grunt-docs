@@ -11,7 +11,7 @@ Development Version: **0.4.0rc7**
 * [[Creating Tasks]]
 * [[Creating Plugins]]
 * [[Contributing]]
-* [[Why Grunt?]]
+* [[Community]]
 
 ### Advanced
 * [[Testing Tasks]]
@@ -19,8 +19,8 @@ Development Version: **0.4.0rc7**
 * [[Project Scaffolding]]
 
 ### Migration guides
-* [[Plugin Release Candidate Versions]]
 * [[Upgrading from 0.3 to 0.4]]
+* [[Plugin Release Candidate Versions]]
 
 ## API
 * [[grunt]]
@@ -37,11 +37,3 @@ Development Version: **0.4.0rc7**
 ### Other
 * [[Inside Tasks]]
 * [[Exit Codes]]
-
-## Community
-* [[Contributing]]
-
-### Help Resources
-* [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt)
-* [[Example Gruntfiles]]
-* [StackOverflow questions tagged with "gruntjs"](http://stackoverflow.com/questions/tagged/gruntjs)
