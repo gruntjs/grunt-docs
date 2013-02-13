@@ -5,13 +5,13 @@ _These instructions are written for grunt 0.4.x, but are still valid for grunt 0
 ## Installing the CLI
 **If you have installed grunt globally in the past, you will need to remove it first:**
 
-```bash
+```shell
 npm uninstall -g grunt
 ```
 
 In order to get started, you'll want to install grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
-```bash
+```shell
 npm install -g grunt-cli
 ```
 
@@ -72,7 +72,7 @@ The easiest way to add grunt and grunt plugins to an existing `package.json` is 
 
 For example, this will install the latest 0.4.0 release candidate of grunt in your project folder, adding it to your devDependencies:
 
-```bash
+```shell
 npm install grunt@0.4.0rc7 --save-dev
 ```
 
@@ -83,7 +83,7 @@ _Note: until 0.4.0 is officially released, a list of updated contrib plugins com
 <!--
 For example, this will install the latest version of grunt in your project folder, adding it to your devDependencies:
 
-```bash
+```shell
 npm install grunt --save-dev
 ```
 -->
