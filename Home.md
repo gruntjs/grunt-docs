@@ -2,7 +2,7 @@
 
 Stable Version: **0.3.17**
 
-Development Version: **0.4.0rc7**
+Development Version: **0.4.0rc8**
 
 ## Documentation
 * [[Getting Started]]
