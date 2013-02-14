@@ -215,7 +215,7 @@ When you want to process many individual files from one location to another, a f
 * `dest` Destination path prefix.
 * `ext` Replace any existing extension with this value in generated `dest` paths.
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.  If this method returns the same `dest` more than once, the sources which used it will be added to an array for that `dest` value.
+* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned more than once, each `src` which used it will be added to an array of sources for it.
 
 In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
