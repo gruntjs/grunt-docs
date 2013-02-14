@@ -1,4 +1,4 @@
-Tasks are grunt's bread and butter. The stuff you do most often, like `jshint` or `nodeunit`. Every time grunt is run, you specify one or more tasks to run, which tells grunt what you'd like it to do.
+Tasks are grunt's bread and butter. The stuff you do most often, like `jshint` or `nodeunit`. Every time Grunt is run, you specify one or more tasks to run, which tells Grunt what you'd like it to do.
 
 If you don't specify a task, but a task named "default" has been defined, that task will run (unsurprisingly) by default.
 
@@ -9,7 +9,7 @@ If a task list is specified, the new task will be an alias for one or more other
 grunt.registerTask(taskName, [description, ] taskList)
 ```
 
-This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if grunt is executed without specifying any tasks:
+This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without specifying any tasks:
 
 ```javascript
 grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
@@ -22,9 +22,9 @@ grunt.registerTask('dist', ['concat:dist', 'uglify:dist']);
 ```
 
 ## Multi Tasks
-When a multi task is run, grunt looks for a property of the same name in the grunt configuration. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets."
+When a multi task is run, Grunt looks for a property of the same name in the Grunt configuration. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets."
 
-Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), grunt will look for a property with the _new_ task name in the config object.
+Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), Grunt will look for a property with the _new_ task name in the config object.
 
 Most of the contrib tasks, including the [grunt-contrib-jshint plugin jshint task](https://github.com/gruntjs/grunt-contrib-jshint), [concat task](https://github.com/gruntjs/grunt-contrib-concat) and [grunt-contrib-concat plugin concat task](https://github.com/gruntjs/grunt-contrib-concat) are multi tasks.
 
@@ -32,7 +32,7 @@ Most of the contrib tasks, including the [grunt-contrib-jshint plugin jshint tas
 grunt.registerMultiTask(taskName, [description, ] taskFunction)
 ```
 
-Given the specified configuration, this example multi task would log `foo: 1,2,3` if grunt was run via `grunt log:foo`, or it would log `bar: hello world` if grunt was run via `grunt log:bar`. If grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
+Given the specified configuration, this example multi task would log `foo: 1,2,3` if Grunt was run via `grunt log:foo`, or it would log `bar: hello world` if Grunt was run via `grunt log:bar`. If Grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
 
 ```javascript
 grunt.initConfig({
@@ -50,13 +50,13 @@ grunt.registerMultiTask('log', 'Log stuff.', function() {
 
 
 ## "Basic" Tasks
-When a basic task is run, grunt doesn't look at the configuration or environment—it just runs the specified task function, passing any specified colon-separated arguments in as function arguments.
+When a basic task is run, Grunt doesn't look at the configuration or environment—it just runs the specified task function, passing any specified colon-separated arguments in as function arguments.
 
 ```javascript
 grunt.registerTask(taskName, [description, ] taskFunction)
 ```
 
-This example task logs `foo, testing 123` if grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
+This example task logs `foo, testing 123` if Grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
 
 ```javascript
 grunt.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2) {
@@ -203,9 +203,9 @@ _TODO_
 (pull from FAQ, recommend process.env)
 
 ## Why doesn't my asynchronous task complete?
-Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell grunt that your task is asynchronous. For simplicity's sake, grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
+Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
-Note that passing `false` to the `done()` function tells grunt that the task has failed.
+Note that passing `false` to the `done()` function tells Grunt that the task has failed.
 
 For example:
 
