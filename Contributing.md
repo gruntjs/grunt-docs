@@ -1,9 +1,9 @@
-There are a number of grunt projects.
+There are a number of Grunt projects.
 
-* [grunt](https://github.com/gruntjs/grunt) - the main grunt project
+* [grunt](https://github.com/gruntjs/grunt) - the main Grunt project
 * [grunt-init](https://github.com/gruntjs/grunt-init) - the standalone grunt-init project scaffolding tool
 * [gruntjs.com](https://github.com/gruntjs/gruntjs.com) - the gruntjs.com website
-* [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all grunt "contrib" plugins
+* [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all Grunt "contrib" plugins
 
 In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs).
 
@@ -38,8 +38,8 @@ First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](h
 1. Ensure grunt-cli is installed (see the [[Getting started]] guide for more information)
 1. Fork and clone the repo.
 1. Check out the master branch (most grunt/grunt-contrib development happens there).
-1. Run `npm install` to install all grunt dependencies.
-1. Run `grunt` to grunt grunt.
+1. Run `npm install` to install all Grunt dependencies.
+1. Run `grunt` to Grunt grunt.
 
 Assuming that you don't see any red, you're ready to go. Just be sure to run `grunt` after making any changes, to ensure that nothing has broken.
 
