@@ -207,7 +207,7 @@ For example:
 For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
 
 ### Building the files object dynamically
-When you want to process many individual files from one location to another, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
+When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
 
 * `expand` Set to `true` to enable the following options:
 * `cwd` All `src` matches are relative to (but don't include) this path.
