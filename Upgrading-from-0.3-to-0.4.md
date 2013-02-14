@@ -3,16 +3,16 @@ _Note that even if you are familiar with grunt, it would be worthwhile to read t
 Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
 
 1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
-2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the grunt that has been installed locally to your project, regardless of the version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
+2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the Grunt that has been installed locally to your project, regardless of the version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
 
 ## Pre-existing tasks and plugins
-All `grunt-contrib-*` series plugins are grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
+All `grunt-contrib-*` series plugins are Grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for Grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
 
-_A forthcoming grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
+_A forthcoming Grunt release will be focused on decoupling grunt's architecture so that plugins are not affected by future updates._
 
 ## Requirements
-* grunt now requires Node.js version `>= 0.8.0`
+* Grunt now requires Node.js version `>= 0.8.0`
 
 ## The Gruntfile
 * The "Gruntfile" has changed from `grunt.js` to `Gruntfile.js`.
@@ -21,7 +21,7 @@ _A forthcoming grunt release will be focused on decoupling grunt's architecture 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
 
 ## Core Tasks are now Grunt Plugins
-The eight core tasks that were included in grunt 0.3 are now separate grunt plugins. Each is a discrete npm module that must be installed as a plugin per the "Loading grunt plugins and tasks" section of the [[Getting started]] guide.
+The eight core tasks that were included in Grunt 0.3 are now separate Grunt plugins. Each is a discrete npm module that must be installed as a plugin per the "Loading Grunt plugins and tasks" section of the [[Getting started]] guide.
 
 * concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
 * init → stand-alone [grunt-init] utility
@@ -35,7 +35,7 @@ The eight core tasks that were included in grunt 0.3 are now separate grunt plug
 Some task names and options have changed.  Be sure to see each plugin's documentation as linked above for the latest configuration details.
 
 ## Configuration
-The configuration format for grunt 0.4 tasks has been standardized and greatly enhanced. See the [[Configuring tasks]] guide, as well as individual plugin documentation for more information.
+The configuration format for Grunt 0.4 tasks has been standardized and greatly enhanced. See the [[Configuring tasks]] guide, as well as individual plugin documentation for more information.
 
 * File globbing (wildcard) patterns may now be negated to exclude matched files.
 * Tasks now support a standard `options` object.
@@ -74,10 +74,10 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added to normalize character encodings, and all `grunt.file` methods have been updated to support the specified encoding.
 
 ## Helpers
-Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between grunt plugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers). Plugin authors are encouraged to upgrade their plugins.
+Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between Grunt plugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers). Plugin authors are encouraged to upgrade their plugins.
 
 ## API
-The grunt API saw substantial changes from 0.3 to 0.4.
+The Grunt API saw substantial changes from 0.3 to 0.4.
 
 * [grunt](grunt)
   * Removed `grunt.registerHelper` and `grunt.renameHelper` methods.
@@ -112,7 +112,7 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Removed `task.searchDirs` property.
   * Removed `task.expand` `task.expandDirs` `task.expandFiles` `task.getFile` `task.readDefaults` methods (moved into [grunt-init]).
 * [grunt.package](grunt#wiki-grunt-package) reflects the metadata stored in grunt's `package.json`.
-* [grunt.version](grunt#wiki-grunt-version) is the current version of grunt as a string.
+* [grunt.version](grunt#wiki-grunt-version) is the current version of Grunt as a string.
 * [grunt.template](grunt.template)
   * Added [template.addDelimiters](grunt.template#wiki-grunt-template-addDelimiters) method to add new template delimiters.
   * Added [template.setDelimiters](grunt.template#wiki-grunt-template-setDelimiters) method to select template delimiters.
@@ -123,7 +123,7 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * Changed the [util.spawn](grunt.util#wiki-grunt-util-spawn) method to be much better behaved and pass more consistent arguments into its callback.
 
 ## Task / plugin authors
-**Plugin authors, please indicate clearly on your repository README which version number of your grunt plugin breaks compatibility with grunt 0.3.**
+**Plugin authors, please indicate clearly on your repository README which version number of your Grunt plugin breaks compatibility with Grunt 0.3.**
 
 ### Tasks
 * Multi tasks
@@ -137,9 +137,9 @@ The grunt API saw substantial changes from 0.3 to 0.4.
   * The `this.options` method may be used within tasks to normalize options. Inside a task, you may specify options defaults like: `var options = this.options({option: 'defaultvalue', ...});`
 
 ### Plugins
-* An updated `gruntplugin` template has been created for grunt 0.4-compatible plugins, and is available in the standalone [grunt-init].
+* An updated `gruntplugin` template has been created for Grunt 0.4-compatible plugins, and is available in the standalone [grunt-init].
 
 ## Troubleshooting
-* If you had previously installed a development version of grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of grunt and grunt-contrib plugins.
+* If you had previously installed a development version of Grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of Grunt and grunt-contrib plugins.
 
 [grunt-init]: /gruntjs/grunt-init
