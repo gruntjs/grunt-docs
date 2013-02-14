@@ -207,7 +207,7 @@ For example:
 For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
 
 ### Building the files object dynamically
-When many static src-dest mappings must be specified for a one-to-one process like copying, compiling or minifying files, a few additional properties may be used to build src-dest file mappings dynamically. These properties may be specified in both "Compact" and "Files Array" src-dest file mapping formats.
+When you want to process many individual files from one location to another, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
 
 * `expand` Set to `true` to enable the following options:
 * `cwd` All `src` matches are relative to (but don't include) this path.
@@ -215,7 +215,7 @@ When many static src-dest mappings must be specified for a one-to-one process li
 * `dest` Destination path prefix.
 * `ext` Replace any existing extension with this value in generated `dest` paths.
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` This function is called for each matched `src` file, post-ext/-flatten. The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.
+* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.  If this method returns the same `dest` more than once, the sources which used it will be added to an array for that `dest` value.
 
 In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
