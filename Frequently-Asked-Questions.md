@@ -2,10 +2,10 @@
 For general installation instructions, please read the [[Getting Started]] guide. If you need more specific information after having read that, read the comprehensive [[Installing grunt]] guide.
 
 ## When will I be able to use in-development feature 'X'?
-Installing both published and unpublished development versions of grunt is covered in the [[Installing grunt]] guide.
+Installing both published and unpublished development versions of Grunt is covered in the [[Installing grunt]] guide.
 
 <a name="faq-windows"></a>
-## Does grunt work on Windows?
+## Does Grunt work on Windows?
 Grunt works fine on Windows, because [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) both work fine on Windows. Usually the problematic part is [Cygwin](http://www.cygwin.com/), because it bundles an outdated version of Node.js.
 
 The best way to avoid this issue is to use the [msysGit installer](http://msysgit.github.com/) to install the `git` binary and the [Node.js installer](http://nodejs.org/#download) to install the `node` and `npm` binaries, and to use the built-in [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html) or [PowerShell](http://support.microsoft.com/kb/968929) instead of Cygwin.
@@ -14,7 +14,7 @@ The best way to avoid this issue is to use the [msysGit installer](http://msysgi
 ## On Windows, why does my JS editor open when I try to run grunt?
 If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
 
-An alternative would be to use the `DOSKEY` command to create a grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
+An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
 
 This is the `DOSKEY` command you'd use:
 
@@ -24,9 +24,9 @@ DOSKEY grunt=grunt.cmd $*
 
 <a name="faq-async-complete"></a>
 ## Why doesn't my asynchronous task complete?
-Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell grunt that your task is asynchronous. For simplicity's sake, grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
+Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
-Note that passing `false` to the `done()` function tells grunt that the task has failed.
+Note that passing `false` to the `done()` function tells Grunt that the task has failed.
 
 For example:
 
@@ -45,7 +45,7 @@ To enable bash tab auto-completion for grunt, add the following line to your `~/
 eval "$(grunt --completion=bash)"
 ```
 
-This assumes that grunt has been installed globally with `npm install -g grunt`. Currently, the only supported shell is bash.
+This assumes that Grunt has been installed globally with `npm install -g grunt`. Currently, the only supported shell is bash.
 
 <a name="faq-share-parameters"></a>
 ## How can I share parameters across multiple tasks?
