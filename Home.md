@@ -6,15 +6,15 @@ Development Version: **0.4.0rc8**
 
 ## Documentation
 * [[Getting Started]]
-* [[Installing Grunt]]
 * [[Configuring Tasks]]
+* [[Sample Gruntfile]]
 * [[Creating Tasks]]
 * [[Creating Plugins]]
 * [[Contributing]]
 * [[Community]]
 
 ### Advanced
-* [[Testing Tasks]]
+* [[Installing Grunt]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
 
