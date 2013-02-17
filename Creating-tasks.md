@@ -2,7 +2,7 @@ Tasks are grunt's bread and butter. The stuff you do most often, like `jshint` o
 
 If you don't specify a task, but a task named "default" has been defined, that task will run (unsurprisingly) by default.
 
-## Alias Tasks<a id="aliastasks"/>
+## Alias Tasks
 If a task list is specified, the new task will be an alias for one or more other tasks. Whenever this "alias task" is run, every specified tasks in `taskList` will be run, in the order specified. The `taskList` argument must be an array of tasks.
 
 ```javascript
@@ -21,7 +21,7 @@ Task arguments can be specified as well. In this example, the alias "dist" runs 
 grunt.registerTask('dist', ['concat:dist', 'uglify:dist']);
 ```
 
-## Multi Tasks<a id="multitasks"/>
+## Multi Tasks
 When a multi task is run, Grunt looks for a property of the same name in the Grunt configuration. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets."
 
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), Grunt will look for a property with the _new_ task name in the config object.
@@ -49,7 +49,7 @@ grunt.registerMultiTask('log', 'Log stuff.', function() {
 ```
 
 
-## "Basic" Tasks<a id="basictasks"/>
+## "Basic" Tasks
 When a basic task is run, Grunt doesn't look at the configuration or environment—it just runs the specified task function, passing any specified colon-separated arguments in as function arguments.
 
 ```javascript
@@ -68,7 +68,7 @@ grunt.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2)
 });
 ```
 
-## Custom tasks<a id="customtasks"/>
+## Custom tasks
 You can go crazy with tasks. If your tasks don't follow the "multi task" structure, use a custom task.
 
 ```javascript
