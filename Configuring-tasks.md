@@ -1,6 +1,6 @@
 This guide explains how to configure tasks for your project using a Gruntfile.  If you don't know what a Gruntfile is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
-## Grunt Configuration<a id="gruntconfiguration"/>
+## Grunt Configuration
 Task configuration is specified in your Gruntfile via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any arbitrary data. As long as properties don't conflict with properties your tasks require, they will be otherwise ignored.
 
 Also, because this is JavaScript, you're not limited to JSON; you may use any valid JavaScript here. You may even programmatically generate the configuration if necessary.
@@ -19,7 +19,7 @@ grunt.initConfig({
 });
 ```
 
-## Task Configuration & Targets<a id="taskconfigurationandtargets"/>
+## Task Configuration & Targets
 ((briefly explain multi tasks vs custom tasks here))
 
 When a task is run, Grunt looks for its configuration under a property of the same name. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets." In the example below, the `concat` task has `foo` and `bar` targets, while the `uglify` task only has a `bar` target.
@@ -43,7 +43,7 @@ grunt.initConfig({
 ```
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.renameTask](https://github.com/gruntjs/grunt/wiki/grunt#wiki-grunt-renameTask), Grunt will look for a property with the _new_ task name in the config object.
 
-## Options<a id="options"/>
+## Options
 Inside a task configuration, an `options` property may be specified to override built-in defaults.  In addition, each target may have an `options` property which is specific to that target.  Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
@@ -66,7 +66,7 @@ grunt.initConfig({
 });
 ```
 
-## Files<a id="files"/>
+## Files
 Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
 
 All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
@@ -252,7 +252,7 @@ grunt.initConfig({
 });
 ```
 
-## Templates<a id="templates"/>
+## Templates
 Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more remain.
 
 The entire config object is the context in which properties are resolved. Additionally, `grunt` and its methods are available inside templates, eg. `<%= grunt.template.today('yyyy-mm-dd') %>`.
@@ -281,7 +281,7 @@ grunt.initConfig({
 });
 ```
 
-## Importing External Data<a id="importingexternaldata"/>
+## Importing External Data
 In the following Gruntfile, project metadata is imported into the Grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin](http://github.com/gruntjs/grunt-contrib-uglify) `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
 
 Grunt has `grunt.file.readJSON` and `grunt.file.readYAML` methods for importing JSON and YAML data.
