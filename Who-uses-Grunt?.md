@@ -1,4 +1,4 @@
-This is just a short list of companies and projects that use Grunt. If you've used Grunt in a project and would like it listed here, [please let us know by filing an issue](https://github.com/gruntjs/gruntjs.com/issues).
+This is just a short list of companies and projects that use Grunt. If you've used Grunt in a project and would like it listed on this page, [please let us know by filing an issue](https://github.com/gruntjs/gruntjs.com/issues).
 
 ### [Adobe](http://www.adobe.com/)
 - [Brackets](http://brackets.io/) ([Gruntfile](https://github.com/adobe/brackets/blob/master/Gruntfile.js))
