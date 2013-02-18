@@ -1,5 +1,7 @@
 Grunt exposes all of its methods and properties on the `grunt` object that gets passed into the `module.exports` function exported in your [Gruntfile](Getting-started), Grunt plugin or in a [tasks file](Creating-tasks).
 
+Nearly all of the following methods are defined elsewhere, but are provided directly on the `grunt` object for convenience. See the individual api section docs for detailed explanations and examples.
+
 ## Config
 
 ### grunt.initConfig
