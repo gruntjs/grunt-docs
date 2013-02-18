@@ -18,7 +18,7 @@ Development Version: **0.4.0rc8**
 
 ### Community
 * [[Help Resources]]
-* [[Who uses Grunt?]]
+* [[Who uses Grunt]]
 * [[Contributing]]
 
 ### Migration guides
