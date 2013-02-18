@@ -20,7 +20,6 @@ Development Version: **0.4.0rc8**
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]
-* [[Plugin Release Candidate Versions]]
 
 ## API
 * [[grunt]]
