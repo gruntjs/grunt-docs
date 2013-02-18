@@ -11,12 +11,15 @@ Development Version: **0.4.0rc8**
 * [[Creating Tasks]]
 * [[Creating Plugins]]
 * [[Contributing]]
-* [[Community]]
 
 ### Advanced
 * [[Installing Grunt]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
+
+### Community
+* [[Who uses Grunt?]]
+* [[Help Resources]]
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]
