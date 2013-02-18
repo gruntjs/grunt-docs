@@ -1,4 +1,4 @@
-This is just a short list of Grunt users. If you've used Grunt in a project and would like it listed here, [let us know!](https://github.com/gruntjs/gruntjs.com/issues).
+This is just a short list of Grunt users. If you've used Grunt in a project and would like it listed here, [let us know](https://github.com/gruntjs/gruntjs.com/issues).
 
 ### [Adobe](http://www.adobe.com/)
 - [Brackets](http://brackets.io/) ([Gruntfile](https://github.com/adobe/brackets/blob/master/Gruntfile.js))
