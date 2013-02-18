@@ -4,13 +4,11 @@ For general installation instructions, please read the [[Getting Started]] guide
 ## When will I be able to use in-development feature 'X'?
 Installing both published and unpublished development versions of Grunt is covered in the [[Installing grunt]] guide.
 
-<a name="faq-windows"></a>
 ## Does Grunt work on Windows?
 Grunt works fine on Windows, because [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) both work fine on Windows. Usually the problematic part is [Cygwin](http://www.cygwin.com/), because it bundles an outdated version of Node.js.
 
 The best way to avoid this issue is to use the [msysGit installer](http://msysgit.github.com/) to install the `git` binary and the [Node.js installer](http://nodejs.org/#download) to install the `node` and `npm` binaries, and to use the built-in [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html) or [PowerShell](http://support.microsoft.com/kb/968929) instead of Cygwin.
 
-<a name="faq-windows-editor"></a>
 ## On Windows, why does my JS editor open when I try to run grunt?
 If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
 
@@ -22,7 +20,6 @@ This is the `DOSKEY` command you'd use:
 DOSKEY grunt=grunt.cmd $*
 ```
 
-<a name="faq-async-complete"></a>
 ## Why doesn't my asynchronous task complete?
 Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
@@ -37,7 +34,6 @@ grunt.registerTask('asyncme', 'My asynchronous task.', function() {
 });
 ```
 
-<a name="faq-auto-completion"></a>
 ## How do I enable shell tab auto-completion?
 To enable bash tab auto-completion for grunt, add the following line to your `~/.bashrc` file:
 
@@ -47,7 +43,6 @@ eval "$(grunt --completion=bash)"
 
 This assumes that Grunt has been installed globally with `npm install -g grunt`. Currently, the only supported shell is bash.
 
-<a name="faq-share-parameters"></a>
 ## How can I share parameters across multiple tasks?
 While each task can accept its own parameters, there are a few options available for sharing parameters across multiple tasks.
 

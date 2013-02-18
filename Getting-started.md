@@ -70,23 +70,16 @@ There are a few ways to create a `package.json` file for your project:
 ### Installing Grunt and gruntplugins
 The easiest way to add Grunt and gruntplugins to an existing `package.json` is with the command `npm install <module> --save-dev`.  Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
 
-For example, this will install the latest 0.4.0 release candidate of Grunt in your project folder, adding it to your devDependencies:
+For example, this will install the latest version of Grunt in your project folder, adding it to your devDependencies:
 
 ```shell
-npm install grunt@0.4.0rc8 --save-dev
+npm install grunt --save-dev
 ```
 
 The same can be done for gruntplugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
 _Note: until 0.4.0 is officially released, a list of updated contrib plugins compatible with the latest release candidate can be found in the [[Plugin Release Candidate Versions]] guide._
 
-<!--
-For example, this will install the latest version of Grunt in your project folder, adding it to your devDependencies:
-
-```shell
-npm install grunt --save-dev
-```
--->
 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source. _This file was named `grunt.js` for 0.3.x versions of Grunt._

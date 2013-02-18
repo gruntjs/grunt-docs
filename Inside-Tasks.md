@@ -2,7 +2,6 @@ While a task is running, grunt exposes many task-specific utility properties and
 
 ## Inside All Tasks
 
-<a name="this-async"></a>
 ### this.async
 If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to indicate that the task has failed.
 
@@ -20,7 +19,6 @@ setTimeout(function() {
 }, 1000);
 ```
 
-<a name="this-requires"></a>
 ### this.requires
 If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The tasks list can be an array of task names or individual task names, as arguments.
 
@@ -30,7 +28,6 @@ Note that this won't actually run the specified task(s), it will just fail the c
 this.requires(tasksList)
 ```
 
-<a name="this-requiresConfig"></a>
 ### this.requiresConfig
 Fail the current task if one or more required [config](grunt.config) properties is missing. One or more string or array config properties may be specified.
 
@@ -42,29 +39,28 @@ See the [grunt.config documentation](grunt.config) for more information about co
 
 _This method is an alias for the [grunt.config.requires](grunt.config) method._
 
-<a name="this-name"></a>
 ### this.name
 The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
 
-<a name="this-nameArgs"></a>
+
 ### this.nameArgs
 The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
-<a name="this-args"></a>
+
 ### this.args
 An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`. Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function.
 
-<a name="this-flags"></a>
+
 ### this.flags
 An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`.
 
 Note that inside multi tasks, the target name is _not_ set as a flag.
 
-<a name="this-errorCount"></a>
+
 ### this.errorCount
 The number of [grunt.log.error](grunt.log) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
 
-<a name="this-options"></a>
+
 ### this.options
 Returns a task-specific options object. This object contains properties merged from the optional `defaultsObj` argument, which can be overridden by a task-specific `options` property (and for multi tasks, an additional target-specific `options` property) in the config data.
 
@@ -116,11 +112,11 @@ grunt.registerTask('ourtask', function() {
 
 ## Inside Multi Tasks
 
-<a name="this-target"></a>
+
 ### this.target
 In a multi task, this is the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
-<a name="this-file"></a>
+
 ### this.file
 In a multi task, target data can be stored in three different formats. A relatively basic "compact" format, a much more flexible "full" format and a multiple destination "list" format.
 
@@ -163,7 +159,6 @@ grunt.initConfig({
 });
 ```
 
-<a name="this-data"></a>
 ### this.data
 In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
 

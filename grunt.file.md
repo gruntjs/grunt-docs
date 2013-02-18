@@ -123,7 +123,6 @@ _If the `--no-write` command-line option is specified, directories won't actuall
 grunt.file.mkdir(dirpath [, mode])
 ```
 
-<a name="grunt-file-recurse"></a>
 ### grunt.file.recurse
 Recurse into a directory, executing `callback` for each file.
 
@@ -152,7 +151,7 @@ It is often impractical to specify all source filepaths individually, so grunt s
 
 See the "Globbing patterns" section of the [[Configuring tasks]] guide for globbing pattern examples.
 
-<a name="grunt-file-expand"></a>
+
 ### grunt.file.expand
 Return a unique array of all file or directory paths that match the given globbing pattern(s). This method accepts either comma separated globbing patterns or an array of globbing patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
 
