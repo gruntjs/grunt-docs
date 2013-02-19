@@ -70,7 +70,7 @@ Returns an options object. Properties of the optional `defaultsObj` argument wil
 this.options([defaultsObj])
 ```
 
-This example shows how a task might use `this.options`:
+This example shows how a task might use the `this.options` method:
 
 ```js
 var options = this.options({
@@ -88,9 +88,15 @@ The [Configuring tasks](configuring-tasks#options) guide shows an example of how
 In a multi task, this property contains the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
 ### this.files
-In a multi task, any number of files specified using any of the [file formats](configuring-tasks#files) are automatically normalized by Grunt into the [Files Array file format](configuring-tasks#files-array-format). It will always be an array of objects, where each object contains a `dest` property (`String` or `undefined`) and a `src` property (`Array` of `String`).
+In a multi task, all files specified using any Grunt-supported [file formats](configuring-tasks#files), [globbing patterns](configuring-tasks#globbing-patterns) or [dynamic mappings](configuring-tasks#building-the-files-object-dynamically) will automatically be normalized into _a single format_. This format looks just like the [Files Array file format](configuring-tasks#files-array-format).
 
-This example shows how a simple "concat" task might use `this.files`:
+What this means is that tasks don't need to explicitly handle custom file formats, globbing patterns, mapping source files to destination files or filtering out files or directories. A task user should just specify files per the [Configuring tasks](configuring-tasks#files) guide, and **Grunt will handle all the details.**
+
+The task should iterate over the `this.files` array, utilizing the `src` and `dest` properties of each object in that array. The `this.files` property will always be an array. The `src` property will also always be an array, in case your task cares about multiple source files per destination file.
+
+_Note that it's possible that nonexistent files might be included in `src` values, so you may want to explicitly test that they exist._
+
+This example shows how a simple "concat" task might use the `this.files` property:
 
 ```js
 this.files.filter(function(f) {
@@ -113,12 +119,12 @@ this.files.filter(function(f) {
 });
 ```
 
-_If you need the original file object properties, they are available on each individual file object under the `orig` property. Because grunt does all the hard work for you, the use-case for this property is unclear._
+_If you need the original file object properties, they are available on each individual file object under the `orig` property. But because Grunt does all the hard work for you, there is no known use-case for the original properties._
 
 ### this.filesSrc
 In a multi task, all `src` files files specified using any of the [file formats](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, you can use this array instead of `this.files`.
 
-This example shows how a simple "lint" task might use `this.filesSrc`:
+This example shows how a simple "lint" task might use the `this.filesSrc` property:
 
 ```js
 // Lint specified files.
