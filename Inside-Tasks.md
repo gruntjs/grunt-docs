@@ -66,8 +66,6 @@ The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred d
 ### this.options
 Returns an options object. Properties of the optional `defaultsObj` argument will be overridden by any task-level `options` object properties, which will be further overridden in multi tasks by any target-level `options` object properties.
 
-The [Configuring tasks](configuring-tasks#options) guide shows an example of how options may be specified.
-
 ```js
 this.options([defaultsObj])
 ```
@@ -81,6 +79,8 @@ var options = this.options({
 
 doSomething(options.enabled);
 ```
+
+The [Configuring tasks](configuring-tasks#options) guide shows an example of how options may be specified, from the task user's point of view.
 
 ## Inside Multi Tasks
 
