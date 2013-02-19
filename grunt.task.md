@@ -92,6 +92,8 @@ _This method is also available as [grunt.registerMultiTask](grunt)._
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
 
+_Note that if a task has been renamed, the [this.name](inside-tasks#this.name) and [this.nameArgs](inside-tasks#this.nameArgs) properties will change accordingly._
+
 ```javascript
 grunt.task.renameTask(oldname, newname)
 ```
