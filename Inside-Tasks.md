@@ -64,52 +64,22 @@ _Note that inside multi tasks, the target name is _not_ set as a flag._
 The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
 
 ### this.options
-Returns a task-specific options object. This object contains properties merged from the optional `defaultsObj` argument, which can be overridden by a task-specific `options` property (and for multi tasks, an additional target-specific `options` property) in the config data.
+Returns an options object. Properties of the optional `defaultsObj` argument will be overridden by any task-level `options` object properties, which will be further overridden in multi tasks by any target-level `options` object properties.
 
-```javascript
+The [Configuring tasks](/configuring-tasks#options) guide shows an example of how options may be specified.
+
+```js
 this.options([defaultsObj])
 ```
 
-So for the given Gruntfile:
-
-```javascript
-grunt.initConfig({
-  ourtask: {
-    // Options set on all of this task's targets
-    options: {
-      separator: ' & '
-    },
-    target: {
-      // Options specific to this target
-      options: {
-        separator: '|'
-      }
-      src: ['src/*.js'],
-      dest: 'dist/built.js'
-    }
-  }
-});
-```
-
-We can access the options within our task with `this.options()`:
-
-```javascript
-grunt.registerTask('ourtask', function() {
-  var options = this.options({
-    // Default options
-    punctuation: '.',
-    separator: ', '
-  });
-});
-```
-
-`options` would equal the following as the target specific option gets precedence:
+This example shows how a task might use `this.options`:
 
 ```js
-{
-  punctuation: '.',
-  separator: '|'
-}
+var options = this.options({
+  enabled: false,
+});
+
+doSomething(options.enabled);
 ```
 
 ## Inside Multi Tasks
@@ -120,7 +90,7 @@ In a multi task, this property contains the name of the target currently being i
 ### this.files
 In a multi task, any number of files specified using any of the [file formats](/configuring-tasks#files) are automatically normalized by Grunt into the [Files Array file format](/configuring-tasks#files-array-format). It will always be an array of objects, where each object contains a `dest` property (`String` or `undefined`) and a `src` property (`Array` of `String`).
 
-This example shows how a simple "concat" task might work:
+This example shows how a simple "concat" task might use `this.files`:
 
 ```js
 this.files.filter(function(f) {
@@ -148,7 +118,7 @@ _If you need the original file object properties, they are available on each ind
 ### this.filesSrc
 In a multi task, all `src` files files specified using any of the [file formats](/configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, you can use this array instead of `this.files`.
 
-This example shows how a simple "lint" task might work:
+This example shows how a simple "lint" task might use `this.filesSrc`:
 
 ```js
 // Lint specified files.
