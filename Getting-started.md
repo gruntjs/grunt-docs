@@ -23,7 +23,7 @@ Note that installing `grunt-cli` does not install the grunt task runner!  The jo
 
 Each time `grunt` is run, it looks for a locally installed grunt using node's `require()` system. Because of this, you can run `grunt` from any subfolder in your project.
 
-If a locally installed gGunt is found, the CLI loads the local installation of the grunt library, applies the configuration from your `Gruntfile`, and executes any tasks you've requested for it to run.
+If a locally installed Grunt is found, the CLI loads the local installation of the grunt library, applies the configuration from your `Gruntfile`, and executes any tasks you've requested for it to run.
 
 *To really understand what is happening, [read the code](https://github.com/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
@@ -60,9 +60,9 @@ There are a few ways to create a `package.json` file for your project:
   "name": "my-project-name",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "0.4.0rc7",
-    "grunt-contrib-jshint": "0.1.1rc6",
-    "grunt-contrib-nodeunit": "0.1.2rc6"
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2"
   }
 }
 ```
@@ -77,9 +77,6 @@ npm install grunt --save-dev
 ```
 
 The same can be done for gruntplugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
-
-_Note: until 0.4.0 is officially released, a list of updated contrib plugins compatible with the latest release candidate can be found in the [[Plugin Release Candidate Versions]] guide._
-
 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source. _This file was named `grunt.js` for 0.3.x versions of Grunt._
@@ -174,7 +171,7 @@ You can configure Grunt to run one or more tasks by default by defining a `defau
 grunt.registerTask('default', ['uglify']);
 ```
 
-If your project requires tasks not provided by a [grunt plugin][grunt plugins], you may define custom tasks right inside the `Gruntfile`. For example, this Gruntfile defines a completely custom `default` task that doesn't even utilize task configuration:
+If your project requires tasks not provided by a Grunt plugin, you may define custom tasks right inside the `Gruntfile`. For example, this Gruntfile defines a completely custom `default` task that doesn't even utilize task configuration:
 
 ```js
 module.exports = function(grunt) {
