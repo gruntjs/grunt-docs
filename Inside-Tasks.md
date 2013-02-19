@@ -42,13 +42,13 @@ _This method is an alias for the [grunt.config.requires](grunt.config#grunt.conf
 ### this.name
 The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
 
-_Note that if a task has been renamed with [grunt.renameTask](grunt#grunt.renameTask) this property will reflect the new name._
+_Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask) this property will reflect the new name._
 
 
 ### this.nameArgs
 The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
-_Note that if a task has been renamed with [grunt.renameTask](grunt#grunt.renameTask) this property will reflect the new name._
+_Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask) this property will reflect the new name._
 
 ### this.args
 An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`.
