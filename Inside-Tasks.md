@@ -119,7 +119,7 @@ this.files.filter(function(f) {
 });
 ```
 
-_If you need the original file object properties, they are available on each individual file object under the `orig` property. But because Grunt does all the hard work for you, there is no known use-case for accessing the original properties as-specified by the task user._
+_If you need the original file object properties, they are available on each individual file object under the `orig` property, but there is no known use-case for accessing the original properties._
 
 ### this.filesSrc
 In a multi task, all `src` files files specified via any [file format](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array instead of `this.files`.
