@@ -36,7 +36,7 @@ grunt.event.off(event, listener)
 Removes all listeners, or those of the specified event.
 
 ```js
-grunt.emitter.removeAllListeners([event])
+grunt.event.removeAllListeners([event])
 ```
 
 ### grunt.event.emit
