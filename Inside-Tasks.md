@@ -1,14 +1,14 @@
-While a task is running, grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template), eg. the property `this.name` is also available as `grunt.task.current.name`.
+While a task is running, Grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template), eg. the property `this.name` is also available as `grunt.task.current.name`.
 
 ## Inside All Tasks
 
 ### this.async
-If a task is asynchronous, this method must be invoked to instruct grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to indicate that the task has failed.
+If a task is asynchronous, this method must be invoked to instruct Grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to instruct Grunt that the task has failed.
 
 If the `this.async` method isn't invoked, the task will execute synchronously.
 
 ```javascript
-// Tell grunt this task is asynchronous.
+// Tell Grunt this task is asynchronous.
 var done = this.async();
 // Your async code.
 setTimeout(function() {
@@ -20,7 +20,7 @@ setTimeout(function() {
 ```
 
 ### this.requires
-If one task depends on the successful completion of another task (or tasks), this method can be used to force grunt to abort if the other task didn't run, or if the other task failed. The tasks list can be an array of task names or individual task names, as arguments.
+If one task depends on the successful completion of another task (or tasks), this method can be used to force Grunt to abort if the other task didn't run, or if the other task failed. The tasks list can be an array of task names or individual task names, as arguments.
 
 Note that this won't actually run the specified task(s), it will just fail the current task if they haven't already run successfully.
 
@@ -37,29 +37,31 @@ this.requiresConfig(prop [, prop [, ...]])
 
 See the [grunt.config documentation](grunt.config) for more information about config properties.
 
-_This method is an alias for the [grunt.config.requires](grunt.config) method._
+_This method is an alias for the [grunt.config.requires](grunt.config#grunt.config.requires) method._
 
 ### this.name
 The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
+
+_Note that if a task has been renamed with [grunt.renameTask](grunt#grunt.renameTask) this property will reflect the new name._
 
 
 ### this.nameArgs
 The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
+_Note that if a task has been renamed with [grunt.renameTask](grunt#grunt.renameTask) this property will reflect the new name._
 
 ### this.args
-An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`. Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function.
+An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`.
 
+_Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function._
 
 ### this.flags
 An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`.
 
-Note that inside multi tasks, the target name is _not_ set as a flag.
-
+_Note that inside multi tasks, the target name is _not_ set as a flag._
 
 ### this.errorCount
-The number of [grunt.log.error](grunt.log) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
-
+The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
 
 ### this.options
 Returns a task-specific options object. This object contains properties merged from the optional `defaultsObj` argument, which can be overridden by a task-specific `options` property (and for multi tasks, an additional target-specific `options` property) in the config data.
@@ -112,54 +114,60 @@ grunt.registerTask('ourtask', function() {
 
 ## Inside Multi Tasks
 
-
 ### this.target
-In a multi task, this is the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
+In a multi task, this property contains the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
+### this.files
+In a multi task, any number of files specified using any of the [file formats](/configuring-tasks#files) are automatically normalized by Grunt into the [Files Array file format](/configuring-tasks#files-array-format). It will always be an array of objects, where each object contains a `dest` property (`String` or `undefined`) and a `src` property (`Array` of `String`).
 
-### this.file
-In a multi task, target data can be stored in three different formats. A relatively basic "compact" format, a much more flexible "full" format and a multiple destination "list" format.
-
-When the compact format is used, that key and value are made available as `this.file.dest` and `this.file.src`, respectively. When the full format is used, the specified `src` and `dest` values are used for `this.file.dest` and `this.file.src`. When the list format is used, the task is ran for each entry in the `files` object with the key and value made available as `this.file.dest` and `this.file.src`.
-
-All formats are normalized to the following example object structure:
+This example shows how a simple "concat" task might work:
 
 ```js
-{
-  src: ['src/one.js', 'src/two.js', 'src/three.js'],
-  dest: 'dist/built.js',
-  srcRaw: [ 'src/*.js' ]
-}
+this.files.filter(function(f) {
+  var contents = f.src.filter(function(filepath) {
+    // Remove nonexistent files (it's up to you to filter or warn here).
+    if (!grunt.file.exists(filepath)) {
+      grunt.log.warn('Source file "' + filepath + '" not found.');
+      return false;
+    } else {
+      return true;
+    }
+  }).map(function(filepath) {
+    // Read and return the file's source.
+    return grunt.file.read(filepath);
+  }).join('\n');
+  // Write joined contents to destination filepath.
+  grunt.file.write(f.dest, contents);
+  // Print a success message.
+  grunt.log.writeln('File "' + f.dest + '" created.');
+});
 ```
 
-`this.file.src` is auto expanded with [grunt.file.expand()](grunt.file). `this.file.srcRaw` will contain the raw, unexpanded (but still template processed) source file patterns. Both `this.file.src` and `this.file.srcRaw` values will always be flattened arrays. `this.file.dest` will be the destination file string.
+_If you need the original file object properties, they are available on each individual file object under the `orig` property. Because grunt does all the hard work for you, the use-case for this property is unclear._
 
-The following are examples of the mentioned formats:
+### this.filesSrc
+In a multi task, all `src` files files specified using any of the [file formats](/configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array.
 
-```javascript
-grunt.initConfig({
-  concat: {
-    // This is the "compact" format.
-    'dist/built.js': ['src/file1.js', 'src/file2.js'],
-    // This is the "full" format.
-    built: {
-      src: ['src/file1.js', 'src/file2.js'],
-      dest: 'dist/built.js'
-    },
-    // This is the "list" format.
-    // The task is ran once per files entry.
-    list: {
-      files: {
-        'dist/buildOne.js': ['src/one_*.js'],
-        'dist/buildTwo.js': ['src/two_*.js'],
-        'dist/all.js': ['<%= concat.built.src %>']
-      }
-    }
+This example shows how a simple "lint" task might work:
+
+```js
+// Lint specified files.
+var files = this.filesSrc;
+var errors = false;
+files.forEach(function(filepath) {
+  if (!lint(grunt.file.read(filepath))) {
+    errors = true;
   }
 });
+
+// Fail task if errors were logged.
+if (errors) { return false; }
+
+// Otherwise, print a success message.
+grunt.log.ok('Files lint free: ' + files.length);
 ```
 
 ### this.data
 In a multi task, this is the actual data stored in the grunt config object for the given target. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
 
-It is recommended that `this.file` and `this.options` are use instead of `this.data`, as their values are normalized.
+_It is recommended that `this.options` `this.files` and `this.filesSrc` are used instead of `this.data`, as their values are normalized._
