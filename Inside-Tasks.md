@@ -88,9 +88,7 @@ The [Configuring tasks](configuring-tasks#options) guide shows an example of how
 In a multi task, this property contains the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
 ### this.files
-In a multi task, all files specified using any Grunt-supported [file formats and options](configuring-tasks#files), [globbing patterns](configuring-tasks#globbing-patterns) or [dynamic mappings](configuring-tasks#building-the-files-object-dynamically) will automatically be normalized into _a single format_.
-
-This format looks just like the [Files Array file format](configuring-tasks#files-array-format).
+In a multi task, all files specified using any Grunt-supported [file formats and options](configuring-tasks#files), [globbing patterns](configuring-tasks#globbing-patterns) or [dynamic mappings](configuring-tasks#building-the-files-object-dynamically) will automatically be normalized into a single format: the [Files Array file format](configuring-tasks#files-array-format).
 
 What this means is that tasks don't need to contain a ton of boilerplate for explicitly handling custom file formats, globbing patterns, mapping source files to destination files or filtering out files or directories. _A task user can just specify files per the [Configuring tasks](configuring-tasks#files) guide, and **Grunt will handle all the details.**_
 
