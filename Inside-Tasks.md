@@ -123,15 +123,15 @@ This example shows how a simple "lint" task might use `this.filesSrc`:
 ```js
 // Lint specified files.
 var files = this.filesSrc;
-var errors = false;
+var errorCount = 0;
 files.forEach(function(filepath) {
   if (!lint(grunt.file.read(filepath))) {
-    errors = true;
+    errorCount++;
   }
 });
 
 // Fail task if errors were logged.
-if (errors) { return false; }
+if (errorCount > 0) { return false; }
 
 // Otherwise, print a success message.
 grunt.log.ok('Files lint free: ' + files.length);
