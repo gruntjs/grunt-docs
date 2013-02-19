@@ -4,7 +4,7 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
 
 1. The npm module `grunt` should be installed locally to your project. It contains the code and logic for running tasks, loading plugins, etc.
 2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the Grunt that has been installed locally to your project, regardless of the version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
-3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](/gruntjs/grunt-init) for more information.
+3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](https://github.com/gruntjs/grunt-init) for more information.
 
 ## Pre-existing tasks and plugins
 All `grunt-contrib-*` series plugins are Grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for Grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
@@ -23,14 +23,14 @@ See the "The Gruntfile" section of the [[Getting started]] guide for more inform
 ## Core Tasks are now Grunt Plugins
 The eight core tasks that were included in Grunt 0.3 are now separate Grunt plugins. Each is a discrete npm module that must be installed as a plugin per the "Loading Grunt plugins and tasks" section of the [[Getting started]] guide.
 
-* concat → [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) plugin
+* concat → [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat) plugin
 * init → stand-alone [grunt-init] utility
-* lint → [grunt-contrib-jshint](/gruntjs/grunt-contrib-jshint) plugin
-* min → [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugin
-* qunit → [grunt-contrib-qunit](/gruntjs/grunt-contrib-qunit) plugin
-* server → [grunt-contrib-connect](/gruntjs/grunt-contrib-connect) plugin
-* test → [grunt-contrib-nodeunit](/gruntjs/grunt-contrib-nodeunit) plugin
-* watch → [grunt-contrib-watch](/gruntjs/grunt-contrib-watch) plugin
+* lint → [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) plugin
+* min → [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) plugin
+* qunit → [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit) plugin
+* server → [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) plugin
+* test → [grunt-contrib-nodeunit](https://github.com/gruntjs/grunt-contrib-nodeunit) plugin
+* watch → [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) plugin
 
 Some task names and options have changed.  Be sure to see each plugin's documentation as linked above for the latest configuration details.
 
@@ -49,9 +49,9 @@ The configuration format for Grunt 0.4 tasks has been standardized and greatly e
 * `'<json:file.json>'` → `grunt.file.readJSON('file.json')`
 * `'<file_template:file.js>'` → `grunt.template.process(grunt.file.read('file.js'))`
 
-Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
+Instead of specifying a banner in a file list with `'<banner>'` or `'<banner:prop.subprop>'`, the [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) plugins each have a `banner` option.
 
-Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
+Instead of stripping banners from files individually with `'<file_strip_banner:file.js>'`, the [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat) and [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) plugins each have an option to strip/preserve banners.
 
 ## Alias task changes
 When specifying an alias task, the list of tasks to run must now be specified as an array.
@@ -74,7 +74,7 @@ grunt my-task:argument-without-spaces "other-task:argument with spaces"
 The [file.defaultEncoding](grunt.file#wiki-grunt-file-defaultEncoding) method was added to normalize character encodings, and all `grunt.file` methods have been updated to support the specified encoding.
 
 ## Helpers
-Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between Grunt plugins, please see [grunt-lib-legacyhelpers](/gruntjs/grunt-lib-legacyhelpers). Plugin authors are encouraged to upgrade their plugins.
+Grunt's helper system has been removed in favor of node `require`. For a concise example on how to share functionality between Grunt plugins, please see [grunt-lib-legacyhelpers](https://github.com/gruntjs/grunt-lib-legacyhelpers). Plugin authors are encouraged to upgrade their plugins.
 
 ## API
 The Grunt API saw substantial changes from 0.3 to 0.4.
@@ -142,4 +142,4 @@ The Grunt API saw substantial changes from 0.3 to 0.4.
 ## Troubleshooting
 * If you had previously installed a development version of Grunt 0.4 or any grunt-contrib plugins, be sure to flush your npm cache with `npm cache clean` first to ensure that you are pulling the final version of Grunt and grunt-contrib plugins.
 
-[grunt-init]: /gruntjs/grunt-init
+[grunt-init]: https://github.com/gruntjs/grunt-init
