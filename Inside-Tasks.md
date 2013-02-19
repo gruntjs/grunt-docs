@@ -46,27 +46,27 @@ _Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#gr
 
 
 ### this.nameArgs
-The name of the task, as specified with any colon-separated arguments or flags on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
+The name of the task, including any colon-separated arguments or flags specified on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
 
 _Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask) this property will reflect the new name._
 
 ### this.args
 An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`.
 
-_Note that in multi tasks, the target is removed from the `this.args` array and is not passed into the task function._
+_Note that in multi tasks, the current target is omitted from the `this.args` array._
 
 ### this.flags
 An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`.
 
-_Note that inside multi tasks, the target name is _not_ set as a flag._
+_Note that inside multi tasks, the target name is **not** set as a flag._
 
 ### this.errorCount
-The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred during this task. This can be used to fail a task if errors occurred during the task.
+The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred during this task. This can be used to fail a task if errors were logged during the task.
 
 ### this.options
 Returns an options object. Properties of the optional `defaultsObj` argument will be overridden by any task-level `options` object properties, which will be further overridden in multi tasks by any target-level `options` object properties.
 
-The [Configuring tasks](/configuring-tasks#options) guide shows an example of how options may be specified.
+The [Configuring tasks](configuring-tasks#options) guide shows an example of how options may be specified.
 
 ```js
 this.options([defaultsObj])
@@ -88,7 +88,7 @@ doSomething(options.enabled);
 In a multi task, this property contains the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
 
 ### this.files
-In a multi task, any number of files specified using any of the [file formats](/configuring-tasks#files) are automatically normalized by Grunt into the [Files Array file format](/configuring-tasks#files-array-format). It will always be an array of objects, where each object contains a `dest` property (`String` or `undefined`) and a `src` property (`Array` of `String`).
+In a multi task, any number of files specified using any of the [file formats](configuring-tasks#files) are automatically normalized by Grunt into the [Files Array file format](configuring-tasks#files-array-format). It will always be an array of objects, where each object contains a `dest` property (`String` or `undefined`) and a `src` property (`Array` of `String`).
 
 This example shows how a simple "concat" task might use `this.files`:
 
@@ -116,7 +116,7 @@ this.files.filter(function(f) {
 _If you need the original file object properties, they are available on each individual file object under the `orig` property. Because grunt does all the hard work for you, the use-case for this property is unclear._
 
 ### this.filesSrc
-In a multi task, all `src` files files specified using any of the [file formats](/configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, you can use this array instead of `this.files`.
+In a multi task, all `src` files files specified using any of the [file formats](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, you can use this array instead of `this.files`.
 
 This example shows how a simple "lint" task might use `this.filesSrc`:
 
