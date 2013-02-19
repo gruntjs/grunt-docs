@@ -146,7 +146,7 @@ this.files.filter(function(f) {
 _If you need the original file object properties, they are available on each individual file object under the `orig` property. Because grunt does all the hard work for you, the use-case for this property is unclear._
 
 ### this.filesSrc
-In a multi task, all `src` files files specified using any of the [file formats](/configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array.
+In a multi task, all `src` files files specified using any of the [file formats](/configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, you can use this array instead of `this.files`.
 
 This example shows how a simple "lint" task might work:
 
