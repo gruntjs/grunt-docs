@@ -19,7 +19,7 @@ grunt.event.once(event, listener)
 ```
 
 ### grunt.event.many
-Adds a listener that will execute **n times** for the event before being removed. The listener is invoked only the first time the event is fired, after which it is removed.
+Adds a listener that will execute **n times** for the event before being removed.
 
 ```js
 grunt.event.many(event, timesToListen, listener)
