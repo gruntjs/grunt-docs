@@ -99,8 +99,8 @@ _Note that it's possible that nonexistent files might be included in `src` value
 This example shows how a simple "concat" task might use the `this.files` property:
 
 ```js
-this.files.filter(function(f) {
-  var contents = f.src.filter(function(filepath) {
+this.files.forEach(function(file) {
+  var contents = file.src.filter(function(filepath) {
     // Remove nonexistent files (it's up to you to filter or warn here).
     if (!grunt.file.exists(filepath)) {
       grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -113,9 +113,9 @@ this.files.filter(function(f) {
     return grunt.file.read(filepath);
   }).join('\n');
   // Write joined contents to destination filepath.
-  grunt.file.write(f.dest, contents);
+  grunt.file.write(file.dest, contents);
   // Print a success message.
-  grunt.log.writeln('File "' + f.dest + '" created.');
+  grunt.log.writeln('File "' + file.dest + '" created.');
 });
 ```
 
