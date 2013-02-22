@@ -1,4 +1,5 @@
 1. Install [grunt-init](https://github.com/gruntjs/grunt-init) with `npm install -g grunt-init`
+2. Install the gruntplugin template with `git clone git@github.com:gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin`
 2. Run `grunt-init gruntplugin` in an empty directory.
 3. Run `npm install` to prepare the development environment.
 4. Author your plugin.
