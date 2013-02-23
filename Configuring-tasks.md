@@ -20,7 +20,6 @@ grunt.initConfig({
 ```
 
 ## Task Configuration and Targets
-((briefly explain multi tasks vs custom tasks here))
 
 When a task is run, Grunt looks for its configuration under a property of the same name. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets." In the example below, the `concat` task has `foo` and `bar` targets, while the `uglify` task only has a `bar` target.
 
