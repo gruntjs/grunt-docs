@@ -54,7 +54,7 @@ Additionally, if you place this custom template in your `~/.grunt-init/` directo
 ### Copying files
 As long as a template uses the `init.filesToCopy` and `init.copyAndProcess` methods, any files in the `root/` subdirectory will be copied to the current directory when the init template is run.
 
-Note that all copied files will be processed as templates, with any `{% %}` template being processed against the collected `props` data object, unless the `noProcess` option is set. See the [jquery template](https://github.com/gruntjs/grunt-init/blob/master/init/jquery.js) for an example.
+Note that all copied files will be processed as templates, with any `{% %}` template being processed against the collected `props` data object, unless the `noProcess` option is set. See the [jquery template](https://github.com/gruntjs/grunt-init-jquery) for an example.
 
 ### Renaming or excluding template files
 The `rename.json` describes `sourcepath` to `destpath` rename mappings. The `sourcepath` must be the path of the file-to-be-copied relative to the `root/` folder, but the `destpath` value can contain `{% %}` templates, describing what the destination path will be.
