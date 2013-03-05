@@ -140,7 +140,7 @@ grunt.initConfig({
 });
 ```
 
-### Older formats
+### Older Formats
 The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options or additional properties per src-dest file mapping.
 
 Consider this format deprecated, and avoid it where possible.
@@ -150,6 +150,35 @@ grunt.initConfig({
   concat: {
     'dest/a.js': ['src/aa.js', 'src/aaa.js'],
     'dest/b.js': ['src/bb.js', 'src/bbb.js'],
+  },
+});
+```
+
+### Custom Filter Function
+The `filter` property can help you target files with a greater level of detail. Simply use a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). The following will clean only if the pattern matches an actual file:
+
+```js
+grunt.initConfig({
+  clean: {
+    foo: {
+      src: ['tmp/**/*'],
+      filter: 'isFile',
+    },
+  },
+});
+```
+
+Or create your own `filter` function and return `true` or `false` whether the file should be matched. For example the following will only clean folders that are empty:
+
+```js
+grunt.initConfig({
+  clean: {
+    foo: {
+      src: ['tmp/**/*'],
+      filter: function(filepath) {
+        return (grunt.file.isDir(filepath) && require('fs').readdirSync(filepath).length === 0);
+      },
+    },
   },
 });
 ```
