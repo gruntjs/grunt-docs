@@ -7,7 +7,7 @@ This is just a short list of companies and projects that use Grunt. If you've us
 ### [jQuery](http://jquery.com/)
 - [jQuery](http://jquery.com/) - ([Gruntfile](https://github.com/jquery/jquery/blob/master/Gruntfile.js))
 - [jQuery UI](http://jqueryui.com/) - ([Gruntfile](https://github.com/jquery/jquery-ui/blob/master/grunt.js))
-- [QUnit](http://qunitjs.com/) - ([Gruntfile](https://github.com/jquery/qunit/blob/master/grunt.js))
+- [QUnit](http://qunitjs.com/) - ([Gruntfile](https://github.com/jquery/qunit/blob/master/Gruntfile.js))
 
 ### [Twitter](https://twitter.com/)
 - [Tweetdeck](http://www.tweetdeck.com/)
