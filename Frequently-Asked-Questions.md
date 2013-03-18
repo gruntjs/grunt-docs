@@ -9,17 +9,6 @@ Grunt works fine on Windows, because [Node.js](http://nodejs.org/) and [npm](htt
 
 The best way to avoid this issue is to use the [msysGit installer](http://msysgit.github.com/) to install the `git` binary and the [Node.js installer](http://nodejs.org/#download) to install the `node` and `npm` binaries, and to use the built-in [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html) or [PowerShell](http://support.microsoft.com/kb/968929) instead of Cygwin.
 
-## On Windows, why does my JS editor open when I try to run grunt?
-If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
-
-An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
-
-This is the `DOSKEY` command you'd use:
-
-```
-DOSKEY grunt=grunt.cmd $*
-```
-
 ## Why doesn't my asynchronous task complete?
 Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
@@ -88,4 +77,21 @@ grunt.registerTask('set_global', 'Set a global variable.', function(name, val) {
 grunt.registerTask('set_config', 'Set a config property.', function(name, val) {
   grunt.config.set(name, val);
 });
+```
+
+
+***
+
+
+## grunt 0.3 Questions
+
+## On Windows with grunt 0.3, why does my JS editor open when I try to run grunt?
+If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
+
+An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
+
+This is the `DOSKEY` command you'd use:
+
+```
+DOSKEY grunt=grunt.cmd $*
 ```
