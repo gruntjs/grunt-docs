@@ -47,7 +47,7 @@ A sample template named `my-template` would follow this general file structure:
 * `my-template/rename.json` - template-specific rename rules, processed as templates.
 * `my-template/root/` - files to be copied into the target location.
 
-Assuming these files exist at `/path/to/my-template`, the command `grunt-init /path/to/my-template` would be used to process the template. Multiple uniquely-named templates may exist in the same directory, just like the [built-in templates][].
+Assuming these files exist at `/path/to/my-template`, the command `grunt-init /path/to/my-template` would be used to process the template. Multiple uniquely-named templates may exist in the same directory.
 
 Additionally, if you place this custom template in your `~/.grunt-init/` directory (`%USERPROFILE%\.grunt-init\` on Windows) it will be automatically available to be used with just `grunt-init my-template`.
 
