@@ -16,7 +16,7 @@ This is just a short list of companies and projects that use Grunt. If you've us
 - [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/grunt.js))
 
 ### [Bitovi](http://bitovi.com/)
-- [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/grunt.js))
+- [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/Gruntfile.js))
 
 ### [Filament Group](http://filamentgroup.com/)
 - [X-rayHTML](https://github.com/filamentgroup/X-rayHTML) ([Gruntfile](https://github.com/filamentgroup/X-rayHTML/blob/master/grunt.js))
