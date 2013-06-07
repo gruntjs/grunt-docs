@@ -32,6 +32,8 @@ This is just a short list of companies and projects that use Grunt. If you've us
 - [Modernizr](http://modernizr.com/) ([Gruntfile]
 (https://github.com/Modernizr/Modernizr/blob/master/Gruntfile.js))
 
+### [Opera](http://opera.com)
+- [Opera GitHub Projects](https://github.com/operasoftware)
 
 ### [Walmart](http://www.walmart.com/)
 - [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile]
