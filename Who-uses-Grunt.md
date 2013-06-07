@@ -11,6 +11,8 @@ This is just a short list of companies and projects that use Grunt. If you've us
 
 ### [Twitter](https://twitter.com/)
 - [Tweetdeck](http://www.tweetdeck.com/)
+- [Typehead](https://github.com/twitter/typeahead.js) ([Gruntfile]
+(https://github.com/twitter/typeahead.js/blob/master/Gruntfile.js))
 
 ### [Cloudant](https://cloudant.com/)
 - [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/grunt.js))
