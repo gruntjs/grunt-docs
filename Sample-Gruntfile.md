@@ -34,7 +34,7 @@ This leaves us with this so far:
 ```javascript
 module.exports = function(grunt) {
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json');
+    pkg: grunt.file.readJSON('package.json')
   });
 };
 ```
