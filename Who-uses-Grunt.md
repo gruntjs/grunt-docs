@@ -29,6 +29,7 @@ This is just a short list of companies and projects that use Grunt. If you've us
 - [Appium](https://saucelabs.com/appium) ([Gruntfile](https://github.com/appium/appium/blob/master/grunt.js))
 
 ### [Modernizr](http://modernizr.com/)
-- [Modernizr](http://modernizr.com/)
+- [Modernizr](http://modernizr.com/) ([Gruntfile]
+(https://github.com/Modernizr/Modernizr/blob/master/Gruntfile.js))
 
 ### [Bazaarvoice](http://www.bazaarvoice.com/)
