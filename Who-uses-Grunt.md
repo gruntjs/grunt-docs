@@ -32,4 +32,11 @@ This is just a short list of companies and projects that use Grunt. If you've us
 - [Modernizr](http://modernizr.com/) ([Gruntfile]
 (https://github.com/Modernizr/Modernizr/blob/master/Gruntfile.js))
 
+
+### [Walmart](http://www.walmart.com/)
+- [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile]
+(https://github.com/walmartlabs/thorax/blob/master/Gruntfile.js))
+- [Lumbar](http://walmartlabs.github.io/lumbar/) ([Gruntfile]
+(https://github.com/walmartlabs/lumbar/blob/master/Gruntfile.js))
+
 ### [Bazaarvoice](http://www.bazaarvoice.com/)
