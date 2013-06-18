@@ -1,4 +1,4 @@
-Grunt and gruntplugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
+Grunt and grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
 
 
 _Grunt 0.4.x requires Node.js version `>= 0.8.0`._
