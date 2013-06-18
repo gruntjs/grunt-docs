@@ -1,15 +1,10 @@
 Grunt and gruntplugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
 
-_These instructions are written for Grunt 0.4.x, but are still valid for Grunt 0.3.x. Just note that for 0.3.x, plugin names and task configuration options may be different than those shown in "The Gruntfile" section._
 
 _Grunt 0.4.x requires Node.js version `>= 0.8.0`._
 
 ## Installing the CLI
-**If you have installed Grunt globally in the past, you will need to remove it first:**
-
-```shell
-npm uninstall -g grunt
-```
+**If you have Grunt 0.3 globally in the past, please see [Grunt 0.3 Notes](#grunt-03-notes):**
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
@@ -45,8 +40,6 @@ A typical setup will involve adding two files to your project: `package.json` an
 
 **Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins. 
 
-_This file was named `grunt.js` for 0.3.x versions of Grunt._
-
 ## package.json
 
 The `package.json` file belongs in the root directory of your project, next to the `Gruntfile`, and should be committed with your project source.  Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed therein.
@@ -63,8 +56,9 @@ There are a few ways to create a `package.json` file for your project:
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-nodeunit": "~0.1.2"
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2"
   }
 }
 ```
@@ -81,7 +75,7 @@ npm install grunt --save-dev
 The same can be done for gruntplugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
-The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source. _This file was named `grunt.js` for 0.3.x versions of Grunt._
+The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
 
 A Gruntfile is comprised of the following parts:
 
@@ -194,6 +188,19 @@ Custom project-specific tasks don't need to be defined in the Gruntfile; they ma
 * The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the Gruntfile, along with an explanation of templates, globbing patterns and importing external data.
 * The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
 * For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
+
+## Grunt 0.3 Notes 
+
+If you are upgrading from Grunt 0.3, make sure to uninstall global `grunt`:
+
+```shell
+npm uninstall -g grunt
+```
+
+_These instructions are written for Grunt 0.4.x, but are still valid for Grunt 0.3.x. Just note that for 0.3.x, plugin names and task configuration options may be different than those shown in "The Gruntfile" section._
+
+_This file was named `grunt.js` for 0.3.x versions of Grunt._
+
 
 [npm]: https://npmjs.org/
 [devDependencies]: https://npmjs.org/doc/json.html#devDependencies
