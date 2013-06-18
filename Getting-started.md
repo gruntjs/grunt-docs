@@ -180,7 +180,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Custom project-specific tasks don't need to be defined in the Gruntfile; they may be defined in external `.js` files and loaded via the [[gruntgrunt.loadTasks|grunt#grunt.loadtasks]] method.
+Custom project-specific tasks don't need to be defined in the Gruntfile; they may be defined in external `.js` files and loaded via the [[grunt.loadTasks|grunt#grunt.loadtasks]] method.
 
 ## Further Reading
 
