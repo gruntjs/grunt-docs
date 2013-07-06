@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 }
 ```
 
-Within there we can then initialize our configuration object:
+Within that function we can initialize our configuration object:
 
 ```javascript
 grunt.initConfig({
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Now we can define configuration for each of the tasks we have. The configuration object for a task lives as a property on the configuration object, that's named the same as the task. So the "concat" task goes in our config object under the "concat" key. Below is my configuration object for the "concat" task. I
+Now we can define configuration for each of the tasks we have. The configuration object for a task lives as a property on the configuration object, that's named the same as the task. So the "concat" task goes in our config object under the "concat" key. Below is my configuration object for the "concat" task.
 
 ```javascript
 concat: {
