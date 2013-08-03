@@ -1,6 +1,6 @@
 ## IRC
 
-You can visit us in [#grunt on irc.freenode.net](irc://irc.freenode.net/#grunt).
+You can visit us in <a href="irc://irc.freenode.net/#grunt">#grunt on irc.freenode.net</a>
 
 ## Forums
 
