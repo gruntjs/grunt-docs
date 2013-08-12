@@ -38,6 +38,9 @@ This is just a short list of companies and projects that use Grunt. If you've us
 ### [LiveChat](http://www.livechatinc.com)
 - [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
 
+### [WordPress](http://wordpress.com/)
+- [WordPress Build Process](
+http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [Walmart](http://www.walmart.com/)
 - [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile](https://github.com/walmartlabs/thorax/blob/master/Gruntfile.js))
