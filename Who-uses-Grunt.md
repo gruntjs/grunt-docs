@@ -35,6 +35,10 @@ This is just a short list of companies and projects that use Grunt. If you've us
 ### [Opera](http://opera.com)
 - [Opera GitHub Projects](https://github.com/operasoftware)
 
+### [LiveChat](http://www.livechatinc.com)
+- [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
+
+
 ### [Walmart](http://www.walmart.com/)
 - [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile](https://github.com/walmartlabs/thorax/blob/master/Gruntfile.js))
 - [Lumbar](http://walmartlabs.github.io/lumbar/) ([Gruntfile](https://github.com/walmartlabs/lumbar/blob/master/Gruntfile.js))
