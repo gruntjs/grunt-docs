@@ -62,3 +62,8 @@ Assuming that you don't see any red, you're ready to go. Just be sure to run `gr
 * Prefer `if` and `else` to ["clever"](http://programmers.stackexchange.com/a/25281) uses of `? :` conditional or `||`, `&&` logical operators.
 * Comments are great. Just put them _before_ the line of code, _not_ at the _end_ of the line.
 * **When in doubt, follow the conventions you see used in the source already.**
+
+### READMEs
+All of the grunt-contrib-* plugins use [grunt-contrib-internal](https://github.com/gruntjs/grunt-contrib-internal) to construct the `README.md` and `CONTRIBUTING.md` files. The source files are located in the corresponding `docs/` folder. The change logs in the READMEs are generated from the `CHANGELOG` file.
+
+When submitting changes to the README files please just edit the source files rather than the README directly.
