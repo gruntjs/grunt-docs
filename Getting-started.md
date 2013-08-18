@@ -4,7 +4,7 @@ Grunt and grunt plugins are installed and managed via [npm](https://npmjs.org/),
 _Grunt 0.4.x requires Node.js version `>= 0.8.0`._
 
 ## Installing the CLI
-**If you upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](getting-started#grunt-0.3-notes)**
+**If you're upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](getting-started#grunt-0.3-notes)**
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
