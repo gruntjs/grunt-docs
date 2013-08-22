@@ -85,7 +85,7 @@ A Gruntfile is comprised of the following parts:
 * Custom tasks
 
 ### An example Gruntfile
-In the following Gruntfile, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
+In the following `Gruntfile`, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
 
 ```js
 module.exports = function(grunt) {
@@ -113,10 +113,10 @@ module.exports = function(grunt) {
 };
 ```
 
-Now that you've seen the whole Gruntfile, let's look at its component parts.
+Now that you've seen the whole `Gruntfile`, let's look at its component parts.
 
 ### The "wrapper" function
-Every Gruntfile (and gruntplugin) uses this basic format, and all of your Grunt code must be specified inside this function:
+Every `Gruntfile` (and gruntplugin) uses this basic format, and all of your Grunt code must be specified inside this function:
 
 ```js
 module.exports = function(grunt) {
@@ -167,7 +167,7 @@ You can configure Grunt to run one or more tasks by default by defining a `defau
 grunt.registerTask('default', ['uglify']);
 ```
 
-If your project requires tasks not provided by a Grunt plugin, you may define custom tasks right inside the `Gruntfile`. For example, this Gruntfile defines a completely custom `default` task that doesn't even utilize task configuration:
+If your project requires tasks not provided by a Grunt plugin, you may define custom tasks right inside the `Gruntfile`. For example, this `Gruntfile` defines a completely custom `default` task that doesn't even utilize task configuration:
 
 ```js
 module.exports = function(grunt) {
@@ -180,12 +180,12 @@ module.exports = function(grunt) {
 };
 ```
 
-Custom project-specific tasks don't need to be defined in the Gruntfile; they may be defined in external `.js` files and loaded via the [[grunt.loadTasks|grunt#grunt.loadtasks]] method.
+Custom project-specific tasks don't need to be defined in the `Gruntfile`; they may be defined in external `.js` files and loaded via the [[grunt.loadTasks|grunt#grunt.loadtasks]] method.
 
 ## Further Reading
 
 * The [[Installing grunt]] guide has detailed information about installing specific, production or in-development, versions of Grunt and grunt-cli.
-* The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the Gruntfile, along with an explanation of templates, globbing patterns and importing external data.
+* The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the `Gruntfile`, along with an explanation of templates, globbing patterns and importing external data.
 * The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
 * For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
 

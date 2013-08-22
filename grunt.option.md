@@ -2,7 +2,7 @@ The Grunt option API is for sharing parameters across multiple tasks and accessi
 
 An example would be a flag to target whether your build is for development or staging. On the command line: `grunt deploy --target=staging` would cause `grunt.option('target')` to return `"staging"`.
 
-An example Gruntfile to utilize the `target` option could be:
+An example `Gruntfile` to utilize the `target` option could be:
 
 ```javascript
 grunt.initConfig({

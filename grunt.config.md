@@ -6,7 +6,7 @@ Note that any method marked with a ☃ (unicode snowman) is also available direc
 _Note that the following method is also available on the `grunt` object as `grunt.initConfig`._
 
 ### grunt.config.init ☃
-Initialize a configuration object for the current project. The specified `configObject` is used by tasks and can be accessed using the `grunt.config` method. Nearly every project's Gruntfile will call this method.
+Initialize a configuration object for the current project. The specified `configObject` is used by tasks and can be accessed using the `grunt.config` method. Nearly every project's `Gruntfile` will call this method.
 
 ```js
 grunt.config.init(configObject)

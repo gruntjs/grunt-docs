@@ -1,6 +1,6 @@
 There are many provided methods for reading and writing files, traversing the filesystem and finding files by matching globbing patterns. Many of these methods are wrappers around built-in Node.js file functionality, but with additional error handling, logging and character encoding normalization.
 
-_Note: all file paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
+_Note: all file paths are relative to the `Gruntfile` unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
 
 ## Character encoding
 
@@ -159,7 +159,7 @@ Return a unique array of all file or directory paths that match the given globbi
 grunt.file.expand([options, ] patterns)
 ```
 
-File paths are relative to the Gruntfile unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
+File paths are relative to the `Gruntfile` unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
 
 The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options, and a few others. For example:
 
@@ -300,7 +300,7 @@ grunt.file.isPathInCwd(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.setBase
-Change grunt's current working directory (CWD). By default, all file paths are relative to the Gruntfile. This works just like the `--base` command-line option.
+Change grunt's current working directory (CWD). By default, all file paths are relative to the `Gruntfile`. This works just like the `--base` command-line option.
 
 ```js
 grunt.file.setBase(path1 [, path2 [, ...]])

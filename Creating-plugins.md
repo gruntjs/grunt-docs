@@ -21,4 +21,4 @@ Only store data files in a .grunt/[npm-module-name]/ directory at the project's 
 ### Avoid Changing the Current Working Directory: `process.cwd()`
 By default, the current working directory is set to be the directory that contains the gruntfile. The user can change it using `grunt.file.setBase()` in their gruntfile, but plugins should take care to not change it.
 
-`path.resolve('foo')` can be used to get the absolute path of the filepath 'foo' relative to the gruntfile.
+`path.resolve('foo')` can be used to get the absolute path of the filepath 'foo' relative to the `Gruntfile`.

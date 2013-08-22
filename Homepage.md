@@ -8,7 +8,7 @@ Here are some of the benefits of using grunt:
 No XML, no custom syntax.
 
 ### Configuration is declarative.
-Since the Gruntfile is JavaScript, the grunt API can be used to dynamically build the configuration.
+Since the `Gruntfile` is JavaScript, the grunt API can be used to dynamically build the configuration.
 
 ### A collection of officially-maintained "contrib" plugins exists to help you get started.
 The most common tasks, like concatenating and minifying files, linting code, running unit tests, etc have already been created.
