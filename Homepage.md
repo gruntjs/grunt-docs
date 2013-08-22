@@ -13,7 +13,7 @@ Since the `Gruntfile` is JavaScript, the grunt API can be used to dynamically bu
 ### A collection of officially-maintained "contrib" plugins exists to help you get started.
 The most common tasks, like concatenating and minifying files, linting code, running unit tests, etc have already been created.
 
-### Creating custom tasks and grunt plugins is easy.
+### Creating custom tasks and Grunt plugins is easy.
 Full documentation and API reference are available.
 
 ### A large community of developers creating common tasks.

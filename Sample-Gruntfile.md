@@ -1,4 +1,4 @@
-Below we walk through a sample gruntfile which uses five grunt plugins:
+Below we walk through a sample `Gruntfile` which uses five Grunt plugins:
 
 - [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 - [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit)
@@ -6,7 +6,7 @@ Below we walk through a sample gruntfile which uses five grunt plugins:
 - [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 
-The entire Gruntfile is at the bottom of this page, but if you keep reading we'll walk through it a step at a time.
+The entire `Gruntfile` is at the bottom of this page, but if you keep reading we'll walk through it a step at a time.
 
 
 The first part is the "wrapper" function, which encapsulates your Grunt configuration.

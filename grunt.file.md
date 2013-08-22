@@ -147,7 +147,7 @@ function callback(abspath, rootdir, subdir, filename) {
 ```
 
 ## Globbing patterns
-It is often impractical to specify all source filepaths individually, so grunt supports filename expansion (also know as globbing) via the built-in [node-glob](https://github.com/isaacs/node-glob) library.
+It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also know as globbing) via the built-in [node-glob](https://github.com/isaacs/node-glob) library.
 
 See the "Globbing patterns" section of the [[Configuring tasks]] guide for globbing pattern examples.
 

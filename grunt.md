@@ -49,14 +49,14 @@ grunt.option(optionName)
 ## Miscellaneous
 
 ### grunt.package
-The current grunt `package.json` metadata, as an object.
+The current Grunt `package.json` metadata, as an object.
 
 ```javascript
 grunt.package
 ```
 
 ### grunt.version
-The current grunt version, as a string. This is just a shortcut to the `grunt.package.version` property.
+The current Grunt version, as a string. This is just a shortcut to the `grunt.package.version` property.
 
 ```javascript
 grunt.version

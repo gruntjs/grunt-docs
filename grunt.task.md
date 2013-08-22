@@ -3,7 +3,7 @@ Register, run and load external tasks.
 See the [task lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt/task.js) and [task util lib source](https://github.com/gruntjs/grunt/blob/master/lib/util/task.js) for more information.
 
 ## The task API
-While a task is running, grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
+While a task is running, Grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
 
 Many utility properties and methods are available inside of tasks via the `this` object. 
 
@@ -22,7 +22,7 @@ If a task list is specified, the new task will be an alias for one or more other
 grunt.task.registerTask(taskName, taskList)
 ```
 
-This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if grunt is executed without any tasks specified:
+This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without any tasks specified:
 
 ```javascript
 task.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
@@ -44,7 +44,7 @@ Note that the `grunt.task.registerMultiTask` method, explained below, can be use
 grunt.task.registerTask(taskName, description, taskFunction)
 ```
 
-This example task logs `foo, testing 123` if grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
+This example task logs `foo, testing 123` if Grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
 
 ```javascript
 grunt.task.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2) {
@@ -69,7 +69,7 @@ Many of the contrib tasks, including the [jshint task](https://github.com/gruntj
 grunt.task.registerMultiTask(taskName, description, taskFunction)
 ```
 
-Given the specified configuration, this example multi task would log `foo: 1,2,3` if grunt was run via `grunt log:foo`, or it would log `bar: hello world` if grunt was run via `grunt log:bar`. If grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
+Given the specified configuration, this example multi task would log `foo: 1,2,3` if Grunt was run via `grunt log:foo`, or it would log `bar: hello world` if Grunt was run via `grunt log:bar`. If Grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
 
 ```javascript
 grunt.initConfig({
@@ -101,10 +101,10 @@ grunt.task.renameTask(oldname, newname)
 _This method is also available as [grunt.renameTask](grunt)._
 
 ## Loading Externally-Defined Tasks
-For most projects, tasks will be defined in the [Gruntfile](Getting-started). For larger projects, or in cases where tasks need to be shared across projects, tasks can be loaded from one or more external directories or Npm-installed grunt plugins.
+For most projects, tasks will be defined in the [Gruntfile](Getting-started). For larger projects, or in cases where tasks need to be shared across projects, tasks can be loaded from one or more external directories or Npm-installed Grunt plugins.
 
 ### grunt.task.loadTasks ☃
-Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
+Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local Grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
 
 ```javascript
 grunt.task.loadTasks(tasksPath)
@@ -113,7 +113,7 @@ grunt.task.loadTasks(tasksPath)
 _This method is also available as [grunt.loadTasks](grunt)._
 
 ### grunt.task.loadNpmTasks ☃
-Load tasks from the specified grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init): `grunt init:gruntplugin`.
+Load tasks from the specified Grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init): `grunt init:gruntplugin`.
 
 ```javascript
 grunt.task.loadNpmTasks(pluginName)

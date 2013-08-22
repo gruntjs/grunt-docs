@@ -1,4 +1,4 @@
-Grunt and grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
+Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
 
 
 _Grunt 0.4.x requires Node.js version `>= 0.8.0`._
@@ -14,17 +14,18 @@ npm install -g grunt-cli
 
 This will put the `grunt` command in your system path, allowing it to be run from any directory.
 
-Note that installing `grunt-cli` does not install the grunt task runner!  The job of the grunt CLI is simple: run the version of grunt which has been installed next to a `Gruntfile`. This allows multiple versions of grunt to be installed on the same machine simultaneously.
+Note that installing `grunt-cli` does not install the Grunt task runner!  The job of the Grunt CLI is simple: run the version of Grunt which has been installed next to a `Gruntfile`.
+This allows multiple versions of Grunt to be installed on the same machine simultaneously.
 
 ## How the CLI works
 
-Each time `grunt` is run, it looks for a locally installed grunt using node's `require()` system. Because of this, you can run `grunt` from any subfolder in your project.
+Each time `grunt` is run, it looks for a locally installed Grunt using node's `require()` system. Because of this, you can run `grunt` from any subfolder in your project.
 
-If a locally installed Grunt is found, the CLI loads the local installation of the grunt library, applies the configuration from your `Gruntfile`, and executes any tasks you've requested for it to run.
+If a locally installed Grunt is found, the CLI loads the local installation of the Grunt library, applies the configuration from your `Gruntfile`, and executes any tasks you've requested for it to run.
 
 *To really understand what is happening, [read the code](https://github.com/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
 
-## Working with an existing grunt project
+## Working with an existing Grunt project
 Assuming that the Grunt CLI has been installed and that the project has already been configured with a `package.json` and a `Gruntfile`, it's very easy to start working with Grunt:
 
 1. Change to the project's root directory.
@@ -33,7 +34,7 @@ Assuming that the Grunt CLI has been installed and that the project has already 
 
 That's really all there is to it. Installed Grunt tasks can be listed by running `grunt --help` but it's usually a good idea to start with the project's documentation.
 
-## Preparing a new grunt project
+## Preparing a new Grunt project
 A typical setup will involve adding two files to your project: `package.json` and the `Gruntfile`.
 
 **package.json**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
@@ -56,7 +57,7 @@ There are a few ways to create a `package.json` file for your project:
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2"
   }
@@ -77,15 +78,15 @@ The same can be done for gruntplugins and other node modules. Be sure to commit 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
 
-A Gruntfile is comprised of the following parts:
+A `Gruntfile` is comprised of the following parts:
 
 * The "wrapper" function
 * Project and task configuration
-* Loading grunt plugins and tasks
+* Loading Grunt plugins and tasks
 * Custom tasks
 
 ### An example Gruntfile
-In the following `Gruntfile`, project metadata is imported into the grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the `uglify` task will be run by default.
+In the following `Gruntfile`, project metadata is imported into the Grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When `grunt` is run on the command line, the `uglify` task will be run by default.
 
 ```js
 module.exports = function(grunt) {
@@ -149,7 +150,7 @@ grunt.initConfig({
 });
 ```
 
-### Loading grunt plugins and tasks
+### Loading Grunt plugins and tasks
 Many commonly used tasks like [concatenation], [minification][grunt-contrib-uglify] and [linting] are available as [grunt plugins](https://github.com/gruntjs). As long as a plugin is specified in `package.json` as a dependency, and has been installed via `npm install`, it may be enabled inside your `Gruntfile` with a simple command:
 
 ```js

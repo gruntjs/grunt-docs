@@ -157,6 +157,6 @@ An explanation of the above code:
   1. `grunt.verbose.or.write(msg)` logs the message (no newline) if not in `--verbose` mode, and returns the `notverbose` object.
   2. `.error()` logs ERROR in red, with a newline, and returns the `notverbose` object.
   3. `.error(e.message);` logs the actual error message (and returns the `notverbose` object).
-4. `grunt.fail.warn('Something went wrong.');` logs a warning in bright yellow, exiting grunt with exit code 1, unless `--force` was specified.
+4. `grunt.fail.warn('Something went wrong.');` logs a warning in bright yellow, exiting Grunt with exit code 1, unless `--force` was specified.
 
 Take a look at the [grunt-contrib-* tasks source code](https://github.com/gruntjs) for more examples.

@@ -16,7 +16,7 @@ _A forthcoming Grunt release will be focused on decoupling grunt's architecture 
 
 ## The Gruntfile
 * The "Gruntfile" has changed from `grunt.js` to `Gruntfile.js`.
-* CoffeeScript is supported in your `Gruntfile.coffee` project gruntfile or `*.coffee` task files (transpiling to JS happens automatically).
+* CoffeeScript is supported in your `Gruntfile.coffee` project `Gruntfile` or `*.coffee` task files (transpiling to JS happens automatically).
 
 See the "The Gruntfile" section of the [[Getting started]] guide for more information.
 
@@ -41,7 +41,7 @@ The configuration format for Grunt 0.4 tasks has been standardized and greatly e
 * Tasks now support a standard `options` object.
 * Tasks now support a standard `files` object.
 
-`<% %>` style template strings specified as config data inside the Gruntfile are automatically expanded, see the [[grunt.template]] documentation for more information.
+`<% %>` style template strings specified as config data inside the `Gruntfile` are automatically expanded, see the [[grunt.template]] documentation for more information.
 
 **Directives have been removed**, but their functionality has been retained. These replacements can be made:
 
