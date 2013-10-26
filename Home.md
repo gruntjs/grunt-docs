@@ -10,6 +10,7 @@ Development Version: **master**
 * [[Sample Gruntfile]]
 * [[Creating Tasks]]
 * [[Creating Plugins]]
+* [[Using the CLI]]
 
 ### Advanced
 * [[Installing Grunt]]
