@@ -15,6 +15,9 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Tweetdeck](http://www.tweetdeck.com/)
 - [Typeahead](https://github.com/twitter/typeahead.js) ([Gruntfile](https://github.com/twitter/typeahead.js/blob/master/Gruntfile.js))
 
+### [Bootstrap](http://getbootstrap.com/)
+- [Gruntfile](https://github.com/twbs/bootstrap/blob/master/Gruntfile.js)
+
 ### [Cloudant](https://cloudant.com/)
 - [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/grunt.js))
 
@@ -52,3 +55,10 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [dscout](http://dscout.com/)
 - [Velge](https://github.com/dscout/velge) ([Gruntfile](https://github.com/dscout/velge/blob/master/Gruntfile.js))
+
+### [Ghost](https://ghost.org/)
+- [Gruntfile](https://github.com/TryGhost/Ghost/blob/master/Gruntfile.js)
+
+
+
+
