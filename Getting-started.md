@@ -4,7 +4,7 @@ Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/),
 _Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions._
 
 ## Installing the CLI
-**If you're upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](getting-started#grunt-0.3-notes)**
+**If you're upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
@@ -189,19 +189,6 @@ Custom project-specific tasks don't need to be defined in the `Gruntfile`; they 
 * The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the `Gruntfile`, along with an explanation of templates, globbing patterns and importing external data.
 * The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
 * For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
-
-## Grunt 0.3 Notes 
-
-If you are upgrading from Grunt 0.3, make sure to uninstall global `grunt`:
-
-```shell
-npm uninstall -g grunt
-```
-
-_These instructions are written for Grunt 0.4.x, but are still valid for Grunt 0.3.x. Just note that for 0.3.x, plugin names and task configuration options may be different than those shown in "The Gruntfile" section._
-
-_This file was named `grunt.js` for 0.3.x versions of Grunt._
-
 
 [npm]: https://npmjs.org/
 [devDependencies]: https://npmjs.org/doc/json.html#devDependencies

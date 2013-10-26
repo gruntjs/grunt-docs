@@ -6,6 +6,19 @@ Grunt is now split into three parts: `grunt`, `grunt-cli` and `grunt-init`.
 2. The npm module `grunt-cli` should be installed globally.  It puts the `grunt` command in your PATH so you can execute it anywhere. By itself, it doesn't do anything; its job is to load and run the Grunt that has been installed locally to your project, regardless of the version.  For more information about why this has changed, please read [npm 1.0: Global vs Local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation).
 3. The `init` task has been broken into its own npm module, `grunt-init`.  It should be installed globally with `npm install -g grunt-init` and run with the `grunt-init` command.  In the coming months, [Yeoman](http://yeoman.io/) will completely replace grunt-init.  See the [grunt-init project page](https://github.com/gruntjs/grunt-init) for more information.
 
+
+## Grunt 0.3 Notes
+
+If you are upgrading from Grunt 0.3, make sure to uninstall global `grunt`:
+
+```shell
+npm uninstall -g grunt
+```
+
+_Note that for 0.3.x, plugin names and task configuration options may be different than those shown in "The Gruntfile" section._
+
+_This file was named `grunt.js` for 0.3.x versions of Grunt._
+
 ## Pre-existing tasks and plugins
 All `grunt-contrib-*` series plugins are Grunt 0.4 ready.  However, it is highly unlikely that third party plugins written for Grunt 0.3 will continue to work with 0.4 until they have been updated.  We are actively working with plugin authors to ensure this happens as swiftly as possible.
 

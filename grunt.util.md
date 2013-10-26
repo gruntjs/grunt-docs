@@ -1,4 +1,4 @@
-Miscellaneous utilities, including Lo-Dash, Async and Hooker.
+Miscellaneous utilities for your Gruntfile and tasks.
 
 ### grunt.util.kindOf
 Return the "kind" of a value. Like `typeof` but returns the internal `[[Class]]` value. Possible results are `"number"`, `"string"`, `"boolean"`, `"function"`, `"regexp"`, `"array"`, `"date"`, `"error"`, `"null"`, `"undefined"` and the catch-all `"object"`.
@@ -136,16 +136,22 @@ An internal library for resolving deeply-nested properties in objects.
 ### grunt.util.task
 An internal library for task running.
 
-## External libraries
+## External libraries [deprecated]
 
-### grunt.util._
-[Lo-Dash](http://lodash.com/) - Tons of super-useful array, function and object utility methods.
-[Underscore.string](https://github.com/epeli/underscore.string) - Tons of string utility methods.
+__All external libraries that are listed below are now deprecated.__
 
-Note that Underscore.string is mixed into `grunt.util._` but is also available as `grunt.util._.str` for methods that conflict with existing Lo-Dash methods.
+Please use __npm__ to manage these external libraries in your project's dependencies.
 
-### grunt.util.async
+For example if you want use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
+use it in your `Gruntfile`: `var _ = require('lodash');`
+
+#### grunt.util._ [deprecated]
+[Lo-Dash](http://lodash.com/) and [Underscore.string](https://github.com/epeli/underscore.string)
+
+`grunt.util._.str` is available for methods that conflict with existing Lo-Dash methods.
+
+#### grunt.util.async [deprecated]
 [Async](https://github.com/caolan/async) - Async utilities for node and the browser.
 
-### grunt.util.hooker
+#### grunt.util.hooker [deprecated]
 [JavaScript Hooker](https://github.com/cowboy/javascript-hooker) - Monkey-patch (hook) functions for debugging and stuff.
