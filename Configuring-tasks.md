@@ -245,13 +245,13 @@ When you want to process many individual files, a few additional properties may 
 * `flatten` Remove all path parts from generated `dest` paths.
 * `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest` and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned more than once, each `src` which used it will be added to an array of sources for it.
 
-In the following example, the `minify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
+In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
 Any combination of static src-dest and dynamic src-dest file mappings may be specified.
 
 ```js
 grunt.initConfig({
-  minify: {
+  uglify: {
     static_mappings: {
       // Because these src-dest file mappings are manually specified, every
       // time a new file is added or removed, the Gruntfile has to be updated.
@@ -263,7 +263,7 @@ grunt.initConfig({
       ],
     },
     dynamic_mappings: {
-      // Grunt will search for "**/*.js" under "lib/" when the "minify" task
+      // Grunt will search for "**/*.js" under "lib/" when the "uglify" task
       // runs and build the appropriate src-dest file mappings then, so you
       // don't need to update the Gruntfile when files are added or removed.
       files: [
