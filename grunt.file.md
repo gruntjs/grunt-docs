@@ -11,6 +11,15 @@ Set this property to change the default encoding used by all `grunt.file` method
 grunt.file.defaultEncoding = 'utf8';
 ```
 
+
+### grunt.file.preserveBOM
+*Added in 0.4.2*
+
+Whether to preserve the Byte Order Mark (BOM) on `file.read` rather than strip it.
+```js
+grunt.file.preserveBOM = false;
+```
+
 ## Reading and writing
 
 ### grunt.file.read
@@ -308,14 +317,27 @@ grunt.file.setBase(path1 [, path2 [, ...]])
 
 Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
-
 ## External libraries
+*Deprecated*
+
+__All external libraries that are listed below are now deprecated.__
+
+Please use __npm__ to manage these external libraries in your project's dependencies.
+
+For example if you want use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
+use it in your `Gruntfile`: `var _ = require('lodash');`
 
 ### grunt.file.glob
+*Deprecated*
+
 [glob](https://github.com/isaacs/node-glob) - File globbing utility.
 
 ### grunt.file.minimatch
+*Deprecated*
+
 [minimatch](https://github.com/isaacs/minimatch) - File pattern matching utility.
 
 ### grunt.file.findup
+*Deprecated*
+
 [findup-sync](https://github.com/cowboy/node-findup-sync) - Search upwards for matching file patterns.

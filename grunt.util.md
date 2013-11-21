@@ -136,7 +136,8 @@ An internal library for resolving deeply-nested properties in objects.
 ### grunt.util.task
 An internal library for task running.
 
-## External libraries [deprecated]
+## External libraries
+*Deprecated*
 
 __All external libraries that are listed below are now deprecated.__
 
@@ -145,13 +146,18 @@ Please use __npm__ to manage these external libraries in your project's dependen
 For example if you want use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
 use it in your `Gruntfile`: `var _ = require('lodash');`
 
-#### grunt.util._ [deprecated]
+#### grunt.util._
+*Deprecated*
 [Lo-Dash](http://lodash.com/) and [Underscore.string](https://github.com/epeli/underscore.string)
 
 `grunt.util._.str` is available for methods that conflict with existing Lo-Dash methods.
 
-#### grunt.util.async [deprecated]
+#### grunt.util.async
+*Deprecated*
+
 [Async](https://github.com/caolan/async) - Async utilities for node and the browser.
 
-#### grunt.util.hooker [deprecated]
+#### grunt.util.hooker
+*Deprecated*
+
 [JavaScript Hooker](https://github.com/cowboy/javascript-hooker) - Monkey-patch (hook) functions for debugging and stuff.
