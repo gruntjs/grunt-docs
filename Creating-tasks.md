@@ -15,7 +15,7 @@ This example alias task defines a "default" task whereby the "jshint", "qunit", 
 grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
-Task arguments can be specified as well. In this example, the alias "dist" runs both the "concat" and "min" tasks, each with a "dist" argument:
+Task arguments can be specified as well. In this example, the alias "dist" runs both the "concat" and "uglify" tasks, each with a "dist" argument:
 
 ```javascript
 grunt.registerTask('dist', ['concat:dist', 'uglify:dist']);
