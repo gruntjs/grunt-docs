@@ -32,7 +32,7 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Fuel UX](http://exacttarget.github.com/fuelux/) ([Gruntfile](https://github.com/ExactTarget/fuelux/blob/master/grunt.js))
 
 ### [SauceLabs](https://saucelabs.com/)
-- [Appium](https://saucelabs.com/appium) ([Gruntfile](https://github.com/appium/appium/blob/master/grunt.js))
+- [Appium](https://saucelabs.com/appium) ([Gruntfile](https://github.com/appium/appium/blob/master/Gruntfile.js))
 
 ### [Modernizr](http://modernizr.com/)
 - [Modernizr](http://modernizr.com/) ([Gruntfile](https://github.com/Modernizr/Modernizr/blob/master/Gruntfile.js))
