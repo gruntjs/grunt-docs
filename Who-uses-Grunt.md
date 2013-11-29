@@ -8,7 +8,7 @@ If you've used Grunt in a project and would like it listed on this page,
 
 ### [jQuery](http://jquery.com/)
 - [jQuery](http://jquery.com/) - ([Gruntfile](https://github.com/jquery/jquery/blob/master/Gruntfile.js))
-- [jQuery UI](http://jqueryui.com/) - ([Gruntfile](https://github.com/jquery/jquery-ui/blob/master/grunt.js))
+- [jQuery UI](http://jqueryui.com/) - ([Gruntfile](https://github.com/jquery/jquery-ui/blob/master/Gruntfile.js))
 - [QUnit](http://qunitjs.com/) - ([Gruntfile](https://github.com/jquery/qunit/blob/master/Gruntfile.js))
 
 ### [Twitter](https://twitter.com/)
@@ -19,17 +19,17 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Gruntfile](https://github.com/twbs/bootstrap/blob/master/Gruntfile.js)
 
 ### [Cloudant](https://cloudant.com/)
-- [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/grunt.js))
+- [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/Gruntfile.js))
 
 ### [Bitovi](http://bitovi.com/)
 - [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/Gruntfile.js))
 
 ### [Filament Group](http://filamentgroup.com/)
 - [X-rayHTML](https://github.com/filamentgroup/X-rayHTML) ([Gruntfile](https://github.com/filamentgroup/X-rayHTML/blob/master/grunt.js))
-- [Grunticon](https://github.com/filamentgroup/grunticon) ([Gruntfile](https://github.com/filamentgroup/grunticon/blob/master/grunt.js))
+- [Grunticon](https://github.com/filamentgroup/grunticon) ([Gruntfile](https://github.com/filamentgroup/grunticon/blob/master/Gruntfile.js))
 
 ### [Fuel UX](http://exacttarget.github.com/fuelux/)
-- [Fuel UX](http://exacttarget.github.com/fuelux/) ([Gruntfile](https://github.com/ExactTarget/fuelux/blob/master/grunt.js))
+- [Fuel UX](http://exacttarget.github.com/fuelux/) ([Gruntfile](https://github.com/ExactTarget/fuelux/blob/master/Gruntfile.js))
 
 ### [SauceLabs](https://saucelabs.com/)
 - [Appium](https://saucelabs.com/appium) ([Gruntfile](https://github.com/appium/appium/blob/master/Gruntfile.js))
