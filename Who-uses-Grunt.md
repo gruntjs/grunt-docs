@@ -59,7 +59,7 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 ### [Ghost](https://ghost.org/)
 - [Gruntfile](https://github.com/TryGhost/Ghost/blob/master/Gruntfile.js)
 
-## [JS Bin](http://jsbin.com/)
+### [JS Bin](http://jsbin.com/)
 - [Gruntfile](https://github.com/remy/jsbin/blob/master/Gruntfile.js)
 
 
