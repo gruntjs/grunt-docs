@@ -20,6 +20,7 @@ Development Version: **master**
 ### Community
 * [[Help Resources]]
 * [[Who uses Grunt]]
+* [[Built with Grunt Badge]]
 * [[Contributing]]
 
 ### Migration guides
