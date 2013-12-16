@@ -148,6 +148,7 @@ use it in your `Gruntfile`: `var _ = require('lodash');`
 
 #### grunt.util._
 *Deprecated*
+
 [Lo-Dash](http://lodash.com/) and [Underscore.string](https://github.com/epeli/underscore.string)
 
 `grunt.util._.str` is available for methods that conflict with existing Lo-Dash methods.
