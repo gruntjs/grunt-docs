@@ -14,6 +14,7 @@ Issues that are linked below were marked as __needs PR__, this means they need a
 Choose any of these issues and make sure to comment if you are working on them.
 
 * grunt-init - [Contribution guidelines should go into contributing.md](https://github.com/gruntjs/grunt-init/issues/5)
+* grunt-contrib-jade - [Add support for basedir option](https://github.com/gruntjs/grunt-contrib-jade/issues/64)
 * grunt-init-gruntfile - [Doesn't generate a package.json](https://github.com/gruntjs/grunt-init-gruntfile/issues/6)
 * grunt-contrib-coffee - [Support the process option](https://github.com/gruntjs/grunt-contrib-coffee/issues/61)
 * grunt - [--gruntfile parameter broken with parent directories](https://github.com/gruntjs/grunt/issues/950)
