@@ -20,6 +20,7 @@ Choose any of these issues and make sure to comment if you are working on them.
 * grunt - [--gruntfile parameter broken with parent directories](https://github.com/gruntjs/grunt/issues/950)
 * grunt-contrib-compress - [Add bzip2 support](https://github.com/gruntjs/grunt-contrib-compress/issues/47)
 * grunt-contrib-jasmine - [Enhance logging](https://github.com/gruntjs/grunt-contrib-jasmine/issues/80)
+* grunt-contrib-less [Sourcemaps with multiple src files](https://github.com/gruntjs/grunt-contrib-less/issues/89)
 
 ## Filing issues
 If something isn't working like you think it should, please read [the documentation](https://github.com/gruntjs/grunt/wiki), especially the [[Getting Started]] guide. If you'd like to chat with someone, [[pop into IRC|contributing#discussing-grunt]] discussing-grunt and ask your question there.
