@@ -10,6 +10,7 @@ Development Version: **master**
 * [[Sample Gruntfile]]
 * [[Creating Tasks]]
 * [[Creating Plugins]]
+* [[Plugin Authoring]]
 * [[Using the CLI]]
 
 ### Advanced
