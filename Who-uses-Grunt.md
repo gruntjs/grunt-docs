@@ -66,8 +66,9 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [Shopetti](https://www.shopetti.com)
 
-
-
+### [Consunet Pty Ltd](https://www.consunet.com.au)
+- [WhisperNote](https://www.consunet.com.au/products/whispernote/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/WhisperNote/Gruntfile.js))
+- [EveryPass](https://www.consunet.com.au/products/everypass/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/EveryPass/Gruntfile.js))
 
 
 
