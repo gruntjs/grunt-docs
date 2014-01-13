@@ -5,7 +5,7 @@ Grunt offers infinite ways to get extended and configured, easily tackling the m
 
 ## General Principle
 
-Much like your `project.json` file, there should be one **and only one** `Gruntfile.js` per repository.
+Much like your `package.json` file, there should be one **and only one** `Gruntfile.js` per repository.
 
 This cannot be stressed enough. Scenarios that require multiple Gruntfiles can really be solved by using simpler setups and infrastructure. Since Grunt is mostly about frontend build flows, let's examine the most common complex requirement, third-party libraries...
 
