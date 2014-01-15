@@ -61,3 +61,8 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
 - *question* - para sugestões e perguntas referentes ao repositório
 
 
+### Algumas recomendações
+
+- Favor não traduzir termos técnicos. 
+- Utilize notas de rodapé para termos técnicos com o seu respectivo link externo para mais informações.
+- Mensagens de *commits* devem ser em **pt-BR**.
