@@ -41,6 +41,24 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
   * [Exit Codes](Exit-Codes.md)
 
 
+
+
 ## Contribuições
 
-Faça um [Pull Request](https://github.com/gruntbrasil/docs-grunt-plugins/pulls) para enviar traduções de documentações para o Grunt.
+### Guia para contribuir
+
+1 - Faça o *fork* deste repositório
+2 - Certifique-se de que está no *branch* **pt-br** ou faça o *checkout* para o mesmo.
+3 - Realize a tradução do arquivo desejado, mas observe se o mesmo já está sendo traduzido
+4 - Caso o arquivo não esteja traduzido ou a sua tradução não esteja em andamento, adicione a label *translating* na respectiva *issue* do arquivo e inicie a sua tradução.
+5 - Faça um *Pull Request* para enviar o arquivo traduzido.
+
+
+### Entendendo as labels
+
+- *translating* - para tradução de arquivo em andamento
+- *revision* - para arquivos que necessitam de revisão
+- *update*  - para arquivo atualizado no repositório original
+- *question* - para sugestões e perguntas referentes ao repositório
+
+
