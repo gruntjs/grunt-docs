@@ -2,7 +2,7 @@
 
 Tradução da documentação do [GruntJS](http://gruntjs.com/)
 
-> *OBS:* Os últimos commits antes deste fork foi em Jan 09, 2014, commits depois desta data precisam ser revisados, para saber se é preciso atualizar a tradução.
+> **Nota importante:** Os últimos commits antes deste fork foi em **09 de janeiro de 2014** commits depois desta data precisam ser revisados, para saber se é preciso atualizar a tradução.
 
 ### Sumário
 
