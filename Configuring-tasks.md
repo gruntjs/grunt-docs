@@ -3,7 +3,7 @@ Este guia explica como configurar tarefas para seu projeto usando um arquivo `Gr
 ## Configuração do Grunt
 A configuração de uma tarefa é especificada no seu `Gruntfile` através do método `grunt.initConfig`. Esta configuração será principalmente em propriedades com o nome da tarefa, mas poderão conter qualquer dados arbitrários. Contando que as propriedades não criem conflitos com propriedades que suas tarefas precisam, elas serão de alguma forma ignorada.
 
-Também, por que é JavaScript, você não é limitado ao JSON; você pode usar qualquer JavaScript válido aqui. Você pode até gerar configurações programadas, se necesário.
+Também, por que é JavaScript, você não é limitado ao JSON; você pode usar qualquer JavaScript válido aqui. Você pode até gerar configurações programadas, se necessário.
 
 ```js
 grunt.initConfig({
@@ -13,7 +13,7 @@ grunt.initConfig({
   uglify: {
     // a tarefa uglify vai aqui.
   },
-  // Propriedades arbritrárias de não tarefas.
+  // Propriedades arbitrárias de não tarefas.
   my_property: 'whatever',
   my_src_files: ['foo/*.js', 'bar/*.js'],
 });
@@ -42,7 +42,7 @@ grunt.initConfig({
 Especificando ambas tarefas e targets como `grunt concat:foo` ou `grunt concat:bar` vai processar somente a configuração da target especificada, enquanto executando `grunt concat` vai iterar sobre _todos_ os targets, processando cada um em turno. Note que se uma tarefa foi renomeada com [grunt.task.renameTask](grunt.task.md#grunttaskrenametask-), o Grunt vai procurar por uma propriedade que o _novo_ nome da tarefa no objeto da configuração.
 
 ## Opções
-Dentro da configuração de uma tarefa, uma propriedade `options` pode ser especificada para sobrescrever os padrões. Adicionando, cada target pode ter uma propriedade `options` que é específica para cada target. Opções no nível dos targets, vão sobescrever as opções no nível da tarefa.
+Dentro da configuração de uma tarefa, uma propriedade `options` pode ser especificada para sobrescrever os padrões. Adicionando, cada target pode ter uma propriedade `options` que é específica para cada target. Opções no nível dos targets, vão sobrescrever as opções no nível da tarefa.
 
 O objeto `options` é opcional e pode ser omitido, caso não necessário.
 
@@ -77,7 +77,7 @@ Todos dos formatos suportam `src` e `desy` mas os formatos "Compact" e "File Arr
 * Outras propriedades serão passadas para as lib subjacentes como opções de correspodência. Veja a documentação do [node-glob][] e [minimatch][] para mais opções.
 
 ### Formato compacto
-Esta forma permite um único mapeamento do **src-dest** (destino) por target. Isto é mais comumente usado para tarefas somente-leitura, como a tarega [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), onde uma única propriedade é necessária, e nenhuma chave `dest` é relevante. Este formato também suporta propriedades adicionais por mapeamento de aquivos no destino e na fonte (src-dest).
+Esta forma permite um único mapeamento do **src-dest** (destino) por target. Isto é mais comumente usado para tarefas somente-leitura, como a tarega [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), onde uma única propriedade é necessária, e nenhuma chave `dest` é relevante. Este formato também suporta propriedades adicionais por mapeamento de arquivos no destino e na fonte (src-dest).
 
 ```js
 grunt.initConfig({
@@ -140,7 +140,7 @@ grunt.initConfig({
 ```
 
 ### Formatos antigos
-O formato de arquivo **dest-as-target** (destino como target) é um resquício de multi-tarefas e targets antes existentes, onde o caminho de destino é atuamente o nome do target. Infelizmente, pelos nomes dos targets serem caminhos de arquivo, executando `grunt task:target` pode ser inadequado. Também, você não precisa especificar opções no nível de tarefa ou propriedades adicionais por mapeamentos de arquivos destino e fonte.
+O formato de arquivo **dest-as-target** (destino como target) é um resquício de multi-tarefas e targets antes existentes, onde o caminho de destino é atualmente o nome do target. Infelizmente, pelos nomes dos targets serem caminhos de arquivo, executando `grunt task:target` pode ser inadequado. Também, você não precisa especificar opções no nível de tarefa ou propriedades adicionais por mapeamentos de arquivos destino e fonte.
 
 Considere este formato obsoleto, e evite-o quando possível.
 
@@ -154,7 +154,7 @@ grunt.initConfig({
 ```
 
 ### Funções de filtro customizadas
-A propriedade `filter` pode ajudar seus arquivos do target com um melhor nível de detalhes. Simplesmente use um [fs.Stats válido nome de método](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). O código seguinte vai executar a tarefa `clean` no target `foo` somente nos aquivos que combinam com o pattern.
+A propriedade `filter` pode ajudar seus arquivos do target com um melhor nível de detalhes. Simplesmente use um [fs.Stats válido nome de método](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). O código seguinte vai executar a tarefa `clean` no target `foo` somente nos arquivos que combinam com o pattern.
 
 ```js
 grunt.initConfig({
@@ -232,7 +232,7 @@ Por exemplo:
 
 Para saber mais sobre englobamento de patterns, veja a documentação do [node-glob][] e [minimatch][].
 
-### Contruindo o objeto dos arquivos dinamicamente
+### Construindo o objeto dos arquivos dinamicamente
 Quando você quer processar vários arquivos individuais, algumas propriedades adicionais podem ser usadas para fazer uma lista de arquivos dinamicamente. Estas propriedades podem ser especificadas em ambos formatos de mapeamento "Compact" e "Files Array".
 
 `expand` Sete `true` para habilitar as sequintes opções:
@@ -280,7 +280,7 @@ grunt.initConfig({
 ```
 
 ## Templates
-Templates especificados com os delimitadors `<% %>` serão automaticamente expandidos quando tarefas a leêm no objeto de configuração. Templates são expandidos recursivamente até não haver mais nenhum.
+Templates especificados com os delimitadores `<% %>` serão automaticamente expandidos quando tarefas a leêm no objeto de configuração. Templates são expandidos recursivamente até não haver mais nenhum.
 
 O objeto da configuração inteiro é o contexto em que as propriedades são interpretadas. Ainda, `grunt` e seus métodos são disponíveis em templates, ex.: `<%= grunt.template.today('yyyy-mm-dd') %>`.
 
