@@ -24,7 +24,7 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
   * [Contribuindo](Contributing.md)
 4. Guia de Migração
   * [Atualizando da 0.3 para 0.4](Upgrading-from-0.3-to-0.4.md)
-6. API
+5. API
   * [grunt](grunt.md)
   * [grunt.config](grunt.config.md)
   * [grunt.event](grunt.event.md)
@@ -35,7 +35,7 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
   * [grunt.task](grunt.task.md)
   * [grunt.template](grunt.template.md)
   * [grunt.util](grunt.util.md)
-7. Other
+6. Outros
   * [Por dentro das tarefas](Inside-Tasks.md)
   * [Códigos de saída](Exit-Codes.md)
 
