@@ -3,7 +3,7 @@
 3. Execute `grunt-init gruntplugin` em um diretório vazio.
 4. Execute `npm install` para preparar o ambiente de desenvolvimento.
 5. Escreva seu plugin.
-6. Execute `npm publish` para publicar seu plugin ao npm!
+6. Execute `npm publish` para publicar seu plugin no npm!
 
 ## Notas
 
