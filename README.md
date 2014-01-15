@@ -6,25 +6,24 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
 
 ### Sumário
 
-1. [Home](Home.md)
-2. Documentation
-  * [Getting Started](Getting-started.md)
-  * [Configuring Tasks](Configuring-tasks.md)
-  * [Sample Gruntfile](Sample-Gruntfile.md)
-  * [Creating Tasks](Creating-Tasks.md)
-  * [Creating Plugins](Creating-Plugins.md)
-  * [Using the CLI](Using-the-CLI)
-3. Advanced
-  * [Installing Grunt](Installing-Grunt.md)
-  * [Frequently Asked Questions](Frequently-Asked-Questions.md)
-  * [Project Scaffolding](Project-Scaffolding.md)
-4. Community
-  * [Help Resources](Help-Resources.md)
-  * [Who uses Grunt](Who-uses-Grunt.md)
-  * [Built with Grunt Badge](Built-with-Grunt-Badge.md)
-  * [Contributing](Contributing.md)
-5. Migration guides
-  * [Upgrading from 0.3 to 0.4](Upgrading-from-0.3-to-0.4.md)
+1. Documentação
+  * [Iniciando](Getting-started.md)
+  * [Configurando Tarefas](Configuring-tasks.md)
+  * [Exemplo do Gruntfile](Sample-Gruntfile.md)
+  * [Criando Tarefas](Creating-Tasks.md)
+  * [Criando Plugins](Creating-Plugins.md)
+  * [Usando o CLI](Using-the-CLI)
+2. Avançado
+  * [Instalando o Grunt](Installing-Grunt.md)
+  * [FAQ](Frequently-Asked-Questions.md)
+  * [Estruturando Projetos](Project-Scaffolding.md)
+3. Comunidade
+  * [Recursos para Ajuda](Help-Resources.md)
+  * [Quem usa o Grunt](Who-uses-Grunt.md)
+  * [Emblema "Built with Grunt"](Built-with-Grunt-Badge.md)
+  * [Contribuindo](Contributing.md)
+4. Guia de Migração
+  * [Atualizando da 0.3 para 0.4](Upgrading-from-0.3-to-0.4.md)
 6. API
   * [grunt](grunt.md)
   * [grunt.config](grunt.config.md)
@@ -37,8 +36,8 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
   * [grunt.template](grunt.template.md)
   * [grunt.util](grunt.util.md)
 7. Other
-  * [Inside Tasks](Inside-Tasks.md)
-  * [Exit Codes](Exit-Codes.md)
+  * [Por dentro das tarefas](Inside-Tasks.md)
+  * [Códigos de saída](Exit-Codes.md)
 
 
 
