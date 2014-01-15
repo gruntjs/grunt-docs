@@ -1,4 +1,4 @@
-A API Grunt Option permite o compartilhamento de parâmetros entre múltiplas tarefas e provém acesso a parâmetros definidos via linha de comando.
+A API Grunt Option permite o compartilhamento de parâmetros entre diferentes tarefas e provém acesso a parâmetros definidos via linha de comando.
 
 
 Um bom exemplo seria uma flag para definir se o seu build é para uma versão de teste (dev) ou produção (staging). O seguinte exemplo, inserido na linha de comando: `grunt deploy --target=staging` faz com que `grunt.option('target')` retorne `"staging"`.
@@ -26,7 +26,7 @@ var target = grunt.option('target') || 'dev';
 grunt.registerTask('deploy', ['compass:' + target]);
 ```
 
-Executando o comando `grunt deploy` seu CSS usa as opções definidas no objeto `dev` como padrão e o resultado utiliza o formato "expanded". Caso seja executado `grunt deploy --target=staging`, as opções definidas em `staging` seriam utilizadas e o CSS final utilizaria o formato "compressed".
+Executando o comando `grunt deploy` seu CSS usa as opções definidas no objeto `dev` como padrão e o resultado utilizaria o formato "expanded". Caso seja executado `grunt deploy --target=staging`, as opções definidas em `staging` seriam utilizadas e o CSS final utilizaria o formato "compressed".
 
 `grunt.option` também pode ser usado dentro de tarefas, por exemplo:
 
