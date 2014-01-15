@@ -4,7 +4,7 @@
 eachdir grunt grunt-{contrib,lib}-* -- 'git pull'
 eachdir grunt grunt-{contrib,lib}-* -- 'rm -rf node_modules; linken . --src ..; npm install'
 
-# Verifique se as ligações foram criadas, se não existe uma incompatibilidade de versão
+# Verifique se os symlinks foram criados, se não, existe uma incompatibilidade de versão
 eachdir grunt grunt-{contrib,lib}-* -- 'll node_modules | grep grunt'
 
 # Verifique se tudo funciona
