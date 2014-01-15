@@ -1,4 +1,4 @@
-A API Grunt Option permite o compartilhamento de parâmetros entre diferentes tarefas e provém acesso a parâmetros definidos via linha de comando.
+A API Grunt Option permite o compartilhamento de parâmetros entre diferentes tarefas e provê acesso a parâmetros definidos via linha de comando.
 
 
 Um bom exemplo seria uma flag para definir se o seu build é para uma versão de teste (dev) ou produção (staging). O seguinte exemplo, inserido na linha de comando: `grunt deploy --target=staging` faz com que `grunt.option('target')` retorne `"staging"`.
