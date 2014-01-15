@@ -1,24 +1,25 @@
-1. Install [grunt-init](https://github.com/gruntjs/grunt-init) with `npm install -g grunt-init`
-2. Install the gruntplugin template with `git clone git://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin`
-3. Run `grunt-init gruntplugin` in an empty directory.
-4. Run `npm install` to prepare the development environment.
-5. Author your plugin.
-6. Run `npm publish` to publish the Grunt plugin to npm!
+1. Instale o [grunt-init](https://github.com/gruntjs/grunt-init) executando `npm install -g grunt-init`
+2. Instale o template gruntplugin com `git clone git://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin`
+3. Execute `grunt-init gruntplugin` em um diretório vazio.
+4. Execute `npm install` para preparar o ambiente de desenvolvimento.
+5. Escreva seu plugin.
+6. Execute `npm publish` para publicar seu plugin ao npm!
 
-## Notes
+## Notas
 
-### Naming your task
+### Dando nome à task
 
-The "grunt-contrib" namespace is reserved for tasks maintained by the Grunt team, please name your task something appropriate that avoids that naming scheme.
+O namespace "grunt-contrib" é reservado para tasks mantidas pelo time do Grunt, por favor, nomeie sua task com algo apropriado que evite esse esquema de nomenclatura.
 
-### Debugging
-Grunt hides error stack traces by default, but they can be enabled for easier task debugging with the `--stack` option. If you want Grunt to always log stack traces on errors, create an alias in your shell. Eg, in bash, you could do `alias grunt='grunt --stack'`.
+### Debugando
 
-### Storing task files
+O Grunt oculta os stack traces dos erros por padrão, mas eles podem ser habilitados com a opção `--stack`, para fácil depuramento. Se você quer que o Grunt sempre mostre os stack traces, crie um alias no seu shell. Exemplificando, no bash você pode fazer `alias grunt='grunt --stack'`.
 
-Only store data files in a .grunt/[npm-module-name]/ directory at the project's root and clean up after yourself when appropriate. This is not a solution for temporary scratch files, use one of the common npm modules (eg [temporary](https://npmjs.org/package/temporary), [tmp](https://npmjs.org/package/tmp)) that take advantage of the OS level temporary directories for that case.
+### Armazenando os arquivos da task
 
-### Avoid Changing the Current Working Directory: `process.cwd()`
-By default, the current working directory is set to be the directory that contains the gruntfile. The user can change it using `grunt.file.setBase()` in their gruntfile, but plugins should take care to not change it.
+Somente armazene arquivos de dados em um diretório .grunt/[npm-nome-do-modulo]/ na raiz do projeto e limpe depois que for apropriado. Isto não é solução para arquivos temporários, use um dos módulos comuns do npm (ex.: [temporary](https://npmjs.org/package/temporary) e [tmp](https://npmjs.org/package/tmp)) que tiram proveito do nível dos diretórios temporários.
 
-`path.resolve('foo')` can be used to get the absolute path of the filepath 'foo' relative to the `Gruntfile`.
+### Evite Mudar o Diretório Atual
+Por padrão, o atual diretório de desenvolvimento, é definido para ser o diretório que vai conter o arquivo Gruntfile. O usuário pode mudá-lo usando `grunt.file.setBase()` em seu arquivo Gruntfile, porém os plugins devem ter cuidado para não mudar isto.
+
+`path.resolve('foo')` pode ser usado para obter o caminho absoluto do caminho do arquivo 'foo' relativo ao arquivo Gruntfile.

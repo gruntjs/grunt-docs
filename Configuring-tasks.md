@@ -1,84 +1,83 @@
-This guide explains how to configure tasks for your project using a `Gruntfile`.  If you don't know what a `Gruntfile` is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
+Este guia explica como configurar tarefas para seu projeto usando um arquivo `Gruntfile`. Se você não sabe o que o `Gruntfile` é, por favor leia o guia de [[Introdução]](Getting-started.md) e veja um [[Gruntfile modelo]](Sample-Gruntfile.md)
 
-## Grunt Configuration
-Task configuration is specified in your `Gruntfile` via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any arbitrary data. As long as properties don't conflict with properties your tasks require, they will be otherwise ignored.
+## Configuração do Grunt
+A configuração de uma tarefa é especificada no seu `Gruntfile` através do método `grunt.initConfig`. Esta configuração será principalmente em propriedades com o nome da tarefa, mas poderão conter qualquer dados arbitrários. Contando que as propriedades não criem conflitos com propriedades que suas tarefas precisam, elas serão de alguma forma ignorada.
 
-Also, because this is JavaScript, you're not limited to JSON; you may use any valid JavaScript here. You may even programmatically generate the configuration if necessary.
+Também, por que é JavaScript, você não é limitado ao JSON; você pode usar qualquer JavaScript válido aqui. Você pode até gerar configurações programadas, se necessário.
 
 ```js
 grunt.initConfig({
   concat: {
-    // concat task configuration goes here.
+    // a tarefa concat vai aqui.
   },
   uglify: {
-    // uglify task configuration goes here.
+    // a tarefa uglify vai aqui.
   },
-  // Arbitrary non-task-specific properties.
+  // Propriedades arbitrárias de não tarefas.
   my_property: 'whatever',
   my_src_files: ['foo/*.js', 'bar/*.js'],
 });
 ```
 
-## Task Configuration and Targets
-
-When a task is run, Grunt looks for its configuration under a property of the same name. Multi-tasks can have multiple configurations, defined using arbitrarily named "targets." In the example below, the `concat` task has `foo` and `bar` targets, while the `uglify` task only has a `bar` target.
+## Configurações de tarefas e targets
+Quando uma tarefa é executada, o Grunt procura por uma configuração de uma propriedade de mesmo nome. Múltiplas tarefas podem ter múltiplas configurações, definidas usando arbitráriamente chamadas "targets". No exemplo abaixo, a tarefa `concat`, tem os targets `foo` e `bar`, enquanto a tarefa `uglify` tem somente o target `bar`.
 
 ```js
 grunt.initConfig({
   concat: {
     foo: {
-      // concat task "foo" target options and files go here.
+      // as opções e arquivos do target "foo" da tarefa concat
     },
     bar: {
-      // concat task "bar" target options and files go here.
+      // as opções e arquivos do target "bar" da tarefa concat
     },
   },
   uglify: {
     bar: {
-      // uglify task "bar" target options and files go here.
+      // as opções e arquivos do target "bar" da tarefa uglify
     },
   },
 });
 ```
-Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask), Grunt will look for a property with the _new_ task name in the config object.
+Especificando ambas tarefas e targets como `grunt concat:foo` ou `grunt concat:bar` vai processar somente a configuração da target especificada, enquanto executando `grunt concat` vai iterar sobre _todos_ os targets, processando cada um em turno. Note que se uma tarefa foi renomeada com [grunt.task.renameTask](grunt.task.md#grunttaskrenametask-), o Grunt vai procurar por uma propriedade que o _novo_ nome da tarefa no objeto da configuração.
 
-## Options
-Inside a task configuration, an `options` property may be specified to override built-in defaults.  In addition, each target may have an `options` property which is specific to that target.  Target-level options will override task-level options.
+## Opções
+Dentro da configuração de uma tarefa, uma propriedade `options` pode ser especificada para sobrescrever os padrões. Adicionando, cada target pode ter uma propriedade `options` que é específica para cada target. Opções no nível dos targets, vão sobrescrever as opções no nível da tarefa.
 
-The `options` object is optional and may be omitted if not needed.
+O objeto `options` é opcional e pode ser omitido, caso não necessário.
 
 ```js
 grunt.initConfig({
   concat: {
     options: {
-      // Task-level options may go here, overriding task defaults.
+      // As opções no nível das tarefas virão aqui, sobrescrevendo as opções padrão.
     },
     foo: {
       options: {
-        // "foo" target options may go here, overriding task-level options.
+        // as opções do target 'foo' virão aqui, sobrescrevendo as opções acima especificadas.
       },
     },
     bar: {
-      // No options specified; this target will use task-level options.
+      // Nenhuma opção especificada; Este target vai usar as opções no nível da tarefa.
     },
   },
 });
 ```
 
-## Files
-Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
+## Arquivos
+Porque a maioria das tarefas realizam operações em arquivos, o Grunt tem poderosas abstrações para declarar nos arquivos que a tarefa deve operar. Existem alguns jeitos de definir o **src-dest** (destino de saída) dos arquivos mapeados, oferecendo varios tipos de aviso e controle. Qualquer multi task vai entender que todos os seguintes formatos, então escolha qual o melhor formato que você precisa.
 
-All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
+Todos dos formatos suportam `src` e `desy` mas os formatos "Compact" e "File Array" suportam algumas propriedades adicionais:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
-* `nonull` When a match is not found, return a list containing the pattern itself. Otherwise, an empty list is returned if there are no matches. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
-* `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
-* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
-* `expand` Process a dynamic src-dest file mapping, see ["Building the files object dynamically"](configuring-tasks#building-the-files-object-dynamically) for more information.
-* Other properties will be passed into the underlying libs as matching options. See the [node-glob][] and [minimatch][] documentation for more options.
+* `filter` Tanto um [nome de método válido fs.Stats](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) ou uma função que for passada que corresponda à pasta `src` e retorna `true` ou `false`.
+* `nonull` Quando uma combinação não é encontrada, retorna uma lista de patterns. Caso contrário, uma lista vazia é retornada se não houver combinações. Combinada com a flag do Grunt `--verbose`, esta opção pode ajudar a debugar problemas nos caminhos das pastas.
+* `dot` Permite que patterns combinem com nomes de arquivo com um período, mesmo se o pattern não explicite ter um periodo neste local.
+* `matchBase` Se setado, o pattern sem barras vai ser comparado com o basename do caminho se este tiver barras. Por exemplo, o pattern `a?b` poderá combinar com o caminho `/xyz/123/acb`, porém não `/xyz/acb/123`.
+* `expand` Processa um mapeamento dinâmico no destino, veja ["Construindo objetos do arquivo dinamicamente"](configuring-tasks.md#building-the-files-object-dynamically) para mais informações.
+* Outras propriedades serão passadas para as lib subjacentes como opções de correspodência. Veja a documentação do [node-glob][] e [minimatch][] para mais opções.
 
-### Compact Format
-This form allows a single **src-dest** (source-destination) file mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. This format also supports additional properties per src-dest file mapping.
+### Formato compacto
+Esta forma permite um único mapeamento do **src-dest** (destino) por target. Isto é mais comumente usado para tarefas somente-leitura, como a tarega [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), onde uma única propriedade é necessária, e nenhuma chave `dest` é relevante. Este formato também suporta propriedades adicionais por mapeamento de arquivos no destino e na fonte (src-dest).
 
 ```js
 grunt.initConfig({
@@ -96,8 +95,8 @@ grunt.initConfig({
 });
 ```
 
-### Files Object Format
-This form supports multiple src-dest mappings per-target, where the property name is the destination file, and its value is the source file(s). Any number of src-dest file mappings may be specified in this way, but additional properties may not be specified per mapping.
+### Objeto de formato de arquivo
+Esta forma suporta múltiplos mapeamentos de destino e fonte (src-dest) por target, onde o nome da propriedade é o nome do(s) arquivo(s) de destino. Qualquer número de mapeamentos de destino e fonte pode ser especificado dessa maneira, mas propriedades adicionais podem não ser especificadas no mapeamento.
 
 ```js
 grunt.initConfig({
@@ -118,8 +117,8 @@ grunt.initConfig({
 });
 ```
 
-### Files Array Format
-This form supports multiple src-dest file mappings per-target, while also allowing additional properties per mapping.
+### Arquivos no formato de Array
+Esta forma suporta múltiplos mapeamentos de destinos e fontes por target, enquanto também permite propriedades adicionais por mapeamento.
 
 ```js
 grunt.initConfig({
@@ -140,10 +139,10 @@ grunt.initConfig({
 });
 ```
 
-### Older Formats
-The **dest-as-target** file format is a holdover from before multi tasks and targets existed, where the destination filepath is actually the target name. Unfortunately, because target names are filepaths, running `grunt task:target` can be awkward. Also, you can't specify target-level options or additional properties per src-dest file mapping.
+### Formatos antigos
+O formato de arquivo **dest-as-target** (destino como target) é um resquício de multi-tarefas e targets antes existentes, onde o caminho de destino é atualmente o nome do target. Infelizmente, pelos nomes dos targets serem caminhos de arquivo, executando `grunt task:target` pode ser inadequado. Também, você não precisa especificar opções no nível de tarefa ou propriedades adicionais por mapeamentos de arquivos destino e fonte.
 
-Consider this format deprecated, and avoid it where possible.
+Considere este formato obsoleto, e evite-o quando possível.
 
 ```js
 grunt.initConfig({
@@ -154,8 +153,8 @@ grunt.initConfig({
 });
 ```
 
-### Custom Filter Function
-The `filter` property can help you target files with a greater level of detail. Simply use a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). The following will clean only if the pattern matches an actual file:
+### Funções de filtro customizadas
+A propriedade `filter` pode ajudar seus arquivos do target com um melhor nível de detalhes. Simplesmente use um [fs.Stats válido nome de método](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). O código seguinte vai executar a tarefa `clean` no target `foo` somente nos arquivos que combinam com o pattern.
 
 ```js
 grunt.initConfig({
@@ -168,7 +167,7 @@ grunt.initConfig({
 });
 ```
 
-Or create your own `filter` function and return `true` or `false` whether the file should be matched. For example the following will only clean folders that are empty:
+Ou crie sua própria função `filter` e retorne `true` ou `false` se o arquivo combina com o pattern. O seguinte exemplo vai ser executado somente nas pastas que estão vazias.
 
 ```js
 grunt.initConfig({
@@ -183,81 +182,78 @@ grunt.initConfig({
 });
 ```
 
-### Globbing patterns
-It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
+### Patterns de englobamento
+É impraticável especificar todos os cominhos de cada arquivo individualmente, então o Grunt suporta a expansão do nome do arquivo (também conhecido como englobamento) através das bibliotecas [node-glob][] e [minimatch][].
 
 [node-glob]: https://github.com/isaacs/node-glob
 [minimatch]: https://github.com/isaacs/minimatch
 
-While this isn't a comprehensive tutorial on globbing patterns, know that in a filepath:
+Como isto não é um tutorial compreensivo de patterns de englobamento, saiba disso em um caminho:
 
-* `*` matches any number of characters, but not `/`
-* `?` matches a single character, but not `/`
-* `**` matches any number of characters, including `/`, as long as it's the only thing in a path part
-* `{}` allows for a comma-separated list of "or" expressions
-* `!` at the beginning of a pattern will negate the match
+* `*` corresponde com qualquer caractere, exceto `/`
+* `?` corresponde a um único caractere, exceto `/`
+* `**` combina com qualquer caractere, incluindo `/`, contanto que é única coisa na parte de um caminho
+* `{}` permite uma lista de expressões separadas por vírgula
+* `!` no início do pattern, vai fazer com que não corresponda com o pattern dado
 
-All most people need to know is that `foo/*.js` will match all files ending with `.js` in the `foo/` subdirectory, but `foo/**/*.js` will match all files ending with `.js` in the `foo/` subdirectory _and all of its subdirectories_.
+A maioria das pessoas precisam saber que `foo/*.js` corresponde com todos os arquivos que terminan com `.js` no subdiretório `foo/`, e que `foo/**/*.js` corresponde a todos os arquivos que terminan com `.js` no subdiretório `foo/` _e todos os seus subdiretórios_.
+O conjunto de resultados é unico.
 
-Also, in order to simplify otherwise complicated globbing patterns, Grunt allows arrays of file paths or globbing patterns to be specified. Patterns are processed in-order, with `!`-prefixed matches excluding matched files from the result set. The result set is uniqued.
-
-For example:
+Por exemplo:
 
 ```js
-// You can specify single files:
+// Você pode especificar arquivos únicos:
 {src: 'foo/this.js', dest: ...}
-// Or arrays of files:
+// Ou um Array com arquivos:
 {src: ['foo/this.js', 'foo/that.js', 'foo/the-other.js'], dest: ...}
 // Or you can generalize with a glob pattern:
 {src: 'foo/th*.js', dest: ...}
 
-// This single node-glob pattern:
+// Esse único pattern node-glob:
 {src: 'foo/{a,b}*.js', dest: ...}
-// Could also be written like this:
+// Que também pode ser escrito dessa forma:
 {src: ['foo/a*.js', 'foo/b*.js'], dest: ...}
 
-// All .js files, in foo/, in alpha order:
+// Todos os arquivos .js, em foo/, em ordem alfabética:
 {src: ['foo/*.js'], dest: ...}
-// Here, bar.js is first, followed by the remaining files, in alpha order:
+// Aqui, bar.js é o primeiro, seguido pelos arquivos restantes, em ordem alfabética:
 {src: ['foo/bar.js', 'foo/*.js'], dest: ...}
 
-// All files except for bar.js, in alpha order:
+// Todos os arquivos exceto bar.js, em ordem alfabética:
 {src: ['foo/*.js', '!foo/bar.js'], dest: ...}
-// All files in alpha order, but with bar.js at the end.
+// Todos os arquivos em ordem alfabética, mas bar.js vai por último.
 {src: ['foo/*.js', '!foo/bar.js', 'foo/bar.js'], dest: ...}
 
-// Templates may be used in filepaths or glob patterns:
+// Templates podem ser usados em caminhos ou patterns:
 {src: ['src/<%= basename %>.js'], dest: 'build/<%= basename %>.min.js'}
-// But they may also reference file lists defined elsewhere in the config:
+// Mas podem referenciar lista de arquivos definidas em outro lugar na configuração:
 {src: ['foo/*.js', '<%= jshint.all.src %>'], dest: ...}
 ```
 
-For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
+Para saber mais sobre englobamento de patterns, veja a documentação do [node-glob][] e [minimatch][].
 
-### Building the files object dynamically
-When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
+### Construindo o objeto dos arquivos dinamicamente
+Quando você quer processar vários arquivos individuais, algumas propriedades adicionais podem ser usadas para fazer uma lista de arquivos dinamicamente. Estas propriedades podem ser especificadas em ambos formatos de mapeamento "Compact" e "Files Array".
 
-`expand` Set to `true` to enable the following options:
+`expand` Sete `true` para habilitar as sequintes opções:
 
-* `cwd` All `src` matches are relative to (but don't include) this path.
-* `src` Pattern(s) to match, relative to the `cwd`.
-* `dest` Destination path prefix.
-* `ext` Replace any existing extension with this value in generated `dest` paths.
-* `flatten` Remove all path parts from generated `dest` paths.
-* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest`
-and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned
-more than once, each `src` which used it will be added to an array of sources for it.
+* `cwd` Todos os correspondentes à `src` são relativos a (mas não incluem) este diretório.
+* `src` Corresponder pattern(s), relativos à `cwd`.
+* `dest` Prefixo do diretório de destino.
+* `ext` Substitui qualquer extensão existente com o valor gerado nos diretórios `dest`.
+* `flatten` Exclui todos as partes dos diretórios geradas pelo `dest`.
+* `rename` Esta função é chamada para cada arquivo que corresponde em `src`, (depois de renomear e diminuir a extensão). O `dest` e os `src` correspondentes são passados, e esta função deve retornar um novo valor para `dest`. Se o mesmo `dest` é retornado mais  de uma vez, cada `src` que é usado vai ser adicionado a um Array de fontes.
 
-In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
+No seguinte exemplo, o tarefa `uglify` vai ter a mesma lista de mapeamentos de destinos e fontes para ambos targets `static_mappings` e `dynamic_mappings`, porque o Grunt vai automaticamente expandir os objetos dos arquivos com `dynamic_mappings` para 4 individuais arquivo do mapeamento na fonte e destino (src-dest), assumingo que 4 arquivos serão encontrados quando a tarefa for executada.
 
-Any combination of static src-dest and dynamic src-dest file mappings may be specified.
+Qualquer combinação de fontes-destino estática mapeamentos dinâmicos podem ser especificados.
 
 ```js
 grunt.initConfig({
   uglify: {
     static_mappings: {
-      // Because these src-dest file mappings are manually specified, every
-      // time a new file is added or removed, the Gruntfile has to be updated.
+      // Pelo mapeamento da fonte e destino estarem manualmente especificadas, cada
+      // vez que um novo arquivo é adicionado ou removido, o arquivo Gruntfile tem de ser atualizado.
       files: [
         {src: 'lib/a.js', dest: 'build/a.min.js'},
         {src: 'lib/b.js', dest: 'build/b.min.js'},
@@ -266,16 +262,16 @@ grunt.initConfig({
       ],
     },
     dynamic_mappings: {
-      // Grunt will search for "**/*.js" under "lib/" when the "uglify" task
-      // runs and build the appropriate src-dest file mappings then, so you
-      // don't need to update the Gruntfile when files are added or removed.
+      // O Grunt vai pesquisar por "**/*.js" dentro de "lib/" quando a tarefa uglify
+      // é executada e é contruída com o mapeamento da fonte e destino, então você
+      // não precisa atualizar o arquivo Gruntfile quando arquivos são adicionados ou removidos.
       files: [
         {
-          expand: true,     // Enable dynamic expansion.
-          cwd: 'lib/',      // Src matches are relative to this path.
-          src: ['**/*.js'], // Actual pattern(s) to match.
-          dest: 'build/',   // Destination path prefix.
-          ext: '.min.js',   // Dest filepaths will have this extension.
+          expand: true,     // Habilita a extensão dinâmica.
+          cwd: 'lib/',      // Os arquivos de fonte são relativos a essa pasta.
+          src: ['**/*.js'], // Pattern a ser combinado.
+          dest: 'build/',   // Prefixo do diretório de destino.
+          ext: '.min.js',   // Os nomes dos arquivos de destino terão esta extensão.
         },
       ],
     },
@@ -284,14 +280,14 @@ grunt.initConfig({
 ```
 
 ## Templates
-Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more remain.
+Templates especificados com os delimitadores `<% %>` serão automaticamente expandidos quando tarefas a leêm no objeto de configuração. Templates são expandidos recursivamente até não haver mais nenhum.
 
-The entire config object is the context in which properties are resolved. Additionally, `grunt` and its methods are available inside templates, eg. `<%= grunt.template.today('yyyy-mm-dd') %>`.
+O objeto da configuração inteiro é o contexto em que as propriedades são interpretadas. Ainda, `grunt` e seus métodos são disponíveis em templates, ex.: `<%= grunt.template.today('yyyy-mm-dd') %>`.
 
-* `<%= prop.subprop %>` Expand to the value of `prop.subprop` in the config, regardless of type. Templates like this can be used to reference not only string values, but also arrays or other objects.
-* `<% %>` Execute arbitrary inline JavaScript code. This is useful with control flow or looping.
+* `<%= prop.subprop %>` Expande ao valor da `prop.subprop` na configuração, independente do tipo. Templates como este podem ser referenciados não somente em valores strinf, mas também arrays de outros objetos.
+* `<% %>` Executa arbitrariamente código JavaScript inline. Isto é útil com controle de fluxo ou looping.
 
-Given the sample `concat` task configuration below, running `grunt concat:sample` will generate a file named `build/abcde.js` by concatenating the banner `/* abcde */` with all files matching `foo/*.js` + `bar/*.js` + `baz/*.js`.
+Dado o exemplo da configuração da tarefa `concat` abaixo, executando `grunt concat:sample` vai gerar um arquivo chamando `build/abcde.js` concatenando o banner `/* abcde */` com todos os arquivos que correspodem aos patterns `foo/*.js` + `bar/*.js` + `baz/*.js`.
 
 ```js
 grunt.initConfig({
@@ -304,7 +300,7 @@ grunt.initConfig({
       dest: 'build/<%= baz %>.js',      // 'build/abcde.js'
     },
   },
-  // Arbitrary properties used in task configuration templates.
+  // Propriedades arbitrárias usadas na configuração de templates de tarefas.
   foo: 'c',
   bar: 'b<%= foo %>d', // 'bcd'
   baz: 'a<%= bar %>e', // 'abcde'
@@ -312,10 +308,10 @@ grunt.initConfig({
 });
 ```
 
-## Importing External Data
-In the following Gruntfile, project metadata is imported into the Grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin](http://github.com/gruntjs/grunt-contrib-uglify) `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
+## Importando Dados Externos
+No seguinte arquivo Gruntfile, os metadados do projeto são importados  à configuração do Grunt do arquivo `package.json`, e o [plugin grunt-contrib-uglify](http://github.com/gruntjs/grunt-contrib-uglify) na tarefa `uglify` é configurada para minificar um arquivo fonte e gerar um comentário no banner dinamicamente com os  metadados.
 
-Grunt has `grunt.file.readJSON` and `grunt.file.readYAML` methods for importing JSON and YAML data.
+O Grunt tem os métodos `grunt.file.readJSON` e `grunt.file.readYAML` para importação de dados JSON e YAML.
 
 ```js
 grunt.initConfig({
