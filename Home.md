@@ -9,7 +9,7 @@ Versão em desenvolvimento: **master**
 * [[Configurando tarefas]](Configuring-tasks.md)
 * [[Arquivo Gruntfile de exemplo]](Sample-Gruntfile.md)
 * [[Criando tarefas]](Creating-tasks.md)
-* [[Criando plugins]]Creating-plugins.md
+* [[Criando plugins]](Creating-plugins.md)
 * [[Usando o CLI]](Using-the-CLI.md)
 
 ### Avançado
