@@ -1,7 +1,7 @@
 grunt-docs
 ==========
 
-Grunt documentation.
+Tradução da documentação do [GruntJS](http://gruntjs.com/)
 
 
 --- ---
