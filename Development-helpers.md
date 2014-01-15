@@ -1,15 +1,15 @@
-Good to do when publishing everything all-at-once.
+É bom fazer quando publicar tudo de uma vez.
 
 ```shell
 eachdir grunt grunt-{contrib,lib}-* -- 'git pull'
 eachdir grunt grunt-{contrib,lib}-* -- 'rm -rf node_modules; linken . --src ..; npm install'
 
-# Make sure symlinks were created, if not there's a version mismatch
+# Verifique se as ligações foram criadas, se não existe uma incompatibilidade de versão
 eachdir grunt grunt-{contrib,lib}-* -- 'll node_modules | grep grunt'
 
-# Make sure everything passes
+# Verifique se tudo funciona
 eachdir grunt grunt-{contrib,lib}-* -- grunt
 
-# Make sure all versions are final
+# Verifique se todas as versões são as finais
 eachdir grunt grunt-{contrib,lib}-* -- 'git branch; node -pe "require(\"./package.json\").version"'
 ```
