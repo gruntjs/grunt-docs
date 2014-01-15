@@ -1,4 +1,4 @@
-Está é apenas uma pequena lista de empresas e projetos que usam o Grunt.
+Esta é apenas uma pequena lista de empresas e projetos que usam o Grunt.
 Se você já usou o Grunt em algum projeto e gostaria dele listado aqui,
 [edite essa página](https://github.com/gruntjs/grunt-docs/blob/master/Who-uses-Grunt.md).
 
