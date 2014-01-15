@@ -5,36 +5,36 @@ Praticamente todos os métodos seguintes são definidos em outros módulos, mas 
 ## Configuração
 
 ### grunt.initConfig
-_Este método é um *alias* do método [grunt.config.init](grunt.config#grunt.config.init)._
+_Este método é um alias do método [grunt.config.init](grunt.config#grunt.config.init)._
 
 
 ## Criando tarefas
 
 ### grunt.registerTask
-_Este método é um *alias* do método [grunt.task.registerTask](grunt.task#grunt.task.registerTask)._
+_Este método é um alias do método [grunt.task.registerTask](grunt.task#grunt.task.registerTask)._
 
 ### grunt.registerMultiTask
-_Este método é um *alias* do método [grunt.task.registerMultiTask](grunt.task#grunt.task.registerMultiTask)._
+_Este método é um alias do método [grunt.task.registerMultiTask](grunt.task#grunt.task.registerMultiTask)._
 
 ### grunt.renameTask
-_Este método é um *alias* do método [grunt.task.renameTask](grunt.task#grunt.task.renameTask)._
+_Este método é um alias do método [grunt.task.renameTask](grunt.task#grunt.task.renameTask)._
 
 ## Carregamento de tarefas definidas externamente
 
 ### grunt.loadTasks
-_Este método é um *alias* do método [grunt.task.loadTasks](grunt.task#grunt.task.loadTasks)._
+_Este método é um alias do método [grunt.task.loadTasks](grunt.task#grunt.task.loadTasks)._
 
 ### grunt.loadNpmTasks
-_Este método é um *alias* do método [grunt.task.loadNpmTasks](grunt.task#grunt.task.loadNpmTasks)._
+_Este método é um alias do método [grunt.task.loadNpmTasks](grunt.task#grunt.task.loadNpmTasks)._
 
 
 ## *Warnings* e erros fatais
 
 ### grunt.warn
-_Este método é um *alias* do método [grunt.fail.warn](grunt.fail#grunt.fail.warn)._
+_Este método é um alias do método [grunt.fail.warn](grunt.fail#grunt.fail.warn)._
 
 ### grunt.fatal
-_Este método é um *alias* do método [grunt.fail.fatal](grunt.fail#grunt.fail.fatal)._
+_Este método é um alias do método [grunt.fail.fatal](grunt.fail#grunt.fail.fatal)._
 
 
 ## Parâmetros via linha de comando
