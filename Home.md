@@ -1,43 +1,43 @@
-> Welcome to the home of **Grunt**, a JavaScript automation tool.
+> Bem vindo à página inicial do **Grunt**, uma ferramenta de automação JavaScript.
 
-Stable Version: **0.4.2**
+Versão estável: **0.4.2**
 
-Development Version: **master**
+Versão em desenvolvimento: **master**
 
-## Documentation
-* [[Getting Started]]
-* [[Configuring Tasks]]
-* [[Sample Gruntfile]]
-* [[Creating Tasks]]
-* [[Creating Plugins]]
-* [[Using the CLI]]
+## Documentação
+* [[Introdução]](Getting-started.md)
+* [[Configurando tarefas]](Configuring-tasks.md)
+* [[Arquivo Gruntfile de exemplo]](Sample-Gruntfile.md)
+* [[Criando tarefas]](Creating-tasks.md)
+* [[Criando plugins]]Creating-plugins.md
+* [[Usando o CLI]](Using-the-CLI.md)
 
-### Advanced
-* [[Installing Grunt]]
-* [[Frequently Asked Questions]]
-* [[Project Scaffolding]]
+### Avançado
+* [[Instalando o Grunt]](Installing-grunt.md)
+* [[FAQ]](Frequently-Asked-Questions.md)
+* [[Scaffolding de projeto]](Project-Scaffolding.md)
 
 ### Community
-* [[Help Resources]]
-* [[Who uses Grunt]]
-* [[Built with Grunt Badge]]
-* [[Contributing]]
+* [[Conteúdo de ajuda]](Help-Resources.md)
+* [[Quem usa Grunt]](Who-uses-Grunt.md)
+* [[Badge 'Built with Grunt']](Built-with-Grunt-Badge.md)
+* [[Contribuindo]](Contributing.md)
 
-### Migration guides
-* [[Upgrading from 0.3 to 0.4]]
+### Guias de migração
+* [[Atualizando da versão 0.3 para 0.4]](Upgrading-from-0.3-to-0.4.md)
 
 ## API
-* [[grunt]]
-* [[grunt.config]]
-* [[grunt.event]]
-* [[grunt.fail]]
-* [[grunt.file]]
-* [[grunt.log]]
-* [[grunt.option]]
-* [[grunt.task]]
-* [[grunt.template]]
-* [[grunt.util]]
+* [[grunt]](grunt.md)
+* [[grunt.config]](grunt.config.md)
+* [[grunt.event]](grunt.event.md)
+* [[grunt.fail]](grunt.fail.md)
+* [[grunt.file]](grunt.file.md)
+* [[grunt.log]](grunt.log.md)
+* [[grunt.option]](grunt.option.md)
+* [[grunt.task]](grunt.task.md)
+* [[grunt.template]](grunt.template.md)
+* [[grunt.util]](grunt.util.md)
 
-### Other
-* [[Inside Tasks]]
-* [[Exit Codes]]
+### Outro
+* [[Dentro das tasks]](Inside-Tasks.md)
+* [[Códigos de saída]](Exit-Codes.md)
