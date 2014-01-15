@@ -1,4 +1,4 @@
-Você usa Grunt em um projeto, e quer orgulhosmente mostrar isso no seu arquivo README ou no website do projeto? Agora você pode com o bagde "Built with Grunt!"
+Você usa Grunt em um projeto, e quer orgulhosamente mostrar isso no seu arquivo README ou no website do projeto? Agora você pode com o bagde "Built with Grunt!"
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
