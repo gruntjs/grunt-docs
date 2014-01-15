@@ -1,16 +1,17 @@
-The Grunt option API is for sharing parameters across multiple tasks and accessing parameters set on the command line.
+A API Grunt Option permite o compartilhamento de parâmetros entre múltiplas tarefas e provém acesso a parâmetros definidos via linha de comando.
 
-An example would be a flag to target whether your build is for development or staging. On the command line: `grunt deploy --target=staging` would cause `grunt.option('target')` to return `"staging"`.
 
-An example `Gruntfile` to utilize the `target` option could be:
+Um bom exemplo seria uma flag para definir se o seu build é para uma versão de teste (dev) ou produção (staging). O seguinte exemplo, inserido na linha de comando: `grunt deploy --target=staging` faz com que `grunt.option('target')` retorne `"staging"`.
+
+Um exemplo de `Gruntfile` que utiliza o parâmetro `target` seria:
 
 ```javascript
 grunt.initConfig({
   compass: {
-   dev: {
-     options: {
-       /* ... */
-       outputStyle: 'expanded'
+    dev: {
+      options: {
+        /* ... */
+        outputStyle: 'expanded'
       },
     },
     staging: {
@@ -25,29 +26,29 @@ var target = grunt.option('target') || 'dev';
 grunt.registerTask('deploy', ['compass:' + target]);
 ```
 
-As you run `grunt deploy` your stylesheets would default to the `dev` target and output the CSS in the expanded format. If you ran `grunt deploy --target=staging` the `staging` target would instead be ran and your CSS would be in the compressed format.
+Executando o comando `grunt deploy` seu CSS usa as opções definidas no objeto `dev` como padrão e o resultado utiliza o formato "expanded". Caso seja executado `grunt deploy --target=staging`, as opções definidas em `staging` seriam utilizadas e o CSS final utilizaria o formato "compressed".
 
-`grunt.option` can be used within tasks as well, for example:
+`grunt.option` também pode ser usado dentro de tarefas, por exemplo:
 
 ```javascript
-grunt.registerTask('upload', 'Upload code to specified target.', function(n) {
+grunt.registerTask('upload', 'Upload do código para um target específico.', function(n) {
   var target = grunt.option('target');
-  // do something useful with target here
+  // Faça algo de útil com a variável target aqui
 });
 grunt.registerTask('deploy', ['validate', 'upload']);
 ```
 
-_Note that boolean options can be specified using just a key without a value. For example, running `grunt deploy --staging` on the command line would cause `grunt.option('staging')` to return `true`._
+_Observação: Opções booleanas podem ser especificadas usando somente sua referência. Por exemplo, executando `grunt deploy --staging` no terminal faz com que `grunt.option('staging')` retorne `true`._
 
 
 ### grunt.option ☃
-Gets or sets an option.
+Retorna ou altera um parâmetro.
 
 ```javascript
 grunt.option(key[, val])
 ```
 
-Boolean options can be negated by prepending `no-` onto the `key`. For example:
+Valores booleanos podem ser invertidos se adicionarmos o prefixo `no-` a referência do parâmetro. Por exemplo:
 
 ```javascript
 grunt.option('staging', false);
@@ -56,14 +57,14 @@ var isDev = grunt.option('no-staging');
 ```
 
 ### grunt.option.init
-Initialize `grunt.option`. If `initObject` is omitted option will be initialized to an empty object otherwise will be set to `initObject`.
+Inicializa `grunt.option`. Se `initObject` for omitido o parâmetro será inicializado como um objeto vazio, caso contrário o parâmetro passa a ter o valor de `initObject`.
 
 ```javascript
 grunt.option.init([initObject])
 ```
 
 ### grunt.option.flags
-Returns the options as an array of command line parameters.
+Retorna um array contendo os parâmetros providos via linha de comando.
 
 ```javascript
 grunt.option.flags()
