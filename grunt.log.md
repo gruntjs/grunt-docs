@@ -1,137 +1,137 @@
-Output messages to the console.
+Mensagens de saída para o console.
 
-See the [log lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt/log.js) for more information.
+Veja na biblioteca a [fonte do log](https://github.com/gruntjs/grunt/blob/master/lib/grunt/log.js) para mais informações.
 
-## The log API
-Grunt output should look consistent, and maybe even pretty. As such, there is a plethora of logging methods, and a few useful patterns. All of the methods that actually log something are chainable.
+## A API log
+A saída do Grunt deve ser consistente, e talvez até bonita. Como tal, há uma infinidade de métodos de registro, em alguns patterns úteis. Todos os métodos que atualmente registram alguma coisa são encadeáveis.
 
-_Note: all methods available under `grunt.verbose` work exactly like `grunt.log` methods, but only log if the `--verbose` command-line option was specified._
+_Observação: todos os métodos disponíveis através do `grunt.verbose` agem da mesma forma que os métodos `grunt.log`, mas somente log, se a opção da linha de comando `--verbose` foi especificada._
 
 ### grunt.log.write / grunt.verbose.write
-Log the specified `msg` string, with no trailing newline.
+Registra a string `msg` especificada, sem adicionar uma nova linha.
 
 ```javascript
 grunt.log.write(msg)
 ```
 
 ### grunt.log.writeln / grunt.verbose.writeln
-Log the specified `msg` string, with trailing newline.
+Registra a string `msg` especificada, adicionando uma nova linha.
 
 ```javascript
 grunt.log.writeln([msg])
 ```
 
 ### grunt.log.error / grunt.verbose.error
-If `msg` string is omitted, logs `ERROR` in red, otherwise logs `>> msg`, with trailing newline.
+Se a string `msg` é omitida, é registrado `ERROR` em vermelho, caso contrário registra `>> msg`, com uma nova linha.
 
 ```javascript
 grunt.log.error([msg])
 ```
 
 ### grunt.log.errorlns / grunt.verbose.errorlns
-Log an error with `grunt.log.error`, wrapping text to 80 columns using `grunt.log.wraptext`.
+Registra um erro com `grunt.log.error`, adicionando o texto para 80 colunas usando `grunt.log.wraptext`.
 
 ```javascript
 grunt.log.errorlns(msg)
 ```
 
 ### grunt.log.ok / grunt.verbose.ok
-If `msg` string is omitted, logs `OK` in green, otherwise logs `>> msg`, with trailing newline.
+Se a string `msg` é omitida, registra `OK` em verde, caso contrário registra `>> msg`, com uma nova linha.
 
 ```javascript
 grunt.log.ok([msg])
 ```
 
 ### grunt.log.oklns / grunt.verbose.oklns
-Log an ok message with `grunt.log.ok`, wrapping text to 80 columns using `grunt.log.wraptext`.
+Registra uma mensagem de sucesso com `grunt.log.ok`, adicionando o texto para 80 colunas usando `grunt.log.wraptext`.
 
 ```javascript
 grunt.log.oklns(msg)
 ```
 
 ### grunt.log.subhead / grunt.verbose.subhead
-Log the specified `msg` string in **bold**, with trailing newline.
+Registra a string `msg` especificada em **negrito**, com a adição de uma nova linha.
 
 ```javascript
 grunt.log.subhead(msg)
 ```
 
 ### grunt.log.writeflags / grunt.verbose.writeflags
-Log a list of `obj` properties (good for debugging flags).
+Registra uma lista de propriedades `obj` (bom para depuração de flags)
 
 ```javascript
 grunt.log.writeflags(obj, prefix)
 ```
 
 ### grunt.log.debug / grunt.verbose.debug
-Logs a debugging message, but only if the `--debug` command-line option was specified.
+Registra uma mensagem de depuração (debug), mas somente se a opção da linha de comando `-debug` foi especificada.
 
 ```javascript
 grunt.log.debug(msg)
 ```
 
-## Verbose and Notverbose
-All logging methods available under `grunt.verbose` work exactly like their `grunt.log` counterparts, but only log if the `--verbose` command-line option was specified. There is also a "notverbose" counterpart available at both `grunt.log.notverbose` and `grunt.log.verbose.or`. In fact, the `.or` property can be used on both `verbose` and `notverbose` to effectively toggle between the two.
+## _Verbose_ e _Não verbose_
+Todos os métodos de registros disponíveis através do `grunt.verbose` funciona exatamente como o homólogo `grunt.log`, mas somente registra se a opção da linha de comando `--verbose` foi especificada. Também há um homônimo "não verbose" disponível em ambos `grunt.log.notverbose` e `grunt.log.verbose.or`. Na verdade, a propriedade `.or` pode ser usada em ambos `verbose` e `não verbose` para alternar efetivamente entre os dois.
 
 ### grunt.verbose / grunt.log.verbose
-This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was specified.
+Este objeto contém todos os métodos de `grunt.log` mas somente registra se a opção da linha de comando `--verbose` foi especificada.
 
 ```javascript
 grunt.verbose
 ```
 
 ### grunt.verbose.or / grunt.log.notverbose
-This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was _not_ specified.
+Este objeto contém todos os métodos de `grunt.log` mas somente registra se a opção da linha de comando `--verbose` _não_ foi especificada.
 
 ```javascript
 grunt.verbose.or
 ```
 
 ## Utility Methods
-These methods don't actually log, they just return strings that can be used in other methods.
+Estes métodos não registram atualmente, somente retornam algumas string que podem ser usadas em outros métodos.
 
 ### grunt.log.wordlist
-Returns a comma-separated list of `arr` array items.
+Retorna uma lista separada por vírgula dos itens do array `arr`,
 
 ```javascript
 grunt.log.wordlist(arr [, options])
 ```
 
-The `options` object has these possible properties, and default values:
+O objeto `options` tem estas possíveis propriedades, e valores padrões:
 
 ```javascript
 var options = {
-  // The separator string (can be colored).
+  // A string separadora. (Pode ser colorida).
   separator: ', ',
-  // The array item color (specify false to not colorize).
+  // O item do array "color" (especifique falso para não colorir).
   color: 'cyan',
 };
 ```
 
 ### grunt.log.uncolor
-Removes all color information from a string, making it suitable for testing `.length` or perhaps logging to a file.
+Remove todas as informações de cores de uma string, fazendo-a adequada para testar `.length` ou talvez o registro de um arquivo.
 
 ```javascript
 grunt.log.uncolor(str)
 ```
 
 ### grunt.log.wraptext
-Wrap `text` string to `width` characters with `\n`, ensuring that words are not split in the middle unless absolutely necessary.
+Adiciona a string `text` para os caractedes `width` com `\n`, assegurando que as palavras não são divididas no meio a menos que seja absolutamente necessário.
 
 ```javascript
 grunt.log.wraptext(width, text)
 ```
 
 ### grunt.log.table
-Wrap `texts` array of strings to columns `widths` characters wide. A wrapper for the `grunt.log.wraptext` method that can be used to generate output in columns.
+Adiciona o array de strings `texts` para as colunas de caracteres `width`. Um invólucro para o método `grunt.log.wraptext` que pode ser usado para gerar a saída em colunas.
 
 ```javascript
 grunt.log.table(widths, texts)
 ```
 
-## An Example
+## Um exemplo
 
-A common pattern is to only log when in `--verbose` mode OR if an error occurs, like so:
+Um pattern comum é somente registrar (log) quando a opção `--verbose` OU se um ocorrer um erro, como esse:
 
 ```javascript
 grunt.registerTask('something', 'Do something interesting.', function(arg) {
@@ -139,24 +139,24 @@ grunt.registerTask('something', 'Do something interesting.', function(arg) {
   grunt.verbose.write(msg);
   try {
     doSomethingThatThrowsAnExceptionOnError(arg);
-    // Success!
+    // Successo!
     grunt.verbose.ok();
   } catch(e) {
-    // Something went wrong.
+    // Alguma coisa deu errado.
     grunt.verbose.or.write(msg).error().error(e.message);
-    grunt.fail.warn('Something went wrong.');
+    grunt.fail.warn('Alguma coisa deu errado.');
   }
 });
 ```
 
-An explanation of the above code:
+Uma explicação do código acima:
 
-1. `grunt.verbose.write(msg);` logs the message (no newline), but only in `--verbose` mode.
-2. `grunt.verbose.ok();` logs OK in green, with a newline.
-3. `grunt.verbose.or.write(msg).error().error(e.message);` does a few things:
-  1. `grunt.verbose.or.write(msg)` logs the message (no newline) if not in `--verbose` mode, and returns the `notverbose` object.
-  2. `.error()` logs ERROR in red, with a newline, and returns the `notverbose` object.
-  3. `.error(e.message);` logs the actual error message (and returns the `notverbose` object).
-4. `grunt.fail.warn('Something went wrong.');` logs a warning in bright yellow, exiting Grunt with exit code 1, unless `--force` was specified.
+1. `grunt.verbose.write(msg);` registra a mensagem (sem uma nova linha), mas somente no mode `--verbose`.
+2. `grunt.verbose.ok();` registra OK em verde, com uma nova linha.
+3. `grunt.verbose.or.write(msg).error().error(e.message);` faz algumas coisas:
+  1. `grunt.verbose.or.write(msg)` registra a mensagem (sem novas linhas) se não estiver no modo `--verbose`, e retorna o objeto `notverbose`.
+  2. `.error()` registra "ERROR" em vermelho, com uma nova linha, e retorna o objeto `notverbose`.
+  3. `.error(e.message);` registra a atual mensagem de erro (e retorna o objeto `notverbose`).
+4. `grunt.fail.warn('Alguma coisa deu errado.');` registra um aviso em amarelo claro, terminando o Grunt com o código de erro 1, a menos que a opção da linha de comando `--force` foi especificada.
 
-Take a look at the [grunt-contrib-* tasks source code](https://github.com/gruntjs) for more examples.
+Dê uma olhada no [código fonte das tarefas grunt-contrib-*](https://github.com/gruntjs) para mais exemplos.
