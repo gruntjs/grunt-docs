@@ -1,11 +1,11 @@
-There are many provided methods for reading and writing files, traversing the filesystem and finding files by matching globbing patterns. Many of these methods are wrappers around built-in Node.js file functionality, but with additional error handling, logging and character encoding normalization.
+Existem muitos métodos previstos para a leitura e gravação de arquivos, percorrendo o sistema de arquivos e encontrando arquivos pela ocorrência de padrões de englobamento. Muitos destes métodos são wrappers sobre as funcionalidades de arquivo do Node.js , mas com um tratamento de erro adicional, registro e codificação de caracteres de normalização.
 
-_Note: all file paths are relative to the `Gruntfile` unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option._
+_Nota: todo endereço de arquivo é relativo ao `Gruntfile`, a não ser que o diretório de trabalho atual (CWD) seja mudado com `grunt.file.setBase` ou a opção de linha de comando `--base`._
 
-## Character encoding
+## A codificação de caracteres (encoding)
 
 ### grunt.file.defaultEncoding
-Set this property to change the default encoding used by all `grunt.file` methods. Defaults to `'utf8'`. If you do have to change this value, it's recommended that you change it as early as possible inside your Gruntfile.
+Defina esta propriedade para mudar o padrão de caracteres (encoding) utilizados em todos os métodos do `grunt.file`. O padrão é `'utf8'`. Se você tiver que alterar este valor, é recomendado que faça isso o mais cedo possível dentro do seu Gruntfile.
 
 ```js
 grunt.file.defaultEncoding = 'utf8';
@@ -13,194 +13,196 @@ grunt.file.defaultEncoding = 'utf8';
 
 
 ### grunt.file.preserveBOM
-*Added in 0.4.2*
+*Adicionado na 0.4.2*
 
-Whether to preserve the Byte Order Mark (BOM) on `file.read` rather than strip it.
+Se é para preservar a Marca de ordem do Byte (Byte Order Mark - BOM) no `file.read` ao invés de tira-la.
+
 ```js
 grunt.file.preserveBOM = false;
 ```
 
-## Reading and writing
+## Leitura e escrita
 
 ### grunt.file.read
-Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
+Lê e retorna o conteúdo do arquivo. Retorna uma string, a não ser que `options.encoding` seja `null`, neste caso, será retornado um [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
 
 ```js
 grunt.file.read(filepath [, options])
 ```
 
-The `options` object has these possible properties:
+O objeto `options` possui as possíveis propriedades:
 
 ```js
 var options = {
-  // If an encoding is not specified, default to grunt.file.defaultEncoding.
-  // If specified as null, returns a non-decoded Buffer instead of a string.
+  // Se uma codificação de caracteres não estiver especificada, padrão para  grunt.file.defaultEncoding.
+  // Se especificada como null, devolve um não-descodificado Buffer em vez de uma string.
   encoding: encodingName
 };
 ```
 
 ### grunt.file.readJSON
-Read a file's contents, parsing the data as JSON and returning the result. See `grunt.file.read` for a list of supported options.
+Lê o conteúdo do arquivo, analisando os dados como JSON e retornando o resultado. Veja `grunt.file.read` para a lista de opções suportadas.
 
 ```js
 grunt.file.readJSON(filepath [, options])
 ```
 
 ### grunt.file.readYAML
-Read a file's contents, parsing the data as YAML and returning the result. See `grunt.file.read` for a list of supported options.
+Lê o conteúdo do arquivo, analisando os dados como YAML e retornando o resultado. Veja `grunt.file.read` para a lista de opções suportadas.
 
 ```js
 grunt.file.readYAML(filepath [, options])
 ```
 
 ### grunt.file.write
-Write the specified contents to a file, creating intermediate directories if necessary. Strings will be encoded using the specified character encoding, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) will be written to disk as-specified.
+Escreve o conteúdo especificado no arquivo, criando diretórios intermediarios se necessário. Strings serão codificadas usando a codificação de caracteres especificada, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) serão escritos no disco como especificados.
 
-_If the `--no-write` command-line option is specified, the file won't actually be written._
+_Se a opção de linha de comando `--no-write` for especificada, o arquivo não será realmente escrito._
 
 ```js
 grunt.file.write(filepath, contents [, options])
 ```
 
-The `options` object has these possible properties:
+O objeto `options` possui as possíveis propriedades:
 
 ```js
 var options = {
-  // If an encoding is not specified, default to grunt.file.defaultEncoding.
-  // If `contents` is a Buffer, encoding is ignored.
+  // Se uma codificação de caracteres não estiver especificada, padrão para  grunt.file.defaultEncoding.
+  // se `contents` for um Buffer, a codificação é ignorada.
   encoding: encodingName
 };
 ```
 
 ### grunt.file.copy
-Copy a source file to a destination path, creating intermediate directories if necessary.
+Copia o arquivo de origem para o caminho de destino, criando diretórios intermediarios se necessário.
 
-_If the `--no-write` command-line option is specified, the file won't actually be written._
+_Se a opção de linha de comando `--no-write` for especificada, o arquivo não será realmente escrito._
 
 ```js
 grunt.file.copy(srcpath, destpath [, options])
 ```
 
-The `options` object has these possible properties:
+O objeto `options` possui as possíveis propriedades:
 
 ```js
 var options = {
-  // If an encoding is not specified, default to grunt.file.defaultEncoding.
-  // If null, the `process` function will receive a Buffer instead of String.
+  // Se uma codificação de caracteres não estiver especificada, padrão para grunt.file.defaultEncoding.
+  // Se especificada como null, a função `process` receberá um Buffer em vez de uma String.
   encoding: encodingName,
-  // The source file contents and file path are passed into this function,
-  // whose return value will be used as the destination file's contents. If
-  // this function returns `false`, the file copy will be aborted.
+  // O conteúdo do arquivo de origem e o caminho de destino são pasados para esta função,
+  // cujo valor de retorno vai ser utilizado como o destino para o conteúdo do arquivo.
+  // Se esta função retornar `false`, a copia do arquivo será abortada.
   process: processFunction,
-  // These optional globbing patterns will be matched against the filepath
-  // (not the filename) using grunt.file.isMatch. If any specified globbing
-  // pattern matches, the file won't be processed via the `process` function.
-  // If `true` is specified, processing will be prevented.
+  // Este padrão de englobamento opcional será comparado novamente com o caminho de destino do arquivo
+  // (não o nome do arquivo) usando grunt.file.isMatch. Se nenhum padrão de
+  //  englobamento corresponder, o arquivo não será processado através da função `process`.
+  // Se `true` for especificado,o processamento será impedido.
   noProcess: globbingPatterns
 };
 ```
 
 ### grunt.file.delete
-Delete the specified filepath. Will delete files and folders recursively.
+Exclui o caminho de arquivo especificado. Irá apagar arquivos e pastas recursivamente.
 
-_Will not delete the current working directory or files outside the current working directory unless the `--force` command-line option is specified._
+_Não irá deletar o diretório de trabalho atual ou arquivos fora do diretório de trabalho atual, a menos que a opção de linha de comando `--force` seja especificada._
 
-_If the `--no-write` command-line option is specified, the filepath won't actually be deleted._
+_Se a opção de linha de comando `--no-write` for especificada, o caminho de arquivo não será realmente deletado._
 
 ```js
 grunt.file.delete(filepath [, options])
 ```
 
-The `options` object has one possible property:
+O objeto `options` possui uma possível propriedade:
 
 ```js
 var options = {
-  // Enable deleting outside the current working directory. This option may
-  // be overridden by the --force command-line option.
+  // Habilita a exclusão fora do diretório de trabalho atual. Esta opção pode
+  // ser sobreposta pela opção de linha de comando --force.
   force: true
 };
 ```
 
-## Directories
+## Diretórios
 
 ### grunt.file.mkdir
-Works like `mkdir -p`. Create a directory along with any intermediate directories. If `mode` isn't specified, it defaults to `0777 & (~process.umask())`.
+Funciona como o comando `mkdir -p`. Cria um diretório junto com qualquer diretório intermediario. Se `mode` não for especificado, o padrão é `0777 & (~process.umask())`.
 
-_If the `--no-write` command-line option is specified, directories won't actually be created._
+_Se a opção de linha de comando `--no-write` for especificada, o diretório não será realmente criado._
 
 ```js
 grunt.file.mkdir(dirpath [, mode])
 ```
 
 ### grunt.file.recurse
-Recurse into a directory, executing `callback` for each file.
+Recursivamente no diretório, executa `callback` para cada arquivo.
 
 ```js
 grunt.file.recurse(rootdir, callback)
 ```
 
-The callback function receives the following arguments:
+A função de callback recebe os seguintes argumentos:
 
 ```js
 function callback(abspath, rootdir, subdir, filename) {
-  // The full path to the current file, which is nothing more than
-  // the rootdir + subdir + filename arguments, joined.
+  // O caminho absoluto do arquivo atual, que nada mais é do que 
+  // os argumentos rootdir + subdir + filename, juntos.
   abspath
-  // The root director, as originally specified.
+  // O diretório raiz, como originalmente especificado.
   rootdir
-  // The current file's directory, relative to rootdir.
+  // O diretório do arquivo atual, relativi a rootdir.
   subdir
-  // The filename of the current file, without any directory parts.
+  // O nome do arquivo atual, sem nenhuma parte do diretório.
   filename
 }
 ```
 
-## Globbing patterns
-It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also know as globbing) via the built-in [node-glob](https://github.com/isaacs/node-glob) library.
+## Padrões de Englobamento
+Muitas vezes, é impraticável especificar todos os caminhos de arquivos individualmente, deste modo o Grunt suporta a expansão de nome de arquivo (também conhecido como englobamento) através da bibliotéca embutida [node-glob](https://github.com/isaacs/node-glob).
 
-See the "Globbing patterns" section of the [[Configuring tasks]] guide for globbing pattern examples.
+Veja a seção "Padrões de Englobamento" do guia [[Configurando tarefas]] para mais exemplos.
 
 
 ### grunt.file.expand
-Return a unique array of all file or directory paths that match the given globbing pattern(s). This method accepts either comma separated globbing patterns or an array of globbing patterns. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
+Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de emglobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspontendo a padrões que começam com `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.expand([options, ] patterns)
 ```
 
-File paths are relative to the `Gruntfile` unless the current working directory is changed with `grunt.file.setBase` or the `--base` command-line option.
+O caminho do arquivo é relativo ao `Gruntfile` a menos que o diretório de trabalho atual seja mudado  unless the current working directory is changed com `grunt.file.setBase` ou a opção de linha de comando `--base`.
 
-The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options, and a few others. For example:
+O objeto `options` suporta todas as opções da [biblioteca minimatch](https://github.com/isaacs/minimatch), entre outras. Por exemplo:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
-* `nonull` Retain `src` patterns even if they fail to match files. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
-* `matchBase` Patterns without slashes will match just the basename part. Eg. this makes `*.js` work like `**/*.js`.
-* `cwd` Patterns will be matched relative to this path, and all returned filepaths will also be relative to this path.
+* `filter` ou um [nome de método fs.Stats](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) válido ou uma função que é correspondete ao caminho de arquivo `src` e retorna `true` ou `false`.
+* `nonull` mantem o padrão `src` mesmo se ele falhar em combinar os arquivos. Combinado com a flag `--verbose` do grunt, esta opção pode ajudar na depuração de problemas relacionados a caminho de arquivo.
+* Padrões `matchBase` sem barras serão comparados apenas à parte do nome. Por exemplo, `*.js` funciona como `**/*.js`.
+* Padrões `cwd` serão comparados em relação a este caminho, e todos os caminhos de arquivos retornados também serão em relação a esse caminho.
 
 ### grunt.file.expandMapping
-Returns an array of src-dest file mapping objects. For each source file matched by a specified pattern, join that file path to the specified `dest`. This file path may be flattened or renamed, depending on the options specified. See the `grunt.file.expand` method documentation for an explanation of how the `patterns` and `options` arguments may be specified.
+Retorna um vetor de objetos mapeados de arquivos src-dest. Para cada arquivo de origem combinado por um padrão especificado, une-se aquele arquivo ao caminho `dest` especificado. Este caminho de arquivo pode ser achatado ou renomeado, dependendo das opções especificadas. Veja a documentação do método `grunt.file.expand` para uma explicação de como os argumentos `patterns` e `options` podem ser especificados.
 
 ```js
 grunt.file.expandMapping(patterns, dest [, options])
 ```
 
-_Note that while this method may be used to programmatically generate a `files` array for a multi task, the declarative syntax for doing this described in the "Building the files object dynamically" section of the [[Configuring tasks]] guide is preferred._
+_Observe que, embora este método possa ser usado para de forma programática gerar um vetor 'files' para uma multi-tarefa, a sintaxe declarativa para se fazer isso, descrita na seção "Criando os arquivos de objeto dinamicamente" do guia [[Configurando tarefas]] é recomendada._
 
-In addition to those the `grunt.file.expand` method supports, the `options` object also supports these properties:
+Além das opções que o método `grunt.file.expand` suporta, o objeto `options` também suporta estas propriedades:
 
 ```js
 var options = {
-  // The directory from which patterns are matched. Any string specified as
-  // cwd is effectively stripped from the beginning of all matched paths.
+  // O diretório a partir do qual os padrões são comparados. Qualquer string
+  // especificada como cwd é efetivamente retirado do início de todos os caminhos
+  // correspondentes.
   cwd: String,
-  // Remove the path component from all matched src files. The src file path
-  // is still joined to the specified dest.
+  // Remove o componente do caminho de todos os arquivos src comparados.
+  // O caminho do arquivo src continuará ligado ao dest especificado.
   flatten: Boolean,
-  // Remove anything after (and including) the first "." in the destination
-  // path, then append this value.
+  // Remove qualquer coisa após (incluindo) o primeiro "." no caminho de destino,
+  // em seguida, acrescenta este valor.
   ext: String,
-  // If specified, this function will be responsible for returning the final
-  // dest filepath. By default, it joins dest and matchedSrcPath like so:
+  // Se for especificado, esta função será responsável por retornar o caminho do
+  // arquivo dest final. Por padrão, ele une dest e matchedSrcPath, desta forma:
   rename: function(dest, matchedSrcPath, options) {
     return path.join(dest, matchedSrcPath);
   }
@@ -208,136 +210,137 @@ var options = {
 ```
 
 ### grunt.file.match
-Match one or more globbing patterns against one or more file paths. Returns a uniqued array of all file paths that match any of the specified globbing patterns. Both the `patterns` and `filepaths` argument can be a single string or array of strings. Paths matching patterns that begin with `!` will be excluded from the returned array. Patterns are processed in order, so inclusion and exclusion order is significant.
+Compara a um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um vetor único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um vetor de strings. Caminhos correspontendo a padrões que começam com  `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.match([options, ] patterns, filepaths)
 ```
 
-The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options. For example, if `options.matchBase` is true, patterns without slashes will match against the basename of the path even if it contains slashes, eg. pattern `*.js` will match filepath `path/to/file.js`.
+O objeto `options` suporta todas as opções da [biblioteca minimatch](https://github.com/isaacs/minimatch), entre outras. Por exemplo, se `options.matchBase` for verdadeiro, padrões sem barras corresponderão ao nome base do caminho mesmo que contenha barras, Ex.: o padrão `*.js` corresponderá ao caminho de arquivo `path/to/file.js`.
 
 ### grunt.file.isMatch
-This method contains the same signature and logic as the `grunt.file.match` method, but simply returns `true` if any files were matched, otherwise `false`.
+Este método contem a mesma assinatura de arquivo e lógica do método `grunt.file.match`, mas simplismente retorna `true` se corresponder a algum arquivo, caso contrário, retorna `false`.
 
-## File types
+## Tipos de arquivo
 
 ### grunt.file.exists
-Does the given path exist? Returns a boolean.
+O caminho fornecido existe? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.exists(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.isLink
-Is the given path a symbolic link? Returns a boolean.
+O caminho fornecido é uma referência simbólica? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isLink(path1 [, path2 [, ...]])
 ```
 
-Returns false if the path doesn't exist.
+Retorna falso se o caminho não existir.
 
 ### grunt.file.isDir
-Is the given path a directory? Returns a boolean.
+O caminho fornecido é um diretório? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isDir(path1 [, path2 [, ...]])
 ```
 
-Returns false if the path doesn't exist.
+Retorna falso se o caminho não existir.
 
 ### grunt.file.isFile
-Is the given path a file? Returns a boolean.
+O caminho fornecido é um arquivo? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isFile(path1 [, path2 [, ...]])
 ```
 
-Returns false if the path doesn't exist.
+Retorna falso se o caminho não existir.
 
 ## Paths
 
 ### grunt.file.isPathAbsolute
-Is a given file path absolute? Returns a boolean.
+O caminho fornecido é um caminho absoluto de arquivo? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isPathAbsolute(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.arePathsEquivalent
-Do all the specified paths refer to the same path? Returns a boolean.
+Todos os caminhos especificados referem-se para o mesmo caminho? Retorna um boolean.
 
 ```js
 grunt.file.arePathsEquivalent(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.doesPathContain
-Are all descendant path(s) contained within the specified ancestor path? Returns a boolean.
+Todo caminho (ou caminhos) descendente está no interior do caminho ancestral especificado? Retorna um boolean.
 
-_Note: does not check to see if paths actually exist._
+_Nota: Não verifica se o caminho atual existe._
 
 ```js
 grunt.file.doesPathContain(ancestorPath, descendantPath1 [, descendantPath2 [, ...]])
 ```
 
 ### grunt.file.isPathCwd
-Is a given file path the CWD? Returns a boolean.
+O caminho fornecido é um CWD? Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isPathCwd(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.isPathInCwd
-Is a given file path inside the CWD? Note: CWD is not _inside_ CWD. Returns a boolean.
+O caminho fornecido é um arquivo dentro do CWD? Note: CWD não está _dentro_ do CWD. Retorna um boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, este método juntará todos os argumentos e normalizará o caminho resultante.
 
 ```js
 grunt.file.isPathInCwd(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.setBase
-Change grunt's current working directory (CWD). By default, all file paths are relative to the `Gruntfile`. This works just like the `--base` command-line option.
+Muda o diretório de trabalho atual do grunt (CWD). Por padrão, todos os caminhos de arquivos são relativos ao `Gruntfile`. Isto funciona como a opção de linha de comando `--base`.
 
 ```js
 grunt.file.setBase(path1 [, path2 [, ...]])
 ```
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) do Node.js, 
+este método juntará todos os argumentos e normalizará o caminho resultante.
 
-## External libraries
-*Deprecated*
+## Bibliotecas externas
+*Obsoleto*
 
-__All external libraries that are listed below are now deprecated.__
+__Todas as bibliotecas externas que estão listadas abaixo estão obsoletas.__
 
-Please use __npm__ to manage these external libraries in your project's dependencies.
+Por favor, use o __npm__ para gerenciar estas bibliotecas externas nas dependências do seu projeto.
 
-For example if you want use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
-use it in your `Gruntfile`: `var _ = require('lodash');`
+Por exempo, se você quiser usar a biblioteca [Lo-Dash](https://npmjs.org/package/lodash), instale-a primeiro `npm install lodash`, 
+então use no seu `Gruntfile`: `var _ = require('lodash');`
 
 ### grunt.file.glob
-*Deprecated*
+*Obsoleto*
 
-[glob](https://github.com/isaacs/node-glob) - File globbing utility.
+[glob](https://github.com/isaacs/node-glob) - Utilitário para englobamento de arquivo.
 
 ### grunt.file.minimatch
-*Deprecated*
+*Obsoleto*
 
-[minimatch](https://github.com/isaacs/minimatch) - File pattern matching utility.
+[minimatch](https://github.com/isaacs/minimatch) - Utilitário para combinar padrões de Arquivos.
 
 ### grunt.file.findup
-*Deprecated*
+*Obsoleto*
 
-[findup-sync](https://github.com/cowboy/node-findup-sync) - Search upwards for matching file patterns.
+[findup-sync](https://github.com/cowboy/node-findup-sync) - Procura ascendentes para a combinação de padrões de arquivos.
