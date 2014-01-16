@@ -163,7 +163,7 @@ Veja a seção "Padrões de Englobamento" do guia [[Configurando tarefas]] para 
 
 
 ### grunt.file.expand
-Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de emglobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo a padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de englobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo a padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.expand([options, ] patterns)
