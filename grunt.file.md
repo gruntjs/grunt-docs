@@ -210,7 +210,7 @@ var options = {
 ```
 
 ### grunt.file.match
-Compara um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um array único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um array de strings. Caminhos correspondendo a padrões que começam com  `!` serão excluidos do array de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Compara um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um array único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Ambos os argumentos `patterns` e `filepaths` podem ser uma string simples ou um array de strings. Caminhos correspondendo a padrões que começam com  `!` serão excluidos do array de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.match([options, ] patterns, filepaths)
@@ -241,7 +241,7 @@ Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path
 grunt.file.isLink(path1 [, path2 [, ...]])
 ```
 
-Retorna falso se o caminho não existir.
+Retorna false se o caminho não existir.
 
 ### grunt.file.isDir
 O caminho fornecido é um diretório? Retorna um boolean.
@@ -252,7 +252,7 @@ Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path
 grunt.file.isDir(path1 [, path2 [, ...]])
 ```
 
-Retorna falso se o caminho não existir.
+Retorna false se o caminho não existir.
 
 ### grunt.file.isFile
 O caminho fornecido é um arquivo? Retorna um boolean.
@@ -263,7 +263,7 @@ Como o método [path.join](http://nodejs.org/docs/latest/api/path.html#path_path
 grunt.file.isFile(path1 [, path2 [, ...]])
 ```
 
-Retorna falso se o caminho não existir.
+Retorna false se o caminho não existir.
 
 ## Paths
 
@@ -277,7 +277,7 @@ grunt.file.isPathAbsolute(path1 [, path2 [, ...]])
 ```
 
 ### grunt.file.arePathsEquivalent
-Todos os caminhos especificados referem-se para o mesmo caminho? Retorna um boolean.
+Todos os caminhos especificados apontam para o mesmo caminho? Retorna um boolean.
 
 ```js
 grunt.file.arePathsEquivalent(path1 [, path2 [, ...]])
