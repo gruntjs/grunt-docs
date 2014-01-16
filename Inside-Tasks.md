@@ -1,6 +1,6 @@
 Quando uma tarefa está rodando, o Grunt expõe dentro da função da tarefa muitos métodos e propriedades específicas através do objeto `this`. Este mesmo objeto também é exposto como `grunt.task.current` para uso nos [templates](grunt.template), Ex.: A propriedade `this.name` também está disponível como `grunt.task.current.name`.
 
-## Dentro de todas tarefas
+## Por dentro de todas tarefas
 
 ### this.async
 Se a tarefa for assíncrona, este método pode ser chamado para instruir o Grunt a esperar. Isto retorna um handle para que a função "done" seja chamada quando a tarefa for concluída. Tanto `false` ou um objeto `Error` pode ser passado para a função done para avisar ao Grunt que a tarefa falhou.
@@ -82,7 +82,7 @@ doSomething(options.enabled);
 
 O guia [Configurando tarefas](configuring-tasks#options) mostra um exemplo de como as opções podem ser especificadas do ponto de vista do usuário.
 
-## Dentro das multitarefas
+## Por dentro das multitarefas
 
 ### this.target
 Em uma multitarefa, esta propriedade contém o nome do target sendo atualmente iterado. Por exemplo, se a multitarefa "sample" for rodada como `grunt sample:foo` com os dados de configuração `{sample: {foo: "bar"}}`, dentro da função da tarefa, `this.target` seria `"foo"`.
