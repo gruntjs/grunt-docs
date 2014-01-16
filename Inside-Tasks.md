@@ -46,7 +46,7 @@ _Note que se a tarefa tiver sido renomeada com [grunt.task.renameTask](grunt.tas
 
 
 ### this.nameArgs
-O nome da tarefa, incluindo qualquer argumento separado por dois pontos ou marcações especificadas na linha de comando. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo`, dentro da função da tarefa, `this.nameArgs` seria `"sample:foo"`.
+O nome da tarefa, incluindo qualquer argumento separado por dois pontos ou flags especificadas na linha de comando. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo`, dentro da função da tarefa, `this.nameArgs` seria `"sample:foo"`.
 
 _Note que se a tarefa tiver sido renomeada com [grunt.task.renameTask](grunt.task#grunt.task.renameTask) esta propriedade refletirá o novo nome._
 
@@ -58,7 +58,7 @@ _Note que em multitarefas, o target atual é omitido do array `this.args`._
 ### this.flags
 Um objeto gerado dos argumentos passados à função. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo:bar`, dentro da função da tarefa, `this.flags` seria `{foo: true, bar: true}`.
 
-_Note que em multitarefas, o target atual **não** é colocado como uma marcação._
+_Note que em multitarefas, o target atual **não** é colocado como uma flag._
 
 ### this.errorCount
 O número de chamadas [grunt.log.error](grunt.log#grunt.log.error) que ocorreram durante a tarefa. Pode ser usado para falhar a tarefa se erros forem registrados durante a tarefa.
