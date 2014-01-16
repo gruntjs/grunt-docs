@@ -1,6 +1,6 @@
-Existem muitos métodos previstos para a leitura e gravação de arquivos, percorrendo o sistema de arquivos e encontrando arquivos pela ocorrência de padrões de englobamento. Muitos destes métodos são wrappers sobre as funcionalidades de arquivo do Node.js , mas com um tratamento de erro adicional, registro e codificação de caracteres de normalização.
+Existem muitos métodos previstos para a leitura e escrita de arquivos, percorrendo o sistema de arquivos e encontrando arquivos pela ocorrência de padrões de englobamento. Muitos destes métodos são wrappers sobre as funcionalidades de arquivo do Node.js , mas com um tratamento de erro adicional, registro e codificação de caracteres de normalização.
 
-_Nota: todo endereço de arquivo é relativo ao `Gruntfile`, a não ser que o diretório de trabalho atual (CWD) seja mudado com `grunt.file.setBase` ou a opção de linha de comando `--base`._
+_Nota: todo endereço de arquivo é relativo ao `Gruntfile`, a não ser que o diretório de trabalho atual seja mudado com `grunt.file.setBase` ou a opção de linha de comando `--base`._
 
 ## A codificação de caracteres (encoding)
 
@@ -55,7 +55,7 @@ grunt.file.readYAML(filepath [, options])
 ```
 
 ### grunt.file.write
-Escreve o conteúdo especificado no arquivo, criando diretórios intermediarios se necessário. Strings serão codificadas usando a codificação de caracteres especificada, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) serão escritos no disco como especificados.
+Escreve o conteúdo especificado no arquivo, criando diretórios intermediários se necessário. Strings serão codificadas usando a codificação de caracteres especificada, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) serão escritos no disco como especificados.
 
 _Se a opção de linha de comando `--no-write` for especificada, o arquivo não será realmente escrito._
 
