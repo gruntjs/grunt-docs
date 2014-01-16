@@ -1,4 +1,4 @@
-Plugins do Grunt definem tarefas que executam certas etapas de *build* e podem ser reutilizados em vários projetos. Os exemplos utilizarão o plugin _"grunt-contrib-uglify"_. Verifique o [website do Grunt](http://gruntjs.com/) para uma lista com os plugins disponíveis.
+Plugins do Grunt definem tarefas que executam certas etapas de *build* e podem ser reutilizadas em vários projetos. Os exemplos utilizarão o plugin _"grunt-contrib-uglify"_. Verifique o [website do Grunt](http://gruntjs.com/) para uma lista de plugins disponíveis.
 
 ## Instalando um plugin do Grunt
 
@@ -6,9 +6,9 @@ O primeiro passo para usar um plugin do Grunt existente é instalando-o. Os plug
 
 `npm install --save-dev grunt-contrib-uglify`
 
-Isso vai instalar o plugin _"grunt-contrib-uglify"_ para o Grunt localmente dentro da pasta `node_modules` (ref.: [npm folders](https://npmjs.org/doc/folders.html)). Plugins devem ser instalados localmente para evitar conflitos quando utilizados em múltiplos projetos.
+Isso vai instalar o plugin _"grunt-contrib-uglify"_ para o Grunt localmente dentro da pasta `node_modules` (ref.: [npm folders](https://npmjs.org/doc/folders.html)). Plugins devem ser instalados localmente para evitar conflitos de versões quando utilizados em múltiplos projetos.
 
-Especificando `--save-dev` como opção, vai adicionar automaticamento este plugin á seção _"devDependency"_ no arquivo `package.json`. Este arquivo lista todas as dependências para Node no projeto.
+Especificando `--save-dev` como opção, vai adicionar automaticamente este plugin á seção _"devDependency"_ no arquivo `package.json`. Este arquivo lista todas as dependências para Node no projeto.
 
 Adicionando o plugin do Grunt, permitirá que outros desenvolvedores trabalhando no projeto simplesmente executem `npm install` para instalar localmente estas dependências necessárias.
 
