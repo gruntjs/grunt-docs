@@ -1,15 +1,14 @@
-It’s far too easy to create a gist or one-file repository and promise yourself that you’ll add linting and unit tests later.
+É muito fácil criar um gist ou um repositório de um arquivo só e prometer-se que vai adicionar o lint e fazer testes unitários depois.
 
-Doing all this stuff manually is a total pain, as is building everything into a gigantic Makefile / Jakefile / Cakefile / Rakefile / ?akefile that's maintained across numerous projects.
+Fazendo isso tudo manualmente é um sofrimento total, é como construir tudo em um arquivo Makefile / Jakefile / Cakefile / Rakefile / ?akefile gigante que é usado em vários e vários projetos.
 
-With grunt, all the excuses you've ever made just disappear. Instead of being a chore, creating a new project and performing repetitive but necessary tasks such as linting, unit testing, concatenating and minifying files become trivially easy.
+Com o grunt, todas as desculpas que você já fez desaparecem. Em vez de fazer um pequeno arquivo, criar um novo projeto e fazer repetitivas mas necessárias tarefas como o lint, testes unitários, concatenação e minificação de arquivos torna-se muito fácil.
 
-## Why not something else?
-* Possibly link to [Why grunt? Why not something else?](http://benalman.com/news/2012/08/why-grunt/)
-( Not just a link here )
+## Por que não alguma outra coisa?
+* Possível link à [Why grunt? Why not something else?](http://benalman.com/news/2012/08/why-grunt/)\
 
-## How do i get started?
-To get started, take a look at the [[getting started guide|Getting Started]]. In addition, check out the example Gruntfiles() which highlight a number of fairly common configurations.
+## Como posso começar?
+Para começar, veja o [guia de introdução](Getting-started.md). Ainda, veja alguns exemplos do arquivo Grunt file com várias configurações comuns.
 
-* Info from <https://github.com/gruntjs/grunt/blob/master/README.md>
-* Possibly link to [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/)
+* Informações de <https://github.com/gruntjs/grunt/blob/master/README.md>
+* Possível link à [Introducing Grunt](http://weblog.bocoup.com/introducing-grunt/)
