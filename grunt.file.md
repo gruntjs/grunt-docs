@@ -74,7 +74,7 @@ var options = {
 ```
 
 ### grunt.file.copy
-Copia o arquivo de origem para o caminho de destino, criando diretórios intermediarios se necessário.
+cópia o arquivo de origem para o caminho de destino, criando diretórios intermediários se necessário.
 
 _Se a opção de linha de comando `--no-write` for especificada, o arquivo não será realmente escrito._
 
@@ -91,12 +91,12 @@ var options = {
   encoding: encodingName,
   // O conteúdo do arquivo de origem e o caminho de destino são passados para esta função,
   // cujo valor de retorno vai ser utilizado como o destino para o conteúdo do arquivo.
-  // Se esta função retornar `false`, a copia do arquivo será abortada.
+  // Se esta função retornar `false`, a cópia do arquivo será abortada.
   process: processFunction,
   // Este padrão de englobamento opcional será comparado novamente com o caminho de destino do arquivo
   // (não o nome do arquivo) usando grunt.file.isMatch. Se nenhum padrão de
   //  englobamento corresponder, o arquivo não será processado através da função `process`.
-  // Se `true` for especificado,o processamento será impedido.
+  // Se `true` for especificado, o processamento será impedido.
   noProcess: globbingPatterns
 };
 ```
@@ -125,7 +125,7 @@ var options = {
 ## Diretórios
 
 ### grunt.file.mkdir
-Funciona como o comando `mkdir -p`. Cria um diretório junto com qualquer diretório intermediario. Se `mode` não for especificado, o padrão é `0777 & (~process.umask())`.
+Funciona como o comando `mkdir -p`. Cria um diretório junto com qualquer diretório intermediário. Se `mode` não for especificado, o padrão é `0777 & (~process.umask())`.
 
 _Se a opção de linha de comando `--no-write` for especificada, o diretório não será realmente criado._
 
@@ -149,7 +149,7 @@ function callback(abspath, rootdir, subdir, filename) {
   abspath
   // O diretório raiz, como originalmente especificado.
   rootdir
-  // O diretório do arquivo atual, relativo a rootdir.
+  // O diretório do arquivo atual, relativo ao rootdir.
   subdir
   // O nome do arquivo atual, sem nenhuma parte do diretório.
   filename
@@ -163,7 +163,7 @@ Veja a seção "Padrões de Englobamento" do guia [[Configurando tarefas]] para 
 
 
 ### grunt.file.expand
-Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de englobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo a padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de englobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo aos padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.expand([options, ] patterns)
