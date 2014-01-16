@@ -49,7 +49,7 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
 1. Faça o *fork* deste repositório
 2. Certifique-se de que está no *branch* **pt-br** ou faça o *checkout* para o mesmo.
 3. Realize a tradução do arquivo desejado, mas observe se o mesmo já está sendo traduzido
-4. Caso o arquivo não esteja traduzido ou a sua tradução não esteja em andamento, adicione a label *translating* na respectiva *issue* do arquivo e inicie a sua tradução.
+4. Caso o arquivo não esteja traduzido ou a sua tradução não esteja em andamento, comente na issue relacionada ao arquivo que você irá traduzir o arquivo, para os moderadores adicionarem a label *translating* na respectiva *issue* do arquivo. **Nota**: procure traduzir uma issue de cara fez.
 5. Faça um *Pull Request* para enviar o arquivo traduzido.
 
 
