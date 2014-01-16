@@ -163,7 +163,7 @@ Veja a seção "Padrões de Englobamento" do guia [[Configurando tarefas]] para 
 
 
 ### grunt.file.expand
-Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de englobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo aos padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Retorna uma array único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de englobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um array de padrões de englobamento. Caminhos correspondendo aos padrões que começam com `!` serão excluídos do array de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.expand([options, ] patterns)
@@ -179,13 +179,13 @@ O objeto `options` suporta todas as opções da [biblioteca minimatch](https://g
 * Padrões `cwd` serão comparados em relação a este caminho, e todos os caminhos de arquivos retornados também serão em relação a esse caminho.
 
 ### grunt.file.expandMapping
-Retorna um vetor de objetos mapeados de arquivos src-dest. Para cada arquivo de origem combinado por um padrão especificado, une-se aquele arquivo ao caminho `dest` especificado. Este caminho de arquivo pode ser achatado ou renomeado, dependendo das opções especificadas. Veja a documentação do método `grunt.file.expand` para uma explicação de como os argumentos `patterns` e `options` podem ser especificados.
+Retorna um array de objetos mapeados de arquivos src-dest. Para cada arquivo de origem combinado por um padrão especificado, une-se aquele arquivo ao caminho `dest` especificado. Este caminho de arquivo pode ser achatado ou renomeado, dependendo das opções especificadas. Veja a documentação do método `grunt.file.expand` para uma explicação de como os argumentos `patterns` e `options` podem ser especificados.
 
 ```js
 grunt.file.expandMapping(patterns, dest [, options])
 ```
 
-_Observe que, embora este método possa ser usado para de forma programática gerar um vetor 'files' para uma multi-tarefa, a sintaxe declarativa para se fazer isso, descrita na seção "Criando os arquivos de objeto dinamicamente" do guia [[Configurando tarefas]] é recomendada._
+_Observe que, embora este método possa ser usado de forma programática gerar um array 'files' para uma multi-tarefa, a sintaxe declarativa para se fazer isso, descrita na seção "Criando os arquivos de objeto dinamicamente" do guia [[Configurando tarefas]] é recomendada._
 
 Além das opções que o método `grunt.file.expand` suporta, o objeto `options` também suporta estas propriedades:
 
@@ -210,7 +210,7 @@ var options = {
 ```
 
 ### grunt.file.match
-Compara a um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um vetor único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um vetor de strings. Caminhos correspondendo a padrões que começam com  `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Compara um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um array único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um array de strings. Caminhos correspondendo a padrões que começam com  `!` serão excluidos do array de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.match([options, ] patterns, filepaths)
