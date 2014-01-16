@@ -1,6 +1,6 @@
 Acesso aos dados das configurações de um projeto específico no arquivo Gruntfile.
  
-Note que qualquer método marcado com um ☃ (unicode boneco de neve) também está disponível diretamente no objeto `grunt`, e qualquer método marcado com uma ☆ (estrela branca) também está disponível dentro da tarefa do objeto `this`. Apenas para você saber.
+Note que qualquer método marcado com um ☃ (boneco de neve unicode) também está disponível diretamente no objeto `grunt`, e qualquer método marcado com uma ☆ (estrela branca) também está disponível dentro da tarefa do objeto `this`. Apenas para você saber.
 
 ## Inicializando os dados da configuração 
 _Observe que o método a seguir também está disponível no objeto `grunt` como `grunt.initConfig`._
