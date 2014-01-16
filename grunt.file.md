@@ -35,7 +35,7 @@ O objeto `options` possui as possíveis propriedades:
 ```js
 var options = {
   // Se uma codificação de caracteres não estiver especificada, padrão para  grunt.file.defaultEncoding.
-  // Se especificada como null, devolve um não-descodificado Buffer em vez de uma string.
+  // Se especificada como null, devolve um Buffer não descodificado  em vez de uma string.
   encoding: encodingName
 };
 ```
@@ -89,7 +89,7 @@ var options = {
   // Se uma codificação de caracteres não estiver especificada, padrão para grunt.file.defaultEncoding.
   // Se especificada como null, a função `process` receberá um Buffer em vez de uma String.
   encoding: encodingName,
-  // O conteúdo do arquivo de origem e o caminho de destino são pasados para esta função,
+  // O conteúdo do arquivo de origem e o caminho de destino são passados para esta função,
   // cujo valor de retorno vai ser utilizado como o destino para o conteúdo do arquivo.
   // Se esta função retornar `false`, a copia do arquivo será abortada.
   process: processFunction,
@@ -149,7 +149,7 @@ function callback(abspath, rootdir, subdir, filename) {
   abspath
   // O diretório raiz, como originalmente especificado.
   rootdir
-  // O diretório do arquivo atual, relativi a rootdir.
+  // O diretório do arquivo atual, relativo a rootdir.
   subdir
   // O nome do arquivo atual, sem nenhuma parte do diretório.
   filename
@@ -157,19 +157,19 @@ function callback(abspath, rootdir, subdir, filename) {
 ```
 
 ## Padrões de Englobamento
-Muitas vezes, é impraticável especificar todos os caminhos de arquivos individualmente, deste modo o Grunt suporta a expansão de nome de arquivo (também conhecido como englobamento) através da bibliotéca embutida [node-glob](https://github.com/isaacs/node-glob).
+Muitas vezes, é impraticável especificar todos os caminhos de arquivos individualmente, deste modo o Grunt suporta a expansão de nome de arquivo (também conhecido como englobamento) através da biblioteca embutida [node-glob](https://github.com/isaacs/node-glob).
 
 Veja a seção "Padrões de Englobamento" do guia [[Configurando tarefas]] para mais exemplos.
 
 
 ### grunt.file.expand
-Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de emglobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspontendo a padrões que começam com `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Retorna uma vetor único de todos os caminhos de arquivos ou diretórios que correspondem ao padrão (ou padrões) de emglobamento fornecido. Este método aceita tanto padrões de englobamento separados por vírgula ou um vetor de padrões de englobamento. Caminhos correspondendo a padrões que começam com `!` serão excluídos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.expand([options, ] patterns)
 ```
 
-O caminho do arquivo é relativo ao `Gruntfile` a menos que o diretório de trabalho atual seja mudado  unless the current working directory is changed com `grunt.file.setBase` ou a opção de linha de comando `--base`.
+O caminho do arquivo é relativo ao `Gruntfile` a menos que o diretório de trabalho atual seja mudado com `grunt.file.setBase` ou a opção de linha de comando `--base`.
 
 O objeto `options` suporta todas as opções da [biblioteca minimatch](https://github.com/isaacs/minimatch), entre outras. Por exemplo:
 
@@ -210,7 +210,7 @@ var options = {
 ```
 
 ### grunt.file.match
-Compara a um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um vetor único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um vetor de strings. Caminhos correspontendo a padrões que começam com  `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
+Compara a um ou mais padrões de englobamento a um ou mais caminhos de arquivo. Retorna um vetor único de todos os caminhos de arquivos que correspondem a qualquer um dos padrões de englobamento especificados. Tanto o argumento `patterns` e `filepaths` podem ser uma string simples ou um vetor de strings. Caminhos correspondendo a padrões que começam com  `!` serão excluidos do vetor de retorno. Padrões são processados em ordem, então a ordem de inclusão e exclusão é significante.
 
 ```js
 grunt.file.match([options, ] patterns, filepaths)
@@ -219,7 +219,7 @@ grunt.file.match([options, ] patterns, filepaths)
 O objeto `options` suporta todas as opções da [biblioteca minimatch](https://github.com/isaacs/minimatch), entre outras. Por exemplo, se `options.matchBase` for verdadeiro, padrões sem barras corresponderão ao nome base do caminho mesmo que contenha barras, Ex.: o padrão `*.js` corresponderá ao caminho de arquivo `path/to/file.js`.
 
 ### grunt.file.isMatch
-Este método contem a mesma assinatura de arquivo e lógica do método `grunt.file.match`, mas simplismente retorna `true` se corresponder a algum arquivo, caso contrário, retorna `false`.
+Este método contem a mesma assinatura de arquivo e lógica do método `grunt.file.match`, mas simplesmente retorna `true` se corresponder a algum arquivo, caso contrário, retorna `false`.
 
 ## Tipos de arquivo
 
@@ -327,7 +327,7 @@ __Todas as bibliotecas externas que estão listadas abaixo estão obsoletas.__
 
 Por favor, use o __npm__ para gerenciar estas bibliotecas externas nas dependências do seu projeto.
 
-Por exempo, se você quiser usar a biblioteca [Lo-Dash](https://npmjs.org/package/lodash), instale-a primeiro `npm install lodash`, 
+Por exemplo, se você quiser usar a biblioteca [Lo-Dash](https://npmjs.org/package/lodash), instale-a primeiro `npm install lodash`, 
 então use no seu `Gruntfile`: `var _ = require('lodash');`
 
 ### grunt.file.glob
