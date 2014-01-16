@@ -1,62 +1,62 @@
-Grunt exposes all of its methods and properties on the `grunt` object that gets passed into the `module.exports` function exported in your [Gruntfile](Getting-started), Grunt plugin or in a [tasks file](Creating-tasks).
+Grunt expõe todos seus métodos e propriedades através do objeto `grunt` que é definido na função `module.exports` declarada no seu arquivo [Gruntfile](Getting-started), plugin Grunt ou em um [arquivo de tarefas](Creating-tasks).
 
-Nearly all of the following methods are defined elsewhere, but are provided directly on the `grunt` object for convenience. See the individual api section docs for detailed explanations and examples.
+Praticamente todos os métodos seguintes são definidos em outros módulos, mas por conveniência, são acessíveis através do objeto `grunt`. Veja a documentação individual de cada API para mais detalhes e exemplos.
 
-## Config
+## Configuração
 
 ### grunt.initConfig
-_This method is an alias for the [grunt.config.init](grunt.config#grunt.config.init) method._
+_Este método é um alias do método [grunt.config.init](grunt.config#grunt.config.init)._
 
 
-## Creating Tasks
+## Criando tarefas
 
 ### grunt.registerTask
-_This method is an alias for the [grunt.task.registerTask](grunt.task#grunt.task.registerTask) method._
+_Este método é um alias do método [grunt.task.registerTask](grunt.task#grunt.task.registerTask)._
 
 ### grunt.registerMultiTask
-_This method is an alias for the [grunt.task.registerMultiTask](grunt.task#grunt.task.registerMultiTask) method._
+_Este método é um alias do método [grunt.task.registerMultiTask](grunt.task#grunt.task.registerMultiTask)._
 
 ### grunt.renameTask
-_This method is an alias for the [grunt.task.renameTask](grunt.task#grunt.task.renameTask) method._
+_Este método é um alias do método [grunt.task.renameTask](grunt.task#grunt.task.renameTask)._
 
-## Loading Externally-Defined Tasks
+## Carregamento de tarefas definidas externamente
 
 ### grunt.loadTasks
-_This method is an alias for the [grunt.task.loadTasks](grunt.task#grunt.task.loadTasks) method._
+_Este método é um alias do método [grunt.task.loadTasks](grunt.task#grunt.task.loadTasks)._
 
 ### grunt.loadNpmTasks
-_This method is an alias for the [grunt.task.loadNpmTasks](grunt.task#grunt.task.loadNpmTasks) method._
+_Este método é um alias do método [grunt.task.loadNpmTasks](grunt.task#grunt.task.loadNpmTasks)._
 
 
-## Warnings and Fatal Errors
+## *Warnings* e erros fatais
 
 ### grunt.warn
-_This method is an alias for the [grunt.fail.warn](grunt.fail#grunt.fail.warn) method._
+_Este método é um alias do método [grunt.fail.warn](grunt.fail#grunt.fail.warn)._
 
 ### grunt.fatal
-_This method is an alias for the [grunt.fail.fatal](grunt.fail#grunt.fail.fatal) method._
+_Este método é um alias do método [grunt.fail.fatal](grunt.fail#grunt.fail.fatal)._
 
 
-## Command-line Options
+## Parâmetros via linha de comando
 
 ### grunt.option
-Retrieve the value of a command-line option, eg. `debug`. Note that for each command-line option, the inverse can be tested, eg. `no-debug`.
+Recupera o valor de um paramêtro definido na linha de comando, por exemplo: `debug`. Note que para cada paramêtro, o inverso pode ser testado: `no-debug`.
 
 ```javascript
 grunt.option(optionName)
 ```
 
-## Miscellaneous
+## Outros
 
 ### grunt.package
-The current Grunt `package.json` metadata, as an object.
+Objeto contendo as informações do arquivo `package.json` da atual instalação Grunt.
 
 ```javascript
 grunt.package
 ```
 
 ### grunt.version
-The current Grunt version, as a string. This is just a shortcut to the `grunt.package.version` property.
+Versão atual do Grunt em formato string. Este é apenas um atalho para a propriedade `grunt.package.version`.
 
 ```javascript
 grunt.version

@@ -1,33 +1,33 @@
-For when something goes horribly wrong.
+Para quando algo vai horrorosamente errado.
 
-See the [fail lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt/fail.js) for more information.
+Veja o [código da biblioteca de erros](https://github.com/gruntjs/grunt/blob/master/lib/grunt/fail.js) para mais informações.
 
-## The fail API
+## A API de falhas
 
-If something explodes (or is about to explode) inside a task, it can force Grunt to abort. See the [exit codes documentation](Exit-Codes) for a list of all built-in Grunt exit codes.
+Se algo explode (ou está prestes a explodir) dentro de uma tarefa, pode forçar o Grunt a abortar. Veja na [documentação de códigos de saída](Exit-Codes) uma lista de todos os códigos de saída embutidos no Grunt.
 
-Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
+Note que qualquer método marcado com um ☃ (unicode snowman) está disponível diretamente no objeto `grunt`. Só para você saber. Veja a [Página principal da API](grunt) para mais informações de uso.
 
 ### grunt.warn ☃
-Display a warning and abort Grunt immediately. Grunt will continue processing tasks if the `--force` command-line option was specified. The `error` argument can be a string message or an error object.
+Mostra um aviso e aborta o Grunt imediatamente. O Grunt continuará processando a tarefa se a opção de linha de comando `--force` for especificada. O argumento `error` pode ser uma mensagem (string) ou um objeto de erro.
 
 ```javascript
 grunt.fail.warn(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+Se `--debug 9` for especificado na linha de comando e um objeto de erro for especificado, um stack trace será registrado.
 
-_This method is also available as `grunt.warn`._
+_Este método também está disponível como `grunt.warn`._
 
 ### grunt.fatal ☃
-Display a warning and abort Grunt immediately. The `error` argument can be a string message or an error object.
+Mostra um aviso e aborta o Grunt imediatamente. O argumento `error` pode ser uma mensagem (string) ou um objeto de erro.
 
 ```javascript
 grunt.fail.fatal(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+Se `--debug 9` for especificado na linha de comando e um objeto de erro for especificado, um stack trace será registrado.
 
-A beep is emitted on fatal unless the `--no-color` option is specified.
+Um sinal será emitido no `fatal` a não ser que a opção `--no-color` seja especificada.
 
-_This method is also available as `grunt.fatal`._
+_Este método também está disponível como `grunt.fatal`._

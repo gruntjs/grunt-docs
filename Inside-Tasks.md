@@ -1,76 +1,76 @@
-While a task is running, Grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. This same object is also exposed as `grunt.task.current` for use in [templates](grunt.template), eg. the property `this.name` is also available as `grunt.task.current.name`.
+Quando uma tarefa está rodando, o Grunt expõe dentro da função da tarefa muitos métodos e propriedades específicas através do objeto `this`. Este mesmo objeto também é exposto como `grunt.task.current` para uso nos [templates](grunt.template), Ex.: A propriedade `this.name` também está disponível como `grunt.task.current.name`.
 
-## Inside All Tasks
+## Por dentro de todas tarefas
 
 ### this.async
-If a task is asynchronous, this method must be invoked to instruct Grunt to wait. It returns a handle to a "done" function that should be called when the task has completed. Either `false` or an `Error` object may be passed to the done function to instruct Grunt that the task has failed.
+Se a tarefa for assíncrona, este método pode ser chamado para instruir o Grunt a esperar. Isto retorna um handle para que a função "done" seja chamada quando a tarefa for concluída. Tanto `false` ou um objeto `Error` pode ser passado para a função done para avisar ao Grunt que a tarefa falhou.
 
-If the `this.async` method isn't invoked, the task will execute synchronously.
+Se o método `this.async` não for chamado, a tarefa será executada de forma síncrona.
 
 ```javascript
-// Tell Grunt this task is asynchronous.
+// Diga ao Grunt que esta tarefa é assíncrona.
 var done = this.async();
-// Your async code.
+// Seu código assíncrono.
 setTimeout(function() {
-  // Let's simulate an error, sometimes.
+  // Vamos simular um erro, aleatoriamente.
   var success = Math.random() > 0.5;
-  // All done!
+  // Pronto!
   done(success);
 }, 1000);
 ```
 
 ### this.requires
-If one task depends on the successful completion of another task (or tasks), this method can be used to force Grunt to abort if the other task didn't run, or if the other task failed. The tasks list can be an array of task names or individual task names, as arguments.
+Se uma tarefa depender da conclusão bem-sucedida de outra tarefa (ou tarefas), este método pode ser usado para forçar o Grunt a abortar se outra tarefa não tiver sido executada, ou se outra tarefa falhar. Como argumento, a lista de tarefas pode ser um array ou um nome individual.
 
-Note that this won't actually run the specified task(s), it will just fail the current task if they haven't already run successfully.
+Note que isto não vai realmente rodar a(s) tarefa(s) especificada(s), irá apenas falhar se a tarefa atual ainda não a tiver executado de forma bem-sucedida.
 
 ```javascript
 this.requires(tasksList)
 ```
 
 ### this.requiresConfig
-Fail the current task if one or more required [config](grunt.config) properties is missing. One or more string or array config properties may be specified.
+Falha a tarefa atual se uma ou mais propriedades [config](grunt.config) necessárias estiverem faltando. Uma ou mais propriedades de configuração do tipo string ou array pode ser especificada.
 
 ```javascript
 this.requiresConfig(prop [, prop [, ...]])
 ```
 
-See the [grunt.config documentation](grunt.config) for more information about config properties.
+Veja a [documentação do grunt.config](grunt.config) para mais informações sobre propriedades de configuração.
 
-_This method is an alias for the [grunt.config.requires](grunt.config#grunt.config.requires) method._
+_Este método é um pseudônimo para o método [grunt.config.requires](grunt.config#grunt.config.requires)._
 
 ### this.name
-The name of the task, as defined in `grunt.registerTask`. For example, if a "sample" task was run as `grunt sample` or `grunt sample:foo`, inside the task function, `this.name` would be `"sample"`.
+O nome da tarefa, definida em `grunt.registerTask`. Por exemplo, se a tarefa "sample" for rodada como `grunt sample` ou `grunt sample:foo`, dentro da função da tarefa, `this.name` seria `"sample"`.
 
-_Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask) this property will reflect the new name._
+_Note que se a tarefa tiver sido renomeada com [grunt.task.renameTask](grunt.task#grunt.task.renameTask) esta propriedade refletirá o novo nome._
 
 
 ### this.nameArgs
-The name of the task, including any colon-separated arguments or flags specified on the command-line. For example, if a "sample" task was run as `grunt sample:foo`, inside the task function, `this.nameArgs` would be `"sample:foo"`.
+O nome da tarefa, incluindo qualquer argumento separado por dois pontos ou flags especificadas na linha de comando. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo`, dentro da função da tarefa, `this.nameArgs` seria `"sample:foo"`.
 
-_Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask) this property will reflect the new name._
+_Note que se a tarefa tiver sido renomeada com [grunt.task.renameTask](grunt.task#grunt.task.renameTask) esta propriedade refletirá o novo nome._
 
 ### this.args
-An array of arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.args` would be `["foo", "bar"]`.
+Um array de argumentos passado à tarefa. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo:bar`, dentro da função da tarefa, `this.args` seria `["foo", "bar"]`.
 
-_Note that in multi tasks, the current target is omitted from the `this.args` array._
+_Note que em multitarefas, o target atual é omitido do array `this.args`._
 
 ### this.flags
-An object generated from the arguments passed to the task. For example, if a "sample" task was run as `grunt sample:foo:bar`, inside the task function, `this.flags` would be `{foo: true, bar: true}`.
+Um objeto gerado dos argumentos passados à função. Por exemplo, se a tarefa "sample" for rodada como `grunt sample:foo:bar`, dentro da função da tarefa, `this.flags` seria `{foo: true, bar: true}`.
 
-_Note that inside multi tasks, the target name is **not** set as a flag._
+_Note que em multitarefas, o target atual **não** é colocado como uma flag._
 
 ### this.errorCount
-The number of [grunt.log.error](grunt.log#grunt.log.error) calls that occurred during this task. This can be used to fail a task if errors were logged during the task.
+O número de chamadas [grunt.log.error](grunt.log#grunt.log.error) que ocorreram durante a tarefa. Pode ser usado para falhar a tarefa se erros forem registrados durante a tarefa.
 
 ### this.options
-Returns an options object. Properties of the optional `defaultsObj` argument will be overridden by any task-level `options` object properties, which will be further overridden in multi tasks by any target-level `options` object properties.
+Retorna um objeto de opções. Propriedades do argumento opcional `defaultsObj` serão sobrescritas pelas propriedades do objeto de opções de qualquer nível de tarefa, que será ainda sobrescrito nas multitarefas em qualquer nível alvo por qualquer propriedade do objeto de opções.
 
 ```js
 this.options([defaultsObj])
 ```
 
-This example shows how a task might use the `this.options` method:
+Este exemplo mostra como uma tarefa pode usar o método `this.options`:
 
 ```js
 var options = this.options({
@@ -80,28 +80,28 @@ var options = this.options({
 doSomething(options.enabled);
 ```
 
-The [Configuring tasks](configuring-tasks#options) guide shows an example of how options may be specified, from the task user's point of view.
+O guia [Configurando tarefas](configuring-tasks#options) mostra um exemplo de como as opções podem ser especificadas do ponto de vista do usuário.
 
-## Inside Multi Tasks
+## Por dentro das multitarefas
 
 ### this.target
-In a multi task, this property contains the name of the target currently being iterated over. For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.target` would be `"foo"`.
+Em uma multitarefa, esta propriedade contém o nome do target sendo atualmente iterado. Por exemplo, se a multitarefa "sample" for rodada como `grunt sample:foo` com os dados de configuração `{sample: {foo: "bar"}}`, dentro da função da tarefa, `this.target` seria `"foo"`.
 
 ### this.files
-In a multi task, all files specified using any Grunt-supported [file formats and options](configuring-tasks#files), [globbing patterns](configuring-tasks#globbing-patterns) or [dynamic mappings](configuring-tasks#building-the-files-object-dynamically) will automatically be normalized into a single format: the [Files Array file format](configuring-tasks#files-array-format).
+Em uma multitarefa, todos os arquivos especificados usando quaisquer [formatos de arquivos e opções](configuring-tasks#files), [padrões de englobamento](configuring-tasks#globbing-patterns) ou [mapeamentos dinâmicos](configuring-tasks#building-the-files-object-dynamically) suportados pelo Grunt serão automaticamente normalizados em um formato simples: o [formato de arquivo do array de Arquivos](configuring-tasks#files-array-format).
 
-What this means is that tasks don't need to contain a ton of boilerplate for explicitly handling custom file formats, globbing patterns, mapping source files to destination files or filtering out files or directories. _A task user can just specify files per the [Configuring tasks](configuring-tasks#files) guide, and **Grunt will handle all the details.**_
+O que significa que as tarefas não precisam de uma tonelada de boilerplates para explicitar formatos de arquivos personalizados, padrões de englobamento, mapeamento de arquivos de origem para arquivos de destino ou filtros fora de arquivos ou diretórios. _Um usuário da tarefa pode apenas especificar os arquivos pelo guia [Configurando tarefas](configuring-tasks#files), e o **Grunt lidará com todos os detalhes.**_
 
-Your task should iterate over the `this.files` array, utilizing the `src` and `dest` properties of each object in that array. The `this.files` property will always be an array. The `src` property will also always be an array, in case your task cares about multiple source files per destination file.
+Sua tarefa deve interagir com o array `this.files`, utilizando as propriedades `src` e `dest` para cada objeto no array. A propriedade `this.files` será sempre um array. A propriedade `src` também será sempre um array, no caso de sua tarefa se importar com múltiplos arquivos de origem por arquivo de destino.
 
-_Note that it's possible that nonexistent files might be included in `src` values, so you may want to explicitly test that source files exist before using them._
+_Note que é possível que arquivos não-existentes sejam incluídos nos valores de `src`, então convêm testar explicitamente que os arquivos existam antes de usá-los._
 
-This example shows how a simple "concat" task might use the `this.files` property:
+Este exemplo mostra como uma simples tarefa do tipo "concat" pode usar a propriedade `this.files`:
 
 ```js
 this.files.forEach(function(file) {
   var contents = file.src.filter(function(filepath) {
-    // Remove nonexistent files (it's up to you to filter or warn here).
+    // Remova os arquivos não existentes (cabe a você filtrar ou avisar aqui).
     if (!grunt.file.exists(filepath)) {
       grunt.log.warn('Source file "' + filepath + '" not found.');
       return false;
@@ -109,25 +109,25 @@ this.files.forEach(function(file) {
       return true;
     }
   }).map(function(filepath) {
-    // Read and return the file's source.
+    // Lê e retorna a origem do arquivo.
     return grunt.file.read(filepath);
   }).join('\n');
-  // Write joined contents to destination filepath.
+  // Escreve o conteúdo unificado no caminho de destino.
   grunt.file.write(file.dest, contents);
-  // Print a success message.
+  // Imprime uma mensagem de sucesso.
   grunt.log.writeln('File "' + file.dest + '" created.');
 });
 ```
 
-_If you need the original file object properties, they are available on each individual file object under the `orig` property, but there is no known use-case for accessing the original properties._
+_Se você precisar do objeto de propriedades do arquivo original, ele estará disponível em cada objeto de arquivo individual na propriedade `orig`, mas não há nenhum caso de uso conhecido para acessar as propriedades originais._
 
 ### this.filesSrc
-In a multi task, all `src` files files specified via any [file format](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array instead of `this.files`.
+Em uma multitarefa, todo arquivo `src` especificado por qualquer [formato de arquivo](configuring-tasks#files) é reduzido a um simples array. Se sua tarefa for do tipo "read only" e não se importar sobre o caminho de destino, utilize esse array ao invés do `this.files`.
 
-This example shows how a simple "lint" task might use the `this.filesSrc` property:
+Este exemplo mostra como uma simples tarefa do tipo "lint" pode utilizar a propriedade `this.filesSrc`:
 
 ```js
-// Lint specified files.
+// Arquivos específicos do Lint.
 var files = this.filesSrc;
 var errorCount = 0;
 files.forEach(function(filepath) {
@@ -136,15 +136,15 @@ files.forEach(function(filepath) {
   }
 });
 
-// Fail task if errors were logged.
+// Falha a tarefa se erros forem registrados.
 if (errorCount > 0) { return false; }
 
-// Otherwise, print a success message.
+// Caso contrário, imprime uma mensagem de sucesso.
 grunt.log.ok('Files lint free: ' + files.length);
 ```
 
 ### this.data
-In a multi task, this is the actual data stored in the Grunt config object for the given target.
-For example, if a "sample" multi task was run as `grunt sample:foo` with the config data `{sample: {foo: "bar"}}`, inside the task function, `this.data` would be `"bar"`.
+Em uma multitarefa, estes são os dados reais armazenados no objeto de configuração do Grunt para o destino especificado.
+Por exemplo, se uma multitarefa "sample" for rodada como `grunt sample:foo` com os dados de configuração `{sample: {foo: "bar"}}`, dentro da função da tarefa, `this.data` seria `"bar"`.
 
-_It is recommended that `this.options` `this.files` and `this.filesSrc` are used instead of `this.data`, as their values are normalized._
+_É recomendado que `this.options`, `this.files` e `this.filesSrc` sejam usados no lugar de `this.data`, devido a seus valores estarem normalizados._

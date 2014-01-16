@@ -1,6 +1,6 @@
-Note: because these are pre-release versions, please follow the instructions in the "Installing a published development version of Grunt" section of the [Installing Grunt guide](https://github.com/gruntjs/grunt/wiki/Installing-grunt). And as a reminder, **do not** specify a version range (using ~ or <=) when including a pre-release version of Grunt or Grunt plugin in your project.
-
-Grunt contrib plugins published to npm that work with Grunt 0.4.0rc8:
+Nota: Por estas serem versões pre-release, por favor siga as instruções de "Instalando uma versão de desenvolvimento publicada do Grunt" na seção [Guia de instalação do Grunt](Installing-grunt.md). E como lembrete **não* especifique um intervalo de versão (usando ~ ou <=) quando incluir uma versão pre-release do Grunt ou de plugins do Grunt no seu projeto.
+ 
+Plugins mantidos pelo Grunt (contrib plugins) publicados no npm que funcionam no Grunt 0.4rc8:
 
 - grunt-contrib-clean@0.4.0rc6
 - grunt-contrib-coffee@0.4.0rc7

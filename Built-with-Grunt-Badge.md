@@ -1,24 +1,24 @@
-Do you use Grunt in a project and want to proudly display that in your project README or on your project website? Now you can with the "Built with Grunt" badge!
+Você usa Grunt em um projeto, e quer orgulhosamente mostrar isso no seu arquivo README ou no website do projeto? Agora você pode com o bagde "Built with Grunt!"
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-## Using the Badge
+## Usando o badge
 
-Just copy the following Markdown code snippet and paste it right underneath the headline in your project README. You can also put it on your project website homepage or footer.
+Só copiar o seguinte snippet em Markdown e colá-lo debaixo do cabeçalho do arquivo README do seu projeto. Você também pode colocá-lo na página inicial do seu site ou no rodapé.
 
 ```
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 ```
 
-If you need an HTML version, we've got you covered.
+Se você precisa da versão em HTML, aqui está:
 
 ```html
 <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a>
 ```
 
-## For example...
+## Por exemplo...
 
-As you can see, the "Built with Grunt" badge is modern, stylish, and has been designed to fit nicely next to all your project's other mini-badges. You can put it first, last, or anywhere in the middle. Have fun!
+Como você pode ver, o badge "Built with Grunt" é moderno, estiloso, e foi desenhado pra ajustar-se próximo aos outros mini-badges do seu projeto. Você pode colocar em primeiro, último, ou em qualquer lugar do meio.
 
 [![BitDeli](https://d2weczhvl823v0.cloudfront.net/bitdeli/bitdeli-tracking-js/trend.png)](https://bitdeli.com/)
 [![NPM version](https://badge.fury.io/js/grunt.png)](http://badge.fury.io/)
@@ -26,9 +26,9 @@ As you can see, the "Built with Grunt" badge is modern, stylish, and has been de
 [![Build Status](https://secure.travis-ci.org/gruntjs/grunt.png?branch=master)](http://travis-ci.org/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-## Shout-outs
+## Avise-nos
 
-Let us know if you are using the "Built with Grunt" badge by [tweeting at @gruntjs](http://twitter.com/gruntjs).
+Deixe-nos saber que você está usando o badge "Built with Grunt" [tweetando para @gruntjs](http://twitter.com/gruntjs).
 
-_We'd like to especially thank [MaxCDN](http://www.maxcdn.com/) for hosting this badge and for [sponsoring open source development](http://www.maxcdn.com/company/open-source/)._
+_Gostaríamos de agradecer principalmente ao [MaxCDN](http://www.maxcdn.com/) por hospedar esse badge e [patrocinar o desenvolvimento open-source](http://www.maxcdn.com/company/open-source/)._
 

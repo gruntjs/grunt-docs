@@ -1,51 +1,51 @@
-The `grunt` command-line interface comes with a series of options. Use `grunt -h` from your terminal to show these options.
+A interface para linha de comando `grunt` vem com uma série de opções. Use `grunt -h` no seu terminal para mostrar estas opções.
 
 ### --help, -h
-Display help text
+Mostra o texto de ajuda.
 
 ### --base, -b
-Specify an alternate base path. By default, all file paths are relative to the `Gruntfile`.
+Especifica um caminho base alternativo. Por padrão, todos os caminhos de arquivos são relativos ao `Gruntfile`.
 
-Alternative to `grunt.file.setBase(...)`
+Alternativa para `grunt.file.setBase(...)`
 
 ### --no-color
-Disable colored output.
+Desabilita a saída de texto colorida.
 
 ### --gruntfile
-Specify an alternate `Gruntfile`.
+Especifica um `Gruntfile` alternativo.
 
-By default, grunt looks in the current or parent directories for the nearest `Gruntfile.js` or `Gruntfile.coffee` file.
+Por padrão, o grunt procura no diretório atual ou nos diretórios parentes pelo arquivo `Gruntfile.js` ou `Gruntfile.coffee` mais próximo.
 
 ### --debug, -d
-Enable debugging mode for tasks that support it.
+Ativa o modo de inspeção para as tarefas que o suportam.
 
 ### --stack
-Print a stack trace when exiting with a warning or fatal error.
+Renderiza um *stack trace* quando acusado um aviso ou erro fatal.
 
 ### --force, -f
-A way to force your way past warnings.
+Uma forma para forçar a passagem por avisos.
 
-Want a suggestion? Don't use this option, fix your code.
+Gostaria de uma sugestão? Não utilize esta opção, corrija o seu código.
 
 ### --tasks
-Additional directory paths to scan for task and "extra" files.
+Caminhos de diretórios adicionais a serem escaneados por tarefas e arquivos "extras".
 
-Alternative to `grunt.loadTasks(...)`
+Alternativa para `grunt.loadTasks(...)`
 
 ### --npm
-Npm-installed grunt plugins to scan for task and "extra" files.
+Plugins do Grunt instalados via NPM a serem escaneados por tarefas e arquivos "extras".
 
-Alternative to `grunt.loadNpmTasks(...)`
+Alternativa para `grunt.loadNpmTasks(...)`
 
 ### --no-write
-Disable writing files (dry run).
+Desabilitar escrita em arquivos (execução enxuta)
 
 ### --verbose, -v
 
-Verbose mode. A lot more information output.
+Modo verboso. Muito mais informações para visualização.
 
 ### --version, -V
-Print the grunt version. Combine with --verbose for more info.
+Imprime a versão do Grunt. Combine com --verbose para mais informações.
 
 ### --completion
-Output shell auto-completion rules. See the grunt-cli documentation for more information.
+Renderiza as regras para auto-complemento do shell. Veja a documentação do grunt-cli para mais informações.
