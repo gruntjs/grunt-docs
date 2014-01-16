@@ -1,37 +1,37 @@
-Grunt plugins define tasks that implement certain build steps and can be reused across multiple projects.  The examples will use the plugin _"grunt-contrib-uglify"_. Check the [Grunt website](http://gruntjs.com/) for a list of available plugins.
+Plugins do Grunt definem tarefas que executam certas etapas de *build* e podem ser reutilizados em vários projetos. Os exemplos utilizarão o plugin _"grunt-contrib-uglify"_. Verifique o [website do Grunt](http://gruntjs.com/) para uma lista com os plugins disponíveis.
 
-## Installing a Grunt plugin
+## Instalando um plugin do Grunt
 
-The first step to using an existing Grunt plugin is to install it.Grunt plugins are packaged as node modules and can be installed using [npm](http://npmjs.org) like this:
+O primeiro passo para usar um plugin do Grunt existente é instalando-o. Os plugins do Grunt são empacotados como módulos Node e podem ser instalados usando o [npm](http://npmjs.org) desta forma:
 
 `npm install --save-dev grunt-contrib-uglify`
 
-This will install the Grunt plugin _"grunt-contrib-uglify"_ locally into the `node_modules` folder (cf. [npm folders](https://npmjs.org/doc/folders.html)).
-Plugins must be installed locally to avoid version conflicts when working with multiple projects.
+Isso vai instalar o plugin _"grunt-contrib-uglify"_ para o Grunt localmente dentro da pasta `node_modules` (ref.: [npm folders](https://npmjs.org/doc/folders.html)). Plugins devem ser instalados localmente para evitar conflitos quando utilizados em múltiplos projetos.
 
-Specifying `--save-dev` as option automatically adds this Grunt plugin to the _"devDependency"_ section in the `package.json` file. This file lists all node dependencies of a project.
-Adding the Grunt plugin there will allow other developers working on the project to simply run `npm install` to locally install these required dependencies.
+Especificando `--save-dev` como opção, vai adicionar automaticamento este plugin á seção _"devDependency"_ no arquivo `package.json`. Este arquivo lista todas as dependências para Node no projeto.
 
-## Loading plugin tasks
+Adicionando o plugin do Grunt, permitirá que outros desenvolvedores trabalhando no projeto simplesmente executem `npm install` para instalar localmente estas dependências necessárias.
 
-Now that the plugin is installed, it is time to tell Grunt about it and let it load all defined tasks. To do this, add the following line to your `Gruntfile.js`:
+## Carregando tarefas de plugin
+
+Agora que o plugin está instalado, é hora de avisar ao Grunt sobre ele e deixá-lo carregar todas as tarefas definidas. Para fazer isso, adicione a seguinte linha ao seu `Gruntfile.js`:
 
 `grunt.loadNpmTasks('grunt-contrib-uglify')`
 
-This line should be added within the top level function scope (not the initConfig section) where other `grunt.registerTask()` calls are made.
+Esta linha deve ser adicionada dentro do escopo da função de nível superior (não na seção initConfig) onde também `grunt.registerTask()` é chamado.
 
-## Running plugin tasks
+## Executando tarefas de plugin
 
-Plugin tasks can be run like other Grunt tasks either by specifying them on the command line:
+Tarefas de plugins podem ser executadas como outras tarefas do grunt, até mesmo quando especificada na linha de comando:
 
 `grunt uglify`
 
-Or by registering a new task alias which calls this task, and running that task:
+Ou registrando um novo atalho para esta tarefa, que é chamada e executada:
 
 `grunt.registerTask("dist", ["uglify"])`
 
-## Configuring plugins
+## Configurando plugins
 
-Plugin configuration depends on the specific plugin, so check the plugin's documentation for further information. Generally the configuration is located in the `initConfig` section of the Gruntfile.
+A configuração do Plugin depende do plugin em específico, então verifique a documentação do plugin para mais informações. Em geral, a configuração está localizado na seção `initConfig` do Gruntfile.
 
 **TODO**: Configuration Targets/options (Merge [Configuring tasks](Configuring tasks)?)
