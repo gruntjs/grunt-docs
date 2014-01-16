@@ -1,12 +1,12 @@
 Acesso aos dados das configurações de um projeto específico no arquivo Gruntfile.
  
-Note que qualquer método marcado com um ☃ (unicode snowman) também está disponível diretamente no objeto `grunt`, e qualquer método marcado com uma ☆ (white star) também está disponível dentro da tarefa do objeto `this`. Apenas para você saber.
+Note que qualquer método marcado com um ☃ (unicode boneco de neve) também está disponível diretamente no objeto `grunt`, e qualquer método marcado com uma ☆ (estrela branca) também está disponível dentro da tarefa do objeto `this`. Apenas para você saber.
 
 ## Inicializando os dados da configuração 
 _Observe que o método a seguir também está disponível no objeto `grunt` como `grunt.initConfig`._
 
 ### grunt.config.init ☃
-Inicializa a configuração de um objeto para o projeto atual. A especificação `configObject` é usada por tarefas e pode ser acessada usando o método `grunt.config`. Quase tudo no `Gruntfile` vai chamar esse método.
+Inicializa a configuração de um objeto para o projeto atual. O `configObject` especificado é usado por tarefas e pode ser acessada usando o método `grunt.config`. Quase tudo no `Gruntfile` vai chamar esse método.
  
 ```js
 grunt.config.init(configObject)
@@ -14,7 +14,7 @@ grunt.config.init(configObject)
 
 Observe que qualquer string `<% %>` especificada no template será processada quando os dados da configuração forem recuperados.
 
-Este exemplo contém algumas configurações da tarefa [grunt-contrib-jshint plugin](https://github.com/gruntjs/grunt-contrib-jshint) `jshint`:
+Este exemplo contém um modelo de dados de configuração para a tarefa [grunt-contrib-jshint plugin](https://github.com/gruntjs/grunt-contrib-jshint) `jshint`:
 
 ```js
 grunt.config.init({
@@ -26,23 +26,23 @@ grunt.config.init({
 
 Veja o guia de [Introdução](Getting-started.md) para mais exemplos de configuração.
 
-_Este método está disponível como `grunt.initConfig`._
+_Este método também está disponível como `grunt.initConfig`._
 
 
 ## Acessando dados da configuração
-Os métodos a seguir permitem acessar os dados de configuração do Grunt tanto por string delimitada por um ponto como `'pkg.author.name'` quanto através de nome de propriedades de array como  ['pkg', 'author', 'name’].
+Os métodos a seguir permitem acessar os dados de configuração do Grunt tanto por string delimitada por um ponto como `'pkg.author.name'` quanto através de nome de propriedades de array como ['pkg', 'author', 'name’].
 
-Observe que se um nome de propriedade especificada contém um `.` ponto, ele deve ser precedido por uma barra invertida, por exemplo. `'concat.dist/built\\.js'`. Se uma parte do array for especificada, o Grunt manipulará internamente a fuga com o método `grunt.config.escape`.
+Observe que se um nome de propriedade especificado contém um `.` ponto, ele deve ser precedido por uma barra invertida, por exemplo. `'concat.dist/built\\.js'`. Se uma parte do array for especificado, o Grunt manipulará internamente o escape com o método `grunt.config.escape`.
 
 ### grunt.config
-Obter ou definir um valor para a configuração no projeto do Grunt. Este método serve como um alias para outros métodos; se são passados dois argumentos, `grunt.config.set` é chamado, se não `grunt.config.get` é chamado.
+Obter ou definir um valor para a configuração no projeto do Grunt. Este método serve como um atalho para outros métodos; se são passados dois argumentos, `grunt.config.set` é chamado, se não `grunt.config.get` é chamado.
  
 ```js
 grunt.config([prop [, value]])
 ```
 
 ### grunt.config.get
-Obter um valor para a configuração no projeto do Grunt. Se o `prop` é especificado, o valor dessa propriedade é retornado, ou `null` se a propriedade não está definida. Se o `prop` não é especificado, uma cópia de todo o objeto de configuração é retornado. Templates de strings serão processados de forma recursiva usando o método `grunt.config.process`.
+Obter um valor para a configuração no projeto do Grunt. Se o `prop` é especificado, o valor dessa propriedade é retornado, ou `null` se a propriedade não estiver definida. Se o `prop` não é especificado, uma cópia de todo o objeto de configuração é retornado. Templates de strings serão processados de forma recursiva usando o método `grunt.config.process`.
 
 ```js
 grunt.config.get([prop])
@@ -55,23 +55,23 @@ Processa um valor, recursivamente expande o template `<% %>` (através do métod
 grunt.config.process(value)
 ```
 
-Se qualquer valor inteiramente recuperado é um único modelo de string `'<%= foo %>'` ou `'<%= foo.bar %>'`, e se a propriedade especificada `foo` ou `foo.bar` não é uma string com valor (e nem `null` ou `undefined`), ele será expandido para o valor_atual_. Isso, combinado com os arrays minificados no sistema de tarefas automatizados do Grunt, pode ser muito útil.
+Se qualquer valor inteiramente recuperado é um único modelo de string `'<%= foo %>'` ou `'<%= foo.bar %>'`, e se a propriedade especificada `foo` ou `foo.bar` não é uma string com valor (e nem `null` ou `undefined`), ele será expandido para o valor _atual_. Isso, combinado com os arrays minificados no sistema de tarefas automatizados do Grunt, pode ser muito útil.
  
 ### grunt.config.getRaw
-Obter um valor bruto para a configuração no projeto do Grunt, sem processar o modelo de string `<% %>`. Se `prop` é especificado, o valor desta propriedade é retornado, ou `null` se a propriedade não está definida. Se `prop` não é especificado, uma cópia de todo objeto de configuração é retornado.
+Obtém um valor bruto para a configuração no projeto do Grunt, sem processar o modelo de string `<% %>`. Se `prop` for especificado, o valor desta propriedade é retornado, ou `null` se a propriedade não estiver definida. Se `prop` não for especificado, uma cópia de todo objeto da configuração é retornado.
 
 ```js
 grunt.config.getRaw([prop])
 ```
 
 ### grunt.config.set
-Defina um valor para a configuração no projeto do Grunt.
+Define um valor para a configuração no projeto do Grunt.
 
 ```js
 grunt.config.set(prop, value)
 ```
 
-Note que qualquer especificação do modelo de string `<% %>` só será processada quando os dados da configuração são recuperados.
+Note que qualquer modelo de string `<% %>` especificado só será processado quando os dados da configuração são recuperados.
 
 ### grunt.config.escape
 Escape `.` pontos em um determinado `propString`. Isso deve ser usado para nomes de propriedades que contêm pontos.
