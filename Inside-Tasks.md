@@ -20,9 +20,9 @@ setTimeout(function() {
 ```
 
 ### this.requires
-Se uma tarefa depender da conclusão bem-sucedida de outra tarefa (ou tarefas), este método pode ser usado para forçar o Grunt a abortar se outra tarefa não tiver sido executada, ou se outra tarefa falhar. Como argumento, a lista de tarefas pode ser um array ou um nome individual.
+Se uma tarefa depender da conclusão bem sucedida de outra tarefa (ou tarefas), este método pode ser usado para forçar o Grunt a abortar se outra tarefa não tiver sido executada, ou se outra tarefa falhar. Como argumento, a lista de tarefas pode ser um array ou um nome individual.
 
-Note que isto não vai realmente rodar a(s) tarefa(s) especificada(s), irá apenas falhar se a tarefa atual ainda não a tiver executado de forma bem-sucedida.
+Note que isto não vai realmente rodar a(s) tarefa(s) especificada(s), irá apenas falhar se a tarefa atual ainda não a tiver executado de forma bem sucedida.
 
 ```javascript
 this.requires(tasksList)
