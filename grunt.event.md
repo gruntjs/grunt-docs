@@ -1,46 +1,46 @@
-Even though only the most relevant methods are listed on this page, the full [EventEmitter2 API][ee2] is available on the `grunt.event` object. Event namespaces may be specified with the `.` (dot) separator, and namespace wildcards have been enabled.
+Mesmo que apenas os métodos mais relevantes estejam listados nesta página, a [API EventEmitter2][ee2] completa está disponível no objeto `grunt.event`. Os namespaces de eventos podem ser especificados com o separador `.` (ponto) se o  namespace genérico estiver habilitado.
 
-*Note that Grunt doesn't yet emit any events, but can still be useful in your own tasks.*
+*Note que o Grunt ainda não emite qualquer evento, mas ainda pode ser útil nas suas próprias tarefas.*
 
 [ee2]: https://github.com/hij1nx/EventEmitter2
 
 ### grunt.event.on
-Adds a listener to the end of the listeners array for the specified event.
+Adiciona um listener ao final do array de listeners do evento especificado.
 
 ```js
 grunt.event.on(event, listener)
 ```
 
 ### grunt.event.once
-Adds a **one time** listener for the event. The listener is invoked only the first time the event is fired, after which it is removed.
+Adiciona um listener do tipo **uma vez** ao evento. O listener invoca apenas na primeira vez que o evento é disparado, após isto é removido.
 
 ```js
 grunt.event.once(event, listener)
 ```
 
 ### grunt.event.many
-Adds a listener that will execute **n times** for the event before being removed.
+Adiciona um listener que será executado **n vezes** ao evento antes de ser removido.
 
 ```js
 grunt.event.many(event, timesToListen, listener)
 ```
 
 ### grunt.event.off
-Remove a listener from the listener array for the specified event.
+Remove um listener do array de listeners do evento especificado.
 
 ```js
 grunt.event.off(event, listener)
 ```
 
 ### grunt.event.removeAllListeners
-Removes all listeners, or those of the specified event.
+Remove todos os listeners, ou os do evento especificado.
 
 ```js
 grunt.event.removeAllListeners([event])
 ```
 
 ### grunt.event.emit
-Execute each of the listeners that may be listening for the specified event name in order with the list of arguments.
+Executa cada um dos listeners que podem ser ouvidos por um nome de evento específico na ordem dos argumentos listados.
 
 ```js
 grunt.event.emit(event, [arg1], [arg2], [...])
