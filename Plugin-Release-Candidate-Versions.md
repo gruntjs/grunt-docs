@@ -1,4 +1,4 @@
-Nota: Por estas serem versões de pre-release, por favor siga as instruções de "Instalando uma versão de desenvolvimento publicada do Grunt (Installing a published development version of Grunt)" na seção [Guia de instalação do Grunt](Installing-grunt.md). E como lembrete **não* especifique um intervalo de versão (usando ~ ou <=) quando incluir uma versão de pre-release do Grunt ou de plugins do Grunt no seu projeto.
+Nota: Por estas serem versões pre-release, por favor siga as instruções de "Instalando uma versão de desenvolvimento publicada do Grunt (Installing a published development version of Grunt)" na seção [Guia de instalação do Grunt](Installing-grunt.md). E como lembrete **não* especifique um intervalo de versão (usando ~ ou <=) quando incluir uma versão pre-release do Grunt ou de plugins do Grunt no seu projeto.
  
 Plugins mantidos pelo Grunt (contrib plugins) publicados no npm que funcionam no Grunt 0.4rc8:
 
