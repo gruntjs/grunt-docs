@@ -38,7 +38,7 @@ Tradução da documentação do [GruntJS](http://gruntjs.com/)
 6. Outros
   * [Por dentro das tarefas](Inside-Tasks.md)
   * [Códigos de saída](Exit-Codes.md)
-
+7. [Blog](/blog)
 
 
 
