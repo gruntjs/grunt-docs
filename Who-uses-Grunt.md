@@ -23,6 +23,8 @@ If you've used Grunt in a project and would like it listed on this page,
 
 ### [Bitovi](http://bitovi.com/)
 - [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/Gruntfile.js))
+ 
+### [TestObject](https://www.testobject.com)
 
 ### [Filament Group](http://filamentgroup.com/)
 - [X-rayHTML](https://github.com/filamentgroup/X-rayHTML) ([Gruntfile](https://github.com/filamentgroup/X-rayHTML/blob/master/grunt.js))
