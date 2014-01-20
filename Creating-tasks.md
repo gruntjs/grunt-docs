@@ -199,8 +199,10 @@ grunt.registerTask('foo', 'My "foo" task.', function() {
 Take a look at the [contrib tasks](https://github.com/gruntjs/) for more examples.
 
 ## CLI options / environment
-_TODO_
-(pull from FAQ, recommend process.env)
+
+Use `process.env` to access the [environment variables](http://en.wikipedia.org/wiki/Environment_variable).
+
+Read more about the available command-line options on the [Using the CLI](http://gruntjs.com/using-the-cli) page.
 
 ## Why doesn't my asynchronous task complete?
 Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
