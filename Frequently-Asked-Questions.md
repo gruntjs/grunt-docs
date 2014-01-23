@@ -79,6 +79,10 @@ grunt.registerTask('set_config', 'Set a config property.', function(name, val) {
 });
 ```
 
+## How I get a stack trace when an error occurs?
+
+Use the `--stack` option to see stack traces. Such as `grunt task --stack`
+
 
 ***
 
