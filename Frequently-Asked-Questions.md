@@ -83,6 +83,10 @@ grunt.registerTask('set_config', 'Set a config property.', function(name, val) {
 
 Use the `--stack` option to see stack traces. Such as `grunt task --stack`
 
+## Why am I getting a "Maximum call stack size exceeded" error?
+
+You probably created an alias task with the same name as one of your regular tasks. 
+Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.registerTask('myUglify', ['uglify:my_target']);`.
 
 ***
 
