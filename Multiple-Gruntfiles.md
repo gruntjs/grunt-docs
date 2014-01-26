@@ -247,10 +247,12 @@ module.exports = function(grunt) {
 
 So, bottom line, to properly extend your custom tasks [`grunt.task.loadTasks`](http://gruntjs.com/api/grunt.task#grunt.task.loadtasks) is your friend.
 
+This article was authored by [thanpolas][].
+
 [Handling Frontend Dependencies]: #handling-frontend-dependencies
 [extconf]: #extending-grunts-configuration
 [exttask]: #extending-grunts-custom-tasks
 [grunt.config]: http://gruntjs.com/api/grunt.config
 [Ben Alman]: https://github.com/cowboy
 [wesbos repo]: https://github.com/cowboy/wesbos
-
+[thanpolas]: https://githug.com/thanpolas
