@@ -102,7 +102,57 @@ For the cases that do not fall under any of the above categories what you need t
 
 ### Extending Grunt's Configuration
 
-Grunt requires nothing but a vanilla Object Literal to be configured. So we can do this for e.g.
+Grunt's configuration file, `Gruntfile.js`, can be extended in infinite ways. In this chapter we will examine how to break out the task definitions in multiple files and how we can then break out each definition in even more files to achieve code scalability and better maintainability for all teams and co-workers.
+
+#### The grunt.config Method
+
+Grunt's [`grunt.config()`][grunt.config] method enables us to break out task definitions in separate files. Let's see how a setup using `grunt.config` would look like, suppose we want to create a task in the `grunt-tasks/` folder:
+
+##### `grunt-tasks/grunt-github-pages.js`
+
+```js
+module.exports = function(grunt) {
+  grunt.config('githubPages', {
+    target: {
+      src: 'build/wwwroot',
+    },
+  });
+
+  grunt.loadNpmTasks('grunt-github-pages');
+};
+```
+
+
+##### Gruntfile.js
+
+Now to include and evaluate this configuration file here's what we need to do in the `Gruntfile.js`:
+
+```js
+module.exports = function(grunt) {
+
+  // Initialize config.
+  grunt.initConfig({
+    pkg: require('./package.json'),
+  });
+
+  // Load per-task config from separate files.
+  grunt.loadTasks('grunt-tasks');
+
+  grunt.registerTask('deploy',
+    'Deploy site via github-pages.',
+    ['githubPages']);
+
+  grunt.registerTask('default', ['deploy']);
+};
+```
+
+So what happens here is that we instruct Grunt to go look in the local folder `grunt-tasks/` and require all files from there. The github-pages file is loaded and evaluated and the configuration *injected* into the main Grunt's process by the use of `grunt.config()`. 
+
+This pattern is your first line of defence when your Gruntfile starts to grow to a non manageable state. You can check out a [sample repo][wesbos repo] made by [Ben Alman][], author of Grunt, that exposes this pattern to its fullest.
+
+#### Breaking out Task Targets into Multiple Files
+
+We saw how we can break out separate Tasks into different files, now let's see how we can do that for each Task's Target. Let's start with the simple truth, Grunt requires nothing but a vanilla Object Literal to be configured. So we can do this:
 
 ```js
 var gruntConf = {};
@@ -200,3 +250,7 @@ So, bottom line, to properly extend your custom tasks [`grunt.task.loadTasks`](h
 [Handling Frontend Dependencies]: #handling-frontend-dependencies
 [extconf]: #extending-grunts-configuration
 [exttask]: #extending-grunts-custom-tasks
+[grunt.config]: http://gruntjs.com/api/grunt.config
+[Ben Alman]: https://github.com/cowboy
+[wesbos repo]: https://github.com/cowboy/wesbos
+
