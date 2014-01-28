@@ -88,6 +88,10 @@ Use the `--stack` option to see stack traces. Such as `grunt task --stack`
 You probably created an alias task with the same name as one of your regular tasks. 
 Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.registerTask('myUglify', ['uglify:my_target']);`.
 
+## How do I uninstall or remove unwanted plugins?
+
+At least two ways. One way is to use `npm remove [GRUNT_PLUGIN] --save-dev`, this will remove the plugin from your `package.json` and from `node_modules`. You may also delete the dependencies you don't want from your `package.json` manually and then run `npm prune`.
+
 ***
 
 
