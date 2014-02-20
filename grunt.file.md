@@ -96,7 +96,10 @@ var options = {
   // (not the filename) using grunt.file.isMatch. If any specified globbing
   // pattern matches, the file won't be processed via the `process` function.
   // If `true` is specified, processing will be prevented.
-  noProcess: globbingPatterns
+  noProcess: globbingPatterns,
+  // A boolean that determines whether or not to generate a symbolic link.
+  // Defaults to false. 
+  symlink: booleanValue
 };
 ```
 
