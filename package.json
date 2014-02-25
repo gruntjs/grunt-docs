@@ -1,0 +1,15 @@
+{
+  "name": "grunt-docs",
+  "version": "0.1.0",
+  "description": "This repository contains the wiki files for the official grunt documentation. Grunt documentation is based on the [Gollum Wiki](https://github.com/gollum/gollum/wiki)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gruntjs/grunt-docs.git"
+  },
+  "author": "GruntJS Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gruntjs/grunt-docs/issues"
+  },
+  "homepage": "https://github.com/gruntjs/grunt-docs"
+}
