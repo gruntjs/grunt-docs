@@ -62,7 +62,7 @@ First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](h
 1. Fork and clone the repo.
 1. Check out the master branch (most grunt/grunt-contrib development happens there).
 1. Run `npm install` to install all Grunt dependencies.
-1. Run `npm uninstall grunt` - This will remove the extra Grunt in your `node_modules`, see [npm issue 3958](https://github.com/npm/npm/issues/3958)
+1. Run `npm uninstall grunt` this will remove the extra Grunt in your `node_modules`, see [npm issue 3958](https://github.com/npm/npm/issues/3958)
 1. Run `grunt` to Grunt grunt.
 
 Assuming that you don't see any red, you're ready to go. Just be sure to run `grunt` after making any changes, to ensure that nothing has broken.
