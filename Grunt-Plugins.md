@@ -1,7 +1,6 @@
 This plugin listing is automatically generated from the npm module database.
 Officially maintained "contrib" plugins are marked with a star
-<span class='icon-star'></span> icon and are shown at the top of
-every search by default.
+<span class='icon-star'></span> icon.
 
 <small><i>
 In order for a Grunt plugin to be listed here, it must be published on
