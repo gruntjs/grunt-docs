@@ -243,7 +243,7 @@ When you want to process many individual files, a few additional properties may 
 * `src` Pattern(s) to match, relative to the `cwd`.
 * `dest` Destination path prefix.
 * `ext` Replace any existing extension with this value in generated `dest` paths.
-* `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'`.
+* `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'` *[Added in 0.4.3]*
 * `flatten` Remove all path parts from generated `dest` paths.
 * `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest`
 and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned
