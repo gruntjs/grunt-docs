@@ -15,6 +15,9 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Tweetdeck](http://www.tweetdeck.com/)
 - [Typeahead](https://github.com/twitter/typeahead.js) ([Gruntfile](https://github.com/twitter/typeahead.js/blob/master/Gruntfile.js))
 
+### [Mozilla](https://mozilla.org/)
+- [Firefox Accounts projects](https://accounts.firefox.com) ([Gruntfile](https://github.com/mozilla/fxa-content-server/blob/master/Gruntfile.js), [Gruntfile](https://github.com/mozilla/fxa-auth-server/blob/master/Gruntfile.js), [Gruntfile](https://github.com/mozilla/fxa-js-client/blob/master/Gruntfile.js))
+
 ### [Bootstrap](http://getbootstrap.com/)
 - [Gruntfile](https://github.com/twbs/bootstrap/blob/master/Gruntfile.js)
 
