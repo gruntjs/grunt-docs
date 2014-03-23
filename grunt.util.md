@@ -9,7 +9,7 @@ grunt.util.kindOf(value)
 
 ### grunt.util.error
 Return a new Error instance (that can be thrown) with the appropriate message. If an Error object is specified instead of `message` that object will be returned.
-Also, if an Error object is specified for `origError` and Grunt was run with the `--debug 9` option, the original Error stack will be dumped.
+Also, if an Error object is specified for `origError` and Grunt was run with the `--stack` option, the original Error stack will be dumped.
 
 ```js
 grunt.util.error(message [, origError])
