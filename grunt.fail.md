@@ -15,7 +15,7 @@ Display a warning and abort Grunt immediately. Grunt will continue processing ta
 grunt.fail.warn(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+If `--stack` is specified on the command-line and an error object was specified, a stack trace will be logged.
 
 _This method is also available as `grunt.warn`._
 
@@ -26,7 +26,7 @@ Display a warning and abort Grunt immediately. The `error` argument can be a str
 grunt.fail.fatal(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+If `--stack` is specified on the command-line and an error object was specified, a stack trace will be logged.
 
 A beep is emitted on fatal unless the `--no-color` option is specified.
 
