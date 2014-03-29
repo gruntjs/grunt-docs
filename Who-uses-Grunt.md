@@ -79,7 +79,7 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [Assemble](http://assemble.io/)
 - [Gruntfile](https://github.com/assemble/assemble/blob/master/Gruntfile.js)
-- 
+ 
 ### [Sourcey](http://sourcey.com)
 - [Mesh](https://github.com/sourcey/mesh) ([Gruntfile](https://github.com/sourcey/mesh/blob/master/Gruntfile.js))
 - [Symple](https://github.com/sourcey/symple) ([Gruntfile](https://github.com/sourcey/symple/blob/master/client/Gruntfile.js))
