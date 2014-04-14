@@ -12,6 +12,9 @@ Development Version: **master**
 * [[Creating Plugins]]
 * [[Using the CLI]]
 
+### Guides
+* [[Scaffold a package.json]]
+
 ### Advanced
 * [[Installing Grunt]]
 * [[Frequently Asked Questions]]
