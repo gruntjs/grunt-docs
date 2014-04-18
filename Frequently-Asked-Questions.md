@@ -92,6 +92,11 @@ Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.
 
 At least two ways. One way is to use `npm remove [GRUNT_PLUGIN] --save-dev`, this will remove the plugin from your `package.json` and from `node_modules`. You may also delete the dependencies you don't want from your `package.json` manually and then run `npm prune`.
 
+## Error "Fail to install with npm error: No compatible version found"
+
+Make sure you have the latest stable version of [NPM and Node.JS](http://nodejs.org/)
+
+
 ***
 
 
