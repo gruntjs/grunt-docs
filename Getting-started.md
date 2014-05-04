@@ -56,10 +56,10 @@ There are a few ways to create a `package.json` file for your project:
   "name": "my-project-name",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-uglify": "~0.2.2"
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.3.3",
+    "grunt-contrib-uglify": "~0.4.0"
   }
 }
 ```
