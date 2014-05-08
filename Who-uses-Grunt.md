@@ -85,3 +85,5 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 - [Symple](https://github.com/sourcey/symple) ([Gruntfile](https://github.com/sourcey/symple/blob/master/client/Gruntfile.js))
 
 ### [Victoria's Secret](http://www.victoriassecret.com)
+
+### [Clevertim CRM](http://www.clevertim.com)
