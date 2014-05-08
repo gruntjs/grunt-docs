@@ -7,6 +7,9 @@ There are a number of Grunt projects.
 
 In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs).
 
+Most forms of contribution aside from providing support to other users requires that you [sign and submit](http://dojofoundation.org/about/cla) a Contributors License Agreement (or "CLA" for short) with the Dojo Foundation.
+
+
 ## Want to contribute?
 
 If you want to contribute, but don't know where to get started, this is for you.
