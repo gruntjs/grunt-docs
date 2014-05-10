@@ -89,7 +89,7 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
-### grunt.task.exists ☃
+### grunt.task.exists
 Check with the name, if a task exists in the registered tasks. Return a boolean.
 
 ```javascript
