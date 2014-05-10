@@ -89,6 +89,15 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
+### grunt.task.exists
+*Added in 0.4.5*
+
+Check with the name, if a task exists in the registered tasks. Return a boolean.
+
+```javascript
+grunt.task.exists(name)
+```
+
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.
 
