@@ -16,9 +16,6 @@ _This method is an alias for the [grunt.task.registerTask](grunt.task#grunt.task
 ### grunt.registerMultiTask
 _This method is an alias for the [grunt.task.registerMultiTask](grunt.task#grunt.task.registerMultiTask) method._
 
-### grunt.exists
-_This method is an alias for the [grunt.task.exists](grunt.task#grunt.task.exists) method._
-
 ### grunt.renameTask
 _This method is an alias for the [grunt.task.renameTask](grunt.task#grunt.task.renameTask) method._
 
