@@ -80,6 +80,16 @@ Escape `.` dots in the given `propString`. This should be used for property name
 grunt.config.escape(propString)
 ```
 
+### grunt.config.merge
+*Added in 0.4.5*
+
+Recursively merges properties of the specified `configObject` into the current project configuration.
+
+```js
+grunt.config.merge(configObject)
+```
+
+
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._
 
