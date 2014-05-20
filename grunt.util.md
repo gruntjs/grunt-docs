@@ -47,7 +47,7 @@ grunt.util.pluralize(n, str, separator)
 ```
 
 ### grunt.util.spawn
-Spawn a child process, keeping track of its stdout, stderr and exit code. The method returns a reference to the spawned child. When the child exits, the done function is called.
+Spawn a child process, keeping track of its stdout, stderr and exit code. The method returns a reference to the spawned child. When the child exits, the `doneFunction` is called.
 
 ```js
 grunt.util.spawn(options, doneFunction)
@@ -73,7 +73,7 @@ var options = {
 };
 ```
 
-The done function accepts these arguments:
+The `doneFunction` accepts these arguments:
 
 ```js
 function doneFunction(error, result, code) {
