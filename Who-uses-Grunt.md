@@ -77,6 +77,8 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [Happy Cog](http://happycog.com)
 
+### [MadGlory](http://madglory.com)
+
 ### [Assemble](http://assemble.io/)
 - [Gruntfile](https://github.com/assemble/assemble/blob/master/Gruntfile.js)
  
