@@ -51,8 +51,7 @@ If you've used Grunt in a project and would like it listed on this page,
 - [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
 
 ### [WordPress](http://wordpress.com/)
-- [WordPress Build Process](
-http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
+- [WordPress Build Process](http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 
 ### [Walmart](http://www.walmart.com/)
 - [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile](https://github.com/walmartlabs/thorax/blob/master/Gruntfile.js))
@@ -95,3 +94,6 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 ### [SitePen](http://sitepen.com/)
 - [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
 - [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
+ 
+### [Phaser](http://phaser.io/)
+- [phaser](https://github.com/photonstorm/phaser/) ([Gruntfile](https://github.com/photonstorm/phaser/blob/master/Gruntfile.js))
