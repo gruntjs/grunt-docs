@@ -22,6 +22,7 @@ Development Version: **master**
 * [[Who uses Grunt]]
 * [[Built with Grunt Badge]]
 * [[Contributing]]
+* [[Development Team]]
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]

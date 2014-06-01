@@ -11,7 +11,7 @@ grunt.registerTask(taskName, [description, ] taskList)
 
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without specifying any tasks:
 
-```javascriptal
+```javascript
 grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
