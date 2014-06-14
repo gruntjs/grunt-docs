@@ -50,7 +50,7 @@ If you've used Grunt in a project and would like it listed on this page,
 ### [LiveChat](http://www.livechatinc.com)
 - [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
 
-### [WordPress](https://wordpress.org/)
+### [WordPress](https://wordpress.com/)
 - [WordPress Build Process](https://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/) ([Gruntfile](https://core.trac.wordpress.org/browser/trunk/Gruntfile.js))
 - [bbPress](https://bbpress.org) ([Gruntfile](https://bbpress.trac.wordpress.org/browser/trunk/Gruntfile.js))
 - [BuddyPress](https://buddypress.org) ([Gruntfile](https://buddypress.trac.wordpress.org/browser/trunk/Gruntfile.js))
@@ -70,6 +70,13 @@ If you've used Grunt in a project and would like it listed on this page,
 ### [JS Bin](http://jsbin.com/)
 - [Gruntfile](https://github.com/remy/jsbin/blob/master/Gruntfile.js)
 
+### [SitePen](http://sitepen.com/)
+- [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
+- [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
+ 
+### [Phaser](http://phaser.io/)
+- [phaser](https://github.com/photonstorm/phaser/) ([Gruntfile](https://github.com/photonstorm/phaser/blob/master/Gruntfile.js))
+
 ### [BufferApp](https://bufferapp.com)
 
 ### [Shopetti](https://www.shopetti.com)
@@ -78,10 +85,6 @@ If you've used Grunt in a project and would like it listed on this page,
 - [WhisperNote](https://www.consunet.com.au/products/whispernote/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/WhisperNote/Gruntfile.js))
 - [EveryPass](https://www.consunet.com.au/products/everypass/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/EveryPass/Gruntfile.js))
 
-### [Happy Cog](http://happycog.com)
-
-### [MadGlory](http://madglory.com)
-
 ### [Assemble](http://assemble.io/)
 - [Gruntfile](https://github.com/assemble/assemble/blob/master/Gruntfile.js)
  
@@ -89,13 +92,10 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Mesh](https://github.com/sourcey/mesh) ([Gruntfile](https://github.com/sourcey/mesh/blob/master/Gruntfile.js))
 - [Symple](https://github.com/sourcey/symple) ([Gruntfile](https://github.com/sourcey/symple/blob/master/client/Gruntfile.js))
 
+### [Happy Cog](http://happycog.com)
+
+### [MadGlory](http://madglory.com)
+
 ### [Victoria's Secret](http://www.victoriassecret.com)
 
 ### [Clevertim CRM](http://www.clevertim.com)
-
-### [SitePen](http://sitepen.com/)
-- [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
-- [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
- 
-### [Phaser](http://phaser.io/)
-- [phaser](https://github.com/photonstorm/phaser/) ([Gruntfile](https://github.com/photonstorm/phaser/blob/master/Gruntfile.js))
