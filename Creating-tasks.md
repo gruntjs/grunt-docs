@@ -176,9 +176,10 @@ Tasks can fail if required configuration properties don't exist.
 
 ```javascript
 grunt.registerTask('foo', 'My "foo" task.', function() {
-  // Fail task if "meta.name" config prop is missing.
+  // Fail task if "meta.name" config prop is missing
+  // Format 1: String 
   grunt.config.requires('meta.name');
-  // Also fails if "meta.name" config prop is missing.
+  // or Format 2: Array
   grunt.config.requires(['meta', 'name']);
   // Log... conditionally.
   grunt.log.writeln('This will only log if meta.name is defined in the config.');

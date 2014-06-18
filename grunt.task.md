@@ -89,6 +89,14 @@ See the [creating tasks](Creating-tasks) documentation for more examples of mult
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
 
+### grunt.task.requires
+
+Fail the task if some other task failed or never ran.
+
+```javascript
+grunt.task.requires(taskName);
+```
+
 ### grunt.task.exists
 *Added in 0.4.5*
 

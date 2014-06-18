@@ -2,6 +2,8 @@ This is just a short list of companies and projects that use Grunt.
 If you've used Grunt in a project and would like it listed on this page,
 [please edit this page](https://github.com/gruntjs/grunt-docs/blob/master/Who-uses-Grunt.md).
 
+### [INK](http://ink.sapo.pt)
+
 ### [Adobe](http://www.adobe.com/)
 - [Brackets](http://brackets.io/) ([Gruntfile](https://github.com/adobe/brackets/blob/master/Gruntfile.js))
 - [CSS FilterLab](http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/) ([Gruntfile](https://github.com/adobe/cssfilterlab/blob/master/grunt.js))
@@ -48,9 +50,10 @@ If you've used Grunt in a project and would like it listed on this page,
 ### [LiveChat](http://www.livechatinc.com)
 - [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
 
-### [WordPress](http://wordpress.com/)
-- [WordPress Build Process](
-http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
+### [WordPress](https://wordpress.org/)
+- [WordPress Build Process](https://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/) ([Gruntfile](https://core.trac.wordpress.org/browser/trunk/Gruntfile.js))
+- [bbPress](https://bbpress.org) ([Gruntfile](https://bbpress.trac.wordpress.org/browser/trunk/Gruntfile.js))
+- [BuddyPress](https://buddypress.org) ([Gruntfile](https://buddypress.trac.wordpress.org/browser/trunk/Gruntfile.js))
 
 ### [Walmart](http://www.walmart.com/)
 - [Thorax](https://github.com/walmartlabs/thorax) ([Gruntfile](https://github.com/walmartlabs/thorax/blob/master/Gruntfile.js))
@@ -67,6 +70,13 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 ### [JS Bin](http://jsbin.com/)
 - [Gruntfile](https://github.com/remy/jsbin/blob/master/Gruntfile.js)
 
+### [SitePen](http://sitepen.com/)
+- [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
+- [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
+ 
+### [Phaser](http://phaser.io/)
+- [phaser](https://github.com/photonstorm/phaser/) ([Gruntfile](https://github.com/photonstorm/phaser/blob/master/Gruntfile.js))
+
 ### [BufferApp](https://bufferapp.com)
 
 ### [Shopetti](https://www.shopetti.com)
@@ -75,8 +85,6 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 - [WhisperNote](https://www.consunet.com.au/products/whispernote/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/WhisperNote/Gruntfile.js))
 - [EveryPass](https://www.consunet.com.au/products/everypass/) - ([Gruntfile](https://github.com/Consunet/Apps/blob/master/EveryPass/Gruntfile.js))
 
-### [Happy Cog](http://happycog.com)
-
 ### [Assemble](http://assemble.io/)
 - [Gruntfile](https://github.com/assemble/assemble/blob/master/Gruntfile.js)
  
@@ -84,10 +92,10 @@ http://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/)
 - [Mesh](https://github.com/sourcey/mesh) ([Gruntfile](https://github.com/sourcey/mesh/blob/master/Gruntfile.js))
 - [Symple](https://github.com/sourcey/symple) ([Gruntfile](https://github.com/sourcey/symple/blob/master/client/Gruntfile.js))
 
+### [Happy Cog](http://happycog.com)
+
+### [MadGlory](http://madglory.com)
+
 ### [Victoria's Secret](http://www.victoriassecret.com)
 
 ### [Clevertim CRM](http://www.clevertim.com)
-
-### [SitePen](http://sitepen.com/)
-- [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
-- [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
