@@ -1,10 +1,10 @@
 Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
+Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions.
 
-
-_Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions._
+Before setting up Grunt ensure that your [npm](https://npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
 
 ## Installing the CLI
-**If you're upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
+**Using Grunt 0.3? Please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
@@ -40,6 +40,7 @@ A typical setup will involve adding two files to your project: `package.json` an
 **package.json**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
 
 **Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins. 
+**When this documentation mentions a `Gruntfile` it is talking about a file, which is either a `Gruntfile.js` or a `Gruntfile.coffee`**.
 
 ## package.json
 
