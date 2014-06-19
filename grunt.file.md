@@ -88,9 +88,10 @@ var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If null, the `process` function will receive a Buffer instead of String.
   encoding: encodingName,
-  // The source file contents and file path are passed into this function,
-  // whose return value will be used as the destination file's contents. If
-  // this function returns `false`, the file copy will be aborted.
+  // The source file contents, source file path, and destination file path 
+  // are passed into this function, whose return value will be used as the
+  // destination file's contents. If this function returns `false`, the file
+  // copy will be aborted.
   process: processFunction,
   // These optional globbing patterns will be matched against the filepath
   // (not the filename) using grunt.file.isMatch. If any specified globbing
