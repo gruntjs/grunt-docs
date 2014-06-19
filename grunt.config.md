@@ -1,4 +1,4 @@
-Access project-specific configuration data defined in the Gruntfile.
+Access project-specific configuration data defined in the `Gruntfile`.
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object, and any method marked with a ☆ (white star) is also available inside tasks on the `this` object. Just so you know.
 
