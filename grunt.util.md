@@ -143,8 +143,8 @@ __All external libraries that are listed below are now deprecated.__
 
 Please use __npm__ to manage these external libraries in your project's dependencies.
 
-For example if you want to use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
-use it in your `Gruntfile`: `var _ = require('lodash');`
+For example if you want to use [Lo-Dash](https://npmjs.org/package/lodash), install it first: `npm install lodash`, then
+use it in your `Gruntfile`: `var _ = require('lodash');`.
 
 #### grunt.util._
 *Deprecated*
