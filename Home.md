@@ -22,6 +22,7 @@ Development Version: **master**
 * [[Who uses Grunt]]
 * [[Built with Grunt Badge]]
 * [[Contributing]]
+* [[Grunt Brand Guide]]
 * [[Development Team]]
 
 ### Migration guides
