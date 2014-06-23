@@ -115,7 +115,7 @@ Don’t display these graphics in a way that implies a relationship, affiliation
 
 Don’t use these graphics as part of your own product, business, or service’s name.
 
-Don’t alter these graphics in any way, or combine them with any other graphics, without written consent from MailChimp.
+Don’t alter these graphics in any way, or combine them with any other graphics, without written consent from the Grunt team.
 
 ## Assets
 
