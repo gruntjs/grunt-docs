@@ -5,8 +5,8 @@ We have a few guidelines for using Grunt’s brand resources—please take a mom
 The Grunt Logomark is a badass warthog. We use it as a standalone graphic and in combination with the Wordmark Grunt.
 
 <div class="logomark">
-![ ](img/brand-guide/grunt-wordmark.jpg)
-![ ](img/brand-guide/grunt-no-wordmark.jpg)
+![](img/brand-guide/grunt-wordmark.jpg)
+![](img/brand-guide/grunt-no-wordmark.jpg)
 </div>
 
 ## Wordmark
@@ -20,7 +20,7 @@ The Wordmark must be written in all uppercase ("GRUNT") when being treated graph
 When using the Grunt Logo with other logos and graphic elements, maintain a safety space that equals 150% the size of the square around it.
 
 <div class="safety">
-![ ](img/brand-guide/safety-space.jpg)
+![](img/brand-guide/safety-space.jpg)
 </div>
 
 ## Typography
@@ -38,10 +38,10 @@ For the content in our website we use the original version of Lato. Google hosts
 Grunt is an Open Source Project, but that doesn’t mean you can do whatever the heck you want with our logo. Please follow our guidelines or we will come after you. Thanks. 
 
 <div class="usage">
-![ ](img/brand-guide/dont-1.jpg)
-![ ](img/brand-guide/dont-2.jpg)
-![ ](img/brand-guide/dont-3.jpg)
-![ ](img/brand-guide/dont-4.jpg)
+![](img/brand-guide/dont-1.jpg)
+![](img/brand-guide/dont-2.jpg)
+![](img/brand-guide/dont-3.jpg)
+![](img/brand-guide/dont-4.jpg)
 </div>
 
 ## Brand Colors
