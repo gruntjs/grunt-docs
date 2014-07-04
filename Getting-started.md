@@ -57,8 +57,8 @@ There are a few ways to create a `package.json` file for your project:
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.3.3",
-    "grunt-contrib-uglify": "~0.4.0"
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0"
   }
 }
 ```
