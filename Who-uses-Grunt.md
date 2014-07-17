@@ -104,3 +104,7 @@ If you've used Grunt in a project and would like it listed on this page,
 - [Gruntfile](https://github.com/tmwagency/kickoff/blob/master/Gruntfile.js)
 
 ### [Vodori](http://vodori.com)
+
+### [Jimdo](http://www.jimdo.com/)
+- [angular-spectrum-colorpicker](https://github.com/Jimdo/angular-spectrum-colorpicker) ([Gruntfile](https://github.com/Jimdo/angular-spectrum-colorpicker/blob/master/Gruntfile.js))
+- [angular-directive-seed](https://github.com/Jimdo/angular-directive-seed) ([Gruntfile](https://github.com/Jimdo/angular-directive-seed/blob/master/Gruntfile.js))
