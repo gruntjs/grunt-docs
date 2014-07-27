@@ -4,7 +4,7 @@
 * New logging (https://github.com/cowboy/node-prolog)
   *  A logger to listen to events and output them to the console.  Deals with stderr/stdout, or Grunt itself has this built in.
 * node-task (https://github.com/node-task)
-  * Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  All task output emitted as events.
+  * Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffeescript transpilation + uglify in a single step).  All task output emitted as events.
   * A library for parsing configurations (merge options, template expansion, glob expansion (using lib from item #2) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.
   * A task runner which uses config parsing library from item #3 to execute node-task compatible modules (can be used programmatically, or via cli).  Supports defining "alias" tasks which compile a set of tasks which can be run in parallel  See: http://github.com/gruntjs/grunt
 
