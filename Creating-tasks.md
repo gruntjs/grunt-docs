@@ -206,7 +206,7 @@ Use `process.env` to access the [environment variables](http://en.wikipedia.org/
 Read more about the available command-line options on the [Using the CLI](http://gruntjs.com/using-the-cli) page.
 
 ## Why doesn't my asynchronous task complete?
-Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
+Chances are this is happening because you have forgotten to call the [this.async](http://gruntjs.com/api/inside-tasks#this.async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
 Note that passing `false` to the `done()` function tells Grunt that the task has failed.
 
