@@ -88,7 +88,16 @@ Recursively merges properties of the specified `configObject` into the current p
 ```js
 grunt.config.merge(configObject)
 ```
+You can use this method to append congiguration options, targets, etc., to already defined tasks, for example:
+```js
+grunt.config.merge({
+  watch: {
+    files: ["path/to/files"],
+    tasks: ["task"]
+  }
+});
 
+```
 
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._
