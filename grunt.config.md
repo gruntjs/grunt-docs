@@ -96,7 +96,6 @@ grunt.config.merge({
     tasks: ["task"]
   }
 });
-
 ```
 
 ## Requiring Config Data
