@@ -13,6 +13,7 @@ Development Version: **master**
 * [[Using the CLI]]
 
 ### Advanced
+* [[API]]
 * [[Installing Grunt]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
