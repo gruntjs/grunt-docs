@@ -22,3 +22,7 @@ Only store data files in a .grunt/[npm-module-name]/ directory at the project's 
 By default, the current working directory is set to be the directory that contains the gruntfile. The user can change it using `grunt.file.setBase()` in their gruntfile, but plugins should take care to not change it.
 
 `path.resolve('foo')` can be used to get the absolute path of the filepath 'foo' relative to the `Gruntfile`.
+
+### Creating your task
+
+You might also want to know how to [create your own tasks](http://gruntjs.com/creating-tasks) or take a look at the [API](http://gruntjs.com/api) reference.
