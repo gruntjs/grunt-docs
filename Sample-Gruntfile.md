@@ -1,13 +1,38 @@
-Below we walk through a sample `Gruntfile` which uses five Grunt plugins:
+Below we walk through a sample `Gruntfile`, but if you're looking for a quick example, here's one:
+
+```js
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+    jshint: {
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      options: {
+        globals: {
+          jQuery: true
+        }
+      }
+    },
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint']
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['jshint']);
+
+};
+```
+
+The entire `Gruntfile` is at the bottom of this page, but if you keep reading we'll walk through it a step at a time, using the following five Grunt plugins:
 
 - [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 - [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit)
 - [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)
 - [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
-
-The entire `Gruntfile` is at the bottom of this page, but if you keep reading we'll walk through it a step at a time.
-
 
 The first part is the "wrapper" function, which encapsulates your Grunt configuration.
 
