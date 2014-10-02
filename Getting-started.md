@@ -80,6 +80,8 @@ The same can be done for gruntplugins and other node modules. As seen in the fol
 npm install grunt-contrib-jshint --save-dev
 ```
 
+Checkout the current available gruntplugins to be installed and used on your project at the [plugins](/plugins) page.
+
 Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
