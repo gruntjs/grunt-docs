@@ -74,7 +74,13 @@ For example, this will install the latest version of Grunt in your project folde
 npm install grunt --save-dev
 ```
 
-The same can be done for gruntplugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
+The same can be done for gruntplugins and other node modules. As seen in the following example installing the JSHint task module:
+
+```shell
+npm install grunt-contrib-jshint --save-dev
+```
+
+Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
 The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
