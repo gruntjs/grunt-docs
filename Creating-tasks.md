@@ -218,3 +218,7 @@ grunt.registerTask('asyncme', 'My asynchronous task.', function() {
   doSomethingAsync(done);
 });
 ```
+
+## Extra Reference
+
+Checkout the [API](http://gruntjs.com/api) documentation if you need extra reference to create your tasks.
