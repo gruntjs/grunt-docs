@@ -161,7 +161,7 @@ grunt.registerTask('test', ['jshint', 'qunit']);
 grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
-And here's the finished `Gruntfile.js`:
+And here's the finished `Gruntfile`:
 
 ```javascript
 module.exports = function(grunt) {
