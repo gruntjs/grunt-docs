@@ -1,3 +1,7 @@
+## Installing the CLI
+
+Run `sudo npm install -g grunt-cli`.
+
 The `grunt` command-line interface comes with a series of options. Use `grunt -h` from your terminal to show these options.
 
 ### --help, -h
