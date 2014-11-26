@@ -90,7 +90,7 @@ Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.
 
 ## How do I uninstall or remove unwanted plugins?
 
-At least two ways. One way is to use `npm remove [GRUNT_PLUGIN] --save-dev`, this will remove the plugin from your `package.json` and from `node_modules`. You may also delete the dependencies you don't want from your `package.json` manually and then run `npm prune`.
+At least two ways. One way is to use `npm uninstall [GRUNT_PLUGIN] --save-dev`, this will remove the plugin from your `package.json` and from `node_modules`. You may also delete the dependencies you don't want from your `package.json` manually and then run `npm prune`.
 
 ## Error "Fail to install with npm error: No compatible version found"
 
