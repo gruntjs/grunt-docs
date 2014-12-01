@@ -111,3 +111,6 @@ If you've used Grunt in a project and would like it listed on this page,
 
 ### [Crowdfunder.co.uk](http://www.crowdfunder.co.uk/)
 
+### [Microsoft](http://www.microsoft.com/)
+- [Visual Studio 2015](http://visualstudio.com/free) has native support for Grunt
+- [Visual Studio 2013](http://visualstudio.com/free/) has Grunt support using the free [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708) extension 
