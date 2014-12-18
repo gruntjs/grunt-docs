@@ -3,7 +3,7 @@ Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of 
 
 Before setting up Grunt ensure that your [npm](https://npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
 
-If you already have installed Grunt and is now searching for some quick reference, please checkout our [`Gruntfile` example](/sample-gruntfile) and how to [configure a task](/configuring-tasks).
+If you already have installed Grunt and is now searching for some quick reference, please checkout our [`Gruntfile` example](http://gruntjs.com/sample-gruntfile) and how to [configure a task](http://gruntjs.com/configuring-tasks).
 
 ## Installing the CLI
 **Using Grunt 0.3? Please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
