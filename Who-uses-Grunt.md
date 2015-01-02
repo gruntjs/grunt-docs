@@ -114,3 +114,7 @@ If you've used Grunt in a project and would like it listed on this page,
 ### [Microsoft](http://www.microsoft.com/)
 - [Visual Studio 2015](http://visualstudio.com/free) has native support for Grunt
 - [Visual Studio 2013](http://visualstudio.com/free/) has Grunt support using the free [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708) extension 
+
+### [Spring Source] (http://spring.io)
+- [Spring XD] (http://projects.spring.io/spring-xd/) uses grunt for managing its UI module dependencies 
+([Gruntfile] (https://github.com/spring-projects/spring-xd/blob/9a2520622dc2e88ee8893d1df618d40281dacabf/spring-xd-ui/Gruntfile.js))
