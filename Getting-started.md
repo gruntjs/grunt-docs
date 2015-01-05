@@ -200,9 +200,9 @@ Custom project-specific tasks don't need to be defined in the `Gruntfile`; they 
 * For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
 
 [npm]: https://npmjs.org/
-[devDependencies]: https://npmjs.org/doc/json.html#devDependencies
-[json]: https://npmjs.org/doc/json.html
-[npm init]: https://npmjs.org/doc/init.html
+[devDependencies]: https://docs.npmjs.com/files/package.json#devdependencies
+[json]: https://docs.npmjs.com/files/package.json
+[npm init]: https://docs.npmjs.com/cli/init
 [grunt-init]: Project-Scaffolding
 [tilde version range]: https://npmjs.org/doc/misc/semver.html#Ranges
 [grunt-contrib-uglify]: http://github.com/gruntjs/grunt-contrib-uglify
