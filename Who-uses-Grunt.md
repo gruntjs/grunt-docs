@@ -100,6 +100,8 @@ If you've used Grunt in a project and would like it listed on this page,
 
 ### [Clevertim CRM](http://www.clevertim.com)
 
+### [Olapic](http://www.olapic.com)
+
 ### [Kickoff](http://tmwagency.github.io/kickoff/)
 - [Gruntfile](https://github.com/tmwagency/kickoff/blob/master/Gruntfile.js)
 
