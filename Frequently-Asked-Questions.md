@@ -105,7 +105,7 @@ Make sure you have the latest stable version of [NPM and Node.JS](http://nodejs.
 ## On Windows with Grunt 0.3, why does my JS editor open when I try to run grunt?
 If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
 
-An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
+An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://web.archive.org/web/20140330024520/http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
 
 This is the `DOSKEY` command you'd use:
 
