@@ -1,6 +1,4 @@
-This is just a short list of companies and projects that use Grunt.
-If you've used Grunt in a project and would like it listed on this page,
-[please edit this page](https://github.com/gruntjs/grunt-docs/blob/master/Who-uses-Grunt.md).
+*Not accepting additional entries at the moment*.
 
 ### [INK](http://ink.sapo.pt)
 
