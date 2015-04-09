@@ -184,7 +184,7 @@ grunt.initConfig({
 ```
 
 ### Globbing patterns
-It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
+It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
 
 [node-glob]: https://github.com/isaacs/node-glob
 [minimatch]: https://github.com/isaacs/minimatch
