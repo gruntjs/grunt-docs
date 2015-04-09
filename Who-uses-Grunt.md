@@ -92,6 +92,8 @@
 
 ### [Happy Cog](http://happycog.com)
 
+### [Hitori Inc.](http://hitori-inc.com)
+
 ### [MadGlory](http://madglory.com)
 
 ### [Victoria's Secret](http://www.victoriassecret.com)
