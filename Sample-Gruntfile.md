@@ -38,7 +38,7 @@ The first part is the "wrapper" function, which encapsulates your Grunt configur
 
 ```javascript
 module.exports = function(grunt) {
-}
+};
 ```
 
 Within that function we can initialize our configuration object:
@@ -114,7 +114,7 @@ The JSHint plugin is also very simple to configure:
 ```javascript
 jshint: {
   // define the files to lint
-  files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+  files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
   // configure JSHint (documented at http://www.jshint.com/docs/)
   options: {
   	// more options here if you want to override JSHint defaults
