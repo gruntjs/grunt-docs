@@ -1,7 +1,7 @@
 This document explains how to install specific versions of Grunt and Grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
 
 ## Overview
-Grunt and Grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  This will allow you to install all of your project's dependencies with a single command: `npm install`.  The current stable and development versions of Grunt are always listed on the wiki's [home page](https://github.com/gruntjs/grunt/wiki/).
+Grunt and Grunt plugins should be defined as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) in your project's [package.json](https://docs.npmjs.com/files/package.json).  This will allow you to install all of your project's dependencies with a single command: `npm install`.  The current stable and development versions of Grunt are always listed on the wiki's [home page](https://github.com/gruntjs/grunt/wiki/).
 
 ## Installing a specific version
 If you need a specific version of Grunt or a Grunt plugin, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need.  This will install the specified version, adding it to your package.json devDependencies.
