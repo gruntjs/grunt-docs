@@ -5,7 +5,7 @@ See the [task lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt
 ## The task API
 While a task is running, Grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
 
-Many utility properties and methods are available inside of tasks via the `this` object. 
+Many utility properties and methods are available inside of tasks via the `this` object.
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
 
@@ -20,6 +20,12 @@ If a task list is specified, the new task will be an alias for one or more other
 
 ```javascript
 grunt.task.registerTask(taskName, taskList)
+```
+
+When the optional `description` string is passed it will be displayed when `grunt --help` is run:
+
+```javascript
+grunt.task.registerTask(taskName, description, taskList)
 ```
 
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without any tasks specified:
