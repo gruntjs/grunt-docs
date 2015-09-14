@@ -120,3 +120,6 @@
 ### [Spring Source](http://spring.io)
 - [Spring XD](http://projects.spring.io/spring-xd/) uses grunt for managing its UI module dependencies 
 ([Gruntfile](https://github.com/spring-projects/spring-xd/blob/9a2520622dc2e88ee8893d1df618d40281dacabf/spring-xd-ui/Gruntfile.js))
+
+### [Wire](https://www.wire.com/)
+- [Wire for Web](https://app.wire.com/)
