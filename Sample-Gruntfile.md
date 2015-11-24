@@ -81,7 +81,7 @@ concat: {
 }
 ```
 
-Note how I refer to the `name` property that's in the JSON file. We access this using `pkg.name` as earlier we defined the `pkg` property to be the result of loading the `package.json` file, which is then parsed to a JavaScript object. Grunt has simple template engine to output the values of properties in the configuration object. Here I tell the concat task to concatenate all files that exist within `src/` and end in `.js`.
+Note how I refer to the `name` property that's in the JSON file. We access this using `pkg.name` as earlier we defined the `pkg` property to be the result of loading the `package.json` file, which is then parsed to a JavaScript object. Grunt has a simple template engine to output the values of properties in the configuration object. Here I tell the concat task to concatenate all files that exist within `src/` and end in `.js`.
 
 Now lets configure the uglify plugin, which minifies our JavaScript:
 
