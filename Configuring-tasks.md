@@ -237,7 +237,7 @@ For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documen
 ### Building the files object dynamically
 When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
 
-`expand` Set to `true` to enable the following options:
+`expand` Set to `true` will enable the following options:
 
 * `cwd` All `src` matches are relative to (but don't include) this path.
 * `src` Pattern(s) to match, relative to the `cwd`.
@@ -245,9 +245,7 @@ When you want to process many individual files, a few additional properties may 
 * `ext` Replace any existing extension with this value in generated `dest` paths.
 * `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'` *[Added in 0.4.3]*
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest`
-and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned
-more than once, each `src` which used it will be added to an array of sources for it.
+* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](#the-rename-option)
 
 In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
@@ -284,6 +282,47 @@ grunt.initConfig({
   },
 });
 ```
+
+#### The rename Option
+The `rename` option is unique, as the only valid value for it is a JavaScript function. Although the function returns a string, you cannot simply use a string as a value for `rename` (doing so results in an error: `Property 'rename' of object # is not a function`). In the following example, the `copy` task will create a backup of README.md.
+
+```js
+grunt.initConfig({
+  copy: {
+    backup: {
+      files: [{
+        expand: true,
+        src: ['docs/README.md'],      // The README.md file has been specified for backup
+        rename: function () {         // The value for rename must be a function
+          return 'docs/BACKUP.txt'; // The function must return a string with the complete destination
+        }
+      }]
+    }
+  }
+});
+```
+
+When the function is called, the `dest` and matched `src` path are passed in and can be used for returning the output string. In the following example, files are copied from the `dev` folder to the `dist` folder, and renamed to have the word "beta" removed .
+
+```js
+grunt.initConfig({
+  copy: {
+    production: {
+      files: [{
+        expand: true,
+        cwd: 'dev/',
+        src: ['*'],
+        dest: 'dist/',
+        rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
+          return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
+        }
+      }]
+    }
+  }
+});
+```
+
+If multiple matched `src` paths are renamed to an identical destination (i.e. if two different files get renamed to the same file), each output will be added to an array of sources for it.
 
 ## Templates
 Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more remain.
