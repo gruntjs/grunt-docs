@@ -3,7 +3,7 @@ Template strings can be processed manually using the provided template functions
 ### grunt.template.process
 Process a [Lo-Dash template](http://lodash.com/docs/#template) string. The `template` argument will be processed recursively until there are no more templates to process.
 
-The default data object is the entire config object, but if `options.data` is set, that object will be used instead. The default template delimiters are `<% %>` but if `options.delimiters` is set to a custom delimiter name (set with [`grunt.template.addDelimiters`](#grunt.template.adddelimiters)), those template delimiters will be used instead.
+The default data object is the entire config object, but if `options.data` is set, that object will be used instead. The default template delimiters are `<% %>` but if `options.delimiters` is set to a custom delimiter name (set with [`grunt.template.addDelimiters`](/api/grunt.template#grunt.template.adddelimiters)), those template delimiters will be used instead.
 
 ```js
 grunt.template.process(template [, options])
