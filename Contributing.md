@@ -33,6 +33,24 @@ Choose any of these issues and make sure to comment if you are working on them.
 * grunt-contrib-jasmine - [Enhance logging](https://github.com/gruntjs/grunt-contrib-jasmine/issues/80)
 * grunt-contrib-less [Sourcemaps with multiple src files](https://github.com/gruntjs/grunt-contrib-less/issues/89)
 
+## Publishing a new version
+
+To publish a new version of a `grunt-contrib-*` plugin follow these steps:
+
+* check the plugin GitHub page to make sure it is passing Travis CI.
+* `cd` into the plugin directory.
+* `git pull` the latest changes from the `master` branch.
+* `rm -rf node_modules` remove stale or old node modules.
+* `npm install` to get the latest version of the node modules.
+* run `npm test` and make sure all tests pass locally.
+* bump the version in `package.json`
+* update CHANGELOG.md
+* run `grunt` in the plugin directory. This should generate the new README.
+* commit the changelog, `package.json` and README changes.
+* create a new git tag for the new version. use this format for the tag: `vX.Y.Z`. (such as `v0.1.13`)
+* push changes to `master`, push tag to the plugin repo.
+* Publish to npm: `npm publish .`. If you do not have access to `npm publish` ask one of the core contributors to publish for you. 
+
 # Non-code contributions
 
 If you don't feel like writing code you can still contribute to the project!
