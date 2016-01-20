@@ -183,6 +183,31 @@ grunt.initConfig({
 });
 ```
 
+Another example—which utilizes the [globbing](#Globbing-patterns) and [expand: true](#Building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
+
+```js
+grunt.initConfig({
+  copy: {
+    templates: {
+      files: [{
+        expand: true,
+        cwd: ['templates/css/'],     // Parent folder of original CSS templates
+        src: '**/*.css',             // Collects all `*.css` files within the parent folder (and its subfolders)
+        dest: 'src/css/',            // Stores the collected `*.css` files in your `src/css/` folder
+        filter: function (dest) {    // `dest`, in this instance, is the filepath of each matched `src`
+          var cwd = this.cwd,        // Configures variables (these are documented for your convenience only)
+              src = dest.replace(new RegExp('^' + cwd), '');
+              dest = grunt.task.current.data.files[0].dest;
+          return (!grunt.file.exists(dest + src));    // Copies `src` files ONLY if their destinations are unoccupied
+        }
+      }]
+    }
+  }
+});
+```
+
+Keep in mind the above technique does not account for the [rename property](#Building-the-files-object-dynamically) when checking if the destination exists.
+
 ### Globbing patterns
 It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
 
