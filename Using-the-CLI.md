@@ -1,6 +1,6 @@
 ## Installing the CLI
 
-Run `sudo npm install -g grunt-cli`.
+Run `sudo npm install -g grunt-cli` (Windows users should omit "sudo ", and may need to run the command-line with elevated privileges).
 
 The `grunt` command-line interface comes with a series of options. Use `grunt -h` from your terminal to show these options.
 
