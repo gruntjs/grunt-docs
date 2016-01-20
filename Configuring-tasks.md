@@ -288,17 +288,17 @@ The `rename` option is unique, as the only valid value for it is a JavaScript fu
 
 ```js
 grunt.initConfig({
-    copy: {
-        backup: {
-            files: [{
-                expand: true,
-                src: ['docs/README.md'],      // The README.md file has been specified for backup
-                rename: function () {         // The value for rename must be a function
-                    return 'docs/BACKUP.txt'; // The function must return a string with the complete destination
-                }
-            }]
+  copy: {
+    backup: {
+      files: [{
+        expand: true,
+        src: ['docs/README.md'],      // The README.md file has been specified for backup
+        rename: function () {         // The value for rename must be a function
+          return 'docs/BACKUP.txt'; // The function must return a string with the complete destination
         }
+      }]
     }
+  }
 });
 ```
 
@@ -306,19 +306,19 @@ When the function is called, the `dest` and matched `src` path are passed in and
 
 ```js
 grunt.initConfig({
-		copy: {
-				production: {
-						files: [{
-								expand: true,
-								cwd: 'dev/',
-								src: ['*'],
-								dest: 'dist/',
-								rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
-										return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
-								}
-						}]
-				}
-		}
+  copy: {
+    production: {
+      files: [{
+        expand: true,
+        cwd: 'dev/',
+        src: ['*'],
+        dest: 'dist/',
+        rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
+          return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
+        }
+      }]
+    }
+  }
 });
 ```
 
