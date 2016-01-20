@@ -306,19 +306,19 @@ When the function is called, the `dest` and matched `src` path are passed in and
 
 ```js
 grunt.initConfig({
-    copy: {
-        production: {
-            files: [{
-                expand: true,
-                cwd: 'dev/',
-                src: ['*'],
-                dest: 'dist/',
-                rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
-                    return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
-                }
-            }]
-        }
-    }
+		copy: {
+				production: {
+						files: [{
+								expand: true,
+								cwd: 'dev/',
+								src: ['*'],
+								dest: 'dist/',
+								rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
+										return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
+								}
+						}]
+				}
+		}
 });
 ```
 
