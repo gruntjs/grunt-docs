@@ -183,7 +183,7 @@ grunt.initConfig({
 });
 ```
 
-Another example—which utilizes the [globbing](#Globbing-patterns) and [expand: true](#Building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
+Another example—which utilizes the [globbing](#globbing-patterns) and [expand: true](#building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
 
 ```js
 grunt.initConfig({
@@ -206,7 +206,7 @@ grunt.initConfig({
 });
 ```
 
-Keep in mind the above technique does not account for the [rename property](#Building-the-files-object-dynamically) when checking if the destination exists.
+Keep in mind the above technique does not account for the [rename property](#building-the-files-object-dynamically) when checking if the destination exists.
 
 ### Globbing patterns
 It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
