@@ -70,7 +70,7 @@ Because most tasks perform file operations, Grunt has powerful abstractions for 
 
 All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
+* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](#custom-filter-function)
 * `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
 * `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
@@ -183,6 +183,31 @@ grunt.initConfig({
 });
 ```
 
+Another example—which utilizes the [globbing](#globbing-patterns) and [expand: true](#building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
+
+```js
+grunt.initConfig({
+  copy: {
+    templates: {
+      files: [{
+        expand: true,
+        cwd: ['templates/css/'],     // Parent folder of original CSS templates
+        src: '**/*.css',             // Collects all `*.css` files within the parent folder (and its subfolders)
+        dest: 'src/css/',            // Stores the collected `*.css` files in your `src/css/` folder
+        filter: function (dest) {    // `dest`, in this instance, is the filepath of each matched `src`
+          var cwd = this.cwd,        // Configures variables (these are documented for your convenience only)
+              src = dest.replace(new RegExp('^' + cwd), '');
+              dest = grunt.task.current.data.files[0].dest;
+          return (!grunt.file.exists(dest + src));    // Copies `src` files ONLY if their destinations are unoccupied
+        }
+      }]
+    }
+  }
+});
+```
+
+Keep in mind the above technique does not account for the [rename property](#building-the-files-object-dynamically) when checking if the destination exists.
+
 ### Globbing patterns
 It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
 
@@ -237,7 +262,7 @@ For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documen
 ### Building the files object dynamically
 When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
 
-`expand` Set to `true` will enable the following options:
+`expand` Set to `true` will enable the following properties:
 
 * `cwd` All `src` matches are relative to (but don't include) this path.
 * `src` Pattern(s) to match, relative to the `cwd`.
@@ -245,7 +270,7 @@ When you want to process many individual files, a few additional properties may 
 * `ext` Replace any existing extension with this value in generated `dest` paths.
 * `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'` *[Added in 0.4.3]*
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](#the-rename-option)
+* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](#the-rename-property)
 
 In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
@@ -283,8 +308,8 @@ grunt.initConfig({
 });
 ```
 
-#### The rename Option
-The `rename` option is unique, as the only valid value for it is a JavaScript function. Although the function returns a string, you cannot simply use a string as a value for `rename` (doing so results in an error: `Property 'rename' of object # is not a function`). In the following example, the `copy` task will create a backup of README.md.
+#### The rename Property
+The `rename` property is unique, as the only valid value for it is a JavaScript function. Although the function returns a string, you cannot simply use a string as a value for `rename` (doing so results in an error: `Property 'rename' of object # is not a function`). In the following example, the `copy` task will create a backup of README.md.
 
 ```js
 grunt.initConfig({
@@ -292,8 +317,8 @@ grunt.initConfig({
     backup: {
       files: [{
         expand: true,
-        src: ['docs/README.md'],      // The README.md file has been specified for backup
-        rename: function () {         // The value for rename must be a function
+        src: ['docs/README.md'],    // The README.md file has been specified for backup
+        rename: function () {       // The value for rename must be a function
           return 'docs/BACKUP.txt'; // The function must return a string with the complete destination
         }
       }]
@@ -313,7 +338,7 @@ grunt.initConfig({
         cwd: 'dev/',
         src: ['*'],
         dest: 'dist/',
-        rename: function (dest, src) {            // The `dest` and `src` values can be passed into the function
+        rename: function (dest, src) {          // The `dest` and `src` values can be passed into the function
           return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
         }
       }]
