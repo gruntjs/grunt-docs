@@ -169,6 +169,8 @@ grunt.registerTask('bar', 'My "bar" task.', function() {
 // Usage:
 // grunt foo bar
 //   doesn't log, because foo failed.
+//   ***Note: This is an example of space-separated sequential commands,
+//   (similar to executing two lines of code: `grunt foo` then `grunt bar`)
 // grunt bar
 //   doesn't log, because foo never ran.
 ```
