@@ -114,7 +114,7 @@ grunt.registerTask('foo', 'My "foo" task.', function(a, b) {
 // Usage:
 // grunt foo
 //   logs: "foo", undefined, undefined
-// grunt foo foo:bar
+// grunt foo:bar
 //   logs: "foo", "bar", undefined
 // grunt foo:bar:baz
 //   logs: "foo", "bar", "baz"
