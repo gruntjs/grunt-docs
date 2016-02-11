@@ -70,7 +70,7 @@ Because most tasks perform file operations, Grunt has powerful abstractions for 
 
 All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](#custom-filter-function)
+* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
 * `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
 * `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
@@ -183,7 +183,7 @@ grunt.initConfig({
 });
 ```
 
-Another example—which utilizes the [globbing](#globbing-patterns) and [expand: true](#building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
+Another example—which utilizes the [globbing](configuring-tasks#globbing-patterns) and [expand: true](configuring-tasks#building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
 
 ```js
 grunt.initConfig({
@@ -206,7 +206,7 @@ grunt.initConfig({
 });
 ```
 
-Keep in mind the above technique does not account for the [rename property](#building-the-files-object-dynamically) when checking if the destination exists.
+Keep in mind the above technique does not account for the [rename property](configuring-tasks#building-the-files-object-dynamically) when checking if the destination exists.
 
 ### Globbing patterns
 It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
@@ -270,7 +270,7 @@ When you want to process many individual files, a few additional properties may 
 * `ext` Replace any existing extension with this value in generated `dest` paths.
 * `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'` *[Added in 0.4.3]*
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](#the-rename-property)
+* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](configuring-tasks#the-rename-property)
 
 In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
