@@ -112,8 +112,9 @@ grunt.registerTask('foo', 'My "foo" task.', function(a, b) {
 });
 
 // Usage:
-// grunt foo foo:bar
+// grunt foo
 //   logs: "foo", undefined, undefined
+// grunt foo:bar
 //   logs: "foo", "bar", undefined
 // grunt foo:bar:baz
 //   logs: "foo", "bar", "baz"
@@ -168,6 +169,8 @@ grunt.registerTask('bar', 'My "bar" task.', function() {
 // Usage:
 // grunt foo bar
 //   doesn't log, because foo failed.
+//   ***Note: This is an example of space-separated sequential commands,
+//   (similar to executing two lines of code: `grunt foo` then `grunt bar`)
 // grunt bar
 //   doesn't log, because foo never ran.
 ```
