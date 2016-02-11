@@ -5,7 +5,8 @@ There are a number of Grunt projects.
 * [gruntjs.com](https://github.com/gruntjs/gruntjs.com) - the gruntjs.com website
 * [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all Grunt "contrib" plugins
 
-In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs).
+In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs). Each repository has its own maintainers, you can easily find the maintainers 
+by looking at recent commits and pushes. Just create an issue in the repository that interests you and `@mention` one of the maintainers to get started. 
 
 ##  Contributors License Agreement
 
@@ -80,7 +81,7 @@ Try to [reduce your code](http://www.webkit.org/quality/reduction.html) to the b
 If we can't reproduce the issue, we can't fix it. Please list the exact steps required to reproduce the issue. Include versions of your OS, Node.js, grunt, etc. Include relevant logs or sample code.
 
 ## Discussing grunt
-Join the [freenode](http://freenode.net/) IRC #grunt channel. We've got a bot and everything.
+Join the [freenode](http://freenode.net/): IRC #grunt channel for general discussion or #grunt-dev for core and plugin development discussion. We've got a bot and everything.
 
 _No private messages, please._
 
