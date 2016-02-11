@@ -20,9 +20,9 @@ If you need an HTML version, we've got you covered.
 
 As you can see, the "Built with Grunt" badge is modern, stylish, and has been designed to fit nicely next to all your project's other mini-badges. You can put it first, last, or anywhere in the middle. Have fun!
 
-[![NPM version](https://badge.fury.io/js/grunt.png)](http://badge.fury.io/)
-[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_100.png)](https://coveralls.io/)
-[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.png?branch=master)](http://travis-ci.org/)
+[![NPM version](https://badge.fury.io/js/grunt.svg)](http://badge.fury.io/)
+[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_100.svg)](https://coveralls.io/)
+[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.svg?branch=master)](http://travis-ci.org/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 ## Shout-outs
