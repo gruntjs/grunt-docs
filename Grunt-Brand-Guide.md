@@ -77,7 +77,7 @@ These are Grunt's brand colors. You can copy the HEX codes below or the Pantone
 
 ## Promotion
 
-Every Open Source Project benefits from the promotion their users make, and Grunt is not an exception. Want to share the project with the world? are you using Grunt in your project and want to brag about it? Here are a few options for you:
+Every Open Source Project benefits from the promotion of its users, and Grunt is no exception. Are you using Grunt in your project and want to brag about it? Want to share the Grunt project with the world? Here are a few suggestions for you:
 
 ## Twitter
 
@@ -85,11 +85,11 @@ The word “Grunt” might be too generic for Twitter, so use the hashtag #Grunt
 
 ## [Badges](/built-with-grunt-badge)
 
-Do you use Grunt in a project and want to proudly display that in your project README or on your project website? Now you can with the "Built with Grunt" badge!
+Do you use Grunt in a project and want to proudly display that in your project's README, or on your project's website? Now you can with the official "Built with Grunt" badge!
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
-## Using the Badge
+### Using the Badge
 
 Just copy the following Markdown code snippet and paste it right underneath the headline in your project README. You can also put it on your project website homepage or footer.
 
@@ -103,7 +103,7 @@ If you need an HTML version, we've got you covered.
 <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt"></a>
 ```
 
-## For example...
+### For example...
 
 As you can see, the "Built with Grunt" badge is modern, stylish, and has been designed to fit nicely next to all your project's other mini-badges. You can put it first, last, or anywhere in the middle. Have fun!
 
