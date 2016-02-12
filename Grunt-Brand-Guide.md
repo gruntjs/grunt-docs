@@ -122,6 +122,8 @@ Don’t use these graphics as part of your own product, business, or service’s
 
 Don’t alter these graphics in any way, or combine them with any other graphics, without written consent from the Grunt team.
 
+If you wish to use any Grunt graphics beyond the scope of this document, apply by [creating an issue ticket](https://github.com/gruntjs/gruntjs.com/issues).
+
 ## Assets
 
 <a class="button" href="#">Download the assets</a>
