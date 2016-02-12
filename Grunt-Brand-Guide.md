@@ -122,7 +122,7 @@ Don’t use these graphics as part of your own product, business, or service’s
 
 Don’t alter these graphics in any way, or combine them with any other graphics, without written consent from the Grunt team.
 
-If you wish to use any Grunt graphics beyond the scope of this document, apply by [creating an issue ticket](https://github.com/gruntjs/gruntjs.com/issues).
+If you wish to use any Grunt graphics beyond the scope of this document, apply by [creating an issue ticket](https://github.com/gruntjs/gruntjs.com/issues) or sending us an email ([info@gruntjs.com](info@gruntjs.com)).
 
 ## Assets
 
@@ -140,9 +140,8 @@ If you wish to use any Grunt graphics beyond the scope of this document, apply b
 <a class="button" href="#">JPG (300dpi)</a>
 <a class="button" href="#">PNG</a>
 
-## Other things 
+## Contact Us
 
-If something is not covered here, or you have any question, please let us know and we can help you evaluate the way your are using this branguide.
-
-[info@gruntjs.com](info@gruntjs.com)
-
+If something is not covered here, or you have any question, please let us know, as it will help us to improve this brand guide. You can reach us in the following ways:
+* Create an [issue ticket](https://github.com/gruntjs/gruntjs.com/issues)
+* Send us an email ([info@gruntjs.com](info@gruntjs.com))
