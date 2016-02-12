@@ -18,8 +18,8 @@ However, when referring to Grunt in a sentence, the Grunt wordmark should be wri
 ## Safety space
 
 When using the Grunt Logo with other logos or graphic elements, ensure a 'safety space' is surrounding the Grunt logo:
-* 25% of the logo's width should be spaced to the left and right
-* 25% of the logo's height should be spaced above and below
+* 25% of the logo's width should be padded to the left and right
+* 25% of the logo's height should be padded above and below
 
 In other words, the Grunt logo and its safety space should have a size that's 150% of the the logo itself.
 
