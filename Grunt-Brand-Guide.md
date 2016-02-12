@@ -29,13 +29,13 @@ In other words, the Grunt logo and its safety space should have a size that's 15
 
 ## Typography
 
-We use a slightly modified version of Lato in our Logo, yes it’s is open source and we can do that, deal with it. 
+When using the Grunt wordmark graphically (and in all-caps), please use the open source font "Lato".
 
-Lato was created by [Łukasz Dziedzic](https://plus.google.com/106163021290874968147/about)
-
-For the content in our website we use the original version of Lato. Google hosts a copy of this font. You can download here:
+Lato was created by [Łukasz Dziedzic](https://plus.google.com/106163021290874968147/about), and Google hosts a copy of this font. You can download here:
 
 <a href="https://www.google.com/fonts/specimen/Lato" class="button">Lato Font</a>
+
+Whilst we use the original Lato font on the Grunt website, we've slightly modified the font in the wordmarked logo.
 
 ## Usage
 
