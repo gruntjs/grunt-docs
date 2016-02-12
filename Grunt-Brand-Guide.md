@@ -17,7 +17,11 @@ However, when referring to Grunt in a sentence, the Grunt wordmark should be wri
 
 ## Safety space
 
-When using the Grunt Logo with other logos and graphic elements, maintain a safety space that equals 150% the size of the square around it.
+When using the Grunt Logo with other logos or graphic elements, ensure a 'safety space' is surrounding the Grunt logo:
+* 25% of the logo's width should be spaced to the left and right
+* 25% of the logo's height should be spaced above and below
+
+In other words, the Grunt logo and its safety space should have a size that's 150% of the the logo itself.
 
 <div class="safety">
 ![From the logo's dimensions, there should be 25% padding surrounding the Grunt logo](https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/safety-space.jpg)
