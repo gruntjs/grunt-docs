@@ -5,8 +5,8 @@ We have a few guidelines for using Grunt’s brand resources—please take a mom
 The Grunt Logomark is a badass warthog. We use it as a standalone graphic and in combination with the Wordmark Grunt.
 
 <div class="logomark">
-![Grunt warthog logo with "GRUNT" caption](https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-wordmark.jpg)
 ![Grunt warthog logo](https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-no-wordmark.jpg)
+![Wordmark Grunt warthog logo with "GRUNT" caption](https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-wordmark.jpg)
 </div>
 
 ## Wordmark
