@@ -11,9 +11,9 @@ The Grunt Logomark is a badass warthog. We use it as a standalone graphic and in
 
 ## Wordmark
 
-Grunt's Wordmark is "Grunt". When used in a sentence, the Wordmark should always appear with a capitalized "G", lowercase "runt". 
+When the name "Grunt" is written stand-alone, or being treated graphically, the Grunt wordmark should be written in uppercase (i.e. GRUNT).
 
-The Wordmark must be written in all uppercase ("GRUNT") when being treated graphically, such as when the brand name appears with the Grunt Logo Mark.
+However, when referring to Grunt in a sentence, the Grunt wordmark should be written as a proper-noun, capitalizing only the first letter (e.g. "We use Grunt to assemble our project!").
 
 ## Safety space
 
