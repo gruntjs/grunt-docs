@@ -39,7 +39,7 @@ Whilst we use the original Lato font on the Grunt website, we've slightly modifi
 
 ## Usage
 
-Grunt is an Open Source Project, but that doesn’t mean you can do whatever the heck you want with our logo. Please follow our guidelines or we will come after you. Thanks. 
+Grunt is an Open Source Project, and whilst you're free to use our logo, we ask that you respect our guidelines. Although you might have the best intentions, we don't want you to alter the official Grunt logo. Here are some examples of logo usage that we do NOT support:
 
 <div class="usage">
 ![Don't add embellishments to the Grunt logo](https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-1.jpg)
