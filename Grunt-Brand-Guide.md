@@ -142,6 +142,6 @@ If you wish to use any Grunt graphics beyond the scope of this document, apply b
 
 ## Contact Us
 
-If something is not covered here, or you have any question, please let us know, as it will help us to improve this brand guide. You can reach us in the following ways:
+If something is not covered here, or you have any questions, please let us know, as it will help us to improve this brand guide. You can reach us in the following ways:
 * Create an [issue ticket](https://github.com/gruntjs/gruntjs.com/issues)
 * Send us an email ([info@gruntjs.com](info@gruntjs.com))
