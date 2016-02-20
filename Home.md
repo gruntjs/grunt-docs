@@ -27,6 +27,7 @@ Development Version: **master**
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]
+* [[Upgrading from 0.4 to 1.0]]
 
 ## API
 * [[grunt]]
