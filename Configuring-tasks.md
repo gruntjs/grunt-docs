@@ -68,7 +68,7 @@ grunt.initConfig({
 ## Files
 Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
 
-All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
+All files formats support `src` and `dest` but the [Compact](configuring-tasks#compact-format) and [Files Array](configuring-tasks#files-array-format) formats support a few additional properties:
 
 * `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
 * `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
@@ -260,7 +260,7 @@ For example:
 For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
 
 ### Building the files object dynamically
-When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
+When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both [Compact](configuring-tasks#compact-format) and [Files Array](configuring-tasks#files-array-format) mapping formats.
 
 `expand` Set to `true` will enable the following properties:
 
