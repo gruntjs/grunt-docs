@@ -77,6 +77,29 @@ All files formats support `src` and `dest` but the "Compact" and "Files Array" f
 * `expand` Process a dynamic src-dest file mapping, see ["Building the files object dynamically"](configuring-tasks#building-the-files-object-dynamically) for more information.
 * Other properties will be passed into the underlying libs as matching options. See the [node-glob][] and [minimatch][] documentation for more options.
 
+### Difference Between Grunt and Task Options
+Most tasks perform file operations, so Grunt provides a built-in infrastructure to retrieve the files a task should process. The advantage is that this logic doesn't have to be implemented again by tasks authors. To allow a user to specify these files, Grunt provides options such as `nonull` and `filter`.
+
+In addition to the files to work on, each task has its own specific needs. A task author may want to allow its user to configure some options to override the default behavior. These task-specific options shall not be confused with the Grunt options described before.
+
+To further clarify this difference, let's see an example that uses [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint):
+
+```js
+grunt.initConfig({
+  jshint: {
+    ignore_warning: {
+      options: {
+        '-W015': true,
+      },
+      src: 'js/**',
+      filter: 'isFile'
+    }
+  }
+});
+```
+
+This configuration employs the Grunt options `src` and `filter` to specify the files to process. It also uses the grunt-contrib-jshint task-specific option `-W015` to ignore a specific warning (the one having code `W015`).
+
 ### Compact Format
 This form allows a single **src-dest** (source-destination) file mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. This format also supports additional properties per src-dest file mapping.
 
