@@ -73,7 +73,7 @@ All files formats support `src` and `dest` but the "Compact" and "Files Array" f
 * `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
 * `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
-* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
+* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, `a?b` would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
 * `expand` Process a dynamic src-dest file mapping, see ["Building the files object dynamically"](configuring-tasks#building-the-files-object-dynamically) for more information.
 * Other properties will be passed into the underlying libs as matching options. See the [node-glob][] and [minimatch][] documentation for more options.
 
