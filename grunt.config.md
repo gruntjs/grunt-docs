@@ -83,7 +83,7 @@ grunt.config.escape(propString)
 ### grunt.config.merge
 *Added in 0.4.5*
 
-Recursively merges properties of the specified `configObject` into the current project configuration.
+Recursively merges properties of the specified `configObject` into the current project configuration. Array and plain object properties are merged recursively while other value types are overridden.
 
 ```js
 grunt.config.merge(configObject)
@@ -97,6 +97,34 @@ grunt.config.merge({
   }
 });
 ```
+
+Array values are merged based on their index. Consider the following code:
+
+```js
+grunt.initConfig({
+  jshint: {
+    files: ['Gruntfile.js', 'src/**/*.js'],
+  }
+);
+
+var config = {
+  jshint: {
+    files: ['hello.js'],
+  }
+};
+
+grunt.config.merge(config);
+```
+
+It'll result in the configuration shown below:
+
+```js
+jshint: {
+  files: ['hello.js', 'src/**/*.js'],
+}
+```
+
+In conclusion, the first value of the `files` array defined in the `config` variable (`hello.js`) overriddes the first value specified in the `initConfig` configuration call (`Gruntfile.js`).
 
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._
