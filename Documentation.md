@@ -13,3 +13,32 @@ Grunt helps you ship better projects by automating many tasks. If you feel grate
 ## Help and support
 
 Do you feel lost? We got you covered. Our dedicated [F.A.Q. page](http://gruntjs.com/frequently-asked-questions) should give the answers you need. If you can't find what you're looking for, you can search for more support in our [Help Resources page](http://gruntjs.com/help-resources). In addition, our community will try to assist you in our [#grunt channel on irc.freenode.net](http://webchat.freenode.net/?channels=grunt).
+
+## Where to go next?
+
+Here's a summary of the documentation pages you can find on this website:
+
+<div class="row-fluid">
+  <div class="span6">
+    <h3>Documentation</h3>
+
+    <ul>
+      <li><a href="http://gruntjs.com/getting-started">Getting Started</a></li>
+      <li><a href="http://gruntjs.com/configuring-tasks">Configuring Tasks</a></li>
+      <li><a href="http://gruntjs.com/sample-gruntfile">Sample Gruntfile</a></li>
+      <li><a href="http://gruntjs.com/creating-tasks">Creating Tasks</a></li>
+      <li><a href="http://gruntjs.com/creating-plugins">Creating Plugins</a></li>
+      <li><a href="http://gruntjs.com/using-the-cli">Using the CLI</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Advanced</h3>
+
+    <ul>
+      <li><a href="http://gruntjs.com/api">API</a></li>
+      <li><a href="http://gruntjs.com/installing-grunt">Installing Grunt</a></li>
+      <li><a href="http://gruntjs.com/frequently-asked-questions">Frequently Asked Questions</a></li>
+      <li><a href="http://gruntjs.com/project-scaffolding">Project Scaffolding</a></li>
+    <ul>
+  </div>
+</div>
