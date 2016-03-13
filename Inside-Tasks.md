@@ -122,7 +122,7 @@ this.files.forEach(function(file) {
 _If you need the original file object properties, they are available on each individual file object under the `orig` property, but there is no known use-case for accessing the original properties._
 
 ### this.filesSrc
-In a multi task, all `src` files files specified via any [file format](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array instead of `this.files`.
+In a multi task, all `src` files specified via any [file format](configuring-tasks#files) are reduced to a single array. If your task is "read only" and doesn't care about destination filepaths, use this array instead of `this.files`.
 
 This example shows how a simple "lint" task might use the `this.filesSrc` property:
 

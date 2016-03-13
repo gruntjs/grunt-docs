@@ -1,4 +1,4 @@
-Access project-specific configuration data defined in the Gruntfile.
+Access project-specific configuration data defined in the `Gruntfile`.
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object, and any method marked with a ☆ (white star) is also available inside tasks on the `this` object. Just so you know.
 
@@ -79,6 +79,52 @@ Escape `.` dots in the given `propString`. This should be used for property name
 ```js
 grunt.config.escape(propString)
 ```
+
+### grunt.config.merge
+*Added in 0.4.5*
+
+Recursively merges properties of the specified `configObject` into the current project configuration. Array and plain object properties are merged recursively while other value types are overridden.
+
+```js
+grunt.config.merge(configObject)
+```
+You can use this method to append configuration options, targets, etc., to already defined tasks, for example:
+```js
+grunt.config.merge({
+  watch: {
+    files: ["path/to/files"],
+    tasks: ["task"]
+  }
+});
+```
+
+Array values are merged based on their index. Consider the following code:
+
+```js
+grunt.initConfig({
+  jshint: {
+    files: ['Gruntfile.js', 'src/**/*.js'],
+  }
+);
+
+var config = {
+  jshint: {
+    files: ['hello.js'],
+  }
+};
+
+grunt.config.merge(config);
+```
+
+It'll result in the configuration shown below:
+
+```js
+jshint: {
+  files: ['hello.js', 'src/**/*.js'],
+}
+```
+
+In conclusion, the first value of the `files` array defined in the `config` variable (`hello.js`) overriddes the first value specified in the `initConfig` configuration call (`Gruntfile.js`).
 
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._

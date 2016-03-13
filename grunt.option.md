@@ -7,10 +7,10 @@ An example `Gruntfile` to utilize the `target` option could be:
 ```javascript
 grunt.initConfig({
   compass: {
-   dev: {
-     options: {
-       /* ... */
-       outputStyle: 'expanded'
+    dev: {
+      options: {
+        /* ... */
+        outputStyle: 'expanded'
       },
     },
     staging: {

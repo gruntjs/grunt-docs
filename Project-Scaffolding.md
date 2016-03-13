@@ -1,5 +1,5 @@
 ## grunt-init
-Grunt-init is a scaffolding tool used to automate project creation. It will build an entire directory structure based on the current environment and the answers to a few questions. The exact files and contents created depend on the template chosen along with the answers to the questions asked.
+Grunt-init is a scaffolding tool used to automate project creation. It will build an entire directory structure based on current environment and answers to some questions. The exact files and contents created depend on the template chosen along with the answers to the questions asked.
 
 _Note: This standalone utility used to be built-in to Grunt as the "init" task. See the Grunt [Upgrading from 0.3 to 0.4](http://gruntjs.com/upgrading-from-0.3-to-0.4) guide for more information about this change._
 
@@ -326,7 +326,7 @@ A public URL to the project's home page. Will default to the github url if a git
 If a jQuery project, the version of jQuery the project requires. Must be a valid semantic version range descriptor.
 
 ### licenses
-The license(s) for the project. Multiple licenses are separated by spaces. The licenses built-in are: `MIT`, `MPL-2.0`, `GPL-2.0`, and `Apache-2.0`. Defaults to `MIT`. Add custom licenses with [init.addLicenseFiles](#initaddlicensefiles).
+The license(s) for the project. Multiple licenses are separated by spaces. The licenses built-in are: `MIT`, `MPL-2.0`, `GPL-2.0`, and `Apache-2.0`. Defaults to `MIT`. Add custom licenses with [init.addLicenseFiles](project-scaffolding#init.addlicensefiles).
 
 ### main
 The primary entry point of the project. Defaults to the project name within the `lib` folder.

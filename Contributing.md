@@ -5,7 +5,19 @@ There are a number of Grunt projects.
 * [gruntjs.com](https://github.com/gruntjs/gruntjs.com) - the gruntjs.com website
 * [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all Grunt "contrib" plugins
 
-In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs).
+In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs). Each repository has its own maintainers, you can easily find the maintainers 
+by looking at recent commits and pushes. Just create an issue in the repository that interests you and `@mention` one of the maintainers to get started. 
+
+##  Contributors License Agreement
+
+Most forms of contribution aside from providing support to other users requires that you **[sign and submit](http://dojofoundation.org/about/cla)** a Contributors License Agreement (or "CLA" for short) with the Dojo Foundation.
+
+
+In summary, the CLA asserts that when you donate fixes or documentation, you both own the code that you're submitting and that the Dojo Foundation can in turn license that code to other people.
+
+Sending in a CLA is a one-time thing, and once it's done, you're in the clear to start contributing to all Dojo Foundation projects! To be effective, though, you need to know a little bit about how contributors and Committers coordinate their work, so getting involved and asking questions should be your first step.
+
+For more on CLAs, read [Alex Russell's Why Do I Need to Sign This?](http://alex.dojotoolkit.org/2008/06/why-do-i-need-to-sign-this/).
 
 ## Want to contribute?
 
@@ -22,13 +34,31 @@ Choose any of these issues and make sure to comment if you are working on them.
 * grunt-contrib-jasmine - [Enhance logging](https://github.com/gruntjs/grunt-contrib-jasmine/issues/80)
 * grunt-contrib-less [Sourcemaps with multiple src files](https://github.com/gruntjs/grunt-contrib-less/issues/89)
 
+## Publishing a new version
+
+To publish a new version of a `grunt-contrib-*` plugin follow these steps:
+
+* check the plugin GitHub page to make sure it is passing Travis CI.
+* `cd` into the plugin directory.
+* `git pull` the latest changes from the `master` branch.
+* `rm -rf node_modules` remove stale or old node modules.
+* `npm install` to get the latest version of the node modules.
+* run `npm test` and make sure all tests pass locally.
+* bump the version in `package.json`
+* update CHANGELOG.md
+* run `grunt` in the plugin directory. This should generate the new README.
+* commit the changelog, `package.json` and README changes.
+* create a new git tag for the new version. use this format for the tag: `vX.Y.Z`. (such as `v0.1.13`)
+* push changes to `master`, push tag to the plugin repo.
+* Publish to npm: `npm publish .`. If you do not have access to `npm publish` ask one of the core contributors to publish for you. 
+
 # Non-code contributions
 
-If you don't feel like writing code you can still contribute to the project! 
+If you don't feel like writing code you can still contribute to the project!
 
 * You may submit updates and improvements to the [documentation](https://github.com/gruntjs/grunt-docs).
 * Submit articles and guides which are also part of the [documentation](https://github.com/gruntjs/grunt-docs).
-* Help Grunt user by answering questions on [StackOverflow](http://stackoverflow.com/questions/tagged/gruntjs), [IRC](http://gruntjs.com/help-resources#irc) and [GitHub](https://github.com/organizations/gruntjs/dashboard/issues/repos?direction=asc&sort=created&state=open).
+* Help Grunt user by answering questions on [StackOverflow](http://stackoverflow.com/questions/tagged/gruntjs), [IRC](http://gruntjs.com/help-resources#irc) and [GitHub](https://github.com/search?q=user%3Agruntjs&state=open&type=Issues&utf8=%E2%9C%93).
 
 ## Filing issues
 If something isn't working like you think it should, please read [the documentation](https://github.com/gruntjs/grunt/wiki), especially the [[Getting Started]] guide. If you'd like to chat with someone, [[pop into IRC|contributing#discussing-grunt]] discussing-grunt and ask your question there.
@@ -51,7 +81,7 @@ Try to [reduce your code](http://www.webkit.org/quality/reduction.html) to the b
 If we can't reproduce the issue, we can't fix it. Please list the exact steps required to reproduce the issue. Include versions of your OS, Node.js, grunt, etc. Include relevant logs or sample code.
 
 ## Discussing grunt
-Join the [freenode](http://freenode.net/) IRC #grunt channel. We've got a bot and everything.
+Join the [freenode](http://freenode.net/): IRC #grunt channel for general discussion or #grunt-dev for core and plugin development discussion. We've got a bot and everything.
 
 _No private messages, please._
 
