@@ -6,7 +6,7 @@ The first step to using an existing Grunt plugin is to install it.Grunt plugins 
 
 `npm install --save-dev grunt-contrib-uglify`
 
-This will install the Grunt plugin _"grunt-contrib-uglify"_ locally into the `node_modules` folder (cf. [npm folders](https://npmjs.org/doc/folders.html)).
+This will install the Grunt plugin _"grunt-contrib-uglify"_ locally into the `node_modules` folder (cf. [npm folders](https://docs.npmjs.com/files/folders)).
 Plugins must be installed locally to avoid version conflicts when working with multiple projects.
 
 Specifying `--save-dev` as option automatically adds this Grunt plugin to the _"devDependency"_ section in the `package.json` file. This file lists all node dependencies of a project.

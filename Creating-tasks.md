@@ -26,7 +26,7 @@ When a multi task is run, Grunt looks for a property of the same name in the Gru
 
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask), Grunt will look for a property with the _new_ task name in the config object.
 
-Most of the contrib tasks, including the [grunt-contrib-jshint plugin jshint task](https://github.com/gruntjs/grunt-contrib-jshint), [concat task](https://github.com/gruntjs/grunt-contrib-concat) and [grunt-contrib-concat plugin concat task](https://github.com/gruntjs/grunt-contrib-concat) are multi tasks.
+Most of the contrib tasks, including the [grunt-contrib-jshint plugin jshint task](https://github.com/gruntjs/grunt-contrib-jshint#jshint-task) and [grunt-contrib-concat plugin concat task](https://github.com/gruntjs/grunt-contrib-concat#concat-task) are multi tasks.
 
 ```javascript
 grunt.registerMultiTask(taskName, [description, ] taskFunction)
@@ -112,8 +112,9 @@ grunt.registerTask('foo', 'My "foo" task.', function(a, b) {
 });
 
 // Usage:
-// grunt foo foo:bar
+// grunt foo
 //   logs: "foo", undefined, undefined
+// grunt foo:bar
 //   logs: "foo", "bar", undefined
 // grunt foo:bar:baz
 //   logs: "foo", "bar", "baz"
@@ -168,6 +169,8 @@ grunt.registerTask('bar', 'My "bar" task.', function() {
 // Usage:
 // grunt foo bar
 //   doesn't log, because foo failed.
+//   ***Note: This is an example of space-separated sequential commands,
+//   (similar to executing two lines of code: `grunt foo` then `grunt bar`)
 // grunt bar
 //   doesn't log, because foo never ran.
 ```
@@ -176,9 +179,10 @@ Tasks can fail if required configuration properties don't exist.
 
 ```javascript
 grunt.registerTask('foo', 'My "foo" task.', function() {
-  // Fail task if "meta.name" config prop is missing.
+  // Fail task if "meta.name" config prop is missing
+  // Format 1: String 
   grunt.config.requires('meta.name');
-  // Also fails if "meta.name" config prop is missing.
+  // or Format 2: Array
   grunt.config.requires(['meta', 'name']);
   // Log... conditionally.
   grunt.log.writeln('This will only log if meta.name is defined in the config.');
@@ -199,11 +203,13 @@ grunt.registerTask('foo', 'My "foo" task.', function() {
 Take a look at the [contrib tasks](https://github.com/gruntjs/) for more examples.
 
 ## CLI options / environment
-_TODO_
-(pull from FAQ, recommend process.env)
+
+Use `process.env` to access the [environment variables](http://en.wikipedia.org/wiki/Environment_variable).
+
+Read more about the available command-line options on the [Using the CLI](http://gruntjs.com/using-the-cli) page.
 
 ## Why doesn't my asynchronous task complete?
-Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
+Chances are this is happening because you have forgotten to call the [this.async](http://gruntjs.com/api/inside-tasks#this.async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
 
 Note that passing `false` to the `done()` function tells Grunt that the task has failed.
 
@@ -215,3 +221,7 @@ grunt.registerTask('asyncme', 'My asynchronous task.', function() {
   doSomethingAsync(done);
 });
 ```
+
+## Extra Reference
+
+Checkout the [API](http://gruntjs.com/api) documentation if you need extra reference to create your tasks.

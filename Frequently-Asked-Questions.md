@@ -79,6 +79,23 @@ grunt.registerTask('set_config', 'Set a config property.', function(name, val) {
 });
 ```
 
+## How I get a stack trace when an error occurs?
+
+Use the `--stack` option to see stack traces. Such as `grunt task --stack`
+
+## Why am I getting a "Maximum call stack size exceeded" error?
+
+You probably created an alias task with the same name as one of your regular tasks. 
+Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.registerTask('myUglify', ['uglify:my_target']);`.
+
+## How do I uninstall or remove unwanted plugins?
+
+At least two ways. One way is to use `npm uninstall [GRUNT_PLUGIN] --save-dev`, this will remove the plugin from your `package.json` and from `node_modules`. You may also delete the dependencies you don't want from your `package.json` manually and then run `npm prune`.
+
+## Error "Fail to install with npm error: No compatible version found"
+
+Make sure you have the latest stable version of [NPM and Node.JS](http://nodejs.org/)
+
 
 ***
 
@@ -88,7 +105,7 @@ grunt.registerTask('set_config', 'Set a config property.', function(name, val) {
 ## On Windows with Grunt 0.3, why does my JS editor open when I try to run grunt?
 If you're in the same directory as the [Gruntfile](Getting-started), Windows tries to execute _that file_ when you type grunt. So you need to type `grunt.cmd` instead.
 
-An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](http://devblog.point2.com/2010/05/14/setup-persistent-aliases-macros-in-windows-command-prompt-cmd-exe-using-doskey/). That would allow you to use `grunt` instead of `grunt.cmd`.
+An alternative would be to use the `DOSKEY` command to create a Grunt macro, following [these directions](https://gist.github.com/vladikoff/38307908088d58af206b). That would allow you to use `grunt` instead of `grunt.cmd`.
 
 This is the `DOSKEY` command you'd use:
 

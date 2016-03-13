@@ -68,14 +68,37 @@ grunt.initConfig({
 ## Files
 Because most tasks perform file operations, Grunt has powerful abstractions for declaring on which files the task should operate. There are several ways to define **src-dest** (source-destination) file mappings, offering varying degrees of verbosity and control. Any multi task will understand all the following formats, so choose whichever format best meets your needs.
 
-All files formats support `src` and `dest` but the "Compact" and "Files Array" formats support a few additional properties:
+All files formats support `src` and `dest` but the [Compact](configuring-tasks#compact-format) and [Files Array](configuring-tasks#files-array-format) formats support a few additional properties:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
-* `nonull` When a match is not found, return a list containing the pattern itself. Otherwise, an empty list is returned if there are no matches. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
+* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
+* `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
-* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, a?b would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
+* `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, `a?b` would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
 * `expand` Process a dynamic src-dest file mapping, see ["Building the files object dynamically"](configuring-tasks#building-the-files-object-dynamically) for more information.
 * Other properties will be passed into the underlying libs as matching options. See the [node-glob][] and [minimatch][] documentation for more options.
+
+### Difference Between Grunt and Task Options
+Most tasks perform file operations, so Grunt provides a built-in infrastructure to retrieve the files a task should process. The advantage is that this logic doesn't have to be implemented again by tasks authors. To allow a user to specify these files, Grunt provides options such as `nonull` and `filter`.
+
+In addition to the files to work on, each task has its own specific needs. A task author may want to allow its user to configure some options to override the default behavior. These task-specific options shall not be confused with the Grunt options described before.
+
+To further clarify this difference, let's see an example that uses [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint):
+
+```js
+grunt.initConfig({
+  jshint: {
+    ignore_warning: {
+      options: {
+        '-W015': true,
+      },
+      src: 'js/**',
+      filter: 'isFile'
+    }
+  }
+});
+```
+
+This configuration employs the Grunt options `src` and `filter` to specify the files to process. It also uses the grunt-contrib-jshint task-specific option `-W015` to ignore a specific warning (the one having code `W015`).
 
 ### Compact Format
 This form allows a single **src-dest** (source-destination) file mapping per-target. It is most commonly used for read-only tasks, like [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint), where a single `src` property is needed, and no `dest` key is relevant. This format also supports additional properties per src-dest file mapping.
@@ -183,8 +206,33 @@ grunt.initConfig({
 });
 ```
 
+Another example—which utilizes the [globbing](configuring-tasks#globbing-patterns) and [expand: true](configuring-tasks#building-the-files-object-dynamically) features—allows you to avoid overwriting files which already exist in the destination:
+
+```js
+grunt.initConfig({
+  copy: {
+    templates: {
+      files: [{
+        expand: true,
+        cwd: ['templates/css/'],     // Parent folder of original CSS templates
+        src: '**/*.css',             // Collects all `*.css` files within the parent folder (and its subfolders)
+        dest: 'src/css/',            // Stores the collected `*.css` files in your `src/css/` folder
+        filter: function (dest) {    // `dest`, in this instance, is the filepath of each matched `src`
+          var cwd = this.cwd,        // Configures variables (these are documented for your convenience only)
+              src = dest.replace(new RegExp('^' + cwd), '');
+              dest = grunt.task.current.data.files[0].dest;
+          return (!grunt.file.exists(dest + src));    // Copies `src` files ONLY if their destinations are unoccupied
+        }
+      }]
+    }
+  }
+});
+```
+
+Keep in mind the above technique does not account for the [rename property](configuring-tasks#building-the-files-object-dynamically) when checking if the destination exists.
+
 ### Globbing patterns
-It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also know as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
+It is often impractical to specify all source filepaths individually, so Grunt supports filename expansion (also known as globbing) via the built-in [node-glob][] and [minimatch][] libraries.
 
 [node-glob]: https://github.com/isaacs/node-glob
 [minimatch]: https://github.com/isaacs/minimatch
@@ -235,18 +283,17 @@ For example:
 For more on glob pattern syntax, see the [node-glob][] and [minimatch][] documentation.
 
 ### Building the files object dynamically
-When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both "Compact" and "Files Array" mapping formats.
+When you want to process many individual files, a few additional properties may be used to build a files list dynamically. These properties may be specified in both [Compact](configuring-tasks#compact-format) and [Files Array](configuring-tasks#files-array-format) mapping formats.
 
-`expand` Set to `true` to enable the following options:
+`expand` Set to `true` will enable the following properties:
 
 * `cwd` All `src` matches are relative to (but don't include) this path.
 * `src` Pattern(s) to match, relative to the `cwd`.
 * `dest` Destination path prefix.
 * `ext` Replace any existing extension with this value in generated `dest` paths.
+* `extDot` Used to indicate where the period indicating the extension is located. Can take either `'first'` (extension begins after the first period in the file name) or `'last'` (extension begins after the last period), and is set by default to `'first'` *[Added in 0.4.3]*
 * `flatten` Remove all path parts from generated `dest` paths.
-* `rename` This function is called for each matched `src` file, (after extension renaming and flattening). The `dest`
-and matched `src` path are passed in, and this function must return a new `dest` value.  If the same `dest` is returned
-more than once, each `src` which used it will be added to an array of sources for it.
+* `rename` Embeds a customized function, which returns a string containing the new destination and filename. This function is called for each matched `src` file (after extension renaming and flattening). [More information](configuring-tasks#the-rename-property)
 
 In the following example, the `uglify` task will see the same list of src-dest file mappings for both the `static_mappings` and `dynamic_mappings` targets, because Grunt will automatically expand the `dynamic_mappings` files object into 4 individual static src-dest file mappings—assuming 4 files are found—when the task runs.
 
@@ -276,12 +323,54 @@ grunt.initConfig({
           src: ['**/*.js'], // Actual pattern(s) to match.
           dest: 'build/',   // Destination path prefix.
           ext: '.min.js',   // Dest filepaths will have this extension.
+          extDot: 'first'   // Extensions in filenames begin after the first dot
         },
       ],
     },
   },
 });
 ```
+
+#### The rename Property
+The `rename` property is unique, as the only valid value for it is a JavaScript function. Although the function returns a string, you cannot simply use a string as a value for `rename` (doing so results in an error: `Property 'rename' of object # is not a function`). In the following example, the `copy` task will create a backup of README.md.
+
+```js
+grunt.initConfig({
+  copy: {
+    backup: {
+      files: [{
+        expand: true,
+        src: ['docs/README.md'],    // The README.md file has been specified for backup
+        rename: function () {       // The value for rename must be a function
+          return 'docs/BACKUP.txt'; // The function must return a string with the complete destination
+        }
+      }]
+    }
+  }
+});
+```
+
+When the function is called, the `dest` and matched `src` path are passed in and can be used for returning the output string. In the following example, files are copied from the `dev` folder to the `dist` folder, and renamed to have the word "beta" removed .
+
+```js
+grunt.initConfig({
+  copy: {
+    production: {
+      files: [{
+        expand: true,
+        cwd: 'dev/',
+        src: ['*'],
+        dest: 'dist/',
+        rename: function (dest, src) {          // The `dest` and `src` values can be passed into the function
+          return dest + src.replace('beta',''); // The `src` is being renamed; the `dest` remains the same
+        }
+      }]
+    }
+  }
+});
+```
+
+If multiple matched `src` paths are renamed to an identical destination (i.e. if two different files get renamed to the same file), each output will be added to an array of sources for it.
 
 ## Templates
 Templates specified using `<% %>` delimiters will be automatically expanded when tasks read them from the config. Templates are expanded recursively until no more remain.

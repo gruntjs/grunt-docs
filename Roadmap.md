@@ -1,14 +1,29 @@
-## grunt 0.5
+## Grunt 0.next
 
-1. Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffescript transpilation + uglify in a single step).  All task output emitted as events.  See: https://github.com/tkellen/node-task
+* Drop Node.JS 0.8 support
+* New logging (https://github.com/cowboy/node-prolog)
+  *  A logger to listen to events and output them to the console.  Deals with stderr/stdout, or Grunt itself has this built in.
+* node-task (https://github.com/node-task)
+  * Tasks as npm modules that can be required and run independent of any task runner (if you want to manually build a compliant config object to execute it).  Can pipe data between multiple tasks (think coffeescript transpilation + uglify in a single step).  All task output emitted as events.
+  * A library for parsing configurations (merge options, template expansion, glob expansion (using lib from item #2) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.
+  * A task runner which uses config parsing library from item #3 to execute node-task compatible modules (can be used programmatically, or via cli).  Supports defining "alias" tasks which compile a set of tasks which can be run in parallel  See: http://github.com/gruntjs/grunt
 
-2. A library for glob expansion that handles arrays of globs, negation, etc. See https://github.com/cowboy/node-globule
+## Grunt 0.5
 
-3. A library for parsing configurations (merge options, template expansion, glob expansion (using lib from item #2) from the current Gruntfile format, into a valid form for running node-task compliant modules.  Will support user-defined middleware for controlling config output.
+### Update Release
 
-3. A task runner which uses config parsing library from item #3 to execute node-task compatible modules (can be used programmatically, or via cli).  Supports defining "alias" tasks which compile a set of tasks which can be run in parallel  See: http://github.com/gruntjs/grunt
+* Updates dependencies
+* Removes external libraries under `grunt.util.`
+* A library for glob expansion that handles arrays of globs, negation, etc. See https://github.com/cowboy/node-globule
 
-4. A logger to listen to events and output them to the console.  Deals with stderr/stdout, or Grunt itself has this built in. See: https://github.com/cowboy/node-prolog
+See https://github.com/gruntjs/grunt/issues/1045 for updated information.
+
+
+
+
+
+
+## Out of Date Information  / Drafts
 
 **0.5 Gruntfile Ideas**
 ```js

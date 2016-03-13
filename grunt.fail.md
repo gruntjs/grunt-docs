@@ -8,25 +8,25 @@ If something explodes (or is about to explode) inside a task, it can force Grunt
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
 
-### grunt.warn ☃
+### grunt.fail.warn ☃
 Display a warning and abort Grunt immediately. Grunt will continue processing tasks if the `--force` command-line option was specified. The `error` argument can be a string message or an error object.
 
 ```javascript
 grunt.fail.warn(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+If `--stack` is specified on the command-line and an error object was specified, a stack trace will be logged.
 
 _This method is also available as `grunt.warn`._
 
-### grunt.fatal ☃
+### grunt.fail.fatal ☃
 Display a warning and abort Grunt immediately. The `error` argument can be a string message or an error object.
 
 ```javascript
 grunt.fail.fatal(error [, errorcode])
 ```
 
-If `--debug 9` is specified on the command-line and an error object was specified, a stack trace will be logged.
+If `--stack` is specified on the command-line and an error object was specified, a stack trace will be logged.
 
 A beep is emitted on fatal unless the `--no-color` option is specified.
 

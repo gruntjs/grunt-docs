@@ -1,6 +1,6 @@
 Output messages to the console.
 
-See the [log lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt/log.js) for more information.
+See the [log lib source](https://github.com/gruntjs/grunt-legacy-log/blob/master/index.js) for more information.
 
 ## The log API
 Grunt output should look consistent, and maybe even pretty. As such, there is a plethora of logging methods, and a few useful patterns. All of the methods that actually log something are chainable.

@@ -9,7 +9,7 @@ grunt.util.kindOf(value)
 
 ### grunt.util.error
 Return a new Error instance (that can be thrown) with the appropriate message. If an Error object is specified instead of `message` that object will be returned.
-Also, if an Error object is specified for `origError` and Grunt was run with the `--debug 9` option, the original Error stack will be dumped.
+Also, if an Error object is specified for `origError` and Grunt was run with the `--stack` option, the original Error stack will be dumped.
 
 ```js
 grunt.util.error(message [, origError])
@@ -47,7 +47,7 @@ grunt.util.pluralize(n, str, separator)
 ```
 
 ### grunt.util.spawn
-Spawn a child process, keeping track of its stdout, stderr and exit code. The method returns a reference to the spawned child. When the child exits, the done function is called.
+Spawn a child process, keeping track of its stdout, stderr and exit code. The method returns a reference to the spawned child. When the child exits, the `doneFunction` is called.
 
 ```js
 grunt.util.spawn(options, doneFunction)
@@ -73,7 +73,7 @@ var options = {
 };
 ```
 
-The done function accepts these arguments:
+The `doneFunction` accepts these arguments:
 
 ```js
 function doneFunction(error, result, code) {
@@ -143,8 +143,8 @@ __All external libraries that are listed below are now deprecated.__
 
 Please use __npm__ to manage these external libraries in your project's dependencies.
 
-For example if you want use [Lo-Dash](https://npmjs.org/package/lodash), install it first `npm install lodash`, then
-use it in your `Gruntfile`: `var _ = require('lodash');`
+For example if you want to use [Lo-Dash](https://npmjs.org/package/lodash), install it first: `npm install lodash`, then
+use it in your `Gruntfile`: `var _ = require('lodash');`.
 
 #### grunt.util._
 *Deprecated*

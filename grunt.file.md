@@ -88,9 +88,10 @@ var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If null, the `process` function will receive a Buffer instead of String.
   encoding: encodingName,
-  // The source file contents and file path are passed into this function,
-  // whose return value will be used as the destination file's contents. If
-  // this function returns `false`, the file copy will be aborted.
+  // The source file contents, source file path, and destination file path 
+  // are passed into this function, whose return value will be used as the
+  // destination file's contents. If this function returns `false`, the file
+  // copy will be aborted.
   process: processFunction,
   // These optional globbing patterns will be matched against the filepath
   // (not the filename) using grunt.file.isMatch. If any specified globbing
@@ -196,9 +197,15 @@ var options = {
   // Remove the path component from all matched src files. The src file path
   // is still joined to the specified dest.
   flatten: Boolean,
-  // Remove anything after (and including) the first "." in the destination
-  // path, then append this value.
+  // Remove anything after (and including) either the first or last "." in the 
+  // destination path (indicated by options.extDot), then append this value.
   ext: String,
+  // *Added in 0.4.3*
+  // Indicates where the period demarcating the extension is located. Can take:
+  // - 'first' (extension begins after the first period in the file name) 
+  // - 'last' (extension begins after the last period)
+  // Default: 'first'
+  extDot: String,
   // If specified, this function will be responsible for returning the final
   // dest filepath. By default, it joins dest and matchedSrcPath like so:
   rename: function(dest, matchedSrcPath, options) {

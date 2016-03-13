@@ -5,7 +5,7 @@ See the [task lib source](https://github.com/gruntjs/grunt/blob/master/lib/grunt
 ## The task API
 While a task is running, Grunt exposes many task-specific utility properties and methods inside the task function via the `this` object. See the [[Inside tasks]] guide for a list of these properties and methods.
 
-Many utility properties and methods are available inside of tasks via the `this` object. 
+Many utility properties and methods are available inside of tasks via the `this` object.
 
 Note that any method marked with a ☃ (unicode snowman) is also available directly on the `grunt` object. Just so you know. See the [API main page](grunt) for more usage information.
 
@@ -20,6 +20,12 @@ If a task list is specified, the new task will be an alias for one or more other
 
 ```javascript
 grunt.task.registerTask(taskName, taskList)
+```
+
+When the optional `description` string is passed it will be displayed when `grunt --help` is run:
+
+```javascript
+grunt.task.registerTask(taskName, description, taskList)
 ```
 
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without any tasks specified:
@@ -88,6 +94,23 @@ grunt.task.registerMultiTask('log', 'Log stuff.', function() {
 See the [creating tasks](Creating-tasks) documentation for more examples of multi tasks.
 
 _This method is also available as [grunt.registerMultiTask](grunt)._
+
+### grunt.task.requires
+
+Fail the task if some other task failed or never ran.
+
+```javascript
+grunt.task.requires(taskName);
+```
+
+### grunt.task.exists
+*Added in 0.4.5*
+
+Check with the name, if a task exists in the registered tasks. Return a boolean.
+
+```javascript
+grunt.task.exists(name)
+```
 
 ### grunt.task.renameTask ☃
 Rename a task. This might be useful if you want to override the default behavior of a task, while retaining the old name.

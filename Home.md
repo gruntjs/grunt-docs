@@ -1,6 +1,6 @@
 > Welcome to the home of **Grunt**, a JavaScript automation tool.
 
-Stable Version: **0.4.2**
+Stable Version: **0.4.5**
 
 Development Version: **master**
 
@@ -14,6 +14,7 @@ Development Version: **master**
 * [[Using the CLI]]
 
 ### Advanced
+* [[API]]
 * [[Installing Grunt]]
 * [[Frequently Asked Questions]]
 * [[Project Scaffolding]]
@@ -23,9 +24,11 @@ Development Version: **master**
 * [[Who uses Grunt]]
 * [[Built with Grunt Badge]]
 * [[Contributing]]
+* [[Development Team]]
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]
+* [[Upgrading from 0.4 to 1.0]]
 
 ## API
 * [[grunt]]
