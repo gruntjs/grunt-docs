@@ -30,13 +30,13 @@ module.exports = function(grunt) {
 
 Every project has its own needs, but most of them have something in common. In this guide we introduce you to a few Grunt plugins to automate basic requirements. The final goal is to teach you how to configure these Grunt plugins so that you can use them in your projects.
 
-For the sake of the example, let's say that you're creating a JavaScript library. The typical folder structure features the following folders: `src`, `dist`, and `test`. The `src` folder (sometimes called `app`) contains the sorce code of the library as you author it. The `dist` folder (sometimes called `build`) contains the distribution, minified version of the source code. A minified file is one where all unnecessary characters, such as spaces, new lines, comments are remove without affecting the functionality of the source code. Minified source code is especially useful for users of the project because it reduces the amount of data that needs to be transferred. Finally, the `test` folder contains the code to test the project. This set up will be used in the next sections when creating the `Gruntfile` configuration.
+For the sake of the example, let's say that you're creating a JavaScript library. The typical folder structure features the following folders: `src`, `dist`, and `test`. The `src` folder (sometimes called `app`) contains the source code of the library as you author it. The `dist` folder (sometimes called `build`) contains the distribution, a minified version of the source code. A minified file is one where all unnecessary characters, such as spaces, new lines, comments are removed, without affecting the functionality of the source code. Minified source code is especially useful for users of the project because it reduces the amount of data that needs to be transferred. Finally, the `test` folder contains the code to test the project. This set up will be used in the next sections when creating the `Gruntfile` configuration.
 
-While developing the library and releasing new versions there are a few tasks that you need to perform on a regular base. For example, you might want to ensure that the code you write adheres to best practices or that the code you've written doesn't result in unexpected behaviors. To do that, you can employ a tool called [JSHint](http://jshint.com/about/). Grunt has an official plugin for it called [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) which we'll adopt in this example. In particular, you might want to ensure that as you modify your code, you don't break any rule or best practice. So, a good strategy is to check the code at every change or you perform. To do that, we'll cover a Grunt plugin called [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch). The latter runs predefined tasks, such as `grunt-contrib-jshint`, whenever files are added, changed, or deleted.
+While developing the library and releasing new versions there are a few tasks that you need to perform on a regular basis. For example, you might want to ensure that the code you write adheres to best practices, or that the code you've written doesn't result in unexpected behaviors. To do that, you can employ a tool called [JSHint](http://jshint.com/about/). Grunt has an official plugin for it called [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint) which we'll adopt in this example. In particular, you might want to ensure that as you modify your code, you don't break any rules or best practices. So, a good strategy is to check the code at every change you perform. To do that, we'll cover a Grunt plugin called [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch). The latter runs predefined tasks, such as `grunt-contrib-jshint`, whenever files are added, changed, or deleted.
 
 Checking that your source code follows best practices is not enough to guarantee that it's stable and doesn't contain bugs. To create a robust project, you need to test it. There are several libraries you can adopt such as [QUnit](https://qunitjs.com/) or [Jasmine](http://jasmine.github.io/). In this guide, we describe how to configure QUnit, and specifically [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit), to test your code.
 
-When it comes to distribute your work, you want to offer a version as small in size  as possible. To create a minified version you need a Grunt plugin like [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify). Moreover,  unless the project you're developing is very small, chances there are that you've split the code in multiple files. While this is a good practice for the developer, you want users to include only one file. So, before minifying the code, you want to concatenate the source files to create a single one. To achieve this goal you need a Grunt plugin like [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat).
+When it comes to distributing your work, you want to offer a version as small in size  as possible. To create a minified version you need a Grunt plugin like [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify). Moreover,  unless the project you're developing is very small, chances are that you've split the code in multiple files. While this is a good practice for the developer, you want users to include only one file. So, before minifying the code, you should concatenate the source files to create a single one. To achieve this goal you need a Grunt plugin like [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat).
 
 To sum up, in this guide we'll use the following five Grunt plugins:
 
@@ -64,7 +64,7 @@ grunt.initConfig({
 });
 ```
 
-Next, we can read in the project settings from the `package.json` file into the `pkg` property. This allows us to refer to the values of properties within our `package.json` file, as we'll see shortly.
+Next, we can store the project settings from the `package.json` file into the `pkg` property. This allows us to refer to the values of properties within our `package.json` file, as we'll see shortly.
 
 ```javascript
 pkg: grunt.file.readJSON('package.json')
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Now we can define configuration for each of the tasks we mentioned. The configuration object for a plugin lives as a property on the configuration object, that's often named the same as the plugin. The configuration for `grunt-contrib-concat` goes in the configuration object under the `concat` key as shown below:
+Now we can define a configuration for each of the tasks we mentioned. The configuration object for a plugin lives as a property on the configuration object, that often shares the same name its plugin. The configuration for `grunt-contrib-concat` goes in the configuration object under the `concat` key as shown below:
 
 ```javascript
 concat: {
@@ -97,7 +97,7 @@ concat: {
 }
 ```
 
-Note how in the snippet above we refer to the `name` property that's in the JSON file. We access it by using `pkg.name` as earlier we defined the `pkg` property to be the result of loading the `package.json` file, which is then parsed to a JavaScript object. Grunt has a simple template engine to output the values of properties in the configuration object. Here we tell the concat task to concatenate all files that exist within `src/` and end in `.js`.
+Note how in the snippet above we refer to the `name` property that's in the JSON file. We access it by using `pkg.name` as earlier we defined the `pkg` property to be the result of loading the `package.json` file, which is then parsed to a JavaScript object. Grunt has a simple template engine to output the values of properties in the configuration object. Here we tell the `concat` task to concatenate all files that exist within `src/` and end in `.js`.
 
 Now let's configure the `grunt-contrib-uglify` plugin, which minifies the JavaScript code:
 
@@ -158,7 +158,7 @@ watch: {
 }
 ```
 
-With this snippet, we've set up the configuration for all the plugins mentioned in the introduction. The last step to perform is to load in the Grunt plugins we need. These should have all been installed through npm.
+With this snippet, we've set up the configuration for all the plugins mentioned in the introduction. The last step to perform is to load in the Grunt plugins we need. All of these should have been previously installed through npm.
 
 ```javascript
 grunt.loadNpmTasks('grunt-contrib-uglify');
