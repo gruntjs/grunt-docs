@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 };
 ```
 
-Now we can define a configuration for each of the tasks we mentioned. The configuration object for a plugin lives as a property on the configuration object, that often shares the same name its plugin. The configuration for `grunt-contrib-concat` goes in the configuration object under the `concat` key as shown below:
+Now we can define a configuration for each of the tasks we mentioned. The configuration object for a plugin lives as a property on the configuration object, that often shares the same name as its plugin. The configuration for `grunt-contrib-concat` goes in the configuration object under the `concat` key as shown below:
 
 ```javascript
 concat: {
