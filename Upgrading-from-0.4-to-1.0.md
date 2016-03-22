@@ -6,18 +6,18 @@ This guide is here to help you update your projects and plugins from Grunt 0.4.x
 
 ### Peer Dependencies
 
-You might receive `peerDependencies` errors when you install a project with Grunt 1.0. 
+You might receive `peerDependencies` errors when you install a project with Grunt 1.0.
 We ask you to send pull requests to your favourite plugins and ask them to update the peerDependencies section of their package.json.
 See below for details about plugin updates.
 
 ## For Plugins and Plugin developers
 
 ### Peer Dependencies
-If you have a Grunt plugin that includes grunt in the peerDependencies section of your package.json, 
-we recommend tagging with "grunt": ">=0.4.0". Otherwise when grunt@1.0.0 is released, npm@2 users will 
+If you have a Grunt plugin that includes grunt in the peerDependencies section of your package.json,
+we recommend tagging with "grunt": ">=0.4.0". Otherwise when grunt@1.0.0 is released, npm@2 users will
 receive a hard error when trying to install your plugin and npm@3 users will get a warning.
 
-Be aware, peer dependencies are no longer installed for users as of npm@3. 
+Be aware, peer dependencies are no longer installed for users as of npm@3.
 Users of Grunt plugins are expected to npm install grunt --save-dev alongside any Grunt plugin install.
 
 We ask you to update your plugin with `"grunt": ">=0.4.0"` in it and publish that on npm.

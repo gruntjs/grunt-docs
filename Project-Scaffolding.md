@@ -64,7 +64,7 @@ If `false` is specified as a `destpath` the file will not be copied. Also, glob 
 ## Specifying default prompt answers
 Each init prompt either has a default value hard-coded or it looks at the current environment to attempt to determine that default value. If you want to override a particular prompt's default value, you can do so in the optional OS X or Linux `~/.grunt-init/defaults.json` or Windows `%USERPROFILE%\.grunt-init\defaults.json` file.
 
-For example, my `defaults.json` file looks like this, because I want to use a slightly different name than the default name, I want to exclude my email address, and I want to specify an author url automatically.
+For example, my `defaults.json` file looks like this, because I want to use a slightly different name than the default name, I want to exclude my email address, and I want to specify an author URL automatically.
 
 ```json
 {
@@ -311,7 +311,7 @@ A public URL to the author's website to use in the `package.json`.
 A relative path from the project root for a cli script.
 
 ### bugs
-A public URL to the project's issues tracker. Will default to the github issue tracker if the project has a github repository.
+A public URL to the project's issues tracker. Will default to the GitHub issue tracker if the project has a GitHub repository.
 
 ### description
 A description of the project. Used in the `package.json` and README files.
@@ -320,7 +320,7 @@ A description of the project. Used in the `package.json` and README files.
 A valid semantic version range descriptor of Grunt the project requires.
 
 ### homepage
-A public URL to the project's home page. Will default to the github url if a github repository.
+A public URL to the project's home page. Will default to the GitHub URL if a GitHub repository.
 
 ### jquery_version
 If a jQuery project, the version of jQuery the project requires. Must be a valid semantic version range descriptor.
@@ -341,7 +341,7 @@ The version of Node.js the project requires. Must be a valid semantic version ra
 The command to run tests on your project. Defaults to `grunt`.
 
 ### repository
-Project's git repository. Defaults to a guess of a github url.
+Project's git repository. Defaults to a guess of a GitHub URL.
 
 ### title
 A human readable project name. Defaults to the actual project name altered to be more human readable.

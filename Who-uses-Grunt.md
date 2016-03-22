@@ -6,13 +6,13 @@
 - [Brackets](http://brackets.io/) ([Gruntfile](https://github.com/adobe/brackets/blob/master/Gruntfile.js))
 - [CSS FilterLab](http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/) ([Gruntfile](https://github.com/adobe/cssfilterlab/blob/master/grunt.js))
 
-### [jQuery](http://jquery.com/)
-- [jQuery](http://jquery.com/) - ([Gruntfile](https://github.com/jquery/jquery/blob/master/Gruntfile.js))
-- [jQuery UI](http://jqueryui.com/) - ([Gruntfile](https://github.com/jquery/jquery-ui/blob/master/Gruntfile.js))
+### [jQuery](https://jquery.com/)
+- [jQuery](https://jquery.com/) - ([Gruntfile](https://github.com/jquery/jquery/blob/master/Gruntfile.js))
+- [jQuery UI](https://jqueryui.com/) - ([Gruntfile](https://github.com/jquery/jquery-ui/blob/master/Gruntfile.js))
 - [QUnit](http://qunitjs.com/) - ([Gruntfile](https://github.com/jquery/qunit/blob/master/Gruntfile.js))
 
 ### [Twitter](https://twitter.com/)
-- [Tweetdeck](http://www.tweetdeck.com/)
+- [Tweetdeck](https://tweetdeck.twitter.com/)
 - [Typeahead](https://github.com/twitter/typeahead.js) ([Gruntfile](https://github.com/twitter/typeahead.js/blob/master/Gruntfile.js))
 
 ### [Mozilla](https://mozilla.org/)
@@ -26,7 +26,7 @@
 
 ### [Bitovi](http://bitovi.com/)
 - [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/Gruntfile.js))
- 
+
 ### [TestObject](https://www.testobject.com)
 
 ### [Filament Group](http://filamentgroup.com/)
@@ -71,7 +71,7 @@
 ### [SitePen](http://sitepen.com/)
 - [generator-dojo](https://github.com/bryanforbes/generator-dojo/) ([Gruntfile](https://github.com/bryanforbes/generator-dojo/blob/master/app/templates/Gruntfile.js))
 - [Intern](http://theintern.io/) ([Gruntfile](https://github.com/theintern/intern-examples/blob/master/grunt-example/Gruntfile.js))
- 
+
 ### [Phaser](http://phaser.io/)
 - [phaser](https://github.com/photonstorm/phaser/) ([Gruntfile](https://github.com/photonstorm/phaser/blob/master/Gruntfile.js))
 
@@ -85,7 +85,7 @@
 
 ### [Assemble](http://assemble.io/)
 - [Gruntfile](https://github.com/assemble/assemble/blob/master/Gruntfile.js)
- 
+
 ### [Sourcey](http://sourcey.com)
 - [Mesh](https://github.com/sourcey/mesh) ([Gruntfile](https://github.com/sourcey/mesh/blob/master/Gruntfile.js))
 - [Symple](https://github.com/sourcey/symple) ([Gruntfile](https://github.com/sourcey/symple/blob/master/client/Gruntfile.js))
@@ -115,10 +115,10 @@
 
 ### [Microsoft](http://www.microsoft.com/)
 - [Visual Studio 2015](http://visualstudio.com/free) has native support for Grunt
-- [Visual Studio 2013](http://visualstudio.com/free/) has Grunt support using the free [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708) extension 
+- [Visual Studio 2013](http://visualstudio.com/free/) has Grunt support using the free [Task Runner Explorer](https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708) extension
 
 ### [Spring Source](http://spring.io)
-- [Spring XD](http://projects.spring.io/spring-xd/) uses grunt for managing its UI module dependencies 
+- [Spring XD](http://projects.spring.io/spring-xd/) uses grunt for managing its UI module dependencies
 ([Gruntfile](https://github.com/spring-projects/spring-xd/blob/9a2520622dc2e88ee8893d1df618d40281dacabf/spring-xd-ui/Gruntfile.js))
 
 ### [Wire](https://www.wire.com/)

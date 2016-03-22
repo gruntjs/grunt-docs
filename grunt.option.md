@@ -4,7 +4,7 @@ An example would be a flag to target whether your build is for development or st
 
 An example `Gruntfile` to utilize the `target` option could be:
 
-```javascript
+```js
 grunt.initConfig({
   compass: {
     dev: {
@@ -29,7 +29,7 @@ As you run `grunt deploy` your stylesheets would default to the `dev` target and
 
 `grunt.option` can be used within tasks as well, for example:
 
-```javascript
+```js
 grunt.registerTask('upload', 'Upload code to specified target.', function(n) {
   var target = grunt.option('target');
   // do something useful with target here
@@ -43,13 +43,13 @@ _Note that boolean options can be specified using just a key without a value. Fo
 ### grunt.option ☃
 Gets or sets an option.
 
-```javascript
+```js
 grunt.option(key[, val])
 ```
 
 Boolean options can be negated by prepending `no-` onto the `key`. For example:
 
-```javascript
+```js
 grunt.option('staging', false);
 var isDev = grunt.option('no-staging');
 // isDev === true
@@ -58,13 +58,13 @@ var isDev = grunt.option('no-staging');
 ### grunt.option.init
 Initialize `grunt.option`. If `initObject` is omitted option will be initialized to an empty object otherwise will be set to `initObject`.
 
-```javascript
+```js
 grunt.option.init([initObject])
 ```
 
 ### grunt.option.flags
 Returns the options as an array of command line parameters.
 
-```javascript
+```js
 grunt.option.flags()
 ```

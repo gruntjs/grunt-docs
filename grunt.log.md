@@ -10,63 +10,63 @@ _Note: all methods available under `grunt.verbose` work exactly like `grunt.log`
 ### grunt.log.write / grunt.verbose.write
 Log the specified `msg` string, with no trailing newline.
 
-```javascript
+```js
 grunt.log.write(msg)
 ```
 
 ### grunt.log.writeln / grunt.verbose.writeln
 Log the specified `msg` string, with trailing newline.
 
-```javascript
+```js
 grunt.log.writeln([msg])
 ```
 
 ### grunt.log.error / grunt.verbose.error
 If `msg` string is omitted, logs `ERROR` in red, otherwise logs `>> msg`, with trailing newline.
 
-```javascript
+```js
 grunt.log.error([msg])
 ```
 
 ### grunt.log.errorlns / grunt.verbose.errorlns
 Log an error with `grunt.log.error`, wrapping text to 80 columns using `grunt.log.wraptext`.
 
-```javascript
+```js
 grunt.log.errorlns(msg)
 ```
 
 ### grunt.log.ok / grunt.verbose.ok
 If `msg` string is omitted, logs `OK` in green, otherwise logs `>> msg`, with trailing newline.
 
-```javascript
+```js
 grunt.log.ok([msg])
 ```
 
 ### grunt.log.oklns / grunt.verbose.oklns
 Log an ok message with `grunt.log.ok`, wrapping text to 80 columns using `grunt.log.wraptext`.
 
-```javascript
+```js
 grunt.log.oklns(msg)
 ```
 
 ### grunt.log.subhead / grunt.verbose.subhead
 Log the specified `msg` string in **bold**, with trailing newline.
 
-```javascript
+```js
 grunt.log.subhead(msg)
 ```
 
 ### grunt.log.writeflags / grunt.verbose.writeflags
 Log a list of `obj` properties (good for debugging flags).
 
-```javascript
+```js
 grunt.log.writeflags(obj, prefix)
 ```
 
 ### grunt.log.debug / grunt.verbose.debug
 Logs a debugging message, but only if the `--debug` command-line option was specified.
 
-```javascript
+```js
 grunt.log.debug(msg)
 ```
 
@@ -76,14 +76,14 @@ All logging methods available under `grunt.verbose` work exactly like their `gru
 ### grunt.verbose / grunt.log.verbose
 This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was specified.
 
-```javascript
+```js
 grunt.verbose
 ```
 
 ### grunt.verbose.or / grunt.log.notverbose
 This object contains all methods of `grunt.log` but only logs if the `--verbose` command-line option was _not_ specified.
 
-```javascript
+```js
 grunt.verbose.or
 ```
 
@@ -93,13 +93,13 @@ These methods don't actually log, they just return strings that can be used in o
 ### grunt.log.wordlist
 Returns a comma-separated list of `arr` array items.
 
-```javascript
+```js
 grunt.log.wordlist(arr [, options])
 ```
 
 The `options` object has these possible properties, and default values:
 
-```javascript
+```js
 var options = {
   // The separator string (can be colored).
   separator: ', ',
@@ -111,21 +111,21 @@ var options = {
 ### grunt.log.uncolor
 Removes all color information from a string, making it suitable for testing `.length` or perhaps logging to a file.
 
-```javascript
+```js
 grunt.log.uncolor(str)
 ```
 
 ### grunt.log.wraptext
 Wrap `text` string to `width` characters with `\n`, ensuring that words are not split in the middle unless absolutely necessary.
 
-```javascript
+```js
 grunt.log.wraptext(width, text)
 ```
 
 ### grunt.log.table
 Wrap `texts` array of strings to columns `widths` characters wide. A wrapper for the `grunt.log.wraptext` method that can be used to generate output in columns.
 
-```javascript
+```js
 grunt.log.table(widths, texts)
 ```
 
@@ -133,7 +133,7 @@ grunt.log.table(widths, texts)
 
 A common pattern is to only log when in `--verbose` mode OR if an error occurs, like so:
 
-```javascript
+```js
 grunt.registerTask('something', 'Do something interesting.', function(arg) {
   var msg = 'Doing something...';
   grunt.verbose.write(msg);

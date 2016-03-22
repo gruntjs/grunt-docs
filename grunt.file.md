@@ -23,7 +23,7 @@ grunt.file.preserveBOM = false;
 ## Reading and writing
 
 ### grunt.file.read
-Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](http://nodejs.org/docs/latest/api/buffer.html).
+Read and return a file's contents. Returns a string, unless `options.encoding` is `null` in which case it returns a [Buffer](https://nodejs.org/docs/latest/api/buffer.html).
 
 ```js
 grunt.file.read(filepath [, options])
@@ -54,7 +54,7 @@ grunt.file.readYAML(filepath [, options])
 ```
 
 ### grunt.file.write
-Write the specified contents to a file, creating intermediate directories if necessary. Strings will be encoded using the specified character encoding, [Buffers](http://nodejs.org/docs/latest/api/buffer.html) will be written to disk as-specified.
+Write the specified contents to a file, creating intermediate directories if necessary. Strings will be encoded using the specified character encoding, [Buffers](https://nodejs.org/docs/latest/api/buffer.html) will be written to disk as-specified.
 
 _If the `--no-write` command-line option is specified, the file won't actually be written._
 
@@ -88,7 +88,7 @@ var options = {
   // If an encoding is not specified, default to grunt.file.defaultEncoding.
   // If null, the `process` function will receive a Buffer instead of String.
   encoding: encodingName,
-  // The source file contents, source file path, and destination file path 
+  // The source file contents, source file path, and destination file path
   // are passed into this function, whose return value will be used as the
   // destination file's contents. If this function returns `false`, the file
   // copy will be aborted.
@@ -173,7 +173,7 @@ File paths are relative to the `Gruntfile` unless the current working directory 
 
 The `options` object supports all [minimatch library](https://github.com/isaacs/minimatch) options, and a few others. For example:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
+* `filter` Either a valid [fs.Stats method name](https://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`.
 * `nonull` Retain `src` patterns even if they fail to match files. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `matchBase` Patterns without slashes will match just the basename part. Eg. this makes `*.js` work like `**/*.js`.
 * `cwd` Patterns will be matched relative to this path, and all returned filepaths will also be relative to this path.
@@ -197,12 +197,12 @@ var options = {
   // Remove the path component from all matched src files. The src file path
   // is still joined to the specified dest.
   flatten: Boolean,
-  // Remove anything after (and including) either the first or last "." in the 
+  // Remove anything after (and including) either the first or last "." in the
   // destination path (indicated by options.extDot), then append this value.
   ext: String,
   // *Added in 0.4.3*
   // Indicates where the period demarcating the extension is located. Can take:
-  // - 'first' (extension begins after the first period in the file name) 
+  // - 'first' (extension begins after the first period in the file name)
   // - 'last' (extension begins after the last period)
   // Default: 'first'
   extDot: String,
@@ -231,7 +231,7 @@ This method contains the same signature and logic as the `grunt.file.match` meth
 ### grunt.file.exists
 Does the given path exist? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.exists(path1 [, path2 [, ...]])
@@ -240,7 +240,7 @@ grunt.file.exists(path1 [, path2 [, ...]])
 ### grunt.file.isLink
 Is the given path a symbolic link? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isLink(path1 [, path2 [, ...]])
@@ -251,7 +251,7 @@ Returns false if the path doesn't exist.
 ### grunt.file.isDir
 Is the given path a directory? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isDir(path1 [, path2 [, ...]])
@@ -262,7 +262,7 @@ Returns false if the path doesn't exist.
 ### grunt.file.isFile
 Is the given path a file? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isFile(path1 [, path2 [, ...]])
@@ -275,7 +275,7 @@ Returns false if the path doesn't exist.
 ### grunt.file.isPathAbsolute
 Is a given file path absolute? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isPathAbsolute(path1 [, path2 [, ...]])
@@ -300,7 +300,7 @@ grunt.file.doesPathContain(ancestorPath, descendantPath1 [, descendantPath2 [, .
 ### grunt.file.isPathCwd
 Is a given file path the CWD? Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isPathCwd(path1 [, path2 [, ...]])
@@ -309,7 +309,7 @@ grunt.file.isPathCwd(path1 [, path2 [, ...]])
 ### grunt.file.isPathInCwd
 Is a given file path inside the CWD? Note: CWD is not _inside_ CWD. Returns a boolean.
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ```js
 grunt.file.isPathInCwd(path1 [, path2 [, ...]])
@@ -322,7 +322,7 @@ Change grunt's current working directory (CWD). By default, all file paths are r
 grunt.file.setBase(path1 [, path2 [, ...]])
 ```
 
-Like the Node.js [path.join](http://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
+Like the Node.js [path.join](https://nodejs.org/docs/latest/api/path.html#path_path_join_path1_path2) method, this method will join all arguments together and normalize the resulting path.
 
 ## External libraries
 *Deprecated*
