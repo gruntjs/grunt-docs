@@ -1,4 +1,4 @@
-This guide explains how to configure tasks for your project using a `Gruntfile`.  If you don't know what a `Gruntfile` is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
+This guide explains how to configure tasks for your project using a `Gruntfile`. If you don't know what a `Gruntfile` is, please read the [[Getting Started]] guide and check out a [[Sample Gruntfile]].
 
 ## Grunt Configuration
 Task configuration is specified in your `Gruntfile` via the `grunt.initConfig` method. This configuration will mostly be under task-named properties, but may contain any arbitrary data. As long as properties don't conflict with properties your tasks require, they will be otherwise ignored.
@@ -40,10 +40,10 @@ grunt.initConfig({
   },
 });
 ```
-Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn.  Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask), Grunt will look for a property with the _new_ task name in the config object.
+Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn. Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask), Grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
-Inside a task configuration, an `options` property may be specified to override built-in defaults.  In addition, each target may have an `options` property which is specific to that target.  Target-level options will override task-level options.
+Inside a task configuration, an `options` property may be specified to override built-in defaults. In addition, each target may have an `options` property which is specific to that target. Target-level options will override task-level options.
 
 The `options` object is optional and may be omitted if not needed.
 
@@ -70,7 +70,7 @@ Because most tasks perform file operations, Grunt has powerful abstractions for 
 
 All files formats support `src` and `dest` but the [Compact](configuring-tasks#compact-format) and [Files Array](configuring-tasks#files-array-format) formats support a few additional properties:
 
-* `filter` Either a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
+* `filter` Either a valid [fs.Stats method name](https://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats) or a function that is passed the matched `src` filepath and returns `true` or `false`. [See examples](configuring-tasks#custom-filter-function)
 * `nonull` If set to `true` then the operation will include non-matching patterns. Combined with grunt's `--verbose` flag, this option can help debug file path issues.
 * `dot` Allow patterns to match filenames starting with a period, even if the pattern does not explicitly have a period in that spot.
 * `matchBase` If set, patterns without slashes will be matched against the basename of the path if it contains slashes. For example, `a?b` would match the path `/xyz/123/acb`, but not `/xyz/acb/123`.
@@ -178,7 +178,7 @@ grunt.initConfig({
 ```
 
 ### Custom Filter Function
-The `filter` property can help you target files with a greater level of detail. Simply use a valid [fs.Stats method name](http://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). The following will clean only if the pattern matches an actual file:
+The `filter` property can help you target files with a greater level of detail. Simply use a valid [fs.Stats method name](https://nodejs.org/docs/latest/api/fs.html#fs_class_fs_stats). The following will clean only if the pattern matches an actual file:
 
 ```js
 grunt.initConfig({
@@ -402,7 +402,7 @@ grunt.initConfig({
 ```
 
 ## Importing External Data
-In the following Gruntfile, project metadata is imported into the Grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin](http://github.com/gruntjs/grunt-contrib-uglify) `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
+In the following Gruntfile, project metadata is imported into the Grunt config from a `package.json` file, and the [grunt-contrib-uglify plugin](https://github.com/gruntjs/grunt-contrib-uglify) `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata.
 
 Grunt has `grunt.file.readJSON` and `grunt.file.readYAML` methods for importing JSON and YAML data.
 

@@ -7,7 +7,7 @@ If a task is asynchronous, this method must be invoked to instruct Grunt to wait
 
 If the `this.async` method isn't invoked, the task will execute synchronously.
 
-```javascript
+```js
 // Tell Grunt this task is asynchronous.
 var done = this.async();
 // Your async code.
@@ -24,14 +24,14 @@ If one task depends on the successful completion of another task (or tasks), thi
 
 Note that this won't actually run the specified task(s), it will just fail the current task if they haven't already run successfully.
 
-```javascript
+```js
 this.requires(tasksList)
 ```
 
 ### this.requiresConfig
 Fail the current task if one or more required [config](grunt.config) properties is missing. One or more string or array config properties may be specified.
 
-```javascript
+```js
 this.requiresConfig(prop [, prop [, ...]])
 ```
 

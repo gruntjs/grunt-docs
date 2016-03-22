@@ -1,4 +1,4 @@
-Template strings can be processed manually using the provided template functions. In addition, the config.get method (used by many tasks) automatically expands `<% %>` style template strings specified as config data inside the `Gruntfile`.
+Template strings can be processed manually using the provided template functions. In addition, the `config.get` method (used by many tasks) automatically expands `<% %>` style template strings specified as config data inside the `Gruntfile`.
 
 ### grunt.template.process
 Process a [Lo-Dash template](http://lodash.com/docs/#template) string. The `template` argument will be processed recursively until there are no more templates to process.
@@ -24,7 +24,7 @@ grunt.template.process('<%= baz %>', {data: obj}) // 'abcde'
 
 ### grunt.template.setDelimiters
 Set the [Lo-Dash template](http://lodash.com/docs/#template) delimiters to a predefined set in case `grunt.util._.template` needs to be called manually. The `config` delimiters `<% %>` are included by default.
- 
+
 _You probably won't need to use this method, because you'll be using `grunt.template.process` which uses this method internally._
 
 ```js

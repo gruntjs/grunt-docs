@@ -1,4 +1,4 @@
-Grunt plugins define tasks that implement certain build steps and can be reused across multiple projects.  The examples will use the plugin _"grunt-contrib-uglify"_. Check the [Grunt website](http://gruntjs.com/) for a list of available plugins.
+Grunt plugins define tasks that implement certain build steps and can be reused across multiple projects. The examples will use the plugin _"grunt-contrib-uglify"_. Check the [Grunt website](http://gruntjs.com/) for a list of available plugins.
 
 ## Installing a Grunt plugin
 

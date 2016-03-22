@@ -57,12 +57,12 @@ These are Grunt's brand colors. You can copy the HEX codes below or the Pantone
     <div class="color"></div>
     <div clas="hex">#452F13</div>
     <div class="pantone">Pantone 476 C</div>
-  </div> 
+  </div>
   <div class="color-container orange">
     <div class="color"></div>
     <div clas="hex">#E68724</div>
     <div class="pantone">Pantone 7569 C</div>
-  </div> 
+  </div>
   <div class="color-container yellow">
     <div class="color"></div>
     <div clas="hex">#FAA918</div>

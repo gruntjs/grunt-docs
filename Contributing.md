@@ -5,10 +5,10 @@ There are a number of Grunt projects.
 * [gruntjs.com](https://github.com/gruntjs/gruntjs.com) - the gruntjs.com website
 * [grunt-contrib collection](https://github.com/gruntjs/grunt-contrib) - a collection of all Grunt "contrib" plugins
 
-In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs). Each repository has its own maintainers, you can easily find the maintainers 
-by looking at recent commits and pushes. Just create an issue in the repository that interests you and `@mention` one of the maintainers to get started. 
+In addition, each individual grunt-contrib plugin is a separate repository listed on the [gruntjs org homepage](https://github.com/gruntjs). Each repository has its own maintainers, you can easily find the maintainers
+by looking at recent commits and pushes. Just create an issue in the repository that interests you and `@mention` one of the maintainers to get started.
 
-##  Contributors License Agreement
+## Contributors License Agreement
 
 Most forms of contribution aside from providing support to other users requires that you **[sign and submit](http://dojofoundation.org/about/cla)** a Contributors License Agreement (or "CLA" for short) with the Dojo Foundation.
 
@@ -50,7 +50,7 @@ To publish a new version of a `grunt-contrib-*` plugin follow these steps:
 * commit the changelog, `package.json` and README changes.
 * create a new git tag for the new version. use this format for the tag: `vX.Y.Z`. (such as `v0.1.13`)
 * push changes to `master`, push tag to the plugin repo.
-* Publish to npm: `npm publish .`. If you do not have access to `npm publish` ask one of the core contributors to publish for you. 
+* Publish to npm: `npm publish .`. If you do not have access to `npm publish` ask one of the core contributors to publish for you.
 
 # Non-code contributions
 
@@ -86,7 +86,7 @@ Join the [freenode](http://freenode.net/): IRC #grunt channel for general discus
 _No private messages, please._
 
 ## Modifying grunt
-First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
+First, ensure that you have the latest [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 
 1. Ensure grunt-cli is installed (see the [[Getting started]] guide for more information)
 1. Fork and clone the repo.

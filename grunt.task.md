@@ -18,25 +18,25 @@ Register an "alias task" or a task function. This method supports the following 
 
 If a task list is specified, the new task will be an alias for one or more other tasks. Whenever this "alias task" is run, every specified task in `taskList` will be run, in the order specified. The `taskList` argument must be an array of tasks.
 
-```javascript
+```js
 grunt.task.registerTask(taskName, taskList)
 ```
 
 When the optional `description` string is passed it will be displayed when `grunt --help` is run:
 
-```javascript
+```js
 grunt.task.registerTask(taskName, description, taskList)
 ```
 
 This example alias task defines a "default" task whereby the "jshint", "qunit", "concat" and "uglify" tasks are run automatically if Grunt is executed without any tasks specified:
 
-```javascript
+```js
 task.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
 Task arguments can be specified as well. In this example, the alias "dist" runs both the "concat" and "uglify" tasks, each with the "dist" argument:
 
-```javascript
+```js
 task.registerTask('dist', ['concat:dist', 'uglify:dist']);
 ```
 
@@ -46,13 +46,13 @@ If a `description` and `taskFunction` are passed, the specified function will be
 
 Note that the `grunt.task.registerMultiTask` method, explained below, can be used to define a special type of task known as a "multi task."
 
-```javascript
+```js
 grunt.task.registerTask(taskName, description, taskFunction)
 ```
 
 This example task logs `foo, testing 123` if Grunt is run via `grunt foo:testing:123`. If the task is run without arguments as `grunt foo` the task logs `foo, no args`.
 
-```javascript
+```js
 grunt.task.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2) {
   if (arguments.length === 0) {
     grunt.log.writeln(this.name + ", no args");
@@ -71,13 +71,13 @@ Register a "multi task." A multi task is a task that implicitly iterates over al
 
 Many of the contrib tasks, including the [jshint task](https://github.com/gruntjs/grunt-contrib-jshint), [concat task](https://github.com/gruntjs/grunt-contrib-concat) and [uglify task](https://github.com/gruntjs/grunt-contrib-uglify) are multi tasks.
 
-```javascript
+```js
 grunt.task.registerMultiTask(taskName, description, taskFunction)
 ```
 
 Given the specified configuration, this example multi task would log `foo: 1,2,3` if Grunt was run via `grunt log:foo`, or it would log `bar: hello world` if Grunt was run via `grunt log:bar`. If Grunt was run as `grunt log` however, it would log `foo: 1,2,3` then `bar: hello world` then `baz: false`.
 
-```javascript
+```js
 grunt.initConfig({
   log: {
     foo: [1, 2, 3],
@@ -99,7 +99,7 @@ _This method is also available as [grunt.registerMultiTask](grunt)._
 
 Fail the task if some other task failed or never ran.
 
-```javascript
+```js
 grunt.task.requires(taskName);
 ```
 
@@ -108,7 +108,7 @@ grunt.task.requires(taskName);
 
 Check with the name, if a task exists in the registered tasks. Return a boolean.
 
-```javascript
+```js
 grunt.task.exists(name)
 ```
 
@@ -117,7 +117,7 @@ Rename a task. This might be useful if you want to override the default behavior
 
 _Note that if a task has been renamed, the [this.name](inside-tasks#this.name) and [this.nameArgs](inside-tasks#this.nameArgs) properties will change accordingly._
 
-```javascript
+```js
 grunt.task.renameTask(oldname, newname)
 ```
 
@@ -129,7 +129,7 @@ For most projects, tasks will be defined in the [Gruntfile](Getting-started). Fo
 ### grunt.task.loadTasks ☃
 Load task-related files from the specified directory, relative to the [Gruntfile](Getting-started). This method can be used to load task-related files from a local Grunt plugin by specifying the path to that plugin's "tasks" subdirectory.
 
-```javascript
+```js
 grunt.task.loadTasks(tasksPath)
 ```
 
@@ -138,7 +138,7 @@ _This method is also available as [grunt.loadTasks](grunt)._
 ### grunt.task.loadNpmTasks ☃
 Load tasks from the specified Grunt plugin. This plugin must be installed locally via npm, and must be relative to the [Gruntfile](Getting-started). Grunt plugins can be created by using the [grunt-init gruntplugin template](https://github.com/gruntjs/grunt-init): `grunt init:gruntplugin`.
 
-```javascript
+```js
 grunt.task.loadNpmTasks(pluginName)
 ```
 
@@ -151,20 +151,20 @@ Grunt automatically enqueues and runs all tasks specified on the command line, b
 ### grunt.task.run
 Enqueue one or more tasks. Every specified task in `taskList` will be run immediately after the current task completes, in the order specified. The task list can be an array of tasks or individual task arguments.
 
-```javascript
+```js
 grunt.task.run(taskList)
 ```
 
 ### grunt.task.clearQueue
 Empty the task queue completely. Unless additional tasks are enqueued, no more tasks will be run.
 
-```javascript
+```js
 grunt.task.clearQueue()
 ```
 
 ### grunt.task.normalizeMultiTaskFiles
 Normalizes a task target configuration object into an array of src-dest file mappings. This method is used internally by the multi task system [this.files / grunt.task.current.files](grunt.task#wiki-this-files) property.
 
-```javascript
+```js
 grunt.task.normalizeMultiTaskFiles(data [, targetname])
 ```

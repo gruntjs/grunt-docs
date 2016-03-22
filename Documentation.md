@@ -2,7 +2,7 @@ Welcome to the Grunt documentation page. Here you can find helpful resources, li
 
 ## Getting started
 
-If you're new to Grunt's world, we suggest to learn more about our CLI and what actions you need to complete to use Grunt in your project. The best resource for that is our [Getting started guide](http://gruntjs.com/getting-started). If you already know what Grunt is and how it works, the next step is to familiarize yourself with [the creation of a `Gruntfile`](http://gruntjs.com/configuring-tasks). A `Gruntfile` contains the configuration of the tasks you wish to employ. If you are curious to know how it looks like, you can check out [our sample](http://gruntjs.com/sample-gruntfile). 
+If you're new to Grunt's world, we suggest to learn more about our CLI and what actions you need to complete to use Grunt in your project. The best resource for that is our [Getting started guide](http://gruntjs.com/getting-started). If you already know what Grunt is and how it works, the next step is to familiarize yourself with [the creation of a `Gruntfile`](http://gruntjs.com/configuring-tasks). A `Gruntfile` contains the configuration of the tasks you wish to employ. If you are curious to know how it looks like, you can check out [our sample](http://gruntjs.com/sample-gruntfile).
 
 ## Advanced
 

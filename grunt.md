@@ -42,7 +42,7 @@ _This method is an alias for the [grunt.fail.fatal](grunt.fail#grunt.fail.fatal)
 ### grunt.option
 Retrieve the value of a command-line option, eg. `debug`. Note that for each command-line option, the inverse can be tested, eg. `no-debug`.
 
-```javascript
+```js
 grunt.option(optionName)
 ```
 
@@ -51,13 +51,13 @@ grunt.option(optionName)
 ### grunt.package
 The current Grunt `package.json` metadata, as an object.
 
-```javascript
+```js
 grunt.package
 ```
 
 ### grunt.version
 The current Grunt version, as a string. This is just a shortcut to the `grunt.package.version` property.
 
-```javascript
+```js
 grunt.version
 ```

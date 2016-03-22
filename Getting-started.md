@@ -1,4 +1,4 @@
-Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
+Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](https://nodejs.org/) package manager.
 Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions.
 
 Before setting up Grunt ensure that your [npm](https://npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
@@ -8,7 +8,7 @@ If you already have installed Grunt and are now searching for some quick referen
 ## Installing the CLI
 **Using Grunt 0.3? Please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
 
-In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
+In order to get started, you'll want to install Grunt's command line interface (CLI) globally. You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
 ```shell
 npm install -g grunt-cli
@@ -37,14 +37,14 @@ That's really all there is to it. Installed Grunt tasks can be listed by running
 ## Preparing a new Grunt project
 A typical setup will involve adding two files to your project: `package.json` and the `Gruntfile`.
 
-**package.json**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
+**package.json**: This file is used by [npm] to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
 
-**Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins. 
+**Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins.
 **When this documentation mentions a `Gruntfile` it is talking about a file, which is either a `Gruntfile.js` or a `Gruntfile.coffee`**.
 
 ## package.json
 
-The `package.json` file belongs in the root directory of your project, next to the `Gruntfile`, and should be committed with your project source.  Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed therein.
+The `package.json` file belongs in the root directory of your project, next to the `Gruntfile`, and should be committed with your project source. Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed therein.
 
 There are a few ways to create a `package.json` file for your project:
 
@@ -66,7 +66,7 @@ There are a few ways to create a `package.json` file for your project:
 ```
 
 ### Installing Grunt and gruntplugins
-The easiest way to add Grunt and gruntplugins to an existing `package.json` is with the command `npm install <module> --save-dev`.  Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
+The easiest way to add Grunt and gruntplugins to an existing `package.json` is with the command `npm install <module> --save-dev`. Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
 
 For example, this will install the latest version of Grunt in your project folder, adding it to your devDependencies:
 
@@ -205,7 +205,7 @@ Custom project-specific tasks don't need to be defined in the `Gruntfile`; they 
 [npm init]: https://docs.npmjs.com/cli/init
 [grunt-init]: Project-Scaffolding
 [tilde version range]: https://npmjs.org/doc/misc/semver.html#Ranges
-[grunt-contrib-uglify]: http://github.com/gruntjs/grunt-contrib-uglify
+[grunt-contrib-uglify]: https://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
 [grunt.loadTasks]: https://github.com/gruntjs/grunt/wiki/grunt.task

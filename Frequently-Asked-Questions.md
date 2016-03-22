@@ -5,9 +5,9 @@ For general installation instructions, please read the [[Getting Started]] guide
 Installing both published and unpublished development versions of Grunt is covered in the [[Installing grunt]] guide.
 
 ## Does Grunt work on Windows?
-Grunt works fine on Windows, because [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) both work fine on Windows. Usually the problematic part is [Cygwin](http://www.cygwin.com/), because it bundles an outdated version of Node.js.
+Grunt works fine on Windows, because [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) both work fine on Windows. Usually the problematic part is [Cygwin](http://www.cygwin.com/), because it bundles an outdated version of Node.js.
 
-The best way to avoid this issue is to use the [msysGit installer](http://msysgit.github.com/) to install the `git` binary and the [Node.js installer](http://nodejs.org/#download) to install the `node` and `npm` binaries, and to use the built-in [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html) or [PowerShell](http://support.microsoft.com/kb/968929) instead of Cygwin.
+The best way to avoid this issue is to use the [msysGit installer](http://msysgit.github.com/) to install the `git` binary and the [Node.js installer](https://nodejs.org/#download) to install the `node` and `npm` binaries, and to use the built-in [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html) or [PowerShell](http://support.microsoft.com/kb/968929) instead of Cygwin.
 
 ## Why doesn't my asynchronous task complete?
 Chances are this is happening because you have forgotten to call the [this.async](grunt.task#wiki-this-async) method to tell Grunt that your task is asynchronous. For simplicity's sake, Grunt uses a synchronous coding style, which can be switched to asynchronous by calling `this.async()` within the task body.
@@ -16,7 +16,7 @@ Note that passing `false` to the `done()` function tells Grunt that the task has
 
 For example:
 
-```javascript
+```js
 grunt.registerTask('asyncme', 'My asynchronous task.', function() {
   var done = this.async();
   doSomethingAsync(done);
@@ -40,7 +40,7 @@ While each task can accept its own parameters, there are a few options available
 
 Whereas [alias tasks](grunt#wiki-grunt-registerTask) are necessarily simple, a regular task can use [grunt.task.run](grunt.task#wiki-grunt-task-run) to make it effectively function as a "dynamic" alias task. In this example, running `grunt build:001` on the command line would result in the `foo:001`, `bar:001` and `baz:001` tasks being run.
 
-```javascript
+```js
 grunt.registerTask('build', 'Run all my build tasks.', function(n) {
   if (n == null) {
     grunt.warn('Build num must be specified, like build:001.');
@@ -53,7 +53,7 @@ grunt.registerTask('build', 'Run all my build tasks.', function(n) {
 
 Another way to share a parameter across multiple tasks would be to use [grunt.option](grunt#wiki-grunt-option). In this example, running `grunt deploy --target=staging` on the command line would cause `grunt.option('target')` to return `"staging"`.
 
-```javascript
+```js
 grunt.registerTask('upload', 'Upload code to specified target.', function(n) {
   var target = grunt.option('target');
   // do something useful with target here
@@ -69,7 +69,7 @@ In other cases, you may want to expose a way to set configuration or global valu
 
 In this example, running `grunt set_global:name:peter set_config:target:staging deploy` on the command line would cause `global.name` to be `"peter"` and `grunt.config('target')` to return `"staging"`. Presumably, the `deploy` task would use those values.
 
-```javascript
+```js
 grunt.registerTask('set_global', 'Set a global variable.', function(name, val) {
   global[name] = val;
 });
@@ -85,7 +85,7 @@ Use the `--stack` option to see stack traces. Such as `grunt task --stack`
 
 ## Why am I getting a "Maximum call stack size exceeded" error?
 
-You probably created an alias task with the same name as one of your regular tasks. 
+You probably created an alias task with the same name as one of your regular tasks.
 Example: `grunt.registerTask('uglify', ['uglify:my_target']);` should be `grunt.registerTask('myUglify', ['uglify:my_target']);`.
 
 ## How do I uninstall or remove unwanted plugins?
@@ -94,7 +94,7 @@ At least two ways. One way is to use `npm uninstall [GRUNT_PLUGIN] --save-dev`, 
 
 ## Error "Fail to install with npm error: No compatible version found"
 
-Make sure you have the latest stable version of [NPM and Node.JS](http://nodejs.org/)
+Make sure you have the latest stable version of [NPM and Node.JS](https://nodejs.org/)
 
 
 ***

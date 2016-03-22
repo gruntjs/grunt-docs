@@ -36,7 +36,7 @@ While developing the library and releasing new versions there are a few tasks th
 
 Checking that your source code follows best practices is not enough to guarantee that it's stable and doesn't contain bugs. To create a robust project, you need to test it. There are several libraries you can adopt such as [QUnit](https://qunitjs.com/) or [Jasmine](http://jasmine.github.io/). In this guide, we describe how to configure QUnit, and specifically [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit), to test your code.
 
-When it comes to distributing your work, you want to offer a version as small in size  as possible. To create a minified version you need a Grunt plugin like [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify). Moreover,  unless the project you're developing is very small, chances are that you've split the code in multiple files. While this is a good practice for the developer, you want users to include only one file. So, before minifying the code, you should concatenate the source files to create a single one. To achieve this goal you need a Grunt plugin like [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat).
+When it comes to distributing your work, you want to offer a version as small in size  as possible. To create a minified version you need a Grunt plugin like [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify). Moreover, unless the project you're developing is very small, chances are that you've split the code in multiple files. While this is a good practice for the developer, you want users to include only one file. So, before minifying the code, you should concatenate the source files to create a single one. To achieve this goal you need a Grunt plugin like [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat).
 
 To sum up, in this guide we'll use the following five Grunt plugins:
 
@@ -52,27 +52,27 @@ If you're curious about what the final result looks like, the entire `Gruntfile`
 
 The first part is the "wrapper" function, which encapsulates your Grunt configuration.
 
-```javascript
+```js
 module.exports = function(grunt) {
 };
 ```
 
 Within that function we can initialize our configuration object:
 
-```javascript
+```js
 grunt.initConfig({
 });
 ```
 
 Next, we can store the project settings from the `package.json` file into the `pkg` property. This allows us to refer to the values of properties within our `package.json` file, as we'll see shortly.
 
-```javascript
+```js
 pkg: grunt.file.readJSON('package.json')
 ```
 
 This leaves us with this so far:
 
-```javascript
+```js
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 
 Now we can define a configuration for each of the tasks we mentioned. The configuration object for a plugin lives as a property on the configuration object, that often shares the same name as its plugin. The configuration for `grunt-contrib-concat` goes in the configuration object under the `concat` key as shown below:
 
-```javascript
+```js
 concat: {
   options: {
     // define a string to put between each file in the concatenated output
@@ -101,7 +101,7 @@ Note how in the snippet above we refer to the `name` property that's in the JSON
 
 Now let's configure the `grunt-contrib-uglify` plugin, which minifies the JavaScript code:
 
-```javascript
+```js
 uglify: {
   options: {
     // the banner is inserted at the top of the output
@@ -119,7 +119,7 @@ This snippet tells `grunt-contrib-uglify` to create a file within `dist/` that c
 
 Up to this point, we have configured the plugins to create the distribution version the library. It's now time to use `grunt-contrib-qunit` to automate the testing of the code. To do that, we need to give to specify the location of the test runner files, which are the HTML files QUnit runs on. The resulting code is reported below:
 
-```javascript
+```js
 qunit: {
   files: ['test/**/*.html']
 },
@@ -129,13 +129,13 @@ Once done, it's time to set up the configuration to ensure that the code of the 
 
 We advice you to analyze with `grunt-contrib-jshint` all the JavaScript files of your project, including `Gruntfile` and the test files. An example of configuration of `grunt-contrib-jshint` is the following:
 
-```javascript
+```js
 jshint: {
   // define the files to lint
   files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
   // configure JSHint (documented at http://www.jshint.com/docs/)
   options: {
-  	// more options here if you want to override JSHint defaults
+    // more options here if you want to override JSHint defaults
     globals: {
       jQuery: true,
       console: true,
@@ -151,7 +151,7 @@ The last plugin left to configure is `grunt-contrib-watch`. We'll use it to run 
 
 Turning the previous description into a configuration for `grunt-contrib-watch` results in the snippet below:
 
-```javascript
+```js
 watch: {
   files: ['<%= jshint.files %>'],
   tasks: ['jshint', 'qunit']
@@ -160,7 +160,7 @@ watch: {
 
 With this snippet, we've set up the configuration for all the plugins mentioned in the introduction. The last step to perform is to load in the Grunt plugins we need. All of these should have been previously installed through npm.
 
-```javascript
+```js
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-qunit');
@@ -170,7 +170,7 @@ grunt.loadNpmTasks('grunt-contrib-concat');
 
 And finally set up some tasks. The most important of these tasks is the default task:
 
-```javascript
+```js
 // this would be run by typing "grunt test" on the command line
 grunt.registerTask('test', ['jshint', 'qunit']);
 
@@ -184,7 +184,7 @@ The default task is executed when you invoke `Grunt` without specifying a task t
 
 If you've followed this guide correctly you should have the following `Gruntfile`:
 
-```javascript
+```js
 module.exports = function(grunt) {
 
   grunt.initConfig({

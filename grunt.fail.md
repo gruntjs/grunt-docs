@@ -11,7 +11,7 @@ Note that any method marked with a ☃ (unicode snowman) is also available direc
 ### grunt.fail.warn ☃
 Display a warning and abort Grunt immediately. Grunt will continue processing tasks if the `--force` command-line option was specified. The `error` argument can be a string message or an error object.
 
-```javascript
+```js
 grunt.fail.warn(error [, errorcode])
 ```
 
@@ -22,7 +22,7 @@ _This method is also available as `grunt.warn`._
 ### grunt.fail.fatal ☃
 Display a warning and abort Grunt immediately. The `error` argument can be a string message or an error object.
 
-```javascript
+```js
 grunt.fail.fatal(error [, errorcode])
 ```
 
