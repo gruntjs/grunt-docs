@@ -8,8 +8,8 @@ You may also be interested on how to [create your own Grunt plugin](http://grunt
 
 <small><i>
 In order for a Grunt plugin to be listed here, it must be published on
-<a href="https://npmjs.org/">npm</a> with the
-<a href="https://npmjs.org/browse/keyword/gruntplugin">gruntplugin</a> keyword.
+<a href="https://www.npmjs.org/">npm</a> with the
+<a href="https://www.npmjs.org/browse/keyword/gruntplugin">gruntplugin</a> keyword.
 Additionally, we recommend that you use the
 <a href="https://github.com/gruntjs/grunt-init-gruntplugin">gruntplugin grunt-init template</a>
 when creating a Grunt plugin.</small></i>

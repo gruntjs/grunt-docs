@@ -1,7 +1,7 @@
-Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](https://nodejs.org/) package manager.
+Grunt and Grunt plugins are installed and managed via [npm](https://www.npmjs.org/), the [Node.js](https://nodejs.org/) package manager.
 Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions.
 
-Before setting up Grunt ensure that your [npm](https://npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
+Before setting up Grunt ensure that your [npm](https://www.npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
 
 If you already have installed Grunt and are now searching for some quick reference, please checkout our [`Gruntfile` example](http://gruntjs.com/sample-gruntfile) and how to [configure a task](http://gruntjs.com/configuring-tasks).
 
@@ -199,12 +199,12 @@ Custom project-specific tasks don't need to be defined in the `Gruntfile`; they 
 * The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
 * For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
 
-[npm]: https://npmjs.org/
+[npm]: https://www.npmjs.org/
 [devDependencies]: https://docs.npmjs.com/files/package.json#devdependencies
 [json]: https://docs.npmjs.com/files/package.json
 [npm init]: https://docs.npmjs.com/cli/init
 [grunt-init]: Project-Scaffolding
-[tilde version range]: https://npmjs.org/doc/misc/semver.html#Ranges
+[tilde version range]: https://www.npmjs.org/doc/misc/semver.html#Ranges
 [grunt-contrib-uglify]: https://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
