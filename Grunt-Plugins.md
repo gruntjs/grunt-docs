@@ -6,10 +6,11 @@ To install and use any plugin listed here, checkout [how to install and use the 
 
 You may also be interested on how to [create your own Grunt plugin](http://gruntjs.com/creating-plugins).
 
-<small><i>
+<div class="plugins-note">
 In order for a Grunt plugin to be listed here, it must be published on
 <a href="https://www.npmjs.org/">npm</a> with the
 <a href="https://www.npmjs.org/browse/keyword/gruntplugin">gruntplugin</a> keyword.
 Additionally, we recommend that you use the
 <a href="https://github.com/gruntjs/grunt-init-gruntplugin">gruntplugin grunt-init template</a>
-when creating a Grunt plugin.</small></i>
+when creating a Grunt plugin.
+</div>
