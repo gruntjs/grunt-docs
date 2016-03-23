@@ -127,7 +127,7 @@ qunit: {
 
 Once done, it's time to set up the configuration to ensure that the code of the project adheres to best practices. JSHint is a tool that can detect issues or potential issues like a high cyclomatic complexity, the use of the equality operator instead of the strict equality operator, and the definition of unused variables and functions.
 
-We advice you to analyze with `grunt-contrib-jshint` all the JavaScript files of your project, including `Gruntfile` and the test files. An example of configuration of `grunt-contrib-jshint` is the following:
+We advise you to analyze with `grunt-contrib-jshint` all the JavaScript files of your project, including `Gruntfile` and the test files. An example of configuration of `grunt-contrib-jshint` is the following:
 
 ```js
 jshint: {
