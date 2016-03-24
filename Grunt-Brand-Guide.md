@@ -109,7 +109,7 @@ As you can see, the "Built with Grunt" badge is modern, stylish, and has been de
 
 [![NPM version](https://badge.fury.io/js/grunt.svg)](http://badge.fury.io/)
 [![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_100.svg)](https://coveralls.io/)
-[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.svg?branch=master)](http://travis-ci.org/)
+[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.svg?branch=master)](https://travis-ci.org/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 ## Legal

@@ -204,7 +204,7 @@ Take a look at the [contrib tasks](https://github.com/gruntjs/) for more example
 
 ## CLI options / environment
 
-Use `process.env` to access the [environment variables](http://en.wikipedia.org/wiki/Environment_variable).
+Use `process.env` to access the [environment variables](https://en.wikipedia.org/wiki/Environment_variable).
 
 Read more about the available command-line options on the [Using the CLI](http://gruntjs.com/using-the-cli) page.
 

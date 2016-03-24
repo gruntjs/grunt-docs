@@ -22,11 +22,11 @@ As you can see, the "Built with Grunt" badge is modern, stylish, and has been de
 
 [![NPM version](https://badge.fury.io/js/grunt.svg)](http://badge.fury.io/)
 [![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_100.svg)](https://coveralls.io/)
-[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.svg?branch=master)](http://travis-ci.org/)
+[![Build Status](https://secure.travis-ci.org/gruntjs/grunt.svg?branch=master)](https://travis-ci.org/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 ## Shout-outs
 
 Let us know if you are using the "Built with Grunt" badge by [tweeting at @gruntjs](https://twitter.com/gruntjs).
 
-_We'd like to especially thank [MaxCDN](http://www.maxcdn.com/) for hosting this badge and for [sponsoring open source development](http://www.maxcdn.com/company/open-source/)._
+_We'd like to especially thank [MaxCDN](https://www.maxcdn.com/) for hosting this badge and for [sponsoring open source development](https://www.maxcdn.com/open-source/)._
