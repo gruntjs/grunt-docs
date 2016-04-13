@@ -58,7 +58,7 @@ If you don't feel like writing code you can still contribute to the project!
 
 * You may submit updates and improvements to the [documentation](https://github.com/gruntjs/grunt-docs).
 * Submit articles and guides which are also part of the [documentation](https://github.com/gruntjs/grunt-docs).
-* Help Grunt user by answering questions on [StackOverflow](http://stackoverflow.com/questions/tagged/gruntjs), [IRC](http://gruntjs.com/help-resources#irc) and [GitHub](https://github.com/search?q=user%3Agruntjs&state=open&type=Issues&utf8=%E2%9C%93).
+* Help Grunt users by answering questions on [StackOverflow](https://stackoverflow.com/questions/tagged/gruntjs), [IRC](http://gruntjs.com/help-resources#irc) and [GitHub](https://github.com/search?q=user%3Agruntjs&state=open&type=Issues&utf8=%E2%9C%93).
 
 ## Filing issues
 If something isn't working like you think it should, please read [the documentation](https://github.com/gruntjs/grunt/wiki), especially the [[Getting Started]] guide. If you'd like to chat with someone, [[pop into IRC|contributing#discussing-grunt]] discussing-grunt and ask your question there.
