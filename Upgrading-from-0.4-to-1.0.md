@@ -22,9 +22,16 @@ Users of Grunt plugins are expected to npm install grunt --save-dev alongside an
 
 We ask you to update your plugin with `"grunt": ">=0.4.0"` in it and publish that on npm.
 
-### API Changes
+### Changes in 1.0.0
 
-#### From Grunt 1.0 RC1:
+- Prevent async callback from being called multiple times. Pull #1464.
+- Update copyright to jQuery Foundation and remove redundant headers. Fixes #1478.
+- Update glob to 7.0.x. Fixes #1467.
+- Removing duplicate BOM strip code. Pull #1482.
+- Updated to latest cli ~1.2.0
+- Ensure a grunt bin gets created upon install.
+ 
+### Changes in Grunt 1.0 RC1:
 Be aware, some APIs have changed warranting a major version update:
 
 * `coffee-script` is upgraded to `~1.10.0` which could incur breaking changes
