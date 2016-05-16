@@ -10,12 +10,12 @@ by looking at recent commits and pushes. Just create an issue in the repository 
 
 ## Contributors License Agreement
 
-Most forms of contribution aside from providing support to other users requires that you **[sign and submit](http://dojofoundation.org/about/cla)** a Contributors License Agreement (or "CLA" for short) with the Dojo Foundation.
+Most forms of contribution aside from providing support to other users requires that you **[sign and submit](https://contribute.jquery.org/cla/)** a Contributors License Agreement (or "CLA" for short) with the jQuery Foundation.
 
 
-In summary, the CLA asserts that when you donate fixes or documentation, you both own the code that you're submitting and that the Dojo Foundation can in turn license that code to other people.
+In summary, the CLA asserts that when you donate fixes or documentation, you both own the code that you're submitting and that the jQuery Foundation can in turn license that code to other people.
 
-Sending in a CLA is a one-time thing, and once it's done, you're in the clear to start contributing to all Dojo Foundation projects! To be effective, though, you need to know a little bit about how contributors and Committers coordinate their work, so getting involved and asking questions should be your first step.
+Sending in a CLA is a one-time thing, and once it's done, you're in the clear to start contributing to all jQuery Foundation projects! To be effective, though, you need to know a little bit about how contributors and Committers coordinate their work, so getting involved and asking questions should be your first step.
 
 For more on CLAs, read [Alex Russell's Why Do I Need to Sign This?](http://alex.dojotoolkit.org/2008/06/why-do-i-need-to-sign-this/).
 
