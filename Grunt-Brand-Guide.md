@@ -93,7 +93,7 @@ Do you use Grunt in a project and want to proudly display that in your project's
 
 Just copy the following Markdown code snippet and paste it right underneath the headline in your project README. You can also put it on your project website homepage or footer.
 
-```
+```markdown
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 ```
 
