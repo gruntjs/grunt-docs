@@ -6,7 +6,7 @@ The Grunt Logomark is a badass warthog. We use it as a standalone graphic and in
 
 <div class="logomark">
 <img alt="Grunt warthog logo" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-no-wordmark.jpg">
-<img alt='Wordmark Grunt warthog logo with "GRUNT" caption' src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-wordmark.jpg">
+<img alt="Wordmark Grunt warthog logo with &quot;GRUNT&quot; caption" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-wordmark.jpg">
 </div>
 
 ## Wordmark
@@ -44,7 +44,7 @@ Grunt is an Open Source Project, and whilst you're free to use our logo, we ask 
 <div class="usage">
 <img alt="Don't add embellishments to the Grunt logo" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-1.jpg">
 <img alt="Don't stretch the logo, or change the x:y ratio of its dimensions" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-2.jpg">
-<img alt="Don't alter the "GRUNT" caption, or embed a customised caption" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-3.jpg">
+<img alt="Don't alter the &quot;GRUNT&quot; caption, or embed a customised caption" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-3.jpg">
 <img alt="Don't alter the colors of the logo, using filters or otherwise" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-4.jpg">
 </div>
 
@@ -55,22 +55,22 @@ These are Grunt's brand colors. You can copy the HEX codes below or the Pantone
 <div class="brand-colors">
   <div class="color-container brown">
     <div class="color"></div>
-    <div clas="hex">#452F13</div>
+    <div class="hex">#452F13</div>
     <div class="pantone">Pantone 476 C</div>
   </div>
   <div class="color-container orange">
     <div class="color"></div>
-    <div clas="hex">#E68724</div>
+    <div class="hex">#E68724</div>
     <div class="pantone">Pantone 7569 C</div>
   </div>
   <div class="color-container yellow">
     <div class="color"></div>
-    <div clas="hex">#FAA918</div>
+    <div class="hex">#FAA918</div>
     <div class="pantone">Pantone 7409 C</div>
   </div>
   <div class="color-container gray">
     <div class="color"></div>
-    <div clas="hex">#C9C8C8</div>
+    <div class="hex">#C9C8C8</div>
     <div class="pantone">Pantone 420 C</div>
   </div>
 </div>
@@ -128,7 +128,7 @@ If you wish to use any Grunt graphics beyond the scope of this document, apply b
 
 <a class="button" href="#">Download the assets</a>
 
-## Logomark
+<h2><a class="anchor" href="#logomark-download" id="logomark-download"></a>Logomark</h2>
 
 <a class="button" href="#">EPS</a>
 <a class="button" href="#">JPG (300dpi)</a>

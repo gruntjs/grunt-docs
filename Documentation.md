@@ -39,6 +39,6 @@ Here's a summary of the documentation pages you can find on this website:
       <li><a href="http://gruntjs.com/installing-grunt">Installing Grunt</a></li>
       <li><a href="http://gruntjs.com/frequently-asked-questions">Frequently Asked Questions</a></li>
       <li><a href="http://gruntjs.com/project-scaffolding">Project Scaffolding</a></li>
-    <ul>
+    </ul>
   </div>
 </div>

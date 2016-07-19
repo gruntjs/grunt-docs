@@ -12,7 +12,8 @@ See below for details about plugin updates.
 
 ## For Plugins and Plugin developers
 
-### Peer Dependencies
+<h3><a class="anchor" href="#peer-dependencies-dev" id="peer-dependencies-dev"></a>Peer Dependencies</h3>
+
 If you have a Grunt plugin that includes grunt in the peerDependencies section of your package.json,
 we recommend tagging with "grunt": ">=0.4.0". Otherwise when grunt@1.0.0 is released, npm@2 users will
 receive a hard error when trying to install your plugin and npm@3 users will get a warning.
