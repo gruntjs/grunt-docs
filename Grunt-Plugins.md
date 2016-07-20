@@ -1,6 +1,6 @@
 This plugin listing is automatically generated from the npm module database.
 Officially maintained "contrib" plugins are marked with a star
-<span class='icon-star'></span> icon.
+<span class='icon-star-full'></span> icon.
 
 To install and use any plugin listed here, checkout [how to install and use the Grunt plugins section](http://gruntjs.com/getting-started#installing-grunt-and-gruntplugins).
 
