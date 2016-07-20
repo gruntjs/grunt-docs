@@ -6,14 +6,16 @@ Do you use Grunt in a project and want to proudly display that in your project R
 
 Just copy the following Markdown code snippet and paste it right underneath the headline in your project README. You can also put it on your project website homepage or footer.
 
-```
+```markdown
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 ```
 
 If you need an HTML version, we've got you covered.
 
 ```html
-<a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt"></a>
+<a href="http://gruntjs.com/">
+  <img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt">
+</a>
 ```
 
 ## For example...

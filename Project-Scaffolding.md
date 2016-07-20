@@ -24,7 +24,7 @@ Note that most templates generate their files in the current directory, so be su
 ## Installing templates
 Once templates are installed into your `~/.grunt-init/` directory (`%USERPROFILE%\.grunt-init\` on Windows) they will be available for use via grunt-init. It's recommended that you use git to clone a template into that directory. For example, the [grunt-init-jquery](https://github.com/gruntjs/grunt-init-jquery) template can be installed like so:
 
-```
+```shell
 git clone https://github.com/gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
 ```
 
