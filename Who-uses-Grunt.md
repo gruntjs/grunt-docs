@@ -46,7 +46,9 @@
 - [Opera GitHub Projects](https://github.com/operasoftware)
 
 ### [LiveChat](http://www.livechatinc.com)
-- [LiveChat Grunt Workflow](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
+- [LiveChat Grunt Workflow](http://deskmoz.com)
+
+###[live chat agents](http://developers.livechatinc.com/blog/how-livechat-uses-grunt-js-for-easy-product-deployment/)
 
 ### [WordPress](https://wordpress.org/)
 - [WordPress Build Process](https://make.wordpress.org/core/2013/08/06/a-new-frontier-for-core-development/) ([Gruntfile](https://core.trac.wordpress.org/browser/trunk/Gruntfile.js))
