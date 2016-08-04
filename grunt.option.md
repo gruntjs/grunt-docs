@@ -39,6 +39,8 @@ grunt.registerTask('deploy', ['validate', 'upload']);
 
 _Note that boolean options can be specified using just a key without a value. For example, running `grunt deploy --staging` on the command line would cause `grunt.option('staging')` to return `true`._
 
+_There is a bug preventing boolean options from working correctly in 0.4.5.  You can only have a single boolean option, and it must be specified last on the command-line.  This bug will be fixed in Grunt 0.5.0._
+
 
 ### grunt.option ☃
 Gets or sets an option.
