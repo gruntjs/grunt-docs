@@ -5,8 +5,8 @@ We have a few guidelines for using Grunt’s brand resources—please take a mom
 The Grunt Logomark is a badass warthog. We use it as a standalone graphic and in combination with the Wordmark Grunt.
 
 <div class="logomark">
-<img alt="Grunt warthog logo" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-no-wordmark.jpg" width="145" height="137">
-<img alt="Wordmark Grunt warthog logo with &quot;GRUNT&quot; caption" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/grunt-wordmark.jpg" width="145" height="172">
+<img alt="Grunt warthog logo" src="/img/docs/grunt-no-wordmark.jpg" width="145" height="137">
+<img alt="Wordmark Grunt warthog logo with &quot;GRUNT&quot; caption" src="/img/docs/grunt-wordmark.jpg" width="145" height="172">
 </div>
 
 ## Wordmark
@@ -24,7 +24,7 @@ When using the Grunt Logo with other logos or graphic elements, ensure a 'safety
 In other words, the Grunt logo and its safety space should have a size that's 150% of the the logo itself.
 
 <div class="safety">
-<img alt="From the logo's dimensions, there should be 25% padding surrounding the Grunt logo" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/safety-space.jpg" width="367" height="258">
+<img alt="From the logo's dimensions, there should be 25% padding surrounding the Grunt logo" src="/img/docs/safety-space.jpg" width="367" height="258">
 </div>
 
 ## Typography
@@ -42,10 +42,10 @@ Whilst we use the original Lato font on the Grunt website, we've slightly modifi
 Grunt is an Open Source Project, and whilst you're free to use our logo, we ask that you respect our guidelines. Although you might have the best intentions, we don't want you to alter the official Grunt logo. Here are some examples of logo usage that we do NOT support:
 
 <div class="usage">
-<img alt="Don't add embellishments to the Grunt logo" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-1.jpg" width="140" height="150">
-<img alt="Don't stretch the logo, or change the x:y ratio of its dimensions" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-2.jpg" width="140" height="150">
-<img alt="Don't alter the &quot;GRUNT&quot; caption, or embed a customised caption" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-3.jpg" width="140" height="150">
-<img alt="Don't alter the colors of the logo, using filters or otherwise" src="https://raw.githubusercontent.com/isaacdurazo/gruntjs.com/44-brand-guide/src/img/brand-guide/dont-4.jpg" width="140" height="150">
+<img alt="Don't add embellishments to the Grunt logo" src="/img/docs/dont-1.jpg" width="140" height="150">
+<img alt="Don't stretch the logo, or change the x:y ratio of its dimensions" src="/img/docs/dont-2.jpg" width="140" height="150">
+<img alt="Don't alter the &quot;GRUNT&quot; caption, or embed a customised caption" src="/img/docs/dont-3.jpg" width="140" height="150">
+<img alt="Don't alter the colors of the logo, using filters or otherwise" src="/img/docs/dont-4.jpg" width="140" height="150">
 </div>
 
 ## Brand Colors
