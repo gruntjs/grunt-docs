@@ -272,7 +272,7 @@ For example:
 // All files except for bar.js, in alpha order:
 {src: ['foo/*.js', '!foo/bar.js'], dest: ...}
 // All files in alpha order, but with bar.js at the end.
-{src: ['foo/*.js', '!foo/bar.js', 'foo/bar.js'], dest: ...}
+{src: ['foo/*.js', 'foo/bar.js'], dest: ...}
 
 // Templates may be used in filepaths or glob patterns:
 {src: ['src/<%= basename %>.js'], dest: 'build/<%= basename %>.min.js'}
