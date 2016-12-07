@@ -24,6 +24,8 @@
 ### [Cloudant](https://cloudant.com/)
 - [Backbone Cloudant](https://github.com/cloudant-labs/backbone.cloudant) ([Gruntfile](https://github.com/cloudant-labs/backbone.cloudant/blob/master/Gruntfile.js))
 
+### [Sht Lst](http://shtlst.co/)
+
 ### [Bitovi](http://bitovi.com/)
 - [CanJS](http://canjs.us/) ([Gruntfile](https://github.com/bitovi/canjs/blob/master/Gruntfile.js))
 
