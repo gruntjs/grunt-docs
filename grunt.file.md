@@ -16,6 +16,7 @@ grunt.file.defaultEncoding = 'utf8';
 *Added in 0.4.2*
 
 Whether to preserve the Byte Order Mark (BOM) on `file.read` rather than strip it.
+
 ```js
 grunt.file.preserveBOM = false;
 ```

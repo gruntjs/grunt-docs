@@ -25,12 +25,12 @@ We ask you to update your plugin with `"grunt": ">=0.4.0"` in it and publish tha
 
 ### Changes in 1.0.0
 
-- Prevent async callback from being called multiple times. Pull #1464.
-- Update copyright to jQuery Foundation and remove redundant headers. Fixes #1478.
-- Update glob to 7.0.x. Fixes #1467.
-- Removing duplicate BOM strip code. Pull #1482.
-- Updated to latest cli ~1.2.0
-- Ensure a grunt bin gets created upon install.
+* Prevent async callback from being called multiple times. Pull #1464.
+* Update copyright to jQuery Foundation and remove redundant headers. Fixes #1478.
+* Update glob to 7.0.x. Fixes #1467.
+* Removing duplicate BOM strip code. Pull #1482.
+* Updated to latest cli ~1.2.0
+* Ensure a grunt bin gets created upon install.
 
 ### Changes in Grunt 1.0 RC1:
 Be aware, some APIs have changed warranting a major version update:
@@ -49,7 +49,7 @@ Be aware, some APIs have changed warranting a major version update:
   function and `grunt.util._.flatten` no longer flattens deeply.
   `grunt.util._` is deprecated and we highly encourage you to
   `npm install lodash` and `var _ = require('lodash')` to use `lodash`.
-  Please see the lodash changelog for a full list of changes: https://github.com/lodash/lodash/wiki/Changelog
+  Please see the lodash changelog for a full list of changes: <https://github.com/lodash/lodash/wiki/Changelog>
 * `iconv-lite` is upgraded to `~0.4.13` and strips the BOM by default.
 * `js-yaml` is upgraded to `~3.5.2` and may affect `grunt.file.readYAML`.
   We encourage you to please `npm install js-yaml` and use

@@ -89,22 +89,22 @@ _No private messages, please._
 First, ensure that you have the latest [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 
 1. Ensure grunt-cli is installed (see the [[Getting started]] guide for more information)
-1. Fork and clone the repo.
-1. Check out the master branch (most grunt/grunt-contrib development happens there).
-1. Run `npm install` to install all Grunt dependencies.
-1. Run `npm uninstall grunt` this will remove the extra Grunt in your `node_modules`, see [npm issue 3958](https://github.com/npm/npm/issues/3958)
-1. Run `grunt` to Grunt grunt.
+2. Fork and clone the repo.
+3. Check out the master branch (most grunt/grunt-contrib development happens there).
+4. Run `npm install` to install all Grunt dependencies.
+5. Run `npm uninstall grunt` this will remove the extra Grunt in your `node_modules`, see [npm issue 3958](https://github.com/npm/npm/issues/3958)
+6. Run `grunt` to Grunt grunt.
 
 Assuming that you don't see any red, you're ready to go. Just be sure to run `grunt` after making any changes, to ensure that nothing has broken.
 
 ### Submitting pull requests
 
 1. Create a new branch, please don't work in `master` directly.
-1. Add failing tests for the change you want to make. Run `grunt` to see the tests fail.
-1. Fix stuff.
-1. Run `grunt` to see if the tests pass. Repeat steps 2-4 until done.
-1. Update the documentation to reflect any changes.
-1. Push to your fork and submit a pull request.
+2. Add failing tests for the change you want to make. Run `grunt` to see the tests fail.
+3. Fix stuff.
+4. Run `grunt` to see if the tests pass. Repeat steps 2-4 until done.
+5. Update the documentation to reflect any changes.
+6. Push to your fork and submit a pull request.
 
 ### Syntax
 

@@ -88,7 +88,9 @@ Recursively merges properties of the specified `configObject` into the current p
 ```js
 grunt.config.merge(configObject)
 ```
+
 You can use this method to append configuration options, targets, etc., to already defined tasks, for example:
+
 ```js
 grunt.config.merge({
   watch: {

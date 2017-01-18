@@ -40,11 +40,11 @@ When it comes to distributing your work, you want to offer a version as small in
 
 To sum up, in this guide we'll use the following five Grunt plugins:
 
-- [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
-- [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit)
-- [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)
-- [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
-- [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+* [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+* [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit)
+* [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)
+* [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
+* [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 
 If you're curious about what the final result looks like, the entire `Gruntfile` can be found at the bottom of this page.
 

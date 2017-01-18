@@ -40,6 +40,7 @@ grunt.initConfig({
   },
 });
 ```
+
 Specifying both a task and target like `grunt concat:foo` or `grunt concat:bar` will process just the specified target's configuration, while running `grunt concat` will iterate over _all_ targets, processing each in turn. Note that if a task has been renamed with [grunt.task.renameTask](grunt.task#grunt.task.renameTask), Grunt will look for a property with the _new_ task name in the config object.
 
 ## Options
