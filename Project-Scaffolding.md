@@ -102,7 +102,7 @@ exports.warnOn = wildcardPattern;
 While the most common value will be `'*'`, matching any file or directory, the [minimatch](https://github.com/isaacs/minimatch) wildcard pattern syntax used allows for a lot of flexibility. For example:
 
 ```js
-exports.warnOn = 'Gruntfile.js';        // Warn on a Gruntfile.js file.
+exports.warnOn = 'Gruntfile.js';    // Warn on a Gruntfile.js file.
 exports.warnOn = '*.js';            // Warn on any .js file.
 exports.warnOn = '*';               // Warn on any non-dotfile or non-dotdir.
 exports.warnOn = '.*';              // Warn on any dotfile or dotdir.

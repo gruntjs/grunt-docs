@@ -31,7 +31,7 @@ We ask you to update your plugin with `"grunt": ">=0.4.0"` in it and publish tha
 - Removing duplicate BOM strip code. Pull #1482.
 - Updated to latest cli ~1.2.0
 - Ensure a grunt bin gets created upon install.
- 
+
 ### Changes in Grunt 1.0 RC1:
 Be aware, some APIs have changed warranting a major version update:
 
