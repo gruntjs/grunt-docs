@@ -25,4 +25,4 @@ By default, the current working directory is set to be the directory that contai
 
 ### Creating your task
 
-You might also want to know how to [create your own tasks](http://gruntjs.com/creating-tasks) or take a look at the [API](http://gruntjs.com/api) reference.
+You might also want to know how to [create your own tasks](https://gruntjs.com/creating-tasks) or take a look at the [API](https://gruntjs.com/api) reference.
