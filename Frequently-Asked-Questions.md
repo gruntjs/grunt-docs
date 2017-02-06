@@ -54,7 +54,7 @@ grunt.registerTask('build', 'Run all my build tasks.', function(n) {
 Another way to share a parameter across multiple tasks would be to use [grunt.option](grunt#wiki-grunt-option). In this example, running `grunt deploy --target=staging` on the command line would cause `grunt.option('target')` to return `"staging"`.
 
 ```js
-grunt.registerTask('upload', 'Upload code to specified target.', function(n) {
+grunt.registerTask('upload', 'Upload code to specified target.', function() {
   var target = grunt.option('target');
   // do something useful with target here
 });
