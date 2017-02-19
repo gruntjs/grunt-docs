@@ -55,5 +55,5 @@ Be aware, some APIs have changed warranting a major version update:
   We encourage you to please `npm install js-yaml` and use
   `var YAML = require('js-yaml')` directly in case of future deprecations.
 * A file `mode` option can be passed into
-  [grunt.file.write()](http://gruntjs.com/api/grunt.file#grunt.file.write).
+  [grunt.file.write()](https://gruntjs.com/api/grunt.file#grunt.file.write).
 * `Done, without errors.` was changed to `Done.` to avoid failing by mistake on the word `errors`.

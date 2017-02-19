@@ -3,7 +3,7 @@ Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of 
 
 Before setting up Grunt ensure that your [npm](https://www.npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
 
-If you already have installed Grunt and are now searching for some quick reference, please checkout our [`Gruntfile` example](http://gruntjs.com/sample-gruntfile) and how to [configure a task](http://gruntjs.com/configuring-tasks).
+If you already have installed Grunt and are now searching for some quick reference, please checkout our [`Gruntfile` example](https://gruntjs.com/sample-gruntfile) and how to [configure a task](https://gruntjs.com/configuring-tasks).
 
 ## Installing the CLI
 **Using Grunt 0.3? Please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
@@ -80,7 +80,7 @@ The same can be done for gruntplugins and other node modules. As seen in the fol
 npm install grunt-contrib-jshint --save-dev
 ```
 
-Checkout the current available gruntplugins to be installed and used on your project at the [plugins](http://gruntjs.com/plugins) page.
+Checkout the current available gruntplugins to be installed and used on your project at the [plugins](https://gruntjs.com/plugins) page.
 
 Be sure to commit the updated `package.json` file with your project when you're done!
 
