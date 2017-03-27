@@ -71,7 +71,7 @@ grunt.template.today(format)
 In this example, today's date is formatted as a 4-digit year.
 
 ```js
-grunt.template.today('yyyy') // '2016'
+grunt.template.today('yyyy') // '2017'
 ```
 
 _(somebody remind me to update this date every year so the docs appear current)_
