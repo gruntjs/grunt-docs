@@ -1,5 +1,5 @@
 Grunt and Grunt plugins are installed and managed via [npm](https://www.npmjs.org/), the [Node.js](https://nodejs.org/) package manager.
-Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions.
+Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`.
 
 Before setting up Grunt ensure that your [npm](https://www.npmjs.org/) is up-to-date by running `npm update -g npm` (this might require `sudo` on certain systems).
 
