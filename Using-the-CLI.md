@@ -45,7 +45,6 @@ Alternative to `grunt.loadNpmTasks(...)`
 Disable writing files (dry run).
 
 ### --verbose, -v
-
 Verbose mode. A lot more information output.
 
 ### --version, -V
@@ -53,3 +52,6 @@ Print the grunt version. Combine with --verbose for more info.
 
 ### --completion
 Output shell auto-completion rules. See the grunt-cli documentation for more information.
+
+### --hide-deprecations
+Hide Grunt deprecation warning messages.
