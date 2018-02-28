@@ -39,8 +39,8 @@ A typical setup will involve adding two files to your project: `package.json` an
 
 **package.json**: This file is used by [npm] to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
 
-**Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins.
-**When this documentation mentions a `Gruntfile` it is talking about a file, which is either a `Gruntfile.js` or a `Gruntfile.coffee`**.
+**Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.[?]` and is used to configure or define tasks and load Grunt plugins.
+**When this documentation mentions a `Gruntfile` it is talking about a file, which is either a `Gruntfile.js` or a `Gruntfile.[?]` where the extension corresponds to a specific transpile language**.
 
 ## package.json
 
@@ -85,7 +85,9 @@ Checkout the current available gruntplugins to be installed and used on your pro
 Be sure to commit the updated `package.json` file with your project when you're done!
 
 ## The Gruntfile
-The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
+The `Gruntfile.js` file is a valid JavaScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
+
+If you would like to write your Gruntfile in CoffeeScript, TypeScript, Babel or any other language; first install the appropriate package and give your Gruntfile a corresponding file extension. For instance, you would `npm install coffeescript` and name your file `Gruntfile.coffee` to write your Gruntfile in CoffeeScript.
 
 A `Gruntfile` is comprised of the following parts:
 

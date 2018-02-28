@@ -18,7 +18,7 @@ Disable colored output.
 ### --gruntfile
 Specify an alternate `Gruntfile`.
 
-By default, grunt looks in the current or parent directories for the nearest `Gruntfile.js` or `Gruntfile.coffee` file.
+By default, grunt looks in the current or parent directories for the nearest `Gruntfile.js` or a `Gruntfile.[?]` file ending with an extension that corresponds to a specific transpile language.
 
 ### --debug, -d
 Enable debugging mode for tasks that support it.
