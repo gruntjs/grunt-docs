@@ -1,6 +1,6 @@
 > Welcome to the home of **Grunt**, a JavaScript automation tool.
 
-Stable Version: **0.4.5**
+Stable Version: **1.0.1**
 
 Development Version: **master**
 
