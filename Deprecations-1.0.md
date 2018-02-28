@@ -16,3 +16,8 @@ deprecated in Grunt 1.x and will be removed in the next major version release.
 * `grunt.file.readYAML` has been deprecated. Please `npm install js-yaml` and require [js-yaml](https://www.npmjs.com/package/js-yaml) directly.
 * `grunt.file.readJSON` has been deprecated. Please use `require("file.json")` directly.
 * `grunt.event` has been deprecated. Please `npm install eventemitter2` and require [eventemitter2](https://www.npmjs.com/package/eventemitter2) directly.
+
+### CoffeeScript
+The next major version release of Grunt will no longer automatically process Gruntfiles in CoffeeScript.
+
+You are now expected to `npm install coffeescript` separately if you would like to write your Gruntfile in CoffeeScript.
