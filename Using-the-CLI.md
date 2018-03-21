@@ -18,7 +18,7 @@ Disable colored output.
 ### --gruntfile
 Specify an alternate `Gruntfile`.
 
-By default, grunt looks in the current or parent directories for the nearest `Gruntfile.js` or `Gruntfile.coffee` file.
+By default, grunt looks in the current or parent directories for the nearest `Gruntfile.js` or a `Gruntfile.[?]` file ending with an extension that corresponds to a specific transpile language.
 
 ### --debug, -d
 Enable debugging mode for tasks that support it.
@@ -45,7 +45,6 @@ Alternative to `grunt.loadNpmTasks(...)`
 Disable writing files (dry run).
 
 ### --verbose, -v
-
 Verbose mode. A lot more information output.
 
 ### --version, -V
@@ -53,3 +52,6 @@ Print the grunt version. Combine with --verbose for more info.
 
 ### --completion
 Output shell auto-completion rules. See the grunt-cli documentation for more information.
+
+### --hide-deprecations
+Hide Grunt deprecation warning messages.

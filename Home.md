@@ -1,6 +1,6 @@
 > Welcome to the home of **Grunt**, a JavaScript automation tool.
 
-Stable Version: **0.4.5**
+Stable Version: **1.0.1**
 
 Development Version: **master**
 
@@ -26,6 +26,7 @@ Development Version: **master**
 * [[Development Team]]
 
 ### Migration guides
+* [[Deprecations 1.0]]
 * [[Upgrading from 0.3 to 0.4]]
 * [[Upgrading from 0.4 to 1.0]]
 
