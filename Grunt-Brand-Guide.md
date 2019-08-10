@@ -116,7 +116,7 @@ As you can see, the "Built with Grunt" badge is modern, stylish, and has been de
 
 ## Legal
 
-All the Grunt graphics are propietary and protected under intellectual property laws, so please use them correctly.
+All the Grunt graphics are proprietary and protected under intellectual property laws, so please use them correctly.
 
 Don’t display these graphics in a way that implies a relationship, affiliation, or endorsment by Grunt of your product, service, or business.
 
