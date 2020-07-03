@@ -68,3 +68,12 @@ Returns the options as an array of command line parameters.
 ```js
 grunt.option.flags()
 ```
+
+### grunt.option.keys 
+@since 1.2.0+
+
+Returns all option keys.
+
+```js
+grunt.option.keys()
+```

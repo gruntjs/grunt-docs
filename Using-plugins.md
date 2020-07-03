@@ -20,6 +20,10 @@ Now that the plugin is installed, it is time to tell Grunt about it and let it l
 
 This line should be added within the top level function scope (not the initConfig section) where other `grunt.registerTask()` calls are made.
 
+### Monorepos
+
+Since v1.2.0, Grunt will load its plugins that are located in any location that is visible to Node.js and NPM, instead of node_modules directly inside package that have a dev dependency to these plugins.
+
 ## Running plugin tasks
 
 Plugin tasks can be run like other Grunt tasks either by specifying them on the command line:
