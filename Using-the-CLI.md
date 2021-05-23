@@ -66,6 +66,10 @@ Print the grunt version. Combine with --verbose for more info.
 
 Output shell auto-completion rules. See the grunt-cli documentation for more information.
 
-### --require
+### --preload
+
+Specify a language interpreter to require first if you are writing your Gruntfile in a language Grunt doesn't support by default.
+
+### --require (Grunt 1.3.0 and below)
 
 Specify a language interpreter to require first if you are writing your Gruntfile in a language Grunt doesn't support by default.
