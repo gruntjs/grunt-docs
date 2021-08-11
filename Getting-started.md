@@ -204,7 +204,7 @@ Custom project-specific tasks don't need to be defined in the `Gruntfile`; they 
 [json]: https://docs.npmjs.com/files/package.json
 [npm init]: https://docs.npmjs.com/cli/init
 [grunt-init]: Project-Scaffolding
-[tilde version range]: https://www.npmjs.org/doc/misc/semver.html#Ranges
+[tilde version range]: https://docs.npmjs.com/cli/v6/using-npm/semver#ranges
 [grunt-contrib-uglify]: https://github.com/gruntjs/grunt-contrib-uglify
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
