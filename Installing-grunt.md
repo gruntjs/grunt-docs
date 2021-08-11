@@ -8,7 +8,7 @@ If you need a specific version of Grunt or a Grunt plugin, run `npm install grun
 
 Note that a [tilde version range] will be used in your `package.json` when you add the `--save-dev` flag to `npm install`. This is typically good, as new patch releases of the specified version will automatically be upgraded as development continues, per [semver].
 
-[tilde version range]: https://www.npmjs.org/doc/misc/semver.html#Ranges
+[tilde version range]: https://docs.npmjs.com/cli/v6/using-npm/semver#ranges
 [semver]: http://semver.org
 
 ## Installing a published development version
