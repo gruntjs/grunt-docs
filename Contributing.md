@@ -17,7 +17,7 @@ In summary, the CLA asserts that when you donate fixes or documentation, you bot
 
 Sending in a CLA is a one-time thing, and once it's done, you're in the clear to start contributing to all jQuery Foundation projects! To be effective, though, you need to know a little bit about how contributors and Committers coordinate their work, so getting involved and asking questions should be your first step.
 
-For more on CLAs, read [Alex Russell's Why Do I Need to Sign This?](http://alex.dojotoolkit.org/2008/06/why-do-i-need-to-sign-this/).
+For more on CLAs, read [Alex Russell's Why Do I Need to Sign This?](https://infrequently.org/2008/06/why-do-i-need-to-sign-this/).
 
 ## Want to contribute?
 
@@ -111,9 +111,9 @@ Assuming that you don't see any red, you're ready to go. Just be sure to run `gr
 * Two space indents. Don't use tabs anywhere. Use `\t` if you need a tab character in a string.
 * No trailing whitespace, except in markdown files where a linebreak must be forced.
 * Don't go overboard with the whitespace.
-* No more than [one assignment](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) per `var` statement.
+* No more than [one assignment](https://benalman.com/news/2012/05/multiple-var-statements-javascript/) per `var` statement.
 * Delimit strings with single-quotes `'`, not double-quotes `"`.
-* Prefer `if` and `else` to ["clever"](http://programmers.stackexchange.com/a/25281) uses of `? :` conditional or `||`, `&&` logical operators.
+* Prefer `if` and `else` to ["clever"](https://softwareengineering.stackexchange.com/a/25281) uses of `? :` conditional or `||`, `&&` logical operators.
 * Comments are great. Just put them _before_ the line of code, _not_ at the _end_ of the line.
 * **When in doubt, follow the conventions you see used in the source already.**
 
