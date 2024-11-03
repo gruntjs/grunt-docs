@@ -1,4 +1,4 @@
-> Versions 0.4 and older are no longer maintained. Find out more and see additional support options [here](/support).
+> Versions 0.4 and older are no longer maintained. Find out more and see additional support options [here](support).
 
 _Note that even if you are familiar with grunt, it would be worthwhile to read the new [[Getting started]] guide._
 

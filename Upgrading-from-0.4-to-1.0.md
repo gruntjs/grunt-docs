@@ -1,4 +1,4 @@
-> Old versions, such as 1.5 and older are no longer maintained. Find out more and see additional support options [here](/support).
+> Old versions, such as 1.5 and older are no longer maintained. Find out more and see additional support options [here](support).
 
 This guide is here to help you update your projects and plugins from Grunt 0.4.x to Grunt 1.0.
 
