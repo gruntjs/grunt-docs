@@ -1,5 +1,3 @@
-## Support
-
 We support the latest version with security and bug fixes. The previous versions are all end-of-life and will not receive any security or bug fixes.
 
 Our OpenJS Ecosystem Sustainability Program partner [HeroDevs](https://www.herodevs.com/support#request-technologies) provides drop-in replacements for older versions of Grunt that are kept up-to-date for security and compliance issues. Learn More.
