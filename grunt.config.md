@@ -126,7 +126,7 @@ jshint: {
 }
 ```
 
-In conclusion, the first value of the `files` array defined in the `config` variable (`hello.js`) overriddes the first value specified in the `initConfig` configuration call (`Gruntfile.js`).
+In conclusion, the first value of the `files` array defined in the `config` variable (`hello.js`) overrides the first value specified in the `initConfig` configuration call (`Gruntfile.js`).
 
 ## Requiring Config Data
 _Note that the method listed below is also available inside tasks on the `this` object as `this.requiresConfig`._
