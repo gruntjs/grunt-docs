@@ -24,7 +24,7 @@ As you can see, the "Built with Grunt" badge is modern, stylish, and has been de
 
 [![NPM version](https://badge.fury.io/js/grunt.svg)](http://badge.fury.io/)
 [![Built with Grunt](https://gruntjs.com/builtwith.svg)](https://gruntjs.com/)
-[![Tested with QUnit](https://img.shields.io/badge/tested_with-qunit-9c3493.svg)](https://qunitjs.com/)
+[![Tested with QUnit](https://qunitjs.com/testedwith.svg)](https://qunitjs.com/)
 
 ## Shout-outs
 
